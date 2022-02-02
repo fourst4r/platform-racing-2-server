@@ -4,6 +4,8 @@
 // returns the active ban of both game/social if the specified user/ip is banned
 function query_if_banned($pdo, $user_id, $ip)
 {
+    return []; // THIS FUNCTION DOESNT WORK!
+
     if (!function_exists('ban_select')) {
         require_once QUERIES_DIR . '/bans.php';
     }
@@ -17,6 +19,8 @@ function query_if_banned($pdo, $user_id, $ip)
 // throw an exception or returns the most recent/severe ban (game first) if the user is banned
 function check_if_banned($pdo, $user_id, $ip, $scope = 'b', $throw_exception = true)
 {
+    return false; // THIS FUNCTION DOESNT WORK!
+
     if ($scope === 'n') {
         return;
     }

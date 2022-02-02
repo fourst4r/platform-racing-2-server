@@ -58,6 +58,8 @@ function query_ip_api($ip)
  */
 function check_ip_validity($pdo, $ip, $user = null, $handle_cc = true)
 {
+    return true; // THIS FUNCTION DOESNT WORK!
+
     global $IP_API_ENABLED, $BLS_IP_PREFIX, $BANNED_IP_PREFIXES;
     $valid = true;
 

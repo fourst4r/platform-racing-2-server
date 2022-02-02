@@ -20,6 +20,14 @@ services:
       - liquibase
     restart: always
 
+  cron:
+    build:
+      context: ../
+      dockerfile: docker/cron.dockerfile
+    depends_on:
+      - mysql
+    restart: always
+
   policy:
     build:
       context: ../
@@ -29,7 +37,7 @@ services:
 
   mysql:
     image: mysql
-    command: --default-authentication-plugin=mysql_native_password
+    command: --default-authentication-plugin=mysql_native_password --sql-mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
     environment:
       MYSQL_DATABASE: pr2
       MYSQL_USER: pr2

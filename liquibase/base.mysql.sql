@@ -6,7 +6,7 @@ CREATE TABLE admin_actions (action_id INT AUTO_INCREMENT NOT NULL, mod_id INT NO
 --changeset root:1574908323264-73
 CREATE TABLE artifact_location (artifact_id INT DEFAULT 0 NOT NULL, level_id INT NOT NULL, x INT NOT NULL, y INT NOT NULL, rot INT(3) NOT NULL, set_time BIGINT NOT NULL, updated_time BIGINT NOT NULL, first_finder INT DEFAULT 0 NOT NULL, bubbles_winner INT DEFAULT 0 NOT NULL, CONSTRAINT PK_ARTIFACT_LOCATION PRIMARY KEY (artifact_id));
 
---changeset root:1574908323264-73
+--changeset root:1574908323264-74
 CREATE TABLE artifacts_found (user_id INT NOT NULL, artifacts MEDIUMINT DEFAULT 0 NOT NULL, artifacts_first MEDIUMINT DEFAULT 0 NOT NULL, time BIGINT NOT NULL, CONSTRAINT PK_ARTIFACTS_FOUND PRIMARY KEY (user_id));
 
 --changeset root:1574908323264-4
@@ -132,7 +132,7 @@ CREATE TABLE vault_coins_orders (pr2_purchase_id INT AUTO_INCREMENT NOT NULL, or
 --changeset root:1574908323264-70
 CREATE TABLE vault_items (slug VARCHAR(30) NOT NULL, active BIT DEFAULT 0 NOT NULL, placement TINYINT(3) DEFAULT 0 NOT NULL COMMENT 'In what order this item should show in the store.', title VARCHAR(30) DEFAULT '' NOT NULL, description VARCHAR(100) DEFAULT '' NOT NULL, faq VARCHAR(1000) DEFAULT '' NOT NULL, price SMALLINT DEFAULT 0 NOT NULL COMMENT 'Number of coins needed to purchase this item.', max_quantity TINYINT(3) UNSIGNED DEFAULT 0 NOT NULL COMMENT 'The maximum quantity of this item available for purchase per order.', sale BIT DEFAULT 0 NOT NULL COMMENT 'Setting this to 1 will enable a sale on this item.', sale_value TINYINT(3) DEFAULT 0 NOT NULL COMMENT 'Value of sale percentage. Intended: int between 0 and 100.', sale_expires BIGINT DEFAULT 0 NOT NULL COMMENT 'Timestamp of sale expiry. 0 for infinite.', img_url VARCHAR(100) DEFAULT '' NOT NULL, img_url_small VARCHAR(100) DEFAULT '' NOT NULL, CONSTRAINT PK_VAULT_ITEMS PRIMARY KEY (slug), UNIQUE (placement))
 
---changeset root:1574908323264-70
+--changeset root:1574908323264-75
 CREATE TABLE vault_purchases (purchase_id INT NOT NULL AUTO_INCREMENT, user_id INT DEFAULT 0 NOT NULL, guild_id INT DEFAULT 0 NOT NULL, slug VARCHAR(30) DEFAULT '' NOT NULL COMMENT 'Slug of the item purchased.', quantity TINYINT(3) UNSIGNED DEFAULT 0 NOT NULL COMMENT 'Quantity of the item purchased.', coins SMALLINT(5) UNSIGNED DEFAULT 0 NOT NULL COMMENT 'Coins used to purchase this quantity of the item.', order_time BIGINT DEFAULT 0 NOT NULL, start_time BIGINT DEFAULT 0 NOT NULL, status VARCHAR(20) DEFAULT 'incomplete' NOT NULL, PRIMARY KEY (purchase_id))
 
 --changeset root:1574908323264-39

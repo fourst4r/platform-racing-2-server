@@ -73,13 +73,14 @@ try {
 
     // sanity: correct version?
     if (!in_array($build, $ALLOWED_CLIENT_VERSIONS) || !in_array($build2, $ALLOWED_CLIENT_VERSIONS)) {
-        $e = "PR2 has recently been updated. Please reload the game to download the latest version.";
-        throw new Exception($e);
+        //$e = "PR2 has recently been updated. Please reload the game to download the latest version. Version: ".$build."/".$build2;
+        //output("allowed versions: ".implode(" ", $ALLOWED_CLIENT_VERSIONS));
+        //throw new Exception($e);
     }
 
     // sanity: valid name?
     if ((is_empty($in_token) && is_empty($user_name)) || strpos($user_name, '`') !== false) {
-        throw new Exception('Invalid user name entered.');
+        throw new Exception('Invalid user name entered. (');
     }
 
     // connect
@@ -97,11 +98,13 @@ try {
         if (isset($in_token) && $user_name === '' && $user_pass === '') {  // token login
             $token_login = true;
             $token = $in_token;
+            output("USER=".$user_name." PASS=".$user_pass);
             $user = user_select($pdo, token_login($pdo, true, false, 'n'));
         } else { // or password login
             $user = pass_login($pdo, $user_name, $user_pass, 'n');
         }
         $user_id = (int) $user->user_id;
+        output("USER_ID=".$user_id);
         unset($user_pass, $login->user_pass); // don't keep raw pass in memory or send to server
 
         // see if they're trying to log into a guest
@@ -111,6 +114,7 @@ try {
         }
     }
 
+    output("BEFORE Q IFBANNED");
     // are they banned?
     $bans = query_if_banned($pdo, $user_id, $ip);
     if (!empty($bans)) {
@@ -124,6 +128,7 @@ try {
         }
     }
 
+    output("BEFORE IP VALID");
     // check IP validity
     $country_code = '?';
     if (!check_ip_validity($pdo, $ip, $user)) {
@@ -155,6 +160,7 @@ try {
         }
     }
 
+    output("BEFORE GEN TOKEN");
     // generate a login token for future requests
     $token = random_str(32);
     token_insert($pdo, $user->user_id, $token);
@@ -211,10 +217,15 @@ try {
         throw new Exception('Your rank is too high. Please choose a different account.');
     }
 
+    output("BEFORE MOD LOGIN");
+
     // record moderator login
     if ($group > 1 || in_array($user_id, $special_ids)) {
-        mod_action_insert($pdo, $user_id, "$user_name logged into $server->server_name from $ip", 'login', $ip);
+        output("ye!!");
+        output("RESULT=".mod_action_insert($pdo, $user_id, "$user_name logged into $server->server_name from $ip", 'login', $ip));
     }
+
+    output("AFTER MOD LOGIN");
 
     // part arrays
     $hat_array = explode(',', $stats->hat_array);
@@ -222,33 +233,40 @@ try {
     $body_array = explode(',', $stats->body_array);
     $feet_array = explode(',', $stats->feet_array);
 
+    output("BEFORE PARTS");
     // check if parts need to be awarded
     $pending_awards = part_awards_select_by_user($pdo, $user_id);
     $stats = award_special_parts($stats, $group, $pending_awards);
 
+    output("BEFORE FRIENDS");
     // select their friends list
     $friends_result = friends_select($pdo, $user_id);
     foreach ($friends_result as $fr) {
         $friends[] = $fr->friend_id;
     }
 
+    output("BEFORE IGNORED");
     // select their ignored list
     $ignored_result = ignored_select_list($pdo, $user_id);
     foreach ($ignored_result as $ir) {
         $ignored[] = $ir->ignore_id;
     }
 
+    output("BEFORE FAV");
     // select their favorites
     $fav_levels_result = favorite_levels_select_ids($pdo, $user_id);
     foreach ($fav_levels_result as $level) {
         $favorite_levels[] = (int) $level->level_id;
     }
 
+    output("BEFORE EXP TODAY");
+
     // get their EXP gained today
     $exp_today_id = exp_today_select($pdo, 'id-'.$user_id);
     $exp_today_ip = exp_today_select($pdo, 'ip-'.$ip);
     $exp_today = max($exp_today_id, $exp_today_ip);
 
+    output("BEFORE GUILD");
     // determine if in a guild and if the guild owner
     if ((int) $user->guild !== 0) {
         $guild = guild_select($pdo, $user->guild);
@@ -259,8 +277,12 @@ try {
         $guild_name = $user->guild_name = $guild->guild_name;
     }
 
+    output("BEFORE PM ID");
+
     // get their most recent PM id
     $last_recv_id = messages_select_most_recent($pdo, $user_id);
+
+    output("AFTER PM ID");
 
     // join the part arrays to send to the server
     $stats->hat_array = join(',', $hat_array);
@@ -283,6 +305,7 @@ try {
     $send->epic_upgrades = $epic_upgrades;
 
     $str = "register_login`" . json_encode($send);
+    output("HERE ".$str);
     $result = talk_to_server($server_address, $server_port, $server->salt, $str, true, false);
 
     // update user information if the login was successful
@@ -292,6 +315,8 @@ try {
         user_update_ip($pdo, $user_id, $ip); // last IP address
         recent_logins_insert($pdo, $user_id, $ip, $country_code); // record recent login
     }
+
+    output("TELL WORLD");
 
     // tell the world
     $ret->success = true;
@@ -308,10 +333,12 @@ try {
     $ret->emblem = $emblem;
     $ret->favoriteLevels = $favorite_levels;
 } catch (Exception $e) {
+    output("CATCH EXCEPITN");
     $ret->error = $e->getMessage();
     if (strpos($ret->error, 'login token') !== false) {
         $ret->resetToken = true;
     }
 } finally {
+    output("FINALLY");
     die(json_encode($ret));
 }
