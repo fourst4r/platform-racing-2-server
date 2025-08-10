@@ -30,6 +30,7 @@ class Game extends Room
     private $campaign;
 
     private $mode = self::MODE_RACE;
+    private $hash;
     private $hatCountdownEnd = -1;
     private $hasHats = -1;
     private $ending_egg = false;
@@ -384,7 +385,9 @@ class Game extends Room
             }
 
             // remove other invalid hats from valid hats array
-            $this->valid_hats = array_values(array_diff($this->valid_hats, explode(',', $bad_hats)));
+            if ($bad_hats) {
+                $this->valid_hats = array_values(array_diff($this->valid_hats, explode(',', $bad_hats)));
+            }
 
             // handle hat attack mode
             if ($this->mode === self::MODE_HAT) {
@@ -1059,13 +1062,22 @@ class Game extends Room
     }
 
 
+    protected function sortFinishArray($a, $b)
+    {
+        return $this->sortFinishArrayRace($a, $b);
+    }
+
+
     private function setFinishTime($player, $finish_time)
     {
         if (!isset($player->race_stats->finish_time)) {
             $player->race_stats->finish_time = $finish_time;
         }
-        $function_name = 'sortFinishArray' . ucfirst($this->mode);
-        @usort($this->finish_array, array($this, $function_name));
+
+        if (in_array($this->mode, ['hat', 'egg', 'objective', 'deathmatch', 'race'])) {
+            $function_name = 'sortFinishArray' . ucfirst($this->mode);
+            @usort($this->finish_array, array($this, $function_name));
+        }
 
         $this->broadcastFinishTimes();
 

@@ -48,9 +48,7 @@ function run_update_cycle($pdo)
     $send_str = json_encode($send);
 
     // check servers and send the data
-    $server_list = check_servers($pdo, false);
-    output("Waiting 1 second before proceeding...\n");
-    sleep(1);
+    $server_list = servers_select($pdo);
     $servers = poll_servers($server_list, 'update_cycle`' . $send_str);
 
     // process replies
@@ -171,17 +169,23 @@ function update_artifact($pdo)
 
     // collect data
     $artifacts = artifact_locations_select($pdo, true);
-    $arti_txt = file_get_contents($lotw_file);
-    if (!isset($artifacts[0]) || !$arti_txt) {
+    if (!isset($artifacts[0])) {
         return;
     }
-    $arti_txt = json_decode($arti_txt);
-    $cur_txt = @$arti_txt->current;
-    $sched_txt = @$arti_txt->scheduled;
 
+    // read current artifact file
+    $arti_txt = file_get_contents($lotw_file);
+    if ($arti_txt) {
+        $arti_obj = json_decode($arti_txt);
+        $cur_txt = @$arti_obj->current;
+        $sched_txt = @$arti_obj->scheduled;
+    }
+    
     // only continue if one of these conditions are met
     // note: this won't update in the case of a usergroup change, but that can be done manually since it's rare
-    if (isset($artifacts[1]) && $artifacts[1]->set_time <= time()) { // sched arti set_time met/exceeded
+    if (!$arti_txt) {
+        output('creating an initial lotw file');
+    } elseif (isset($artifacts[1]) && $artifacts[1]->set_time <= time()) { // sched arti set_time met/exceeded
         output('Placing new artifact via scheduled update.');
         artifact_location_delete_old($pdo);
         $artifacts = [$artifacts[1]];
@@ -248,26 +252,6 @@ function update_artifact($pdo)
 
     // write to the file system
     file_put_contents($lotw_file, json_encode($r, JSON_UNESCAPED_UNICODE));
-}
-
-
-function failover_servers($pdo)
-{
-    global $FALLBACK_ADDRESSES;
-
-    // list servers
-    $servers = servers_select($pdo);
-
-    // restart if down
-    foreach ($servers as $server) {
-        if ($server->status == 'down') {
-            $fallback_address = $FALLBACK_ADDRESSES[array_rand($FALLBACK_ADDRESSES)];
-            server_update_address($pdo, $server->server_id, $fallback_address);
-        }
-    }
-
-    // tell the world
-    output("The correct address of all active servers has been ensured.\n");
 }
 
 

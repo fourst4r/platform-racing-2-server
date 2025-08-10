@@ -31,7 +31,7 @@ class SocketDaemon
         if (!is_subclass_of($server, '\chabot\SocketServer')) {
             throw new \Exception("Invalid server class specified! Has to be a subclass of \chabot\SocketServer");
         }
-        $this->servers[(int)$server->socket] = $server;
+        $this->servers[spl_object_id($server->socket)] = $server;
         return $server;
     }
 
@@ -43,7 +43,7 @@ class SocketDaemon
         }
         $client->setNonBlock(true);
         $client->connect($remote_address, $remote_port);
-        $this->clients[(int)$client->socket] = $client;
+        $this->clients[spl_object_id($client->socket)] = $client;
         return $client;
     }
 
@@ -51,10 +51,14 @@ class SocketDaemon
     {
         $ret = array();
         foreach ($this->clients as $socket) {
-            $ret[] = $socket->socket;
+            if ($socket->is_open) {
+                $ret[] = $socket->socket;
+            }
         }
         foreach ($this->servers as $socket) {
-            $ret[] = $socket->socket;
+            if ($socket->is_open) {
+                $ret[] = $socket->socket;
+            }
         }
         return $ret;
     }
@@ -63,12 +67,12 @@ class SocketDaemon
     {
         $ret = array();
         foreach ($this->clients as $socket) {
-            if (!empty($socket->write_buffer) || $socket->connecting) {
+            if ((!empty($socket->write_buffer) || $socket->connecting) && $socket->is_open) {
                 $ret[] = $socket->socket;
             }
         }
         foreach ($this->servers as $socket) {
-            if (!empty($socket->write_buffer)) {
+            if (!empty($socket->write_buffer) && $socket->is_open) {
                 $ret[] = $socket->socket;
             }
         }
@@ -79,20 +83,25 @@ class SocketDaemon
     {
         $ret = array();
         foreach ($this->clients as $socket) {
-            $ret[] = $socket->socket;
+            if ($socket->is_open) {
+                $ret[] = $socket->socket;
+            }
         }
         foreach ($this->servers as $socket) {
-            $ret[] = $socket->socket;
+            if ($socket->is_open) {
+                $ret[] = $socket->socket;
+            }
         }
         return $ret;
     }
 
     private function cleanSockets()
     {
+        # maybe could do this instead: $this->clients = array_filter($this->clients, fn($s) => !$s->disconnected && $this->socket instanceof \Socket)
         foreach ($this->clients as $socket) {
-            if ($socket->disconnected || !is_resource($socket->socket)) {
-                if (isset($this->clients[(int)$socket->socket])) {
-                    unset($this->clients[(int)$socket->socket]);
+            if ($socket->disconnected || !$socket->socket instanceof \Socket || !$socket->is_open) {
+                if (isset($this->clients[$socket->id])) {
+                    unset($this->clients[$socket->id]);
                 }
             }
         }
@@ -100,12 +109,12 @@ class SocketDaemon
 
     private function getClass($socket)
     {
-        if (isset($this->clients[(int)$socket])) {
-            return $this->clients[(int)$socket];
-        } elseif (isset($this->servers[(int)$socket])) {
-            return $this->servers[(int)$socket];
+        if (isset($this->clients[spl_object_id($socket)])) {
+            return $this->clients[spl_object_id($socket)];
+        } elseif (isset($this->servers[spl_object_id($socket)])) {
+            return $this->servers[spl_object_id($socket)];
         } else {
-            throw (new \Exception("Could not locate socket class for $socket"));
+            throw (new \Exception("Could not locate socket class for socket"));
         }
     }
 
@@ -122,7 +131,7 @@ class SocketDaemon
                     $socket = $this->getClass($socket);
                     if (is_subclass_of($socket, '\chabot\SocketServer')) {
                         $client = $socket->accept();
-                        $this->clients[(int)$client->socket] = $client;
+                        $this->clients[spl_object_id($client->socket)] = $client;
                     } elseif (is_subclass_of($socket, '\chabot\SocketClient')) {
                         // regular onRead event
                         $socket->read();
@@ -142,8 +151,8 @@ class SocketDaemon
                     $socket = $this->getClass($socket);
                     if (is_subclass_of($socket, '\chabot\SocketClient')) {
                         $socket->onDisconnect();
-                        if (isset($this->clients[(int)$socket->socket])) {
-                            unset($this->clients[(int)$socket->socket]);
+                        if (isset($this->clients[spl_object_id($socket->socket)])) {
+                            unset($this->clients[spl_object_id($socket->socket)]);
                         }
                     }
                 }

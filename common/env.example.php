@@ -19,10 +19,7 @@ $PROCESS_IP = '127.0.0.1';
 
 $COMM_PASS = 'def';
 
-$EMAIL_HOST = 'ssl://some.emailhost.com';
-$EMAIL_PORT = 'port';
-$EMAIL_USER = '2@2.com';
-$EMAIL_PASS = 'pass';
+$MAILGUN_API_KEY = 'key';
 
 $PR2_HUB_API_KEY = 'test';
 $PR2_HUB_API_ALLOWED_IPS = [
@@ -52,8 +49,8 @@ $PAYPAL_API_ENDPOINT = $PAYPAL_SANDBOX ? 'https://api.sandbox.paypal.com' : 'htt
 $PAYPAL_CLIENT_ID = $PAYPAL_SANDBOX ? 'sandbox client id' : 'production client id';
 $PAYPAL_SECRET = $PAYPAL_SANDBOX ? 'sandbox secret' : 'production secret';
 
-$PAYPAL_DATA_KEY = 'elon';
-$PAYPAL_DATA_IV = 'musk';
+$PAYPAL_DATA_KEY = 'cookie';
+$PAYPAL_DATA_IV = 'monster';
 
 $URL_SALT = 'haha';
 $URL_KEY = 'encryption';
