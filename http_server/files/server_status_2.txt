@@ -1,0 +1,1 @@
+{"servers":[{"server_id":1,"server_name":"Derron","address":"127.0.0.1","port":9160,"population":1,"status":"open","uptime":1754795170,"guild_id":0,"tournament":0,"happy_hour":0,"hh_hour":18}]}

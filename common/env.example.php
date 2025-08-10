@@ -3,7 +3,7 @@
 $BLS_IP_PREFIX = 'test';
 $SERVER_IP = '127.0.0.1';
 
-$DEBUG_MODE = false; // always set to false in production environments
+$DEBUG_MODE = true; // always set to false in production environments
 
 $DB_ADDRESS = 'mysql';
 $DB_PASS = 'pr2';
@@ -17,9 +17,12 @@ $S3_PASS = 'pass';
 $PROCESS_PASS = 'abc';
 $PROCESS_IP = '127.0.0.1';
 
-$COMM_PASS = 'def';
+$COMM_PASS = 'QHE0NSNwKWZZQVEhU19xMA==';
 
-$MAILGUN_API_KEY = 'key';
+$EMAIL_HOST = 'ssl://some.emailhost.com';
+$EMAIL_PORT = 'port';
+$EMAIL_USER = '2@2.com';
+$EMAIL_PASS = 'pass';
 
 $PR2_HUB_API_KEY = 'test';
 $PR2_HUB_API_ALLOWED_IPS = [
@@ -49,27 +52,27 @@ $PAYPAL_API_ENDPOINT = $PAYPAL_SANDBOX ? 'https://api.sandbox.paypal.com' : 'htt
 $PAYPAL_CLIENT_ID = $PAYPAL_SANDBOX ? 'sandbox client id' : 'production client id';
 $PAYPAL_SECRET = $PAYPAL_SANDBOX ? 'sandbox secret' : 'production secret';
 
-$PAYPAL_DATA_KEY = 'cookie';
-$PAYPAL_DATA_IV = 'monster';
+$PAYPAL_DATA_KEY = 'elon';
+$PAYPAL_DATA_IV = 'musk';
 
-$URL_SALT = 'haha';
-$URL_KEY = 'encryption';
-$URL_IV = 'go brrr';
+$URL_SALT = '[%B3+WKxQl';
+$URL_KEY = 'OTkhX24+S0VVaHlAIXhqbA==';
+$URL_IV = 'J1N0QSJzSWV6ZT4mIz5vKA==';
 
-$LEVEL_LIST_SALT = 'why does this exist?';
-$LEVEL_SALT = 'fa';
-$LEVEL_SALT_2 = 'ti';
-$LEVEL_PASS_SALT = 'fa';
-$LEVEL_PASS_KEY = 'so';
-$LEVEL_PASS_IV = 'la';
+$LEVEL_LIST_SALT = '984cn98c54$';
+$LEVEL_SALT = '84ge5tnr';
+$LEVEL_SALT_2 = '0kg4%dsw';
+$LEVEL_PASS_SALT = 'WGZSL3JWcUE9L3Q4YipZIQ==';
+$LEVEL_PASS_KEY = 'OWdCREBKUkI9JjEpQCNuYg==';
+$LEVEL_PASS_IV = 'ZiUybmpjc04mNEAkNythbg==';
 
-$LOGIN_KEY = 'hello';
-$LOGIN_IV = 'there';
+$LOGIN_KEY = 'VUovam5GKndSMHFSSy9kSA==';
+$LOGIN_IV = 'JmM5KnkqNXA9MVVOeC9Ucg==';
 
-$ACCOUNT_CHANGE_KEY = 'why did I do this';
-$ACCOUNT_CHANGE_IV = 'why oh why';
+$ACCOUNT_CHANGE_KEY = 'KVhFJSVLNigvKkdhV0RaSw==';
+$ACCOUNT_CHANGE_IV = 'QEFUZCskMnhhdk8rYlFLKg==';
 
-$ALLOWED_CLIENT_VERSIONS = array('weeeee version', 'weeeee new version');
+$ALLOWED_CLIENT_VERSIONS = array('29-oct-2023-v168_2_1');
 $FALLBACK_ADDRESSES = array($SERVER_IP);
 $TRUSTED_REFS = [ // trusted referrers for the pr2 client
     'http://pr2hub.com/', // pr2hub

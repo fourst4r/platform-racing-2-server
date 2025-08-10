@@ -14,4 +14,4 @@ COPY vend/ /pr2/vend
 COPY docker/prepend_file.ini $PHP_INI_DIR/conf.d/
 
 # Run the gameserver
-ENTRYPOINT ["php", "pr2/multiplayer_server/pr2.php"]
+ENTRYPOINT ["php", "pr2/multiplayer_server/pr2.php", "1", "true"]
