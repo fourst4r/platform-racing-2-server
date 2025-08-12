@@ -67,7 +67,7 @@ try {
 
     // more rate limiting (check if too many accounts have been made from this ip today)
     $rl_msg = 'You may create a maximum of five accounts from the same IP address per day.';
-    rate_limit('register-account-'.$ip, 86400, 5, $rl_msg);
+    // rate_limit('register-account-'.$ip, 86400, 5, $rl_msg);
 
     // register user
     do_register_user($pdo, $name, $password, $ip, $time, $email);

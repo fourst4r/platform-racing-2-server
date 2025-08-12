@@ -56,7 +56,7 @@ class Game extends Room
 
     public function addPlayer($player)
     {
-        if (count($this->finish_array) < 4) {
+        if (count($this->finish_array) < 8) {
             Room::addPlayer($player);
             $player->socket->write('tournamentMode`' . (int) PR2SocketServer::$tournament);
             $player->socket->write('startGame`'.$this->course_id);

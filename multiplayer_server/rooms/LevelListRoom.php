@@ -73,7 +73,7 @@ class LevelListRoom extends Room
 
     public function fillSlot($player, $course_id, $slot, $page_num)
     {
-        if (!is_numeric($slot) || $slot < 0 || $slot > 3) {
+        if (!is_numeric($slot) || $slot < 0 || $slot > 7) {
             $slot = 0;
         }
         if (isset($this->course_array[$course_id])) {

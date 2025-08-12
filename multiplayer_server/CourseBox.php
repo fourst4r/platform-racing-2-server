@@ -39,8 +39,9 @@ class CourseBox
         $page_number = $this->page_number;
         $course_id = $this->course_id;
 
+        output("Filling slot $slot for player $player->name in course box $this->course_id");
         // sanity check (slot to fill?)
-        if ($slot < 0 || $slot > 3) {
+        if ($slot < 0 || $slot > 7) {
             return;
         }
 
@@ -80,8 +81,9 @@ class CourseBox
 
         // initiate the countdown if it hasn't already started
         if (!isset($this->force_time)) {
-            $this->force_time = time();
-            $this->sendToAll('forceTime`0');
+            // Force time for 8p is weird...
+            // $this->force_time = time();
+            // $this->sendToAll('forceTime`0');
         }
 
         $this->checkConfirmed();

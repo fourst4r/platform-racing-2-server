@@ -139,7 +139,7 @@ class PR2Client extends \chabot\SocketServerClient
         $ip_count = !isset($ip_count) ? 1 : ++$ip_count;
         PR2Client::$ip_array[$ip] = $ip_count;
 
-        if ($ip_count > 5) {
+        if ($ip_count > 9) {
             $this->close();
             $this->onDisconnect();
         } else {

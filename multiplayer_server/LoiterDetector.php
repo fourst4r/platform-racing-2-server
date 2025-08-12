@@ -26,7 +26,7 @@ class LoiterDetector
 
         foreach (self::$level_lists as $level_list) {
             foreach ($level_list->course_array as $course) {
-                if (count($course->slot_array) >= 4) {
+                if (count($course->slot_array) >= 8) {
                     foreach ($course->slot_array as $player) {
                         if ($player->confirmed === false) {
                             $ip = $player->ip;
@@ -51,7 +51,7 @@ class LoiterDetector
             foreach ($level_list->player_array as $player) {
                 if ($player->ip === $ip) {
                     if (isset($player->course_box)) {
-                        $player->course_box->clearSlot($player);
+                        // $player->course_box->clearSlot($player);
                     }
                 }
             }
