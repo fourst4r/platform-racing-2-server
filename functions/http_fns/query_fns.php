@@ -108,16 +108,16 @@ function send_pm($pdo, $from_user_id, $to_user_id, $message)
     $ip = get_ip();
 
     // make sure the user's rank is above 3 (min rank to send PMs) and they aren't a guest
-    if ($active_rank < 3) {
-        throw new Exception('You need to be rank 3 or above to send private messages.');
-    }
-    if ($from_power <= 0) {
-        $e = 'Guests can\'t use the private messaging system. To access this feature, please create your own account.';
-        throw new Exception($e);
-    }
-    if ($to_power <= 0) {
-         throw new Exception("You can't send private messages to guests.");
-    }
+    // if ($active_rank < 3) {
+    //     throw new Exception('You need to be rank 3 or above to send private messages.');
+    // }
+    // if ($from_power <= 0) {
+    //     $e = 'Guests can\'t use the private messaging system. To access this feature, please create your own account.';
+    //     throw new Exception($e);
+    // }
+    // if ($to_power <= 0) {
+    //      throw new Exception("You can't send private messages to guests.");
+    // }
 
     // check the length of their message
     if (strlen($message) > 1000) {

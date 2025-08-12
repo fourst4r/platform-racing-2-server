@@ -92,11 +92,11 @@ try {
     }
 
     // sanity check: rank requirement
-    $rank = pr2_select_true_rank($pdo, $user_id);
-    if ($live == 1 && $rank < 3) {
-        $msg = 'You need to be rank 3 or above to publish levels. Please uncheck the publish box and try again.';
-        throw new Exception($msg);
-    }
+    // $rank = pr2_select_true_rank($pdo, $user_id);
+    // if ($live == 1 && $rank < 3) {
+    //     $msg = 'You need to be rank 3 or above to publish levels. Please uncheck the publish box and try again.';
+    //     throw new Exception($msg);
+    // }
 
     // check game mode
     if ($game_mode === 'race') {

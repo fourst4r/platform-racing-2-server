@@ -234,11 +234,7 @@ class ChatMessage
         $muted = Mutes::isMuted($player->name, $player->ip);
 
         // make sure they're allowed to send a message
-        if ($player->group <= 0 || $player->guest === true) {
-            $this->write('systemChat`Sorries, guests can\'t send chat messages.'); // guest check
-        } elseif ($player->active_rank < 3 && $player->group < 2) {
-            $this->write('systemChat`Sorries, you must be rank 3 or above to chat.'); // rank 3 check
-        } elseif ($this->isSociallyBanned()) {
+        if ($this->isSociallyBanned()) {
             $msg = $this->outputSocialBan();
             $this->write("systemChat`$msg");
         } elseif ($muted && ((!$this->isMod() && !$this->isTempMod()) || (!$this->isServerOwner() && $guild_id > 0))) {
