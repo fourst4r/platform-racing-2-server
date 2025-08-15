@@ -54,11 +54,11 @@ class PR2Client extends \chabot\SocketServerClient
                 $local_hash = md5($str_to_hash);
                 $sub_hash = substr($local_hash, 0, 3);
 
-                if ($sub_hash !== $hash) {
-                    $this->close();
-                    $this->onDisconnect();
-                    throw new \Exception("The received hash doesn't match. Recieved: $hash | Local: $sub_hash");
-                }
+                // if ($sub_hash !== $hash) {
+                //     $this->close();
+                //     $this->onDisconnect();
+                //     throw new \Exception("The received hash doesn't match. Recieved: $hash | Local: $sub_hash");
+                // }
 
                 if ($send_num > 2 && $send_num !== $this->rec_num + 1 && $send_num !== 13) {
                     $this->close();

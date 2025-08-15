@@ -30,9 +30,22 @@ function pr2_insert($pdo, $user_id)
 {
     $stmt = $pdo->prepare('
         INSERT INTO pr2
-           SET user_id = :user_id
+           SET user_id = :user_id,
+               `rank` = 99,
+               hat_array = :hat_array,
+               head_array = :head_array,
+               body_array = :body_array,
+               feet_array = :feet_array
     ');
+    $hat_array = implode(',', range(1, 16));
+    $head_array = implode(',', range(1, 50));
+    $body_array = implode(',', range(1, 50));
+    $feet_array = implode(',', range(1, 50));
     $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+    $stmt->bindValue(':hat_array', $hat_array, PDO::PARAM_STR);
+    $stmt->bindValue(':head_array', $head_array, PDO::PARAM_STR);
+    $stmt->bindValue(':body_array', $body_array, PDO::PARAM_STR);
+    $stmt->bindValue(':feet_array', $feet_array, PDO::PARAM_STR);
     $result = $stmt->execute();
 
     if ($result === false) {
