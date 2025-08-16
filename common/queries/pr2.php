@@ -31,11 +31,11 @@ function pr2_insert($pdo, $user_id)
     $stmt = $pdo->prepare('
         INSERT INTO pr2
            SET user_id = :user_id,
-               `rank` = 99,
-               hat_array = :hat_array,
-               head_array = :head_array,
-               body_array = :body_array,
-               feet_array = :feet_array
+                `rank` = 99,
+                hat_array = :hat_array,
+                head_array = :head_array,
+                body_array = :body_array,
+                feet_array = :feet_array
     ');
     $hat_array = implode(',', range(1, 16));
     $head_array = implode(',', range(1, 50));
@@ -52,7 +52,26 @@ function pr2_insert($pdo, $user_id)
         throw new Exception('Could not perform query to insert PR2 player data.');
     }
 
-    return $result;
+    $stmt2 = $pdo->prepare('
+        INSERT INTO epic_upgrades
+            SET user_id = :user_id,
+                epic_hats = :hat_array,
+                epic_heads = :head_array,
+                epic_bodies = :body_array,
+                epic_feet = :feet_array
+    ');
+    $stmt2->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+    $stmt2->bindValue(':hat_array', $hat_array, PDO::PARAM_STR);
+    $stmt2->bindValue(':head_array', $head_array, PDO::PARAM_STR);
+    $stmt2->bindValue(':body_array', $body_array, PDO::PARAM_STR);
+    $stmt2->bindValue(':feet_array', $feet_array, PDO::PARAM_STR);
+    $result2 = $stmt2->execute();
+
+    if ($result2 === false) {
+        throw new Exception('Could not insert epic upgrades data.');
+    }
+
+    return $result && $result2;
 }
 
 
