@@ -7,6 +7,8 @@ services:
       dockerfile: docker/http_server.dockerfile
     ports:
       - "8080:80"
+    volumes:
+      - ../clients:/pr2/http_server/clients:ro
     depends_on:
       - mysql
 
