@@ -263,6 +263,63 @@ function notify_followers($pdo, $user_id, $ip, $level_id, $title, $version, $not
 
 // -- PARTS/EXP (PART_AWARDS, PR2, EPIC_UPGRADES, USER) -- \\
 
+function award_epic_part_to_user($pdo, $username, $part_type, $part_id)
+{
+    // Validate part_type
+    $allowed_types = ['hat', 'head', 'body', 'feet'];
+    if (!in_array($part_type, $allowed_types)) {
+        throw new Exception('Invalid part type.');
+    }
+    $column = $part_type . '_array';
+    $epic_type = 'e' . $part_type;
+
+    // Get user_id from username
+    $stmt = $pdo->prepare('SELECT user_id FROM users WHERE name = :username LIMIT 1');
+    $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+    $stmt->execute();
+    $user = $stmt->fetch(PDO::FETCH_OBJ);
+
+    if (!$user) {
+        throw new Exception('User not found: '. $username);
+    }
+
+    // Get current part array
+    $stmt = $pdo->prepare("SELECT $column FROM pr2 WHERE user_id = :user_id LIMIT 1");
+    $stmt->bindValue(':user_id', $user->user_id, PDO::PARAM_INT);
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$row) {
+        throw new Exception('PR2 data not found for user.');
+    }
+
+    // Add part if not already present
+    $parts = array_filter(explode(',', $row[$column]), fn($v) => $v !== '');
+    $changed = false;
+    if (!in_array($part_id, $parts)) {
+        $parts[] = $part_id;
+        sort($parts, SORT_NUMERIC);
+        $new_array = implode(',', $parts);
+        pr2_update_part_array($pdo, $user->user_id, $part_type, $new_array);
+        $changed = true;
+    }
+
+    // Epic upgrades
+    $epic_row = epic_upgrades_select($pdo, $user->user_id, true);
+    $epic_field = $epic_type === 'ehat' ? 'epic_hats' : ($epic_type === 'ehead' ? 'epic_heads' : ($epic_type === 'ebody' ? 'epic_bodies' : 'epic_feet'));
+    $epic_parts = $epic_row !== false ? array_filter(explode(',', $epic_row->{$epic_field}), fn($v) => $v !== '') : [];
+    if (!in_array($part_id, $epic_parts)) {
+        $epic_parts[] = $part_id;
+        sort($epic_parts, SORT_NUMERIC);
+        $new_epic_array = implode(',', $epic_parts);
+        epic_upgrades_update_field($pdo, $user->user_id, $epic_type, $new_epic_array);
+        $changed = true;
+    }
+
+    return $changed;
+}
+
+
 // award parts
 function award_part($pdo, $user_id, $type, $part_id)
 {
