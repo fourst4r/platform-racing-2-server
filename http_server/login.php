@@ -216,11 +216,6 @@ try {
         $rt_used = $rt_available;
     }
 
-    // sanity check: is the user's rank 100+?
-    if (((int) $stats->rank + $rt_used >= 100) && $user_id !== FRED) {
-        throw new Exception('Your rank is too high. Please choose a different account.');
-    }
-
     // record moderator login
     if ($group > 1 || in_array($user_id, $special_ids)) {
         mod_action_insert($pdo, $user_id, "$user_name logged into $server->server_name from $ip", 'login', $ip);

@@ -193,10 +193,6 @@ class Player
             $this->write('loginFailure`');
             $this->write('message`Sorry, this server is full. Try back later.');
             $this->remove();
-        } elseif ($this->active_rank > 100 && $this->user_id != FRED) { // check for a valid rank
-            $this->write('loginFailure`');
-            $this->write('message`Your rank is too high. Please choose a different account.');
-            $this->remove();
         } else { // add to the player array
             $player_array[$this->user_id] = $this;
         }
