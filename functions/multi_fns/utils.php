@@ -504,6 +504,14 @@ function __crashHandler($force = false)
     // handle crash
     output("--- SERVER IS CRASHING ---");
     output("Saving data...");
-    shutdown_server(null, false, 'The server is restarting (due to an error), hold on a sec...');
+    $error_details = '';
+    if ($error) {
+        $error_details = " Error: [{$error['type']}] {$error['message']} in {$error['file']} on line {$error['line']}";
+    }
+    shutdown_server(
+        null,
+        false,
+        'The server is restarting (due to an error), send this to oxy...' . $error_details
+    );
     output("Data successfully saved.");
 }
