@@ -24,7 +24,8 @@ RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
-    zip
+    zip \
+    cron
 
 # Install extensions
 RUN docker-php-ext-install pdo_mysql
@@ -39,6 +40,14 @@ RUN cd /pr2 \
     && curl -sS https://getcomposer.org/installer | php \
     && php composer.phar install --no-dev --optimize-autoloader
 
+# Create a cron file that runs minute.php every minute
+COPY docker/minute-cron /etc/cron.d/minute-cron
+RUN chmod 0644 /etc/cron.d/minute-cron \
+    && crontab /etc/cron.d/minute-cron
+
+# Ensure cron logs to stdout 
+RUN ln -sf /proc/1/fd/1 /var/log/cron.log
+
 # Run minute and hour cron when this service starts up to generate server and level list files
 ENTRYPOINT []
-CMD [ "/http_server_startup.sh" ]
+CMD service cron start && /http_server_startup.sh

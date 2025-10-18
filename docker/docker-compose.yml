@@ -36,6 +36,8 @@ services:
       MYSQL_USER: pr2
       MYSQL_PASSWORD: pr2
       MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - mysql-data:/var/lib/mysql
 
   liquibase:
     build:
@@ -61,3 +63,6 @@ services:
       - 8081:8080
     depends_on:
       - mysql
+
+volumes:
+  mysql-data:
