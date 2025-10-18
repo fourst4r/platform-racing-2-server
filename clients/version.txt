@@ -1,3 +1,1 @@
-{
-	"url":"https:\/\/github.com\/fourst4r\/platform-racing-2-server\/raw\/refs\/heads\/8p\/clients\/v3.swf"
-}
+{"url":"http://bestestgameserver.ddns.net:8080/clients/4.swf"}
