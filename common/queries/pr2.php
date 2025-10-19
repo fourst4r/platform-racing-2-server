@@ -31,7 +31,7 @@ function pr2_insert($pdo, $user_id)
     $stmt = $pdo->prepare('
         INSERT INTO pr2
            SET user_id = :user_id,
-                `rank` = 99,
+                `rank` = 150,
                 hat_array = :hat_array,
                 head_array = :head_array,
                 body_array = :body_array,
