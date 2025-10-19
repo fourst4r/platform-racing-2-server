@@ -8,6 +8,7 @@ require_once QUERIES_DIR . '/follows.php';
 require_once QUERIES_DIR . '/level_backups.php';
 require_once QUERIES_DIR . '/messages.php';
 require_once QUERIES_DIR . '/new_levels.php';
+require_once QUERIES_DIR . '/level_contents.php';
 
 $title = default_post('title');
 $note = default_post('note');
@@ -264,9 +265,7 @@ try {
     $str .= $hash;
 
     // save this file to the new level system
-    if (!$s3->putObjectString($str, 'pr2levels1', "$level_id.txt")) {
-        throw new Exception('A server error was encountered. Your level could not be saved.');
-    }
+    level_contents_upsert($pdo, $level_id, $str);
 
     // write to the file system
     $file_path = WWW_ROOT . "/levels/$level_id.txt";
