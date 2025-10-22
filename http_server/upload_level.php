@@ -270,12 +270,10 @@ try {
     // write to the file system
     $file_path = WWW_ROOT . "/levels/$level_id.txt";
     $was_writable = false;
-    if (is_writable($file_path)) {
-        $file = fopen($file_path, "w");
-        if ($file !== false) {
-            fwrite($file, $str);
-            fclose($file);
-        }
+    $file = fopen($file_path, "w");
+    if ($file !== false) {
+        fwrite($file, $str);
+        fclose($file);
         $was_writable = true;
     }
 
