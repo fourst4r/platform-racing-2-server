@@ -265,7 +265,7 @@ try {
     $str .= $hash;
 
     // save this file to the new level system
-    level_contents_upsert($pdo, $level_id, $str);
+    // level_contents_upsert($pdo, $level_id, $str);
 
     // write to the file system
     $file_path = WWW_ROOT . "/levels/$level_id.txt";

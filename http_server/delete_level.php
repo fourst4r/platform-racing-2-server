@@ -97,9 +97,9 @@ try {
     unlink(__DIR__ . "/levels/$level_id.txt");
 
     // delete the file from s3
-    if (!$s3->deleteObject('pr2levels1', "$level_id.txt")) {
-        throw new Exception('A server error was encountered. Your level could not be deleted.');
-    }
+    // if (!$s3->deleteObject('pr2levels1', "$level_id.txt")) {
+    //     throw new Exception('A server error was encountered. Your level could not be deleted.');
+    // }
 
     // tell the world
     $ret->success = true;
