@@ -269,12 +269,14 @@ try {
 
     // write to the file system
     $file_path = WWW_ROOT . "/levels/$level_id.txt";
+    $was_writable = false;
     if (is_writable($file_path)) {
         $file = fopen($file_path, "w");
         if ($file !== false) {
             fwrite($file, $str);
             fclose($file);
         }
+        $was_writable = true;
     }
 
     // save the new file to the backup system
@@ -313,7 +315,7 @@ try {
             'your level was not added to the newest levels list. If you wish to have your level on newest, '.
             'wait for your other levels to disappear off page 1 of newest and then publish again.';
     } else {
-        echo 'message=The save was successful.';
+        echo 'message=The save was successful.' . 'writeable=' . ($was_writable ? '1' : '0') . ', path=' . $file_path;
     }
 } catch (Exception $e) {
     $error = $e->getMessage();
