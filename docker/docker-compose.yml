@@ -10,6 +10,7 @@ services:
     volumes:
       - ../clients:/pr2/http_server/clients:ro
       - ../../levels:/pr2/http_server/levels
+    user: "www-data:www-data"
     depends_on:
       - mysql
 
