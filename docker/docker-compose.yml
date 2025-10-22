@@ -9,6 +9,7 @@ services:
       - "8080:80"
     volumes:
       - ../clients:/pr2/http_server/clients:ro
+      - ../../levels:/pr2/http_server/levels
     depends_on:
       - mysql
 
