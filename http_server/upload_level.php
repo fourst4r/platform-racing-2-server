@@ -268,7 +268,7 @@ try {
     // level_contents_upsert($pdo, $level_id, $str);
 
     // write to the file system
-    $file_path = WWW_ROOT . "/levels/$level_id.txt";
+    $file_path = WWW_ROOT . "/levels/8p_$level_id.txt";
     $file = fopen($file_path, "w");
     if ($file !== false) {
         fwrite($file, $str);
