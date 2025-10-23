@@ -228,7 +228,7 @@ function format_level_list($levels)
     $ret = new stdClass();
     $ret->levels = [];
     foreach ($levels as $level) {
-        $level->level_id = (int) $level->level_id;
+        $level->level_id = "8p_" . $level->level_id;
         $level->user_id = (int) $level->user_id;
         $level->version = (int) $level->version;
         $level->title = $level->title;
