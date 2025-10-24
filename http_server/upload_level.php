@@ -255,7 +255,7 @@ try {
     // create the save string
     $url_note = str_replace('&', '%26', $note);
     $url_title = str_replace('&', '%26', $title);
-    $str = "level_id=$level_id&version=$version&user_id=$user_id&credits="
+    $str = "level_id=8p_$level_id&version=$version&user_id=8p_$user_id&credits="
         ."&cowboyChance=$cowboy_chance&title=$url_title&time=$time"
         ."&note=$url_note&min_level=$min_level&song=$song&gravity=$gravity&max_time=$max_time"
         ."&has_pass=$has_pass&live=$live&items=$items&gameMode=$game_mode&badHats=$bad_hats"

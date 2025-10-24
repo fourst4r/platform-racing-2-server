@@ -165,7 +165,7 @@ class CourseBox
     private function startGame()
     {
         $this->starting = true;
-        $course_id = substr($this->course_id, 0, strpos($this->course_id, '_'));
+        $course_id = substr($this->course_id, 0, strrpos($this->course_id, '_'));
         $game = new Game($course_id, $this->room->getType());
         foreach ($this->slot_array as $player) {
             $player->confirmed = false;

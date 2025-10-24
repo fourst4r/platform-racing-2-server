@@ -34,6 +34,8 @@ try {
     // handle special characters
     foreach ($levels as $key => $level) {
         $level->rating = round($level->rating, 2);
+        // for some reason this isn't run through format_level_list() like other level lists, so we need to do this manually
+        $level->level_id = "8p_" . $level->level_id;
         $levels[$key] = $level;
     }
     
