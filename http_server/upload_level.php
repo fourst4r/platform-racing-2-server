@@ -253,14 +253,15 @@ try {
     }
 
     // create the save string
+    $level_id_8p = "8p_$level_id";
     $url_note = str_replace('&', '%26', $note);
     $url_title = str_replace('&', '%26', $title);
-    $str = "level_id=8p_$level_id&version=$version&user_id=8p_$user_id&credits="
+    $str = "level_id=$level_id_8p&version=$version&user_id=8p_$user_id&credits="
         ."&cowboyChance=$cowboy_chance&title=$url_title&time=$time"
         ."&note=$url_note&min_level=$min_level&song=$song&gravity=$gravity&max_time=$max_time"
         ."&has_pass=$has_pass&live=$live&items=$items&gameMode=$game_mode&badHats=$bad_hats"
         ."&data=$data";
-    $str_to_hash = $version . $level_id . $str . $LEVEL_SALT_2;
+    $str_to_hash = $version . $level_id_8p . $str . $LEVEL_SALT_2;
     $hash = md5($str_to_hash);
     $str .= $hash;
 
@@ -268,7 +269,7 @@ try {
     // level_contents_upsert($pdo, $level_id, $str);
 
     // write to the file system
-    $file_path = WWW_ROOT . "/levels/8p_$level_id.txt";
+    $file_path = WWW_ROOT . "/levels/$level_id_8p.txt";
     $file = fopen($file_path, "w");
     if ($file !== false) {
         fwrite($file, $str);
