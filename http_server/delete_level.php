@@ -21,17 +21,10 @@ try {
         throw new Exception('Invalid request method.');
     }
 
-    // check referrer
-    require_trusted_ref('delete levels');
-
     // sanity check
     if (is_empty($level_id, false)) {
         throw new Exception('No level ID was specified.');
     }
-
-    // rate limiting
-    $rl_msg = 'Please wait at least 10 seconds before trying to delete another level.';
-    rate_limit('delete-level-attempt-'.$ip, 10, 1, $rl_msg);
 
     //connect
     $pdo = pdo_connect();
@@ -43,9 +36,6 @@ try {
     if ($power <= 0) {
         throw new Exception('Guests can\'t delete levels. To access this feature, please create your own account.');
     }
-
-    // more rate limiting
-    rate_limit('delete-level-attempt-'.$user_id, 10, 1, $rl_msg);
 
     // fetch level data
     $level = level_select($pdo, $level_id);
@@ -64,10 +54,6 @@ try {
     if (!empty(campaign_level_select_by_id($pdo, $level_id)) || !empty(level_prize_select($pdo, $level_id))) {
         throw new Exception('Your level could not be deleted because it is has a prize.');
     }
-
-    // even more rate limiting
-    rate_limit('delete-level-'.$ip, 3600, 5, 'You may only delete 5 levels per hour. Try again later.');
-    rate_limit('delete-level-'.$user_id, 3600, 5, 'You may only delete 5 levels per hour. Try again later.');
 
     // save this file to the backup system
     backup_level(
