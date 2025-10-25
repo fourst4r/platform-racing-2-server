@@ -9,7 +9,8 @@ require_once QUERIES_DIR . '/level_backups.php';
 require_once QUERIES_DIR . '/level_prizes.php';
 require_once QUERIES_DIR . '/new_levels.php';
 
-$level_id = (int) default_post('level_id', 0);
+$level_id_8p = default_post('level_id', '');
+$level_id = (int) substr($level_id_8p, 3); // remove "8p_" prefix
 $ip = get_ip();
 
 $ret = new stdClass();
@@ -22,7 +23,7 @@ try {
     }
 
     // sanity check
-    if (is_empty($level_id, false)) {
+    if (is_empty($level_id_8p, false)) {
         throw new Exception('No level ID was specified.');
     }
 
@@ -80,10 +81,10 @@ try {
     delete_from_newest($pdo, $level_id);
 
     // delete the file from server
-    unlink(__DIR__ . "/levels/$level_id.txt");
+    unlink(__DIR__ . "/levels/$level_id_8p.txt");
 
     // delete the file from s3
-    // if (!$s3->deleteObject('pr2levels1', "$level_id.txt")) {
+    // if (!$s3->deleteObject('pr2levels1', "$level_id_8p.txt")) {
     //     throw new Exception('A server error was encountered. Your level could not be deleted.');
     // }
 
