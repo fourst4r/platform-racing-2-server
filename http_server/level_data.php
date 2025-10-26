@@ -5,7 +5,8 @@ header("Content-type: text/plain");
 require_once GEN_HTTP_FNS;
 
 $ip = get_ip();
-$level_id = (int) default_get('level_id', 0);
+$level_id_8p = default_get('level_id', '');
+$level_id = (int) substr($level_id_8p, 3); // remove "8p_" prefix
 
 $ret = new stdClass();
 $ret->success = true;
@@ -30,7 +31,7 @@ try {
     parse_str($level_txt, $ldata);
     
     // assign level data to ret object
-    $ret->level_id = (int) $ldata['level_id'];
+    $ret->level_id = $ldata['level_id'];
     $ret->max_time = (int) $ldata['max_time'];
     $ret->min_rank = (int) $ldata['min_level'];
     $ret->live = (bool) (int) $ldata['live'];
