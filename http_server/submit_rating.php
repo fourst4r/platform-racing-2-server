@@ -5,7 +5,8 @@ header("Content-type: text/plain");
 require_once GEN_HTTP_FNS;
 require_once QUERIES_DIR . '/ratings.php';
 
-$level_id = (int) default_post('level_id', 0);
+$level_id_8p = default_post('level_id', '');
+$level_id = (int) substr($level_id_8p, 3); // remove "8p_" prefix
 $new_rating = (int) default_post('rating', 0);
 
 $ip = get_ip();
@@ -18,9 +19,6 @@ try {
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
         throw new Exception('Invalid request method.');
     }
-
-    // ref check
-    require_trusted_ref('rate levels');
 
     // rate limiting
     rate_limit('submit-rating-'.$ip, 5, 2);
