@@ -42,8 +42,9 @@ RUN cd /pr2 \
 
 # Create a cron file that runs minute.php every minute
 COPY docker/minute-cron /etc/cron.d/minute-cron
-RUN chmod 0644 /etc/cron.d/minute-cron \
-    && crontab /etc/cron.d/minute-cron
+# Ensure LF endings (Windows checkouts can break cron) and correct perms
+RUN sed -i 's/\r$//' /etc/cron.d/minute-cron \
+    && chmod 0644 /etc/cron.d/minute-cron
 
 # Ensure cron logs to stdout 
 RUN ln -sf /proc/1/fd/1 /var/log/cron.log

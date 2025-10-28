@@ -129,7 +129,21 @@ function drain_plays()
 
     $cup = array();
     foreach ($play_count_array as $course => $plays) {
-        $cup[$course] = $plays;
+        // normalize externally-facing ids like "8p_123" to integer ids
+        if (is_string($course) && strpos($course, '8p_') === 0) {
+            $course_id = (int) substr($course, 3);
+        } else {
+            $course_id = (int) $course;
+        }
+
+        $plays = (int) $plays;
+        if ($course_id > 0 && $plays > 0) {
+            if (isset($cup[$course_id])) {
+                $cup[$course_id] += $plays;
+            } else {
+                $cup[$course_id] = $plays;
+            }
+        }
     }
 
     $play_count_array = array();

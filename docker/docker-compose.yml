@@ -7,6 +7,9 @@ services:
       dockerfile: docker/http_server.dockerfile
     ports:
       - "8080:80"
+    environment:
+      # Use Docker service name to reach multi from inside web container
+      - MULTI_INTERNAL_HOST=multi
     volumes:
       - ../clients:/pr2/http_server/clients:ro
       - ../../levels:/pr2/http_server/levels

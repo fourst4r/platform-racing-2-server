@@ -49,13 +49,35 @@ function run_update_cycle($pdo)
 
     // check servers and send the data
     $server_list = servers_select($pdo);
-    $servers = poll_servers($server_list, 'update_cycle`' . $send_str);
+    // Use Docker service DNS to reach the multi server internally, but keep
+    // public addresses intact elsewhere (e.g., for client-visible status).
+    $server_list_internal = [];
+    foreach ($server_list as $srv) {
+        $copy = clone $srv;
+        $copy->address = 'multi';
+        $server_list_internal[] = $copy;
+    }
+    $servers = poll_servers($server_list_internal, 'update_cycle`' . $send_str);
 
     // process replies
     foreach ($servers as $server) {
         if ($server->result != false && $server->result != null) {
             $happy_hour = (int) $server->result->happy_hour;
             output("(ID #$server->server_id) is up.");
+            // Debug: dump plays payload received from multi server
+            $plays_payload = isset($server->result->plays) ? $server->result->plays : null;
+            $plays_entries = (is_array($plays_payload) || is_object($plays_payload)) ? count((array) $plays_payload) : 0;
+            output("Received plays from server ID #$server->server_id: entries=$plays_entries");
+            if ($plays_entries > 0) {
+                // show up to 20 entries to avoid overly verbose logs
+                $sample = [];
+                $i = 0;
+                foreach ($plays_payload as $cid => $cnt) {
+                    $sample[(string) $cid] = (int) $cnt;
+                    if (++$i >= 20) { break; }
+                }
+                output('Plays sample (max 20): ' . json_encode($sample));
+            }
             save_plays($pdo, $server->result->plays);
             save_gp($pdo, $server->server_id, $server->result->gp);
             server_update_status(
