@@ -135,10 +135,19 @@ class Game extends Room
     {
         global $play_count_array;
         $player_count = count($this->player_array);
-        if (isset($play_count_array[$this->course_id])) {
-            $play_count_array[$this->course_id] += $player_count;
+
+        // normalize externally-facing level ids like "8p_123" to integer ids
+        $course_key = $this->course_id;
+        if (is_string($course_key) && strpos($course_key, '8p_') === 0) {
+            $course_key = (int) substr($course_key, 3);
         } else {
-            $play_count_array[$this->course_id] = $player_count;
+            $course_key = (int) $course_key;
+        }
+
+        if (isset($play_count_array[$course_key])) {
+            $play_count_array[$course_key] += $player_count;
+        } else {
+            $play_count_array[$course_key] = $player_count;
         }
     }
 
