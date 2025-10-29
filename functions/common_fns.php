@@ -662,3 +662,17 @@ function validate_prize($type, $id, $incl_exp = true)
     $reply->epic = $is_epic;
     return $reply;
 }
+
+
+function get_level_content($level_id)
+{
+    $level_file = WWW_ROOT . "/levels/8p_$level_id.txt";
+    if (!file_exists($level_file)) {
+        throw new Exception('Level file does not exist.');
+    }
+    $level_txt = file_get_contents($level_file);
+    if ($level_txt === false) {
+        throw new Exception('Could not read level file.');
+    }
+    return $level_txt;
+}

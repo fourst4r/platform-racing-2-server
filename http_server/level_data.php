@@ -21,9 +21,9 @@ try {
     }
 
     // make sure level exists
-    $level_txt = file_get_contents("https://pr2hub.com/levels/$level_id.txt");
+    $level_txt = get_level_content($level_id);
     if ($level_txt === false) {
-        throw new Exception("No level exists with the ID: $level_id.");
+        throw new Exception("No level exists with the ID: $level_id_8p.");
     }
 
     // parse level data

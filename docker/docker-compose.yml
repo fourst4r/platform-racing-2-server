@@ -1,4 +1,3 @@
-version: "3"
 services:
 
   web:
@@ -8,11 +7,11 @@ services:
     ports:
       - "8080:80"
     environment:
-      # Use Docker service name to reach multi from inside web container
       - MULTI_INTERNAL_HOST=multi
     volumes:
       - ../clients:/pr2/http_server/clients:ro
       - ../../levels:/pr2/http_server/levels
+      - shared-data:/pr2/shared
     depends_on:
       - mysql
 
@@ -25,6 +24,8 @@ services:
     depends_on:
       - liquibase
     restart: always
+    volumes:
+      - shared-data:/pr2/shared
 
   policy:
     build:
@@ -70,3 +71,4 @@ services:
 
 volumes:
   mysql-data:
+  shared-data:
