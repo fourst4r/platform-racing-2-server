@@ -22,8 +22,11 @@ try {
     }
 
     // sanity check: did they search for something?
-    if ($mode === 'id' && ($search_str != (int) $search_str || (int) $search_str === 0)) {
-        throw new Exception('Invalid level ID specified.');
+    if ($mode === 'id') {
+        if (strpos($search_str, '8p_') !== 0) {
+            throw new Exception('Invalid level ID specified.');
+        }
+        $search_str = substr($search_str, 3); // remove "8p_" prefix
     } elseif (empty($search_str)) {
         throw new Exception('You can\'t search for nothing!');
     }
