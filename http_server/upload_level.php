@@ -42,13 +42,8 @@ try {
     }
 
     // sanity check: level data okay?
-    if (empty($data) || strpos($data, 'm4') !== 0) {
+    if (empty($data)) {
         throw new Exception("Could not publish level. There was a problem with the data.");
-    }
-
-    // sanity check: obscenities?
-    if ($live == 1 && (is_obscene($title) || is_obscene($note))) {
-        throw new Exception('Could not publish level. Check the title and note for obscenities.');
     }
 
     // sanity check: title too long?
@@ -91,13 +86,6 @@ try {
         $msg = 'Guests can\'t load or save levels. To access this feature, please create your own account.';
         throw new Exception($msg);
     }
-
-    // sanity check: rank requirement
-    // $rank = pr2_select_true_rank($pdo, $user_id);
-    // if ($live == 1 && $rank < 3) {
-    //     $msg = 'You need to be rank 3 or above to publish levels. Please uncheck the publish box and try again.';
-    //     throw new Exception($msg);
-    // }
 
     // check game mode
     if ($game_mode === 'race') {
