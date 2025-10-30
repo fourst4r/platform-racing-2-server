@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-fulltext-index-levels-title
+      author: pr2-8p
+      changes:
+        - sql:
+            dbms: mysql
+            splitStatements: false
+            stripComments: true
+            sql: |
+              CREATE FULLTEXT INDEX idx_levels_title ON levels (title);
