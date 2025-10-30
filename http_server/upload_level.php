@@ -77,7 +77,7 @@ try {
     // ensure the level survived the upload without data corruption
     $local_hash = md5($title . strtolower($user_name) . $data . $LEVEL_SALT);
     if ($local_hash !== $remote_hash) {
-        throw new Exception('The level did not upload correctly. Maybe try again?');
+        throw new Exception('The level did not upload correctly. Maybe try again? (Hash mismatch)');
     }
 
     // sanity check: are they a guest?
@@ -111,7 +111,7 @@ try {
 
         // preg_match raw "bad" hats input string
         if (empty(preg_match('/^\d+(,\d+)*$/', $bad_hats)) && $bad_hats !== '') {
-            throw new Exception('The level did not upload correctly. Maybe try again?');
+            throw new Exception('The level did not upload correctly. Maybe try again? (Invalid bad hats)');
         }
 
         // verify that all of the "bad" hats passed are valid
