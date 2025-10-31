@@ -1,1 +1,1 @@
-{"url":"http://bestestgameserver.ddns.net:8080/clients/5.swf"}
+{"url":"http://bestestgameserver.ddns.net:8080/clients/6.swf"}
