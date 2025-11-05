@@ -11,6 +11,7 @@ services:
     volumes:
       - ../clients:/pr2/http_server/clients:ro
       - ../../levels:/pr2/http_server/levels
+      - ../../replays:/pr2/http_server/replays
       - shared-data:/pr2/shared
     depends_on:
       - mysql
@@ -26,6 +27,8 @@ services:
     restart: always
     volumes:
       - shared-data:/pr2/shared
+      - ../../levels:/pr2/http_server/levels:ro
+      - ../../replays:/pr2/http_server/replays
 
   policy:
     build:

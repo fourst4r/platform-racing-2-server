@@ -668,7 +668,7 @@ function get_level_content($level_id)
 {
     $level_file = WWW_ROOT . "/levels/8p_$level_id.txt";
     if (!file_exists($level_file)) {
-        throw new Exception('Level file does not exist.');
+        throw new Exception('Level file does not exist: ' . $level_file);
     }
     $level_txt = file_get_contents($level_file);
     if ($level_txt === false) {

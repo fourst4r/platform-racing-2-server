@@ -60,6 +60,7 @@ require_once PR2_ROOT . '/PR2Client.php';
 require_once PR2_ROOT . '/RaceStats.php';
 require_once PR2_ROOT . '/ServerBans.php';
 require_once PR2_ROOT . '/TemporaryItems.php';
+require_once PR2_ROOT . '/ReplayRecorder.php';
 
 // ensure no data is lost to a server crash
 register_shutdown_function('__crashHandler');

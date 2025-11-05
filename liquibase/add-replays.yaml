@@ -1,0 +1,81 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-replay-tables
+      author: codex
+      changes:
+        - sql:
+            dbms: mysql
+            splitStatements: false
+            stripComments: true
+            sql: |
+              CREATE TABLE IF NOT EXISTS replays (
+                id VARCHAR(64) NOT NULL,
+                level_id INT NOT NULL,
+                is_pr2hub TINYINT(1) NOT NULL DEFAULT 0,
+                level_version INT NOT NULL,
+                mode VARCHAR(20) NOT NULL DEFAULT 'race',
+                created_at_ms BIGINT NOT NULL,
+                duration_ms BIGINT NOT NULL,
+                first_finisher_user_id INT NULL,
+                first_finish_time_ms BIGINT NULL,
+                first_server_finish_ms BIGINT NULL,
+                participants_count INT NOT NULL DEFAULT 0,
+                file_path VARCHAR(255) NOT NULL,
+                file_size BIGINT NOT NULL DEFAULT 0,
+                server_id INT NOT NULL DEFAULT 0,
+                created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                PRIMARY KEY (id),
+                INDEX idx_replays_level_src_time (is_pr2hub, level_id, first_finish_time_ms, created_at_ms)
+              ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+        - sql:
+            dbms: mysql
+            splitStatements: false
+            stripComments: true
+            sql: |
+              CREATE TABLE IF NOT EXISTS replay_participants (
+                replay_id VARCHAR(64) NOT NULL,
+                user_id INT NOT NULL,
+                username VARCHAR(30) NOT NULL,
+                PRIMARY KEY (replay_id, user_id),
+                INDEX idx_replay_participants_user (user_id, replay_id),
+                CONSTRAINT fk_replay_participants_replay
+                  FOREIGN KEY (replay_id) REFERENCES replays (id)
+                  ON DELETE CASCADE
+              ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+        - sql:
+            dbms: mysql
+            splitStatements: false
+            stripComments: true
+            sql: |
+              CREATE TABLE IF NOT EXISTS replay_results (
+                replay_id VARCHAR(64) NOT NULL,
+                position TINYINT UNSIGNED NOT NULL,
+                user_id INT NOT NULL,
+                username VARCHAR(30) NOT NULL,
+                finish_time_ms BIGINT NULL,
+                server_finish_ms BIGINT NULL,
+                quit TINYINT(1) NOT NULL DEFAULT 0,
+                PRIMARY KEY (replay_id, position),
+                INDEX idx_replay_results_user (user_id, finish_time_ms),
+                CONSTRAINT fk_replay_results_replay
+                  FOREIGN KEY (replay_id) REFERENCES replays (id)
+                  ON DELETE CASCADE
+              ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  - changeSet:
+      id: add-replay-server-finish-columns
+      author: codex
+      changes:
+        - sql:
+            dbms: mysql
+            splitStatements: false
+            stripComments: true
+            sql: |
+              ALTER TABLE replays
+                ADD COLUMN IF NOT EXISTS first_server_finish_ms BIGINT NULL AFTER first_finish_time_ms;
+        - sql:
+            dbms: mysql
+            splitStatements: false
+            stripComments: true
+            sql: |
+              ALTER TABLE replay_results
+                ADD COLUMN IF NOT EXISTS server_finish_ms BIGINT NULL AFTER finish_time_ms;

@@ -41,6 +41,15 @@ class Game extends Room
     private $tournament = false;
     private $valid_hats = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
+    private $level_id = 0;
+    private $level_version = 0;
+    private $replayRecorder;
+    private $replayParticipants = array();
+    private $replayUniquePackets = array();
+    private $replayFinishPositions = array();
+    private $replayHasRealFinish = false;
+    private $replayIsPr2hub = false;
+
     protected $room_name = 'game_room';
     protected $temp_id = 0;
 
@@ -51,6 +60,7 @@ class Game extends Room
         $this->from_room = $from_room;
         $this->tournament = PR2SocketServer::$tournament;
         $this->start_time = microtime(true);
+        $this->initReplayMetadata();
     }
 
 
@@ -58,8 +68,13 @@ class Game extends Room
     {
         if (count($this->finish_array) < 8) {
             Room::addPlayer($player);
-            $player->socket->write('tournamentMode`' . (int) PR2SocketServer::$tournament);
-            $player->socket->write('startGame`'.$this->course_id);
+            $tournamentPacket = 'tournamentMode`' . (int) PR2SocketServer::$tournament;
+            $player->socket->write($tournamentPacket);
+            $this->recordPacketOnce('tournamentMode', $tournamentPacket);
+
+            $startGamePacket = 'startGame`'.$this->course_id;
+            $player->socket->write($startGamePacket);
+            $this->recordPacketOnce('startGame', $startGamePacket);
             $player->temp_id = $this->temp_id;
             $player->pos_x = 0;
             $player->pos_y = 0;
@@ -70,6 +85,7 @@ class Game extends Room
             $race_stats = new RaceStats($player);
             array_push($this->finish_array, $race_stats);
             $player->race_stats = $race_stats;
+            $this->trackReplayParticipant($player);
         }
     }
 
@@ -368,6 +384,9 @@ class Game extends Room
         if (!$this->begun) {
             $this->begun = true;
             $this->mode = $this->democratize('mode');
+            if ($this->replayRecorder) {
+                $this->replayRecorder->setMetaValue('mode', $this->mode);
+            }
             $this->hash = $this->democratize('level_hash');
             $this->finish_positions = $this->democratize('finish_positions');
             $this->finish_count = $this->democratize('finish_count');
@@ -565,15 +584,22 @@ class Game extends Room
     public function remoteFinishRace($player, $data)
     {
         if ($this->isStillPlaying($player->temp_id)) {
+            $local_finish_ms = null;
             if ($this->mode == self::MODE_RACE) {
-                list($finish_id, $x, $y) = explode('`', $data);
+                $parts = explode('`', $data);
+                $finish_id = isset($parts[0]) ? (int) $parts[0] : 0;
+                $x = isset($parts[1]) ? (int) $parts[1] : 0;
+                $y = isset($parts[2]) ? (int) $parts[2] : 0;
+                if (isset($parts[3]) && is_numeric($parts[3])) {
+                    $local_finish_ms = (int) $parts[3];
+                }
                 $this->verifyFinishPosition($x, $y, $finish_id);
             } elseif ($this->mode == self::MODE_HAT) {
                 $msg = 'Psst... finish blocks don\'t do anything in hat attack mode!';
                 $player->socket->write("chat`Fred the G. Cactus`3`$msg");
                 return;
             }
-            $this->finishRace($player);
+            $this->finishRace($player, $local_finish_ms);
         }
     }
 
@@ -587,20 +613,30 @@ class Game extends Room
     }
 
 
-    public function finishRace($player)
+    public function finishRace($player, $local_finish_ms = null)
     {
         if ($player->race_stats->finished_race === false
             && !isset($player->race_stats->finish_time)
             && $player->race_stats->drawing === false
             && $this->begun === true
         ) {
+            $local_finish_ms = is_numeric($local_finish_ms) ? (int) $local_finish_ms : null;
+            if ($local_finish_ms !== null && $local_finish_ms <= 0) {
+                $local_finish_ms = null;
+            }
+
             // get/format/validate/set finish time
             $finish_microtime = microtime(true);
             $full_time = $finish_microtime - $this->start_time;
             $finish_time = $this->timeFormat($full_time);
             $broadcast_time = $this->timeFormat($full_time, 3);
             $finish_time = $finish_time > 31536000 ? 0 : $finish_time; // if the race time > 1 year, set it to 0
-            $this->setFinishTime($player, $finish_time);
+            $finish_time_ms = (int) round($full_time * 1000);
+            $effective_finish_ms = $local_finish_ms !== null ? $local_finish_ms : $finish_time_ms;
+            $player->race_stats->local_finish_ms = $effective_finish_ms;
+            $player->race_stats->server_finish_ms = $finish_time_ms;
+            $this->recordReplayFinish($player, $effective_finish_ms, $finish_time_ms, false);
+            $this->setFinishTime($player, $finish_time, $effective_finish_ms, $finish_time_ms);
 
             // exp time modifier (propotional before 2 mins)
             $time_mod = $finish_time / 120;
@@ -1068,10 +1104,15 @@ class Game extends Room
     }
 
 
-    private function setFinishTime($player, $finish_time)
+    private function setFinishTime($player, $finish_time, $local_finish_ms = null, $server_finish_ms = null)
     {
         if (!isset($player->race_stats->finish_time)) {
             $player->race_stats->finish_time = $finish_time;
+            $player->race_stats->local_finish_ms = $local_finish_ms;
+            $player->race_stats->server_finish_ms = $server_finish_ms;
+            if ($finish_time === 'forfeit') {
+                $this->recordReplayFinish($player, $local_finish_ms, $server_finish_ms, true);
+            }
         }
 
         if (in_array($this->mode, ['hat', 'egg', 'objective', 'deathmatch', 'race'])) {
@@ -1105,7 +1146,8 @@ class Game extends Room
             foreach ($this->finish_array as $rs) {
                 $player = $this->idToPlayer($rs->temp_id);
                 $forfeit = $rs->quit_race ? ($this->mode === self::MODE_EGG ? '0' : 'forfeit') : '';
-                $str .= '`' . $rs->name . '`' . $forfeit . '`' . $rs->drawing . '`' . $rs->still_here;
+                $local_ms = isset($rs->local_finish_ms) ? (int) $rs->local_finish_ms : '';
+                $str .= '`' . $rs->name . '`' . $forfeit . '`' . $rs->drawing . '`' . $rs->still_here . '`' . $local_ms;
             }
         } else { // if not, broadcast as normal
             foreach ($this->finish_array as $rs) {
@@ -1122,7 +1164,8 @@ class Game extends Room
                 }
                 if (isset($finish_time) || $rs->quit_race) {
                     $finish_time = isset($finish_time) ? $finish_time : ($rs->quit_race ? 'forfeit' : $finish_time);
-                    $str .= '`' . $rs->name . '`' . $finish_time . '`' . $rs->drawing . '`' . $rs->still_here;
+                    $local_ms = isset($rs->local_finish_ms) ? (int) $rs->local_finish_ms : '';
+                    $str .= '`' . $rs->name . '`' . $finish_time . '`' . $rs->drawing . '`' . $rs->still_here . '`' . $local_ms;
                 }
             }
         }
@@ -1566,6 +1609,7 @@ class Game extends Room
 
     public function remove()
     {
+        $this->finalizeReplay();
         foreach ($this as $key => $var) {
             if ($key !== 'mode' && $key !== 'finish_array') {
                 $this->$key = null;
@@ -1574,5 +1618,242 @@ class Game extends Room
         }
 
         parent::remove();
+    }
+
+
+    public function sendToAll($str, $extra = null)
+    {
+        $this->recordReplayPacket($str);
+        parent::sendToAll($str);
+    }
+
+
+    public function sendToRoom($str, $from_id)
+    {
+        $this->recordReplayPacket($str);
+        parent::sendToRoom($str, $from_id);
+    }
+
+
+    private function initReplayMetadata()
+    {
+        $numeric = $this->course_id;
+        $isPr2hub = strpos($numeric, '8p_') !== 0;
+        if (!$isPr2hub) {
+            $numeric = substr($numeric, 3);
+        }
+        $parts = explode('_', $numeric);
+        $this->level_id = isset($parts[0]) ? (int) $parts[0] : 0;
+        $this->level_version = isset($parts[1]) ? (int) $parts[1] : 0;
+        $this->replayIsPr2hub = (bool) $isPr2hub;
+
+        try {
+            $meta = [
+                'level_id' => $this->level_id,
+                'level_version' => $this->level_version,
+                'mode' => $this->mode,
+                'created_at_ms' => ReplayRecorder::nowMs(),
+                'participants' => [],
+                'participants_count' => 0,
+                'server_id' => isset($GLOBALS['server_id']) ? (int) $GLOBALS['server_id'] : 0,
+                'is_pr2hub' => (int) $isPr2hub,
+            ];
+            $this->replayRecorder = new ReplayRecorder($meta);
+            $this->captureReplayLevelData();
+            $this->replayRecorder->start();
+        } catch (\Exception $e) {
+            output('ReplayRecorder init failed: ' . $e->getMessage());
+            $this->replayRecorder = null;
+        }
+    }
+
+
+    private function recordReplayPacket($packet)
+    {
+        if ($this->replayRecorder) {
+            try {
+                $this->replayRecorder->recordPacket($packet);
+            } catch (\Exception $e) {
+                output('ReplayRecorder write failed: ' . $e->getMessage());
+            }
+        }
+    }
+
+
+    private function recordPacketOnce($key, $packet)
+    {
+        if (isset($this->replayUniquePackets[$key])) {
+            return;
+        }
+        $this->replayUniquePackets[$key] = true;
+        $this->recordReplayPacket($packet);
+    }
+
+
+    private function trackReplayParticipant($player)
+    {
+        if (!$this->replayRecorder) {
+            return;
+        }
+        $userId = isset($player->user_id) ? (int) $player->user_id : 0;
+        if ($userId <= 0) {
+            return;
+        }
+        if (isset($this->replayParticipants[$userId])) {
+            return;
+        }
+        $this->replayParticipants[$userId] = true;
+        try {
+            $this->replayRecorder->addParticipant(
+                $userId,
+                (string) $player->name,
+                (int) $player->speed,
+                (int) $player->acceleration,
+                (int) $player->jumping
+            );
+        } catch (\Exception $e) {
+            output('ReplayRecorder participant failed: ' . $e->getMessage());
+        }
+    }
+
+
+    private function recordReplayFinish($player, $finishTimeMs, $serverFinishMs, $quit)
+    {
+        if (!$this->replayRecorder) {
+            return;
+        }
+        $finishTimeMs = is_numeric($finishTimeMs) ? (int) $finishTimeMs : null;
+        if ($finishTimeMs !== null && $finishTimeMs <= 0) {
+            $finishTimeMs = null;
+        }
+        $serverFinishMs = is_numeric($serverFinishMs) ? (int) $serverFinishMs : null;
+        if ($serverFinishMs !== null && $serverFinishMs <= 0) {
+            $serverFinishMs = null;
+        }
+        $userId = isset($player->user_id) ? (int) $player->user_id : 0;
+        $key = isset($player->temp_id) ? (int) $player->temp_id : $userId;
+        if (isset($this->replayFinishPositions[$key])) {
+            return;
+        }
+        $position = count($this->replayFinishPositions) + 1;
+        $this->replayFinishPositions[$key] = $position;
+        if ($finishTimeMs !== null) {
+            $player->race_stats->local_finish_ms = $finishTimeMs;
+        }
+        if ($serverFinishMs !== null) {
+            $player->race_stats->server_finish_ms = $serverFinishMs;
+        }
+        try {
+            $this->replayRecorder->recordFinishResult(
+                $position,
+                $userId,
+                (string) $player->name,
+                $finishTimeMs,
+                $serverFinishMs,
+                $quit
+            );
+        } catch (\Exception $e) {
+            output('ReplayRecorder finish failed: ' . $e->getMessage());
+        }
+
+        if (!$quit && ($finishTimeMs !== null || $serverFinishMs !== null)) {
+            $this->replayHasRealFinish = true;
+        }
+    }
+
+
+    private function finalizeReplay()
+    {
+        if (!$this->replayRecorder) {
+            return;
+        }
+
+        if (!$this->replayHasRealFinish) {
+            try {
+                $this->replayRecorder->discard();
+            } catch (\Exception $e) {
+                output('ReplayRecorder discard failed: ' . $e->getMessage());
+            }
+            $this->replayRecorder = null;
+            return;
+        }
+
+        try {
+            $pdo = pdo_connect();
+            $this->replayRecorder->finalize($pdo);
+        } catch (\Exception $e) {
+            output('ReplayRecorder finalize failed: ' . $e->getMessage());
+        }
+        $this->replayRecorder = null;
+    }
+
+
+    private function captureReplayLevelData()
+    {
+        if (!$this->replayRecorder || $this->level_id <= 0) {
+            return;
+        }
+
+        // Prefer local file system for PR2-hosted levels.
+        if (!$this->replayIsPr2hub) {
+            $paths = [
+                WWW_ROOT . "/levels/8p_{$this->level_id}.txt",
+                WWW_ROOT . "/files/levels/8p_{$this->level_id}.txt",
+            ];
+
+            foreach ($paths as $path) {
+                if (is_string($path) && file_exists($path)) {
+                    $content = @file_get_contents($path);
+                    if ($content !== false && $content !== '') {
+                        try {
+                            $this->replayRecorder->setLevelData($content);
+                        } catch (\Exception $e) {
+                            output('ReplayRecorder level embed failed: ' . $e->getMessage());
+                        }
+                        return;
+                    }
+                }
+            }
+
+            try {
+                $levelData = get_level_content($this->level_id);
+                if (!empty($levelData)) {
+                    $this->replayRecorder->setLevelData($levelData);
+                }
+            } catch (\Exception $e) {
+                output('ReplayRecorder level capture failed: ' . $e->getMessage());
+            }
+            return;
+        }
+
+        // PR2Hub level – fetch and cache snapshot so we avoid repeated downloads.
+        $cacheDir = WWW_ROOT . '/replays/_cache/pr2hub';
+        $versionSuffix = $this->level_version >= 0 ? $this->level_version : '';
+        $cacheFile = $cacheDir . '/' . $this->level_id . '_' . $versionSuffix . '.txt';
+        $levelData = '';
+
+        if (file_exists($cacheFile)) {
+            $levelData = @file_get_contents($cacheFile);
+        } else {
+            if (!is_dir($cacheDir)) {
+                @mkdir($cacheDir, 0775, true);
+            }
+            $url = 'https://pr2hub.com/levels/' . $this->level_id . '.txt?version=' . $versionSuffix;
+            $downloaded = @file_get_contents($url);
+            if ($downloaded !== false && $downloaded !== '') {
+                $levelData = $downloaded;
+                @file_put_contents($cacheFile, $levelData, LOCK_EX);
+            } else {
+                output('ReplayRecorder level fetch failed for PR2Hub level ID ' . $this->level_id);
+            }
+        }
+
+        if (!empty($levelData)) {
+            try {
+                $this->replayRecorder->setLevelData($levelData);
+            } catch (\Exception $e) {
+                output('ReplayRecorder level embed failed: ' . $e->getMessage());
+            }
+        }
     }
 }

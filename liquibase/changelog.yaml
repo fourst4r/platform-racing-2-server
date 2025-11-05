@@ -2,6 +2,8 @@ databaseChangeLog:
   - include:
       file: liquibase/base.mysql.sql
   - include:
+      file: liquibase/add-replays.yaml
+  - include:
       file: liquibase/add-indexes.yaml
   - include:
       file: liquibase/seed-servers.yaml

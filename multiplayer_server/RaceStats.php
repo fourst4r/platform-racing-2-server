@@ -17,6 +17,8 @@ class RaceStats
     public $trial_mod = false;
 
     public $finish_time;
+    public $local_finish_ms;
+    public $server_finish_ms;
     public $drawing = true;
     public $still_here = true;
     public $finished_race = false;
@@ -40,6 +42,8 @@ class RaceStats
         $this->name = $player->name;
         $this->rank = $player->active_rank;
         $this->ip = $player->ip;
+        $this->local_finish_ms = null;
+        $this->server_finish_ms = null;
 
         $this->group = $player->group;
         $this->ca = $player->ca;
