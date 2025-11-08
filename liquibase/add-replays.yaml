@@ -19,6 +19,8 @@ databaseChangeLog:
                 first_finisher_user_id INT NULL,
                 first_finish_time_ms BIGINT NULL,
                 first_server_finish_ms BIGINT NULL,
+                first_objectives_hit INT NOT NULL DEFAULT 0,
+                best_objectives_hit INT NOT NULL DEFAULT 0,
                 participants_count INT NOT NULL DEFAULT 0,
                 file_path VARCHAR(255) NOT NULL,
                 file_size BIGINT NOT NULL DEFAULT 0,
@@ -55,6 +57,7 @@ databaseChangeLog:
                 finish_time_ms BIGINT NULL,
                 server_finish_ms BIGINT NULL,
                 quit TINYINT(1) NOT NULL DEFAULT 0,
+                objectives_hit INT NOT NULL DEFAULT 0,
                 PRIMARY KEY (replay_id, position),
                 INDEX idx_replay_results_user (user_id, finish_time_ms),
                 CONSTRAINT fk_replay_results_replay
@@ -79,3 +82,28 @@ databaseChangeLog:
             sql: |
               ALTER TABLE replay_results
                 ADD COLUMN IF NOT EXISTS server_finish_ms BIGINT NULL AFTER finish_time_ms;
+  - changeSet:
+      id: add-replay-objective-columns
+      author: codex
+      changes:
+        - sql:
+            dbms: mysql
+            splitStatements: false
+            stripComments: true
+            sql: |
+              ALTER TABLE replays
+                ADD COLUMN IF NOT EXISTS first_objectives_hit INT NOT NULL DEFAULT 0 AFTER first_server_finish_ms;
+        - sql:
+            dbms: mysql
+            splitStatements: false
+            stripComments: true
+            sql: |
+              ALTER TABLE replays
+                ADD COLUMN IF NOT EXISTS best_objectives_hit INT NOT NULL DEFAULT 0 AFTER first_objectives_hit;
+        - sql:
+            dbms: mysql
+            splitStatements: false
+            stripComments: true
+            sql: |
+              ALTER TABLE replay_results
+                ADD COLUMN IF NOT EXISTS objectives_hit INT NOT NULL DEFAULT 0 AFTER quit;

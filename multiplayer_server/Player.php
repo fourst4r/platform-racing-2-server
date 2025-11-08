@@ -381,11 +381,12 @@ class Player
 
     public function getRemoteInfo()
     {
+        $hatId = $this->getPacketHatId();
         return 'createRemoteCharacter'
         .'`'.$this->temp_id.'`'.$this->name
         .'`'.$this->hat_color.'`'.$this->head_color.'`'.$this->body_color.'`'.$this->feet_color
-        .'`'.$this->hat.'`'.$this->head.'`'.$this->body.'`'.$this->feet
-        .'`'.$this->getSecondColor('hat', $this->hat)
+        .'`'.$hatId.'`'.$this->head.'`'.$this->body.'`'.$this->feet
+        .'`'.$this->getSecondColor('hat', $hatId)
         .'`'.$this->getSecondColor('head', $this->head)
         .'`'.$this->getSecondColor('body', $this->body)
         .'`'.$this->getSecondColor('feet', $this->feet)
@@ -395,12 +396,13 @@ class Player
 
     public function getLocalInfo()
     {
+        $hatId = $this->getPacketHatId();
         return 'createLocalCharacter'
         .'`'.$this->temp_id
         .'`'.$this->getStatStr()
         .'`'.$this->hat_color.'`'.$this->head_color.'`'.$this->body_color.'`'.$this->feet_color
-        .'`'.$this->hat.'`'.$this->head.'`'.$this->body.'`'.$this->feet
-        .'`'.$this->getSecondColor('hat', $this->hat)
+        .'`'.$hatId.'`'.$this->head.'`'.$this->body.'`'.$this->feet
+        .'`'.$this->getSecondColor('hat', $hatId)
         .'`'.$this->getSecondColor('head', $this->head)
         .'`'.$this->getSecondColor('body', $this->body)
         .'`'.$this->getSecondColor('feet', $this->feet)
@@ -425,6 +427,18 @@ class Player
         }
 
         return (array_search($id, $epic_arr) === false && array_search('*', $epic_arr) === false) ? -1 : $color;
+    }
+
+
+    private function getPacketHatId(): int
+    {
+        return $this->isHatBlockedForRace() ? 1 : (int) $this->hat;
+    }
+
+
+    private function isHatBlockedForRace(): bool
+    {
+        return isset($this->race_stats) && isset($this->race_stats->hat_blocked) && $this->race_stats->hat_blocked;
     }
 
 

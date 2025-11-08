@@ -64,6 +64,8 @@ try {
             'first_finisher_user_id' => isset($row->first_finisher_user_id) ? (int) $row->first_finisher_user_id : null,
             'first_finish_time_ms' => isset($row->first_finish_time_ms) ? (int) $row->first_finish_time_ms : null,
             'first_server_finish_time_ms' => isset($row->first_server_finish_ms) ? (int) $row->first_server_finish_ms : null,
+            'first_objectives_hit' => isset($row->first_objectives_hit) ? (int) $row->first_objectives_hit : 0,
+            'best_objectives_hit' => isset($row->best_objectives_hit) ? (int) $row->best_objectives_hit : 0,
         ];
 
         if ($includeResults) {
@@ -76,6 +78,7 @@ try {
                     'finish_time_ms' => $result->finish_time_ms !== null ? (int) $result->finish_time_ms : null,
                     'server_finish_ms' => $result->server_finish_ms !== null ? (int) $result->server_finish_ms : null,
                     'quit' => (int) $result->quit === 1,
+                    'objectives_hit' => isset($result->objectives_hit) ? (int) $result->objectives_hit : 0,
                 ];
             }, $results);
         }

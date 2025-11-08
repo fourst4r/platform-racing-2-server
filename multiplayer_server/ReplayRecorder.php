@@ -9,7 +9,12 @@ class ReplayRecorder
 {
     private const MAGIC = 'PR2R';
     private const VERSION = "\x01";
-    private const FLAGS = "\x00";
+    private const FLAG_NONE = 0x00;
+    private const FLAG_STREAM_COMPRESSED = 0x01;
+    private const EXCLUDED_COMMANDS = [
+        'ping',
+        'finishDrawing'
+    ];
 
     /** @var resource|null */
     private $fh = null;
@@ -23,6 +28,10 @@ class ReplayRecorder
     private bool $open = false;
     private bool $finalized = false;
     private bool $discarded = false;
+    private int $flags = self::FLAG_NONE;
+    /** @var resource|null */
+    private $compressionFilter = null;
+    private bool $compressStream = true;
 
     public static function nowMs(): int
     {
@@ -41,6 +50,10 @@ class ReplayRecorder
         $this->baseDir = $baseDir ?? (WWW_ROOT . '/replays');
         $this->startedAtMs = $meta['created_at_ms'] ?? self::nowMs();
         $this->lastEventAtMs = $this->startedAtMs;
+
+        if (!extension_loaded('zlib')) {
+            $this->compressStream = false;
+        }
 
         if (empty($this->meta['participants']) || !is_array($this->meta['participants'])) {
             $this->meta['participants'] = [];
@@ -136,12 +149,31 @@ class ReplayRecorder
             throw new Exception('ReplayRecorder: cannot open replay file for writing.');
         }
         $this->open = true;
+
+        $this->flags = $this->compressStream ? self::FLAG_STREAM_COMPRESSED : self::FLAG_NONE;
         $this->writeHeader();
+
+        if ($this->compressStream) {
+            $filter = @stream_filter_append($this->fh, 'zlib.deflate', STREAM_FILTER_WRITE, ['level' => -1]);
+            if ($filter === false) {
+                $this->flags = self::FLAG_NONE;
+                $this->compressStream = false;
+                if (@ftruncate($this->fh, 0) === false || @fseek($this->fh, 0) !== 0) {
+                    throw new Exception('ReplayRecorder: failed to reset replay file after compression setup.');
+                }
+                $this->writeHeader();
+            } else {
+                $this->compressionFilter = $filter;
+            }
+        }
     }
 
     public function recordPacket(string $packet): void
     {
         if (!$this->open) {
+            return;
+        }
+        if ($this->shouldSkipPacket($packet)) {
             return;
         }
         $now = self::nowMs();
@@ -152,7 +184,15 @@ class ReplayRecorder
         $this->writeRaw($packet);
     }
 
-    public function recordFinishResult(int $position, int $userId, string $username, ?int $finishTimeMs, ?int $serverTimeMs, bool $quit): void
+    public function recordFinishResult(
+        int $position,
+        int $userId,
+        string $username,
+        ?int $finishTimeMs,
+        ?int $serverTimeMs,
+        bool $quit,
+        int $objectivesHit = 0
+    ): void
     {
         $this->results[] = [
             'position' => $position,
@@ -161,6 +201,7 @@ class ReplayRecorder
             'finish_time_ms' => $finishTimeMs,
             'server_finish_ms' => $serverTimeMs,
             'quit' => $quit ? 1 : 0,
+            'objectives_hit' => max(0, $objectivesHit),
         ];
     }
 
@@ -214,6 +255,21 @@ class ReplayRecorder
             $first = $this->results[0] ?? null;
         }
 
+        $bestObjectivesHit = 0;
+        foreach ($this->results as $row) {
+            if (($row['quit'] ?? 0) !== 0) {
+                continue;
+            }
+            $bestObjectivesHit = max($bestObjectivesHit, (int) ($row['objectives_hit'] ?? 0));
+        }
+        $firstObjectivesHit = $first !== null ? (int) ($first['objectives_hit'] ?? 0) : 0;
+
+        $mode = (string) ($this->meta['mode'] ?? 'race');
+        if (in_array($mode, ['objective', 'deathmatch'], true) && $bestObjectivesHit <= 0) {
+            $this->discard();
+            return null;
+        }
+
         replay_insert(
             $pdo,
             $replayId,
@@ -227,6 +283,8 @@ class ReplayRecorder
             $first ? (int) $first['user_id'] : null,
             $first ? (int) $first['finish_time_ms'] : null,
             $first ? (int) $first['server_finish_ms'] : null,
+            $firstObjectivesHit,
+            $bestObjectivesHit,
             (int) ($this->meta['participants_count'] ?? 0),
             (int) ($this->meta['is_pr2hub'] ?? 0),
             (int) ($this->meta['server_id'] ?? 0)
@@ -247,7 +305,8 @@ class ReplayRecorder
                 (string) $row['username'],
                 $row['finish_time_ms'] !== null ? (int) $row['finish_time_ms'] : null,
                 $row['server_finish_ms'] !== null ? (int) $row['server_finish_ms'] : null,
-                (int) $row['quit']
+                (int) $row['quit'],
+                (int) ($row['objectives_hit'] ?? 0)
             );
         }
 
@@ -297,8 +356,18 @@ class ReplayRecorder
         if ($json === false) {
             throw new Exception('ReplayRecorder: failed to encode header.');
         }
-        $payload = self::MAGIC . self::VERSION . self::FLAGS . pack('N', strlen($json)) . $json;
+        $payload = self::MAGIC . self::VERSION . chr($this->flags & 0xFF) . pack('N', strlen($json)) . $json;
         $this->writeRaw($payload);
+    }
+
+    private function shouldSkipPacket(string $packet): bool
+    {
+        $command = $packet;
+        $pos = strpos($packet, '`');
+        if ($pos !== false) {
+            $command = substr($packet, 0, $pos);
+        }
+        return in_array($command, self::EXCLUDED_COMMANDS, true);
     }
 
     private function writeRaw(string $bytes): void

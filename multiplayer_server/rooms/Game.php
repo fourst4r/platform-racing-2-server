@@ -85,6 +85,7 @@ class Game extends Room
             $race_stats = new RaceStats($player);
             array_push($this->finish_array, $race_stats);
             $player->race_stats = $race_stats;
+            $this->enforceValidHatSelection($player);
             $this->trackReplayParticipant($player);
         }
     }
@@ -550,6 +551,24 @@ class Game extends Room
     }
 
 
+    private function enforceValidHatSelection($player): void
+    {
+        $hatId = isset($player->hat) ? (int) $player->hat : 0;
+        if ($hatId <= 1) {
+            return;
+        }
+        if (in_array($hatId, $this->valid_hats, true)) {
+            return;
+        }
+
+        if (isset($player->race_stats)) {
+            $player->race_stats->hat_blocked = true;
+        }
+
+        $player->socket->write('systemChat`Your selected hat is disabled for this level.');
+    }
+
+
     private function makeHat($id, $num, $color, $color2)
     {
         $hat = new \stdClass();
@@ -585,21 +604,27 @@ class Game extends Room
     {
         if ($this->isStillPlaying($player->temp_id)) {
             $local_finish_ms = null;
+            $treatedAsQuit = false;
+            $parts = explode('`', $data);
+            $finish_id = isset($parts[0]) ? (int) $parts[0] : 0;
+
             if ($this->mode == self::MODE_RACE) {
-                $parts = explode('`', $data);
-                $finish_id = isset($parts[0]) ? (int) $parts[0] : 0;
                 $x = isset($parts[1]) ? (int) $parts[1] : 0;
                 $y = isset($parts[2]) ? (int) $parts[2] : 0;
                 if (isset($parts[3]) && is_numeric($parts[3])) {
                     $local_finish_ms = (int) $parts[3];
                 }
                 $this->verifyFinishPosition($x, $y, $finish_id);
+            } elseif ($this->mode == self::MODE_DEATHMATCH) {
+                if ($finish_id === -1) {
+                    $treatedAsQuit = true;
+                }
             } elseif ($this->mode == self::MODE_HAT) {
                 $msg = 'Psst... finish blocks don\'t do anything in hat attack mode!';
                 $player->socket->write("chat`Fred the G. Cactus`3`$msg");
                 return;
             }
-            $this->finishRace($player, $local_finish_ms);
+            $this->finishRace($player, $local_finish_ms, $treatedAsQuit);
         }
     }
 
@@ -613,7 +638,7 @@ class Game extends Room
     }
 
 
-    public function finishRace($player, $local_finish_ms = null)
+    public function finishRace($player, $local_finish_ms = null, bool $forceQuit = false)
     {
         if ($player->race_stats->finished_race === false
             && !isset($player->race_stats->finish_time)
@@ -635,7 +660,7 @@ class Game extends Room
             $effective_finish_ms = $local_finish_ms !== null ? $local_finish_ms : $finish_time_ms;
             $player->race_stats->local_finish_ms = $effective_finish_ms;
             $player->race_stats->server_finish_ms = $finish_time_ms;
-            $this->recordReplayFinish($player, $effective_finish_ms, $finish_time_ms, false);
+            $this->recordReplayFinish($player, $effective_finish_ms, $finish_time_ms, $forceQuit);
             $this->setFinishTime($player, $finish_time, $effective_finish_ms, $finish_time_ms);
 
             // exp time modifier (propotional before 2 mins)
@@ -1743,6 +1768,19 @@ class Game extends Room
         if ($serverFinishMs !== null) {
             $player->race_stats->server_finish_ms = $serverFinishMs;
         }
+        $objectivesHit = 0;
+        if ($this->mode === self::MODE_OBJECTIVE) {
+            $objectiveCount = count($player->race_stats->objectives_reached);
+            if ($this->finish_count > 0) {
+                $objectiveCount = min($objectiveCount, $this->finish_count);
+            }
+            $objectivesHit = $objectiveCount;
+        } elseif ($this->mode === self::MODE_DEATHMATCH) {
+            $objectivesHit = $quit ? 0 : 1;
+        } else {
+            $objectivesHit = $quit ? 0 : 1;
+        }
+
         try {
             $this->replayRecorder->recordFinishResult(
                 $position,
@@ -1750,7 +1788,8 @@ class Game extends Room
                 (string) $player->name,
                 $finishTimeMs,
                 $serverFinishMs,
-                $quit
+                $quit,
+                $objectivesHit
             );
         } catch (\Exception $e) {
             output('ReplayRecorder finish failed: ' . $e->getMessage());

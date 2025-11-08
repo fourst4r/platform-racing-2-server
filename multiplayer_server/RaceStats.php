@@ -30,6 +30,7 @@ class RaceStats
     public $finish_count = '';
     public $cowboy_chance = '';
     public $bad_hats = '';
+    public $hat_blocked = false;
 
     public $eggs = 0;
     public $objectives_reached = array();

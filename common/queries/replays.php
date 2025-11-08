@@ -13,6 +13,8 @@ function replay_insert(
     ?int $first_finisher_user_id,
     ?int $first_finish_time_ms,
     ?int $first_server_finish_ms,
+    int $first_objectives_hit,
+    int $best_objectives_hit,
     int $participants_count,
     int $is_pr2hub = 0,
     int $server_id = 0
@@ -20,11 +22,13 @@ function replay_insert(
     $stmt = $pdo->prepare(
         'INSERT INTO replays
             (id, level_id, is_pr2hub, level_version, mode, created_at_ms, duration_ms,
-             first_finisher_user_id, first_finish_time_ms, first_server_finish_ms, participants_count,
+             first_finisher_user_id, first_finish_time_ms, first_server_finish_ms,
+             first_objectives_hit, best_objectives_hit, participants_count,
              file_path, file_size, server_id)
          VALUES
             (:id, :level_id, :is_pr2hub, :level_version, :mode, :created_at_ms, :duration_ms,
-             :first_finisher_user_id, :first_finish_time_ms, :first_server_finish_ms, :participants_count,
+             :first_finisher_user_id, :first_finish_time_ms, :first_server_finish_ms,
+             :first_objectives_hit, :best_objectives_hit, :participants_count,
              :file_path, :file_size, :server_id)'
     );
     $stmt->execute([
@@ -42,6 +46,8 @@ function replay_insert(
         ':file_path' => $file_path,
         ':file_size' => $file_size,
         ':server_id' => $server_id,
+        ':first_objectives_hit' => $first_objectives_hit,
+        ':best_objectives_hit' => $best_objectives_hit,
     ]);
 }
 
@@ -71,6 +77,62 @@ function replay_participants_select(PDO $pdo, string $replay_id): array
     return $stmt->fetchAll(PDO::FETCH_OBJ);
 }
 
+function replay_participants_map_by_replay_ids(PDO $pdo, array $replay_ids): array
+{
+    if (empty($replay_ids)) {
+        return [];
+    }
+
+    $placeholders = implode(',', array_fill(0, count($replay_ids), '?'));
+    $stmt = $pdo->prepare(
+        "SELECT replay_id, user_id, username
+           FROM replay_participants
+          WHERE replay_id IN ($placeholders)"
+    );
+    $stmt->execute($replay_ids);
+    $rows = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+    $map = [];
+    foreach ($rows as $row) {
+        $map[$row->replay_id][] = $row;
+    }
+
+    return $map;
+}
+
+function build_solo_participant_key(array $participants): ?string
+{
+    if (empty($participants)) {
+        return null;
+    }
+
+    $participant = $participants[0];
+    $userId = isset($participant->user_id) ? (int) $participant->user_id : 0;
+    $username = strtolower($participant->username ?? '');
+
+    return $userId . ':' . $username;
+}
+
+function build_team_participant_key(array $participants): ?string
+{
+    if (empty($participants)) {
+        return null;
+    }
+
+    $normalized = array_map(
+        static function ($participant) {
+            $userId = isset($participant->user_id) ? (int) $participant->user_id : 0;
+            $username = strtolower($participant->username ?? '');
+            return $userId . ':' . $username;
+        },
+        $participants
+    );
+
+    sort($normalized, SORT_STRING);
+
+    return implode('|', $normalized);
+}
+
 function replay_result_insert(
     PDO $pdo,
     string $replay_id,
@@ -79,11 +141,12 @@ function replay_result_insert(
     string $username,
     ?int $finish_time_ms,
     ?int $server_finish_ms,
-    int $quit
+    int $quit,
+    int $objectives_hit
 ): void {
     $stmt = $pdo->prepare(
-        'INSERT INTO replay_results (replay_id, position, user_id, username, finish_time_ms, server_finish_ms, quit)
-         VALUES (:replay_id, :position, :user_id, :username, :finish_time_ms, :server_finish_ms, :quit)'
+        'INSERT INTO replay_results (replay_id, position, user_id, username, finish_time_ms, server_finish_ms, quit, objectives_hit)
+         VALUES (:replay_id, :position, :user_id, :username, :finish_time_ms, :server_finish_ms, :quit, :objectives_hit)'
     );
     $stmt->execute([
         ':replay_id' => $replay_id,
@@ -93,6 +156,7 @@ function replay_result_insert(
         ':finish_time_ms' => $finish_time_ms,
         ':server_finish_ms' => $server_finish_ms,
         ':quit' => $quit,
+        ':objectives_hit' => $objectives_hit,
     ]);
 }
 
@@ -110,7 +174,7 @@ function replay_select_by_id(PDO $pdo, string $id)
 function replay_results_select(PDO $pdo, string $replay_id): array
 {
     $stmt = $pdo->prepare(
-        'SELECT position, user_id, username, finish_time_ms, server_finish_ms, quit
+        'SELECT position, user_id, username, finish_time_ms, server_finish_ms, quit, objectives_hit
            FROM replay_results
           WHERE replay_id = :replay_id
           ORDER BY position ASC'
@@ -133,6 +197,7 @@ function replays_select(
                FROM replays r
                JOIN replay_participants p ON p.replay_id = r.id
               WHERE p.user_id = :user_id
+                AND (r.mode <> \'deathmatch\' OR r.best_objectives_hit > 0)
               ORDER BY r.created_at_ms DESC
               LIMIT :start, :count'
         );
@@ -143,6 +208,7 @@ function replays_select(
                FROM replays
               WHERE level_id = :level_id
                 AND is_pr2hub = :is_pr2hub
+                AND (mode <> \'deathmatch\' OR best_objectives_hit > 0)
               ORDER BY created_at_ms DESC
               LIMIT :start, :count'
         );
@@ -152,6 +218,7 @@ function replays_select(
         $stmt = $pdo->prepare(
             'SELECT *
                FROM replays
+              WHERE (mode <> \'deathmatch\' OR best_objectives_hit > 0)
               ORDER BY created_at_ms DESC
               LIMIT :start, :count'
         );
@@ -175,6 +242,7 @@ function replays_leaderboard_by_level(
         'level_id = :level_id',
         'is_pr2hub = :is_pr2hub',
         'first_finish_time_ms IS NOT NULL',
+        '(mode <> \'deathmatch\' OR best_objectives_hit > 0)',
     ];
 
     if ($mode_filter === 'team') {
@@ -187,7 +255,7 @@ function replays_leaderboard_by_level(
         'SELECT *
            FROM replays
           WHERE %s
-          ORDER BY first_finish_time_ms ASC, created_at_ms ASC
+          ORDER BY best_objectives_hit DESC, first_finish_time_ms ASC, created_at_ms ASC
           LIMIT :start, :count',
         implode(' AND ', $conditions)
     );
@@ -208,34 +276,94 @@ function replays_leaderboard_both(
     int $count,
     int $is_pr2hub = 0
 ): array {
-    $baseSql = 'SELECT *
-                  FROM replays
-                 WHERE level_id = :level_id
-                   AND is_pr2hub = :is_pr2hub
-                   AND first_finish_time_ms IS NOT NULL
-                   AND %s
-                 ORDER BY first_finish_time_ms ASC, created_at_ms ASC
-                 LIMIT :start, :count';
-
-    $soloSql = sprintf($baseSql, 'participants_count = 1');
-    $teamSql = sprintf($baseSql, 'participants_count > 1');
-
-    $soloStmt = $pdo->prepare($soloSql);
-    $soloStmt->bindValue(':level_id', $level_id, PDO::PARAM_INT);
-    $soloStmt->bindValue(':is_pr2hub', $is_pr2hub, PDO::PARAM_INT);
-    $soloStmt->bindValue(':start', $start, PDO::PARAM_INT);
-    $soloStmt->bindValue(':count', $count, PDO::PARAM_INT);
-    $soloStmt->execute();
-
-    $teamStmt = $pdo->prepare($teamSql);
-    $teamStmt->bindValue(':level_id', $level_id, PDO::PARAM_INT);
-    $teamStmt->bindValue(':is_pr2hub', $is_pr2hub, PDO::PARAM_INT);
-    $teamStmt->bindValue(':start', $start, PDO::PARAM_INT);
-    $teamStmt->bindValue(':count', $count, PDO::PARAM_INT);
-    $teamStmt->execute();
-
     return [
-        'solo' => $soloStmt->fetchAll(PDO::FETCH_OBJ),
-        'team' => $teamStmt->fetchAll(PDO::FETCH_OBJ),
+        'solo' => replays_leaderboard_unique_by_type($pdo, $level_id, $start, $count, $is_pr2hub, 'solo'),
+        'team' => replays_leaderboard_unique_by_type($pdo, $level_id, $start, $count, $is_pr2hub, 'team'),
     ];
+}
+
+function replays_leaderboard_unique_by_type(
+    PDO $pdo,
+    int $level_id,
+    int $start,
+    int $count,
+    int $is_pr2hub,
+    string $type
+): array {
+    $type = $type === 'team' ? 'team' : 'solo';
+    $target = $start + $count;
+    $chunkSize = max(50, $count * 4);
+    $rawOffset = 0;
+
+    $uniqueRows = [];
+    $seenKeys = [];
+
+    while (count($uniqueRows) < $target) {
+        $chunk = replays_leaderboard_fetch_chunk($pdo, $level_id, $is_pr2hub, $type, $rawOffset, $chunkSize);
+        if (empty($chunk)) {
+            break;
+        }
+
+        $replayIds = array_map(static fn($row) => $row->id, $chunk);
+        $participantMap = replay_participants_map_by_replay_ids($pdo, $replayIds);
+
+        foreach ($chunk as $row) {
+            $participants = $participantMap[$row->id] ?? [];
+            $key = $type === 'solo'
+                ? build_solo_participant_key($participants)
+                : build_team_participant_key($participants);
+
+            if ($key === null || isset($seenKeys[$key])) {
+                continue;
+            }
+
+            $seenKeys[$key] = true;
+            $uniqueRows[] = $row;
+
+            if (count($uniqueRows) >= $target) {
+                break;
+            }
+        }
+
+        $rawOffset += $chunkSize;
+    }
+
+    if ($start >= count($uniqueRows)) {
+        return [];
+    }
+
+    return array_slice($uniqueRows, $start, $count);
+}
+
+function replays_leaderboard_fetch_chunk(
+    PDO $pdo,
+    int $level_id,
+    int $is_pr2hub,
+    string $type,
+    int $start,
+    int $count
+): array {
+    $participantCondition = $type === 'team' ? 'participants_count > 1' : 'participants_count = 1';
+
+    $sql = sprintf(
+        'SELECT *
+           FROM replays
+          WHERE level_id = :level_id
+            AND is_pr2hub = :is_pr2hub
+            AND first_finish_time_ms IS NOT NULL
+            AND %s
+            AND (mode <> \'deathmatch\' OR best_objectives_hit > 0)
+          ORDER BY best_objectives_hit DESC, first_finish_time_ms ASC, created_at_ms ASC
+          LIMIT :start, :count',
+        $participantCondition
+    );
+
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':level_id', $level_id, PDO::PARAM_INT);
+    $stmt->bindValue(':is_pr2hub', $is_pr2hub, PDO::PARAM_INT);
+    $stmt->bindValue(':start', $start, PDO::PARAM_INT);
+    $stmt->bindValue(':count', $count, PDO::PARAM_INT);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_OBJ);
 }
