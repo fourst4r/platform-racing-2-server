@@ -11,6 +11,7 @@ class ReplayRecorder
     private const VERSION = "\x01";
     private const FLAG_NONE = 0x00;
     private const FLAG_STREAM_COMPRESSED = 0x01;
+    private const MAX_RECORDING_DURATION_MS = 3600000; // 60 minutes
     private const EXCLUDED_COMMANDS = [
         'ping',
         'finishDrawing'
@@ -32,6 +33,7 @@ class ReplayRecorder
     /** @var resource|null */
     private $compressionFilter = null;
     private bool $compressStream = true;
+    private bool $durationLimitReached = false;
 
     public static function nowMs(): int
     {
@@ -177,6 +179,11 @@ class ReplayRecorder
             return;
         }
         $now = self::nowMs();
+        if (!$this->durationLimitReached && $this->hasExceededDurationLimit($now)) {
+            $this->stopRecordingForDurationLimit();
+            return;
+        }
+
         $delta = max(0, $now - $this->lastEventAtMs);
         $this->lastEventAtMs = $now;
         $this->writeUVarint($delta);
@@ -215,11 +222,7 @@ class ReplayRecorder
             return $this->meta['replay_id'] ?? null;
         }
 
-        if ($this->open && is_resource($this->fh)) {
-            fflush($this->fh);
-            fclose($this->fh);
-            $this->open = false;
-        }
+        $this->closeRecordingStream();
 
         if (is_file($this->tmpPath)) {
             if (@rename($this->tmpPath, $this->path) === false) {
@@ -320,11 +323,7 @@ class ReplayRecorder
             return;
         }
 
-        if ($this->open && is_resource($this->fh)) {
-            fflush($this->fh);
-            fclose($this->fh);
-            $this->open = false;
-        }
+        $this->closeRecordingStream();
 
         @unlink($this->tmpPath);
         @unlink($this->path);
@@ -393,5 +392,32 @@ class ReplayRecorder
             $buffer .= chr($byte);
         } while ($value > 0);
         $this->writeRaw($buffer);
+    }
+
+    private function hasExceededDurationLimit(int $timestampMs): bool
+    {
+        return ($timestampMs - $this->startedAtMs) >= self::MAX_RECORDING_DURATION_MS;
+    }
+
+    private function stopRecordingForDurationLimit(): void
+    {
+        $this->durationLimitReached = true;
+        $this->lastEventAtMs = $this->startedAtMs + self::MAX_RECORDING_DURATION_MS;
+        $this->closeRecordingStream();
+    }
+
+    private function closeRecordingStream(): void
+    {
+        if ($this->compressionFilter !== null) {
+            @stream_filter_remove($this->compressionFilter);
+            $this->compressionFilter = null;
+        }
+
+        if ($this->open && is_resource($this->fh)) {
+            fflush($this->fh);
+            fclose($this->fh);
+        }
+
+        $this->open = false;
     }
 }
