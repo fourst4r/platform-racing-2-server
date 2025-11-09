@@ -1799,6 +1799,33 @@ class Game extends Room
         if (!$quit && ($finishTimeMs !== null || $serverFinishMs !== null)) {
             $this->replayHasRealFinish = true;
         }
+
+        $this->maybeCompleteReplayRecording();
+    }
+
+
+    private function maybeCompleteReplayRecording(): void
+    {
+        if (!$this->replayRecorder) {
+            return;
+        }
+
+        $expectedPlayers = count($this->finish_array);
+        if ($expectedPlayers <= 0) {
+            return;
+        }
+
+        if (count($this->replayFinishPositions) < $expectedPlayers) {
+            return;
+        }
+
+        try {
+            $this->replayRecorder->stopRecording();
+        } catch (\Exception $e) {
+            output('ReplayRecorder stop failed: ' . $e->getMessage());
+        }
+
+        $this->finalizeReplay();
     }
 
 

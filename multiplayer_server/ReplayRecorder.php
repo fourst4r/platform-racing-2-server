@@ -212,6 +212,11 @@ class ReplayRecorder
         ];
     }
 
+    public function stopRecording(): void
+    {
+        $this->closeRecordingStream();
+    }
+
     public function finalize(PDO $pdo): ?string
     {
         if ($this->discarded) {
