@@ -36,6 +36,9 @@ class RaceStats
     public $objectives_reached = array();
     public $last_objective_time = 0;
 
+    // stores local canonicalised finish time of last objective reached
+    public $last_objective_ms = null;
+
     public function __construct($player)
     {
         $this->temp_id = $player->temp_id;

@@ -1014,7 +1014,7 @@ class Game extends Room
             if ($this->mode == self::MODE_DEATHMATCH && $this->begun) {
                 $this->finishRace($player);
             } elseif ($this->mode == self::MODE_OBJECTIVE && $this->begun) {
-                $this->finishRace($player);
+                $this->finishRace($player, $player->race_stats->last_objective_ms);
             } elseif ($this->mode === self::MODE_EGG) {
                 $this->maybeEndEgg();
             } elseif ($this->mode === self::MODE_RACE || $this->mode === self::MODE_HAT) {
@@ -1489,7 +1489,7 @@ class Game extends Room
 
     public function objectiveReached($player, $data)
     {
-        list($finish_id, $x, $y) = explode('`', $data);
+        list($finish_id, $x, $y, $canon_ms) = explode('`', $data);
 
         $this->verifyFinishPosition($x, $y, $finish_id);
 
@@ -1499,8 +1499,9 @@ class Game extends Room
 
         $player->race_stats->objectives_reached[$finish_id] = 1;
         $player->race_stats->last_objective_time = time();
+        $player->race_stats->last_objective_ms = (int) $canon_ms;
         if (count($player->race_stats->objectives_reached) >= $this->finish_count) {
-            $this->finishRace($player);
+            $this->finishRace($player, $canon_ms);
         }
     }
 
