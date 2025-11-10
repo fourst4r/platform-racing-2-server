@@ -367,3 +367,149 @@ function replays_leaderboard_fetch_chunk(
 
     return $stmt->fetchAll(PDO::FETCH_OBJ);
 }
+
+function replays_leaderboard_sort_key_expr(string $alias): string
+{
+    if (!preg_match('/^[a-zA-Z_][a-zA-Z0-9_]*$/', $alias)) {
+        throw new Exception('Invalid table alias for leaderboard sort key.');
+    }
+
+    $objectives = "GREATEST(0, LEAST(9999999, COALESCE({$alias}.best_objectives_hit, 0)))";
+    $finish = "GREATEST(0, LEAST(99999999999, COALESCE({$alias}.first_finish_time_ms, 0)))";
+    $created = "GREATEST(0, LEAST(9999999999999, COALESCE({$alias}.created_at_ms, 0)))";
+
+    return "CONCAT(
+        LPAD(10000000 - $objectives, 8, '0'),
+        LPAD($finish, 11, '0'),
+        LPAD($created, 13, '0')
+    )";
+}
+
+function replays_leaderboard_conditions(string $alias, ?int $is_pr2hub, string $type): string
+{
+    if (!preg_match('/^[a-zA-Z_][a-zA-Z0-9_]*$/', $alias)) {
+        throw new Exception('Invalid table alias for leaderboard conditions.');
+    }
+
+    $conditions = [
+        "{$alias}.first_finish_time_ms IS NOT NULL",
+        "({$alias}.mode <> 'deathmatch' OR {$alias}.best_objectives_hit > 0)",
+    ];
+
+    if ($type === 'team') {
+        $conditions[] = "{$alias}.participants_count > 1";
+    } else {
+        $conditions[] = "{$alias}.participants_count = 1";
+    }
+
+    if ($is_pr2hub !== null) {
+        $conditions[] = "{$alias}.is_pr2hub = :is_pr2hub";
+    }
+
+    return implode(' AND ', $conditions);
+}
+
+function replays_leaderboard_winner_rows(PDO $pdo, ?int $is_pr2hub, string $type): array
+{
+    $type = $type === 'team' ? 'team' : 'solo';
+
+    $outerConditions = replays_leaderboard_conditions('r', $is_pr2hub, $type);
+    $innerConditions = replays_leaderboard_conditions('w', $is_pr2hub, $type);
+    $outerSortKey = replays_leaderboard_sort_key_expr('r');
+    $innerSortKey = replays_leaderboard_sort_key_expr('w');
+
+    $winnerSql = "
+        SELECT w.level_id, w.is_pr2hub, MIN($innerSortKey) AS sort_key
+          FROM replays w
+         WHERE $innerConditions
+         GROUP BY w.level_id, w.is_pr2hub
+    ";
+
+    $sql = "
+        SELECT r.*
+          FROM replays r
+          INNER JOIN ($winnerSql) winners
+                  ON winners.level_id = r.level_id
+                 AND winners.is_pr2hub = r.is_pr2hub
+                 AND $outerSortKey = winners.sort_key
+         WHERE $outerConditions
+    ";
+
+    $stmt = $pdo->prepare($sql);
+    if ($is_pr2hub !== null) {
+        $stmt->bindValue(':is_pr2hub', $is_pr2hub, PDO::PARAM_INT);
+    }
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_OBJ);
+}
+
+function replays_leaderboard_increment_holder(array &$counts, int $userId, string $username): void
+{
+    if ($userId <= 0) {
+        return;
+    }
+    $username = trim((string) $username);
+    if ($username === '') {
+        return;
+    }
+    if (!isset($counts[$userId])) {
+        $counts[$userId] = [
+            'user_id' => $userId,
+            'username' => $username,
+            'count' => 0,
+        ];
+    } elseif ($counts[$userId]['username'] !== $username) {
+        $counts[$userId]['username'] = $username;
+    }
+    $counts[$userId]['count']++;
+}
+
+function replays_leaderboard_champion_counts(PDO $pdo, ?int $is_pr2hub, string $type): array
+{
+    $winnerRows = replays_leaderboard_winner_rows($pdo, $is_pr2hub, $type);
+    if (empty($winnerRows)) {
+        return [
+            'total_levels' => 0,
+            'counts' => [],
+        ];
+    }
+
+    $replayIds = array_map(static fn($row) => $row->id, $winnerRows);
+    $participantsMap = replay_participants_map_by_replay_ids($pdo, $replayIds);
+
+    $counts = [];
+    foreach ($winnerRows as $row) {
+        $participants = $participantsMap[$row->id] ?? [];
+
+        if ($type === 'team') {
+            $seen = [];
+            foreach ($participants as $participant) {
+                $userId = isset($participant->user_id) ? (int) $participant->user_id : 0;
+                if ($userId <= 0 || isset($seen[$userId])) {
+                    continue;
+                }
+                $seen[$userId] = true;
+                replays_leaderboard_increment_holder($counts, $userId, $participant->username ?? '');
+            }
+            continue;
+        }
+
+        $participant = $participants[0] ?? null;
+        if ($participant !== null) {
+            $userId = isset($participant->user_id) ? (int) $participant->user_id : 0;
+            replays_leaderboard_increment_holder($counts, $userId, $participant->username ?? '');
+            continue;
+        }
+
+        $fallbackUserId = isset($row->first_finisher_user_id) ? (int) $row->first_finisher_user_id : 0;
+        if ($fallbackUserId > 0) {
+            replays_leaderboard_increment_holder($counts, $fallbackUserId, 'Unknown');
+        }
+    }
+
+    return [
+        'total_levels' => count($winnerRows),
+        'counts' => array_values($counts),
+    ];
+}
