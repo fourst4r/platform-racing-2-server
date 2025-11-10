@@ -660,8 +660,8 @@ class Game extends Room
             $effective_finish_ms = $local_finish_ms !== null ? $local_finish_ms : $finish_time_ms;
             $player->race_stats->local_finish_ms = $effective_finish_ms;
             $player->race_stats->server_finish_ms = $finish_time_ms;
-            $this->recordReplayFinish($player, $effective_finish_ms, $finish_time_ms, $forceQuit);
             $this->setFinishTime($player, $finish_time, $effective_finish_ms, $finish_time_ms);
+            $this->recordReplayFinish($player, $effective_finish_ms, $finish_time_ms, $forceQuit);
 
             // exp time modifier (propotional before 2 mins)
             $time_mod = $finish_time / 120;
