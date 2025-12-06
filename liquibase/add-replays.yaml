@@ -107,3 +107,15 @@ databaseChangeLog:
             sql: |
               ALTER TABLE replay_results
                 ADD COLUMN IF NOT EXISTS objectives_hit INT NOT NULL DEFAULT 0 AFTER quit;
+  - changeSet:
+      id: add-levels-replays-public-flag
+      author: codex
+      changes:
+        - sql:
+            dbms: mysql
+            splitStatements: false
+            stripComments: true
+            sql: |
+              ALTER TABLE levels
+                ADD COLUMN IF NOT EXISTS replays_public TINYINT(1) NOT NULL DEFAULT 0
+                AFTER bad_hats;

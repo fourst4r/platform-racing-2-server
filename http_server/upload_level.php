@@ -23,6 +23,7 @@ $items = default_post('items');
 $remote_hash = default_post('hash');
 $pass_hash = default_post('passHash', '');
 $has_pass = (int) default_post('hasPass', 0);
+$replays_public = (int) (default_post('replays_public', 0) == 1);
 $game_mode = default_post('gameMode', 'race');
 $cowboy_chance = (int) default_post('cowboyChance', 5);
 $bad_hats = trim(default_post('badHats', ''));
@@ -213,7 +214,22 @@ try {
         // update existing level
         $version = $level->version + 1;
         // phpcs:disable
-        level_update($pdo, $level_id, $title, $note, $live, $time, $ip, $min_level, $song, $version, $hash2, $type, $bad_hats);
+        level_update(
+            $pdo,
+            $level_id,
+            $title,
+            $note,
+            $live,
+            $time,
+            $ip,
+            $min_level,
+            $song,
+            $version,
+            $hash2,
+            $type,
+            $bad_hats,
+            $replays_public
+        );
         // phpcs:enable
 
         // delete from newest if there and not published
@@ -224,7 +240,21 @@ try {
         if ($has_pass === 1) {
             $hash2 = empty($pass_hash) ? null : sha1($pass_hash . $LEVEL_PASS_SALT);
         }
-        level_insert($pdo, $title, $note, $live, $time, $ip, $min_level, $song, $user_id, $hash2, $type, $bad_hats);
+        level_insert(
+            $pdo,
+            $title,
+            $note,
+            $live,
+            $time,
+            $ip,
+            $min_level,
+            $song,
+            $user_id,
+            $hash2,
+            $type,
+            $bad_hats,
+            $replays_public
+        );
         $level = level_select_by_title($pdo, $user_id, $title);
         $level_id = (int) $level->level_id;
         $version = (int) $level->version;

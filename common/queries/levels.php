@@ -94,7 +94,21 @@ function level_increment_play_count($pdo, $level_id, $play_count)
 }
 
 
-function level_insert($pdo, $title, $note, $live, $time, $ip, $min_level, $song, $user_id, $pass, $type, $hats)
+function level_insert(
+    $pdo,
+    $title,
+    $note,
+    $live,
+    $time,
+    $ip,
+    $min_level,
+    $song,
+    $user_id,
+    $pass,
+    $type,
+    $hats,
+    int $replays_public = 0
+)
 {
     db_set_encoding($pdo, 'utf8mb4');
     $stmt = $pdo->prepare('
@@ -109,7 +123,8 @@ function level_insert($pdo, $title, $note, $live, $time, $ip, $min_level, $song,
                user_id = :user_id,
                pass = :pass,
                type = :type,
-               bad_hats = :bad_hats
+               bad_hats = :bad_hats,
+               replays_public = :replays_public
     ');
     $stmt->bindValue(':title', $title, PDO::PARAM_STR);
     $stmt->bindValue(':note', $note, PDO::PARAM_STR);
@@ -122,6 +137,7 @@ function level_insert($pdo, $title, $note, $live, $time, $ip, $min_level, $song,
     $stmt->bindValue(':pass', $pass, PDO::PARAM_STR);
     $stmt->bindValue(':type', $type, PDO::PARAM_STR);
     $stmt->bindValue(':bad_hats', $hats, PDO::PARAM_STR);
+    $stmt->bindValue(':replays_public', $replays_public, PDO::PARAM_INT);
     $result = $stmt->execute();
 
     if ($result === false) {
@@ -320,7 +336,22 @@ function level_update_rating($pdo, $level_id, $rating, $votes)
 }
 
 
-function level_update($pdo, $lid, $title, $note, $live, $time, $ip, $rank, $song, $version, $pass, $type, $hats)
+function level_update(
+    $pdo,
+    $lid,
+    $title,
+    $note,
+    $live,
+    $time,
+    $ip,
+    $rank,
+    $song,
+    $version,
+    $pass,
+    $type,
+    $hats,
+    int $replays_public = 0
+)
 {
     db_set_encoding($pdo, 'utf8mb4');
     $stmt = $pdo->prepare('
@@ -336,6 +367,7 @@ function level_update($pdo, $lid, $title, $note, $live, $time, $ip, $rank, $song
                pass = :pass,
                type = :type,
                bad_hats = :bad_hats,
+               replays_public = :replays_public,
                restricted = 0
          WHERE level_id = :level_id
          LIMIT 1
@@ -352,6 +384,7 @@ function level_update($pdo, $lid, $title, $note, $live, $time, $ip, $rank, $song
     $stmt->bindValue(':pass', $pass, PDO::PARAM_STR);
     $stmt->bindValue(':type', $type, PDO::PARAM_STR);
     $stmt->bindValue(':bad_hats', $hats, PDO::PARAM_STR);
+    $stmt->bindValue(':replays_public', $replays_public, PDO::PARAM_INT);
     $result = $stmt->execute();
 
     if ($result === false) {

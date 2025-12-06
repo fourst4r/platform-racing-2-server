@@ -164,6 +164,10 @@ class CourseBox
 
     private function startGame()
     {
+        if ($this->starting === true) {
+            return;
+        }
+
         $this->starting = true;
         $course_id = substr($this->course_id, 0, strrpos($this->course_id, '_'));
         $game = new Game($course_id, $this->room->getType());

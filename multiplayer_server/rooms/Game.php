@@ -1810,12 +1810,7 @@ class Game extends Room
             return;
         }
 
-        $expectedPlayers = count($this->finish_array);
-        if ($expectedPlayers <= 0) {
-            return;
-        }
-
-        if (count($this->replayFinishPositions) < $expectedPlayers) {
+        if (!$this->replayParticipantsResolved()) {
             return;
         }
 
@@ -1826,6 +1821,22 @@ class Game extends Room
         }
 
         $this->finalizeReplay();
+    }
+
+    private function replayParticipantsResolved(): bool
+    {
+        $hasParticipants = false;
+        foreach ($this->finish_array as $raceStats) {
+            if (!is_object($raceStats)) {
+                continue;
+            }
+            $hasParticipants = true;
+            if (!isset($raceStats->finish_time)) {
+                return false;
+            }
+        }
+
+        return $hasParticipants;
     }
 
 

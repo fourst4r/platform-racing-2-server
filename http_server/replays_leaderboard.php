@@ -36,9 +36,39 @@ try {
     rate_limit("replay-leader-$ip", 10, 5);
 
     $pdo = pdo_connect();
+    $viewerId = 0;
+    try {
+        $tokenUserId = token_login($pdo, false, true, 'n');
+        if ($tokenUserId !== false) {
+            $viewerId = (int) $tokenUserId;
+        }
+    } catch (Exception $ignored) {
+        $viewerId = 0;
+    }
+
+    $visibility = replay_level_visibility($pdo, $levelId, $isPr2hub);
+    $restrictReplays = $visibility['restricted'];
+    $levelCreatorId = $visibility['creator_id'];
+    $needsVisibilityCheck = $restrictReplays && $viewerId !== $levelCreatorId;
+
     $dual = replays_leaderboard_both($pdo, $levelId, $start, $count, $isPr2hub);
 
-    $formatRows = function ($rows) use ($pdo, $includeParticipants) {
+    $allRows = array_merge($dual['solo'], $dual['team']);
+    $needParticipantsLookup = $includeParticipants || $needsVisibilityCheck;
+    $participantsLookup = [];
+    if ($needParticipantsLookup && !empty($allRows)) {
+        $replayIds = array_values(array_unique(array_map(static fn($row) => $row->id, $allRows)));
+        $participantsLookup = replay_participants_map_by_replay_ids($pdo, $replayIds);
+    }
+
+    $formatRows = function ($rows) use (
+        $pdo,
+        $includeParticipants,
+        $needsVisibilityCheck,
+        $viewerId,
+        $levelCreatorId,
+        &$participantsLookup
+    ) {
         $list = [];
         foreach ($rows as $row) {
             $entry = [
@@ -57,8 +87,15 @@ try {
                 'best_objectives_hit' => isset($row->best_objectives_hit) ? (int) $row->best_objectives_hit : 0,
             ];
 
+            $participants = [];
+            if ($includeParticipants || $needsVisibilityCheck) {
+                if (!array_key_exists($row->id, $participantsLookup)) {
+                    $participantsLookup[$row->id] = replay_participants_select($pdo, $row->id);
+                }
+                $participants = $participantsLookup[$row->id] ?? [];
+            }
+
             if ($includeParticipants) {
-                $participants = replay_participants_select($pdo, $row->id);
                 $entry['participants'] = array_map(static function ($participant) {
                     return [
                         'user_id' => (int) $participant->user_id,
@@ -66,6 +103,16 @@ try {
                     ];
                 }, $participants);
             }
+
+            $canWatch = true;
+            if ($needsVisibilityCheck) {
+                $canWatch = replay_participants_contains_user($participants, $viewerId);
+            }
+
+            if (!$canWatch) {
+                $entry['id'] = null;
+            }
+            $entry['can_watch'] = $canWatch;
 
             $list[] = $entry;
         }

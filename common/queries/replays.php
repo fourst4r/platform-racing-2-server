@@ -100,6 +100,50 @@ function replay_participants_map_by_replay_ids(PDO $pdo, array $replay_ids): arr
     return $map;
 }
 
+function replay_participants_contains_user(array $participants, int $user_id): bool
+{
+    if ($user_id <= 0) {
+        return false;
+    }
+
+    foreach ($participants as $participant) {
+        if ((int) ($participant->user_id ?? 0) === $user_id) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function replay_level_visibility(PDO $pdo, int $level_id, int $is_pr2hub): array
+{
+    static $cache = [];
+    $key = $is_pr2hub . ':' . $level_id;
+    if (isset($cache[$key])) {
+        return $cache[$key];
+    }
+
+    $visibility = [
+        'restricted' => false,
+        'creator_id' => 0,
+    ];
+
+    if ($is_pr2hub === 0 && $level_id > 0) {
+        if (!function_exists('level_select')) {
+            require_once QUERIES_DIR . '/levels.php';
+        }
+        $level = level_select($pdo, $level_id, true);
+        if ($level !== false) {
+            $visibility['creator_id'] = (int) $level->user_id;
+            $flag = isset($level->replays_public) ? (int) $level->replays_public : 0;
+            $visibility['restricted'] = $flag !== 1;
+        }
+    }
+
+    $cache[$key] = $visibility;
+    return $visibility;
+}
+
 function build_solo_participant_key(array $participants): ?string
 {
     if (empty($participants)) {

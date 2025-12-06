@@ -21,6 +21,23 @@ try {
     $pdo = pdo_connect();
     $row = replay_select_by_id($pdo, $id);
 
+    $visibility = replay_level_visibility($pdo, (int) $row->level_id, (int) $row->is_pr2hub);
+    if ($visibility['restricted']) {
+        $viewerId = 0;
+        $tokenUserId = token_login($pdo, false, true, 'n');
+        if ($tokenUserId === false) {
+            throw new Exception('You must be signed in to download this replay.');
+        }
+        $viewerId = (int) $tokenUserId;
+
+        if ($viewerId !== $visibility['creator_id']) {
+            $participants = replay_participants_select($pdo, $row->id);
+            if (!replay_participants_contains_user($participants, $viewerId)) {
+                throw new Exception('You may only download your own replay for this level.');
+            }
+        }
+    }
+
     if (!isset($row->file_path) || !is_file($row->file_path)) {
         throw new Exception('Replay file is unavailable.');
     }
