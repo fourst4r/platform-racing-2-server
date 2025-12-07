@@ -252,17 +252,6 @@ class ReplayRecorder
             require_once QUERIES_DIR . '/replays.php';
         }
 
-        $first = null;
-        foreach ($this->results as $row) {
-            if (($row['quit'] ?? 0) === 0 && $row['finish_time_ms'] !== null) {
-                $first = $row;
-                break;
-            }
-        }
-        if ($first === null) {
-            $first = $this->results[0] ?? null;
-        }
-
         $bestObjectivesHit = 0;
         foreach ($this->results as $row) {
             if (($row['quit'] ?? 0) !== 0) {
@@ -270,6 +259,22 @@ class ReplayRecorder
             }
             $bestObjectivesHit = max($bestObjectivesHit, (int) ($row['objectives_hit'] ?? 0));
         }
+        $first = null;
+        foreach ($this->results as $row) {
+            if (($row['quit'] ?? 0) !== 0 || $row['finish_time_ms'] === null) {
+                continue;
+            }
+            if ($bestObjectivesHit > 0 && (int) ($row['objectives_hit'] ?? 0) !== $bestObjectivesHit) {
+                continue;
+            }
+            if ($first === null || (int) $row['finish_time_ms'] < (int) $first['finish_time_ms']) {
+                $first = $row;
+            }
+        }
+        if ($first === null) {
+            $first = $this->results[0] ?? null;
+        }
+
         $firstObjectivesHit = $first !== null ? (int) ($first['objectives_hit'] ?? 0) : 0;
 
         $mode = (string) ($this->meta['mode'] ?? 'race');
