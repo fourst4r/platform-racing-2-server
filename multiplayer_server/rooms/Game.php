@@ -433,11 +433,17 @@ class Game extends Room
             }
 
             // boot people with the wrong level hash
+            /*
+                Actually don't. Computing MD5 is VERY slow in AS3,
+                (800ms for Basilisk) so we won't make the client do it
+                for essentially nothing here.
+
             foreach ($this->player_array as $player) {
                 if ($this->hash !== $player->race_stats->level_hash) {
                     $this->quitRace($player);
                 }
             }
+            */
 
             // jigg hat
             if ($this->course_id == self::LEVEL_BUTO) {
