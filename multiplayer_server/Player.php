@@ -730,12 +730,11 @@ class Player
     public function becomeGuest()
     {
         $this->guest = true;
-        $discord_link = urlify('https://jiggmin2.com/discord', 'our Discord server');
-        $this->write("message`Welcome to Platform Racing 2!<br><br>".
-            "You're a guest, which means you'll have limited privileges. ".
-            "To gain full functionality, log out and create your own account. ".
-            "You can join $discord_link for assistance. ".
-            "<br><br>Thanks for playing, I hope you enjoy!<br>-Jiggmin");
+        $discord_link = urlify('https://discord.gg/h4HpbfAPBw', 'our Discord server');
+        $this->write("message`Welcome to Platform Racing 2 (8P version)!<br><br>".
+            "This is a modded version of PR2 with new blocks and many added features.".
+            "Join $discord_link to find other players to play with. ".
+            "<br><br>Enjoy!<br>-oxy");
     }
 
 
