@@ -100,6 +100,9 @@ try {
                     return [
                         'user_id' => (int) $participant->user_id,
                         'username' => $participant->username,
+                        'speed' => $participant->speed !== null ? (int) $participant->speed : null,
+                        'accel' => $participant->accel !== null ? (int) $participant->accel : null,
+                        'jump' => $participant->jump !== null ? (int) $participant->jump : null,
                     ];
                 }, $participants);
             }

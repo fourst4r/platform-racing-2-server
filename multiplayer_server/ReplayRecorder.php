@@ -34,6 +34,8 @@ class ReplayRecorder
     private $compressionFilter = null;
     private bool $compressStream = true;
     private bool $durationLimitReached = false;
+    private bool $headerWritten = false;
+    private bool $headerDirty = false;
 
     public static function nowMs(): int
     {
@@ -105,16 +107,25 @@ class ReplayRecorder
         $this->meta[$key] = $value;
     }
 
-    public function addParticipant(int $userId, string $username, int $speed, int $acceleration, int $jumping): void
+    public function addParticipant(
+        int $userId,
+        string $username,
+        ?int $speed = null,
+        ?int $accel = null,
+        ?int $jump = null
+    ): void
     {
         $this->meta['participants'][] = [
             'user_id' => $userId,
             'username' => $username,
             'speed' => $speed,
-            'acceleration' => $acceleration,
-            'jumping' => $jumping,
+            'accel' => $accel,
+            'jump' => $jump,
         ];
         $this->meta['participants_count'] = count($this->meta['participants']);
+        if ($this->headerWritten) {
+            $this->headerDirty = true;
+        }
     }
 
     public function setLevelData(string $levelData, string $format = 'pr2-level-txt', string $compression = 'zlib'): void
@@ -229,6 +240,17 @@ class ReplayRecorder
 
         $this->closeRecordingStream();
 
+        if ($this->headerDirty) {
+            try {
+                $this->rewriteHeaderFile($this->tmpPath);
+                $this->headerDirty = false;
+            } catch (\Exception $e) {
+                if (\function_exists('output')) {
+                    \output('ReplayRecorder header rewrite failed: ' . $e->getMessage());
+                }
+            }
+        }
+
         if (is_file($this->tmpPath)) {
             if (@rename($this->tmpPath, $this->path) === false) {
                 $contents = @file_get_contents($this->tmpPath);
@@ -306,7 +328,16 @@ class ReplayRecorder
         foreach ($this->meta['participants'] as $participant) {
             $uid = (int) ($participant['user_id'] ?? 0);
             $uname = (string) ($participant['username'] ?? '');
-            replay_participant_insert($pdo, $replayId, $uid, $uname);
+            $speed = array_key_exists('speed', $participant)
+                ? ($participant['speed'] === null ? null : (int) $participant['speed'])
+                : null;
+            $accel = array_key_exists('accel', $participant)
+                ? ($participant['accel'] === null ? null : (int) $participant['accel'])
+                : null;
+            $jump = array_key_exists('jump', $participant)
+                ? ($participant['jump'] === null ? null : (int) $participant['jump'])
+                : null;
+            replay_participant_insert($pdo, $replayId, $uid, $uname, $speed, $accel, $jump);
         }
 
         foreach ($this->results as $row) {
@@ -344,6 +375,13 @@ class ReplayRecorder
 
     private function writeHeader(): void
     {
+        $this->writeRaw($this->buildHeaderBytes());
+        $this->headerWritten = true;
+        $this->headerDirty = false;
+    }
+
+    private function buildHeader(): array
+    {
         $header = [
             'replay_id' => $this->meta['replay_id'],
             'level_id' => (int) ($this->meta['level_id'] ?? 0),
@@ -361,12 +399,100 @@ class ReplayRecorder
         if (isset($this->meta['seed'])) {
             $header['seed'] = (int) $this->meta['seed'];
         }
-        $json = json_encode($header, JSON_UNESCAPED_SLASHES);
+        return $header;
+    }
+
+    private function buildHeaderBytes(): string
+    {
+        $json = json_encode($this->buildHeader(), JSON_UNESCAPED_SLASHES);
         if ($json === false) {
             throw new Exception('ReplayRecorder: failed to encode header.');
         }
-        $payload = self::MAGIC . self::VERSION . chr($this->flags & 0xFF) . pack('N', strlen($json)) . $json;
-        $this->writeRaw($payload);
+        return self::MAGIC . self::VERSION . chr($this->flags & 0xFF) . pack('N', strlen($json)) . $json;
+    }
+
+    private function rewriteHeaderFile(string $path): void
+    {
+        if (!is_file($path)) {
+            return;
+        }
+
+        $in = @fopen($path, 'rb');
+        if ($in === false) {
+            throw new Exception('ReplayRecorder: unable to open replay for header rewrite.');
+        }
+
+        $prefix = @fread($in, 10);
+        if ($prefix === false || strlen($prefix) < 10) {
+            fclose($in);
+            throw new Exception('ReplayRecorder: replay header is incomplete.');
+        }
+
+        $magic = substr($prefix, 0, 4);
+        if ($magic !== self::MAGIC) {
+            fclose($in);
+            throw new Exception('ReplayRecorder: replay header magic mismatch.');
+        }
+
+        $lenData = substr($prefix, 6, 4);
+        $unpacked = unpack('Nlen', $lenData);
+        $oldHeaderLen = isset($unpacked['len']) ? (int) $unpacked['len'] : 0;
+        if ($oldHeaderLen < 0) {
+            fclose($in);
+            throw new Exception('ReplayRecorder: replay header length invalid.');
+        }
+
+        if (@fseek($in, 10 + $oldHeaderLen) !== 0) {
+            fclose($in);
+            throw new Exception('ReplayRecorder: failed to seek replay stream.');
+        }
+
+        $tmpPath = $path . '.hdr';
+        $out = @fopen($tmpPath, 'wb');
+        if ($out === false) {
+            fclose($in);
+            throw new Exception('ReplayRecorder: unable to open replay temp for header rewrite.');
+        }
+
+        $headerBytes = $this->buildHeaderBytes();
+        $written = fwrite($out, $headerBytes);
+        if ($written === false || $written !== strlen($headerBytes)) {
+            fclose($in);
+            fclose($out);
+            @unlink($tmpPath);
+            throw new Exception('ReplayRecorder: failed to write replay header.');
+        }
+
+        while (!feof($in)) {
+            $chunk = fread($in, 1024 * 1024);
+            if ($chunk === false) {
+                fclose($in);
+                fclose($out);
+                @unlink($tmpPath);
+                throw new Exception('ReplayRecorder: failed to read replay stream.');
+            }
+            if ($chunk === '') {
+                break;
+            }
+            $wrote = fwrite($out, $chunk);
+            if ($wrote === false) {
+                fclose($in);
+                fclose($out);
+                @unlink($tmpPath);
+                throw new Exception('ReplayRecorder: failed to write replay stream.');
+            }
+        }
+
+        fclose($in);
+        fclose($out);
+
+        if (@rename($tmpPath, $path) === false) {
+            if (!@copy($tmpPath, $path)) {
+                @unlink($tmpPath);
+                throw new Exception('ReplayRecorder: failed to replace replay after header rewrite.');
+            }
+            @unlink($tmpPath);
+        }
     }
 
     private function shouldSkipPacket(string $packet): bool
