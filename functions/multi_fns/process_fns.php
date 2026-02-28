@@ -249,7 +249,7 @@ function process_register_login($server_socket, $data)
                 } elseif ($player->group <= 0) {
                     $player->becomeGuest();
                 } elseif ($login_obj->user->returning) {
-                    $player->welcomeBackMessage();
+                    // $player->welcomeBackMessage();
                 }
 
                 $socket->write("loginSuccessful`$group`$player->name");
