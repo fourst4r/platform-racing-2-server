@@ -479,7 +479,10 @@ function to_part_name($type, $id)
         47 => 'Blobfish',
         48 => 'Turkey',
         49 => 'Dog',
-        50 => 'Gladiator'
+        50 => 'Gladiator',
+        51 => 'Hot Dog',
+        52 => 'Baby',
+        53 => 'Skeleton'
     ];
 
     // bodies
@@ -530,7 +533,10 @@ function to_part_name($type, $id)
         46 => 'Snowman',
         48 => 'Turkey',
         49 => 'Dog',
-        50 => 'Gladiator'
+        50 => 'Gladiator',
+        51 => 'Hot Dog',
+        52 => 'Baby',
+        53 => 'Skeleton'
     ];
 
     // feet
@@ -579,7 +585,9 @@ function to_part_name($type, $id)
         46 => 'Snowman',
         48 => 'Turkey',
         49 => 'Dog',
-        50 => 'Gladiator'
+        50 => 'Gladiator',
+        52 => 'Baby',
+        53 => 'Skeleton'
     ];
 
     $lookup = [
@@ -629,7 +637,7 @@ function validate_prize($type, $id, $incl_exp = true)
     // check for a valid head id
     if ($type === 'head' || $type === 'ehead') {
         $type = 'head';
-        if ($id < 1 || $id > 50) {
+        if ($id < 1 || $id > 53) {
             throw new Exception("Invalid head ID ($id) specified.");
         }
     }
@@ -637,7 +645,7 @@ function validate_prize($type, $id, $incl_exp = true)
     // check for a valid body id
     if ($type === 'body' || $type === 'ebody') {
         $type = 'body';
-        if ($id < 1 || $id > 50 || $id === 33 || $id === 44 || $id === 47) {
+        if ($id < 1 || $id > 53 || $id === 33 || $id === 44 || $id === 47) {
             throw new Exception("Invalid body ID ($id) specified.");
         }
     }
@@ -645,7 +653,7 @@ function validate_prize($type, $id, $incl_exp = true)
     // check for a valid feet id
     if ($type === 'feet' || $type === 'efeet') {
         $type = 'feet';
-        if ($id < 1 || $id > 50 || ($id >= 31 && $id <= 33) || $id === 44 || $id === 47) {
+        if ($id < 1 || $id > 53 || ($id >= 31 && $id <= 33) || $id === 44 || $id === 47 || $id === 51) {
             throw new Exception("Invalid feet ID ($id) specified.");
         }
     }

@@ -164,6 +164,9 @@ class Heads
     const TURKEY = 48;
     const DOG = 49;
     const GLADIATOR = 50;
+    const HOT_DOG = 51;
+    const BABY = 52;
+    const SKELETON = 53;
 }
 
 
@@ -216,6 +219,9 @@ class Bodies
     const TURKEY = 48;
     const DOG = 49;
     const GLADIATOR = 50;
+    const HOT_DOG = 51;
+    const BABY = 52;
+    const SKELETON = 53;
 }
 
 
@@ -266,4 +272,6 @@ class Feet
     const TURKEY = 48;
     const DOG = 49;
     const GLADIATOR = 50;
+    const BABY = 52;
+    const SKELETON = 53;
 }

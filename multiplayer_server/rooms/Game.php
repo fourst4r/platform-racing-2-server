@@ -28,6 +28,8 @@ class Game extends Room
     private $prize_cancelled = false;
     private $prizer_prize = false;
     private $campaign;
+    private $prize_from_level = false;
+    private $level_prize_solo_only = false;
 
     private $mode = self::MODE_RACE;
     private $hash;
@@ -176,6 +178,8 @@ class Game extends Room
     private function determinePrize()
     {
         $player_count = count($this->player_array);
+        $this->prize_from_level = false;
+        $this->level_prize_solo_only = false;
 
         global $campaign_array;
         if (isset($campaign_array[$this->course_id])) {
@@ -194,19 +198,23 @@ class Game extends Room
         global $level_prize_array;
         if (isset($level_prize_array[$this->course_id])) {
             $lp = $level_prize_array[$this->course_id];
-            if ($lp->type === 'set' || $lp->type === 'eSet') {
-                $part_types = $lp->type === 'eSet' ? ['eHead', 'eBody', 'eFeet'] : ['head', 'body', 'feet'];
-                $set_ids = explode(',', $lp->id);
-                $set_prizes = [];
-                foreach ($set_ids as $it => $id) {
-                    $set_prize = Prizes::find($part_types[$it], $id);
-                    if (!is_null($set_prize)) {
-                        array_push($set_prizes, $set_prize);
+            $this->level_prize_solo_only = stripos((string) $lp->info, 'solo') !== false;
+            if (!$this->level_prize_solo_only || $player_count === 1) {
+                if ($lp->type === 'set' || $lp->type === 'eSet') {
+                    $part_types = $lp->type === 'eSet' ? ['eHead', 'eBody', 'eFeet'] : ['head', 'body', 'feet'];
+                    $set_ids = explode(',', $lp->id);
+                    $set_prizes = [];
+                    foreach ($set_ids as $it => $id) {
+                        $set_prize = Prizes::find($part_types[$it], $id);
+                        if (!is_null($set_prize)) {
+                            array_push($set_prizes, $set_prize);
+                        }
                     }
+                    $this->prize = $set_prizes[array_rand($set_prizes)];
+                } else {
+                    $this->prize = Prizes::find($lp->type, $lp->id);
                 }
-                $this->prize = $set_prizes[array_rand($set_prizes)];
-            } else {
-                $this->prize = Prizes::find($lp->type, $lp->id);
+                $this->prize_from_level = true;
             }
         }
 
@@ -219,11 +227,13 @@ class Game extends Room
                 Prizes::$EPIC_SIR_FEET
             ];
             $this->prize = $sir_prizes[array_rand($sir_prizes)];
+            $this->prize_from_level = false;
         }
 
         // Clint the Cowboy; Awards: Epic Cowboy Hat
         if ($this->isPlayerHere(self::PLAYER_CLINT)) {
             $this->prize = Prizes::$EPIC_COWBOY_HAT;
+            $this->prize_from_level = false;
         }
 
         // random part/upgrade prizes

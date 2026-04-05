@@ -76,7 +76,10 @@ echo '<pre>Platform Racing 2 Part Codes
 48 - Turkey
 49 - Dog
 50 - Gladiator
-51+ - *BLANK*
+51 - Hot Dog
+52 - Baby
+53 - Skeleton
+54+ - *BLANK*
 
 -- Bodies --
 1 - Classic
@@ -129,7 +132,10 @@ echo '<pre>Platform Racing 2 Part Codes
 48 - Turkey
 49 - Dog
 50 - Gladiator
-51+ - *BLANK*
+51 - Hot Dog
+52 - Baby
+53 - Skeleton
+54+ - *BLANK*
 
 -- Feet --
 1 - Classic
@@ -182,7 +188,10 @@ echo '<pre>Platform Racing 2 Part Codes
 48 - Turkey
 49 - Dog
 50 - Gladiator
-51+ - *BLANK*
+51 - *BLANK*
+52 - Baby
+53 - Skeleton
+54+ - *BLANK*
 
 -- Full Sets --
 (Key: Head ID, Body ID, Feet ID)
@@ -223,11 +232,14 @@ Snowman: 46
 Turkey: 48
 Dog: 49
 Gladiator: 50
+Hot Dog: 51
+Baby: 52
+Skeleton: 53
 
 -- Blank IDs --
 Hats: 17+
-Heads: 51+
-Bodies: 33, 44, 47, 51+
-Feet: 31-33, 44, 47, 51+</pre>';
+Heads: 54+
+Bodies: 33, 44, 47, 54+
+Feet: 31-33, 44, 47, 51, 54+</pre>';
 
 output_footer();

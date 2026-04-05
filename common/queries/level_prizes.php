@@ -4,7 +4,7 @@
 function level_prizes_select($pdo)
 {
     $stmt = $pdo->query('
-        SELECT level_id, type, id
+        SELECT level_id, info, type, id
         FROM level_prizes
     ');
 
@@ -20,6 +20,7 @@ function level_prize_select($pdo, $level_id)
 {
     $stmt = $pdo->prepare('
         SELECT
+          info,
           type,
           id
         FROM

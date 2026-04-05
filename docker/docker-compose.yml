@@ -22,8 +22,8 @@ services:
       dockerfile: docker/multi_server.dockerfile
     ports:
       - "9160:9160"
-    depends_on:
-      - liquibase
+    # depends_on:
+    #   - liquibase
     restart: always
     volumes:
       - shared-data:/pr2/shared

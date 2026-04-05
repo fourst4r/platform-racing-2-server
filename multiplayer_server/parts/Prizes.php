@@ -172,6 +172,9 @@ class Prizes
     public static $TURKEY_HEAD;
     public static $DOG_HEAD;
     public static $GLADIATOR_HEAD;
+    public static $HOT_DOG_HEAD;
+    public static $BABY_HEAD;
+    public static $SKELETON_HEAD;
 
     // epic heads
     public static $EPIC_CLASSIC_HEAD;
@@ -224,6 +227,9 @@ class Prizes
     public static $EPIC_TURKEY_HEAD;
     public static $EPIC_DOG_HEAD;
     public static $EPIC_GLADIATOR_HEAD;
+    public static $EPIC_HOT_DOG_HEAD;
+    public static $EPIC_BABY_HEAD;
+    public static $EPIC_SKELETON_HEAD;
 
 
     // bodies
@@ -274,6 +280,9 @@ class Prizes
     public static $TURKEY_BODY;
     public static $DOG_BODY;
     public static $GLADIATOR_BODY;
+    public static $HOT_DOG_BODY;
+    public static $BABY_BODY;
+    public static $SKELETON_BODY;
 
     // epic bodies
     public static $EPIC_CLASSIC_BODY;
@@ -323,6 +332,9 @@ class Prizes
     public static $EPIC_TURKEY_BODY;
     public static $EPIC_DOG_BODY;
     public static $EPIC_GLADIATOR_BODY;
+    public static $EPIC_HOT_DOG_BODY;
+    public static $EPIC_BABY_BODY;
+    public static $EPIC_SKELETON_BODY;
 
 
     // feet
@@ -371,6 +383,8 @@ class Prizes
     public static $TURKEY_FEET;
     public static $DOG_FEET;
     public static $GLADIATOR_FEET;
+    public static $BABY_FEET;
+    public static $SKELETON_FEET;
 
     // epic feet
     public static $EPIC_CLASSIC_FEET;
@@ -418,6 +432,8 @@ class Prizes
     public static $EPIC_TURKEY_FEET;
     public static $EPIC_DOG_FEET;
     public static $EPIC_GLADIATOR_FEET;
+    public static $EPIC_BABY_FEET;
+    public static $EPIC_SKELETON_FEET;
 
 
     public static function init()
@@ -513,6 +529,9 @@ class Prizes
         self::$TURKEY_HEAD = new Prize(self::TYPE_HEAD, Heads::TURKEY, 'Turkey Head');
         self::$DOG_HEAD = new Prize(self::TYPE_HEAD, Heads::DOG, 'Dog Head');
         self::$GLADIATOR_HEAD = new Prize(self::TYPE_HEAD, Heads::GLADIATOR, 'Gladiator Head');
+        self::$HOT_DOG_HEAD = new Prize(self::TYPE_HEAD, Heads::HOT_DOG, 'Hot Dog Head');
+        self::$BABY_HEAD = new Prize(self::TYPE_HEAD, Heads::BABY, 'Baby Head');
+        self::$SKELETON_HEAD = new Prize(self::TYPE_HEAD, Heads::SKELETON, 'Skeleton Head');
 
         // epic heads
         self::$EPIC_CLASSIC_HEAD = new Prize(self::TYPE_EPIC_HEAD, Heads::CLASSIC, 'Epic Upgrade');
@@ -565,6 +584,9 @@ class Prizes
         self::$EPIC_TURKEY_HEAD = new Prize(self::TYPE_EPIC_HEAD, Heads::TURKEY, 'Epic Upgrade');
         self::$EPIC_DOG_HEAD = new Prize(self::TYPE_EPIC_HEAD, Heads::DOG, 'Epic Upgrade');
         self::$EPIC_GLADIATOR_HEAD = new Prize(self::TYPE_EPIC_HEAD, Heads::GLADIATOR, 'Epic Upgrade');
+        self::$EPIC_HOT_DOG_HEAD = new Prize(self::TYPE_EPIC_HEAD, Heads::HOT_DOG, 'Epic Upgrade');
+        self::$EPIC_BABY_HEAD = new Prize(self::TYPE_EPIC_HEAD, Heads::BABY, 'Epic Upgrade');
+        self::$EPIC_SKELETON_HEAD = new Prize(self::TYPE_EPIC_HEAD, Heads::SKELETON, 'Epic Upgrade');
 
 
         // bodies
@@ -615,6 +637,9 @@ class Prizes
         self::$TURKEY_BODY = new Prize(self::TYPE_BODY, Bodies::TURKEY, 'Turkey Body');
         self::$DOG_BODY = new Prize(self::TYPE_BODY, Bodies::DOG, 'Dog Body');
         self::$GLADIATOR_BODY = new Prize(self::TYPE_BODY, Bodies::GLADIATOR, 'Gladiator Body');
+        self::$HOT_DOG_BODY = new Prize(self::TYPE_BODY, Bodies::HOT_DOG, 'Hot Dog Body');
+        self::$BABY_BODY = new Prize(self::TYPE_BODY, Bodies::BABY, 'Baby Body');
+        self::$SKELETON_BODY = new Prize(self::TYPE_BODY, Bodies::SKELETON, 'Skeleton Body');
 
         // epic bodies
         self::$EPIC_CLASSIC_BODY = new Prize(self::TYPE_EPIC_BODY, Bodies::CLASSIC, 'Epic Upgrade');
@@ -664,6 +689,9 @@ class Prizes
         self::$EPIC_TURKEY_BODY = new Prize(self::TYPE_EPIC_BODY, Bodies::TURKEY, 'Epic Upgrade');
         self::$EPIC_DOG_BODY = new Prize(self::TYPE_EPIC_BODY, Bodies::DOG, 'Epic Upgrade');
         self::$EPIC_GLADIATOR_BODY = new Prize(self::TYPE_EPIC_BODY, Bodies::GLADIATOR, 'Epic Upgrade');
+        self::$EPIC_HOT_DOG_BODY = new Prize(self::TYPE_EPIC_BODY, Bodies::HOT_DOG, 'Epic Upgrade');
+        self::$EPIC_BABY_BODY = new Prize(self::TYPE_EPIC_BODY, Bodies::BABY, 'Epic Upgrade');
+        self::$EPIC_SKELETON_BODY = new Prize(self::TYPE_EPIC_BODY, Bodies::SKELETON, 'Epic Upgrade');
 
 
         // feet
@@ -712,6 +740,8 @@ class Prizes
         self::$TURKEY_FEET = new Prize(self::TYPE_FEET, Feet::TURKEY, 'Turkey Feet');
         self::$DOG_FEET = new Prize(self::TYPE_FEET, Feet::DOG, 'Dog Feet');
         self::$GLADIATOR_FEET = new Prize(self::TYPE_FEET, Feet::GLADIATOR, 'Gladiator Feet');
+        self::$BABY_FEET = new Prize(self::TYPE_FEET, Feet::BABY, 'Baby Feet');
+        self::$SKELETON_FEET = new Prize(self::TYPE_FEET, Feet::SKELETON, 'Skeleton Feet');
 
         // epic feet
         self::$EPIC_CLASSIC_FEET = new Prize(self::TYPE_EPIC_FEET, Feet::CLASSIC, 'Epic Upgrade');
@@ -759,6 +789,8 @@ class Prizes
         self::$EPIC_TURKEY_FEET = new Prize(self::TYPE_EPIC_FEET, Feet::TURKEY, 'Epic Upgrade');
         self::$EPIC_DOG_FEET = new Prize(self::TYPE_EPIC_FEET, Feet::DOG, 'Epic Upgrade');
         self::$EPIC_GLADIATOR_FEET = new Prize(self::TYPE_EPIC_FEET, Feet::GLADIATOR, 'Epic Upgrade');
+        self::$EPIC_BABY_FEET = new Prize(self::TYPE_EPIC_FEET, Feet::BABY, 'Epic Upgrade');
+        self::$EPIC_SKELETON_FEET = new Prize(self::TYPE_EPIC_FEET, Feet::SKELETON, 'Epic Upgrade');
     }
 
 
