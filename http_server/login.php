@@ -283,7 +283,7 @@ try {
     $user->returning = false;
     if ($user->time < time() - 5184000) {
         $user->returning = true;
-        message_send_welcome_back($pdo, $user_name, $user_id);
+        // message_send_welcome_back($pdo, $user_name, $user_id);
     }
 
     // send this info to the socket server

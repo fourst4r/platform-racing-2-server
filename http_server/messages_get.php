@@ -38,7 +38,7 @@ try {
             $message->message = "Hi there! It looks like you're a guest. "
                 ."You won't be able to send or receive private messages.\n\n"
                 ."To use the private messaging system, log out and create your own account.\n\n"
-                ."Thanks for playing!\n- Jiggmin";
+                ."Thanks for playing!\n- Monke";
             $message->time = time();
             $message->user_id = 1;
             $message->name = 'Jiggmin';
