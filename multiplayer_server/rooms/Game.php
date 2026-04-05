@@ -318,6 +318,18 @@ class Game extends Room
     }
 
 
+    private function getEpicPrizeType($type)
+    {
+        $map = [
+            'hat' => 'eHat',
+            'head' => 'eHead',
+            'body' => 'eBody',
+            'feet' => 'eFeet'
+        ];
+        return isset($map[$type]) ? $map[$type] : null;
+    }
+
+
     public function prizerSetPrize($user_id, $type, $id)
     {
         $this->prizer_prize = true;
@@ -726,10 +738,35 @@ class Game extends Room
             // award prize to player
             if (isset($prize) && $true_fin) {
                 $autoset = $prize->getType() == 'hat';
-                $result = $player->gainPart($prize->getType(), $prize->getId(), $autoset);
+                $result = false;
+                $awarded_prizes = [];
+
+                $part_added = $player->gainPart($prize->getType(), $prize->getId(), $autoset);
+                if ($part_added === true) {
+                    $result = true;
+                    $awarded_prizes[] = $prize;
+                }
+
+                // Level prizes can optionally include the matching epic upgrade.
+                if ($this->prize_from_level) {
+                    $epic_type = $this->getEpicPrizeType($prize->getType());
+                    if (!is_null($epic_type)) {
+                        $epic_added = $player->gainPart($epic_type, $prize->getId());
+                        if ($epic_added === true) {
+                            $result = true;
+                            $epic_prize = Prizes::find($epic_type, $prize->getId());
+                            if (!is_null($epic_prize)) {
+                                $awarded_prizes[] = $epic_prize;
+                            }
+                        }
+                    }
+                }
+
                 if ($result == true) {
                     // prize popup
-                    $player->write('winPrize`' . $prize->toStr());
+                    foreach ($awarded_prizes as $awarded_prize) {
+                        $player->write('winPrize`' . $awarded_prize->toStr());
+                    }
 
                     // determine if a special account
                     $spec_acc = null;

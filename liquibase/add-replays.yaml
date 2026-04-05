@@ -108,6 +108,31 @@ databaseChangeLog:
               ALTER TABLE replay_results
                 ADD COLUMN IF NOT EXISTS objectives_hit INT NOT NULL DEFAULT 0 AFTER quit;
   - changeSet:
+      id: add-replay-participant-stats
+      author: codex
+      changes:
+        - sql:
+            dbms: mysql
+            splitStatements: false
+            stripComments: true
+            sql: |
+              ALTER TABLE replay_participants
+                ADD COLUMN IF NOT EXISTS speed INT NULL AFTER username;
+        - sql:
+            dbms: mysql
+            splitStatements: false
+            stripComments: true
+            sql: |
+              ALTER TABLE replay_participants
+                ADD COLUMN IF NOT EXISTS acceleration INT NULL AFTER speed;
+        - sql:
+            dbms: mysql
+            splitStatements: false
+            stripComments: true
+            sql: |
+              ALTER TABLE replay_participants
+                ADD COLUMN IF NOT EXISTS jumping INT NULL AFTER acceleration;
+  - changeSet:
       id: add-levels-replays-public-flag
       author: codex
       changes:
