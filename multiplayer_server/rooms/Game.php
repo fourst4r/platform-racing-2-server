@@ -630,6 +630,11 @@ class Game extends Room
 
     public function remoteFinishRace($player, $data)
     {
+        // Ignore late finish packets after the player has already been removed from the race.
+        if (!isset($player->race_stats)) {
+            return;
+        }
+
         if ($this->isStillPlaying($player->temp_id)) {
             $local_finish_ms = null;
             $treatedAsQuit = false;
@@ -668,6 +673,10 @@ class Game extends Room
 
     public function finishRace($player, $local_finish_ms = null, bool $forceQuit = false)
     {
+        if (!isset($player->race_stats)) {
+            return;
+        }
+
         if ($player->race_stats->finished_race === false
             && !isset($player->race_stats->finish_time)
             && $player->race_stats->drawing === false
@@ -953,6 +962,7 @@ class Game extends Room
                     $player->socket->write("message`Botting is a no-no. :(");
                 }
                 $player->remove();
+                return;
             }
 
             // log/increment exp and maybe save
@@ -964,6 +974,10 @@ class Game extends Room
         }
 
         // they finished
+        if (!isset($player->race_stats)) {
+            return;
+        }
+
         $player->race_stats->finished_race = true;
 
         // everyone finishes at the same time in egg mode
