@@ -9,6 +9,7 @@ $levelParam = default_get('level_id', '');
 $page = max(1, (int) default_get('page', 1));
 $count = (int) default_get('count', 20);
 $includeParticipants = (int) default_get('include_participants', 0) === 1;
+$includeHiddenRequested = (int) default_get('include_hidden', 0) === 1;
 $ip = get_ip();
 
 try {
@@ -46,12 +47,18 @@ try {
         $viewerId = 0;
     }
 
+    $includeHidden = false;
+    if ($includeHiddenRequested && $viewerId > 0) {
+        $staff = is_staff($pdo, $viewerId, false, false);
+        $includeHidden = $staff->mod || $staff->admin;
+    }
+
     $visibility = replay_level_visibility($pdo, $levelId, $isPr2hub);
     $restrictReplays = $visibility['restricted'];
     $levelCreatorId = $visibility['creator_id'];
     $needsVisibilityCheck = $restrictReplays && $viewerId !== $levelCreatorId;
 
-    $dual = replays_leaderboard_both($pdo, $levelId, $start, $count, $isPr2hub);
+    $dual = replays_leaderboard_both($pdo, $levelId, $start, $count, $isPr2hub, $includeHidden);
 
     $allRows = array_merge($dual['solo'], $dual['team']);
     $needParticipantsLookup = $includeParticipants || $needsVisibilityCheck;
@@ -64,6 +71,7 @@ try {
     $formatRows = function ($rows) use (
         $pdo,
         $includeParticipants,
+        $includeHidden,
         $needsVisibilityCheck,
         $viewerId,
         $levelCreatorId,
@@ -86,6 +94,16 @@ try {
                 'first_objectives_hit' => isset($row->first_objectives_hit) ? (int) $row->first_objectives_hit : 0,
                 'best_objectives_hit' => isset($row->best_objectives_hit) ? (int) $row->best_objectives_hit : 0,
             ];
+
+            if ($includeHidden) {
+                $entry['hidden'] = isset($row->hidden) ? (int) $row->hidden === 1 : false;
+                $entry['hidden_at_ms'] = isset($row->hidden_at_ms) && $row->hidden_at_ms !== null
+                    ? (int) $row->hidden_at_ms
+                    : null;
+                $entry['hidden_by_user_id'] = isset($row->hidden_by_user_id) && $row->hidden_by_user_id !== null
+                    ? (int) $row->hidden_by_user_id
+                    : null;
+            }
 
             $participants = [];
             if ($includeParticipants || $needsVisibilityCheck) {

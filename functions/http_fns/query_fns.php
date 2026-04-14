@@ -198,16 +198,11 @@ function message_parse_tags($pdo, $message)
 function message_send_welcome($pdo, $name, $user_id)
 {
     // compose a welcome pm
-    $safe_name = htmlspecialchars($name, ENT_QUOTES);
-    $discord_link = urlify('https://jiggmin2.com/discord', 'our Discord server');
-    $jv_link = urlify('https://jiggmin2.com/forums', 'Jiggmin\'s Village');
-    $blog_link = urlify('https://grahn.io', 'my blog');
-    $email_link = urlify('mailto:jacob@grahn.io?subject=Questions or Comments about PR2', 'jacob@grahn.io');
-    $welcome_message = "Welcome to Platform Racing 2, $safe_name!\n\n"
-        ."You can stay up-to-date on the latest Platform Racing news on $discord_link, $jv_link, and $blog_link.\n\n"
-        ."If you have any questions or comments, send me an email at $email_link.\n\n"
-        ."Thanks for playing, I hope you enjoy.\n\n"
-        ."- Jiggmin";
+    $discord_link = urlify('https://discord.gg/h4HpbfAPBw', 'our Discord server');
+    $welcome_message = "message`Welcome to Platform Racing 2 (8P version)!<br><br>".
+        "This is a modded version of PR2 with new blocks and many added features.".
+        "Join $discord_link to find other players to play with. ".
+        "<br><br>Enjoy!<br>-oxy";
 
     // welcome them
     message_insert($pdo, $user_id, 1, $welcome_message, '0');

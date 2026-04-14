@@ -144,3 +144,31 @@ databaseChangeLog:
               ALTER TABLE levels
                 ADD COLUMN IF NOT EXISTS replays_public TINYINT(1) NOT NULL DEFAULT 0
                 AFTER bad_hats;
+  - changeSet:
+      id: add-replay-hidden-flag
+      author: codex
+      changes:
+        - sql:
+            dbms: mysql
+            splitStatements: false
+            stripComments: true
+            sql: |
+              ALTER TABLE replays
+                ADD COLUMN IF NOT EXISTS hidden TINYINT(1) NOT NULL DEFAULT 0
+                AFTER server_id;
+        - sql:
+            dbms: mysql
+            splitStatements: false
+            stripComments: true
+            sql: |
+              ALTER TABLE replays
+                ADD COLUMN IF NOT EXISTS hidden_at_ms BIGINT NULL
+                AFTER hidden;
+        - sql:
+            dbms: mysql
+            splitStatements: false
+            stripComments: true
+            sql: |
+              ALTER TABLE replays
+                ADD COLUMN IF NOT EXISTS hidden_by_user_id INT NULL
+                AFTER hidden_at_ms;

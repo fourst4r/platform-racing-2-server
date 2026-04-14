@@ -11,6 +11,7 @@ $page = max(1, (int) default_get('page', 1));
 $count = (int) default_get('count', 20);
 $includeResults = (int) default_get('include_results', 0) === 1;
 $includeParticipants = (int) default_get('include_participants', 0) === 1;
+$includeHiddenRequested = (int) default_get('include_hidden', 0) === 1;
 $isPr2hubParam = default_get('is_pr2hub', null);
 $ip = get_ip();
 
@@ -50,13 +51,20 @@ try {
         $viewerId = 0;
     }
 
+    $includeHidden = false;
+    if ($includeHiddenRequested && $viewerId > 0) {
+        $staff = is_staff($pdo, $viewerId, false, false);
+        $includeHidden = $staff->mod || $staff->admin;
+    }
+
     $rows = replays_select(
         $pdo,
         $userId > 0 ? $userId : null,
         $levelId,
         $start,
         $count,
-        $isPr2hub
+        $isPr2hub,
+        $includeHidden
     );
 
     $responseRows = [];
@@ -98,6 +106,16 @@ try {
             'first_objectives_hit' => isset($row->first_objectives_hit) ? (int) $row->first_objectives_hit : 0,
             'best_objectives_hit' => isset($row->best_objectives_hit) ? (int) $row->best_objectives_hit : 0,
         ];
+
+        if ($includeHidden) {
+            $entry['hidden'] = isset($row->hidden) ? (int) $row->hidden === 1 : false;
+            $entry['hidden_at_ms'] = isset($row->hidden_at_ms) && $row->hidden_at_ms !== null
+                ? (int) $row->hidden_at_ms
+                : null;
+            $entry['hidden_by_user_id'] = isset($row->hidden_by_user_id) && $row->hidden_by_user_id !== null
+                ? (int) $row->hidden_by_user_id
+                : null;
+        }
 
         $needsVisibility = $visibilityChecks[$row->id] ?? false;
         $participants = [];

@@ -230,6 +230,42 @@ function replay_select_by_id(PDO $pdo, string $id)
     return $row;
 }
 
+function replay_update_hidden(PDO $pdo, string $id, int $hidden, int $staff_user_id)
+{
+    $hidden = $hidden === 1 ? 1 : 0;
+    $hiddenAtMs = $hidden === 1 ? (int) floor(microtime(true) * 1000) : null;
+    $hiddenByUserId = $hidden === 1 ? $staff_user_id : null;
+
+    $stmt = $pdo->prepare(
+        'UPDATE replays
+            SET hidden = :hidden,
+                hidden_at_ms = :hidden_at_ms,
+                hidden_by_user_id = :hidden_by_user_id
+          WHERE id = :id
+          LIMIT 1'
+    );
+    $stmt->bindValue(':hidden', $hidden, PDO::PARAM_INT);
+    $stmt->bindValue(':hidden_at_ms', $hiddenAtMs, $hiddenAtMs === null ? PDO::PARAM_NULL : PDO::PARAM_INT);
+    $stmt->bindValue(
+        ':hidden_by_user_id',
+        $hiddenByUserId,
+        $hiddenByUserId === null ? PDO::PARAM_NULL : PDO::PARAM_INT
+    );
+    $stmt->bindValue(':id', $id, PDO::PARAM_STR);
+    $stmt->execute();
+
+    if ($stmt->rowCount() === 0) {
+        $existing = replay_select_by_id($pdo, $id);
+        $currentHidden = isset($existing->hidden) ? (int) $existing->hidden : 0;
+        if ($currentHidden !== $hidden) {
+            throw new Exception('Could not update replay visibility.');
+        }
+        return $existing;
+    }
+
+    return replay_select_by_id($pdo, $id);
+}
+
 function replay_results_select(PDO $pdo, string $replay_id): array
 {
     $stmt = $pdo->prepare(
@@ -248,15 +284,20 @@ function replays_select(
     ?int $level_id,
     int $start,
     int $count,
-    int $is_pr2hub = 0
+    int $is_pr2hub = 0,
+    bool $include_hidden = false
 ): array {
+    $hiddenCondition = $include_hidden ? '' : ' AND COALESCE(r.hidden, 0) = 0';
+    $hiddenConditionNoAlias = $include_hidden ? '' : ' AND COALESCE(hidden, 0) = 0';
+
     if ($user_id !== null) {
         $stmt = $pdo->prepare(
             'SELECT r.*
                FROM replays r
                JOIN replay_participants p ON p.replay_id = r.id
-              WHERE p.user_id = :user_id
-                AND (r.mode <> \'deathmatch\' OR r.best_objectives_hit > 0)
+              WHERE p.user_id = :user_id'
+                . $hiddenCondition .
+            ' AND (r.mode <> \'deathmatch\' OR r.best_objectives_hit > 0)
               ORDER BY r.created_at_ms DESC
               LIMIT :start, :count'
         );
@@ -266,8 +307,9 @@ function replays_select(
             'SELECT *
                FROM replays
               WHERE level_id = :level_id
-                AND is_pr2hub = :is_pr2hub
-                AND (mode <> \'deathmatch\' OR best_objectives_hit > 0)
+                AND is_pr2hub = :is_pr2hub'
+                . $hiddenConditionNoAlias .
+            ' AND (mode <> \'deathmatch\' OR best_objectives_hit > 0)
               ORDER BY created_at_ms DESC
               LIMIT :start, :count'
         );
@@ -277,7 +319,9 @@ function replays_select(
         $stmt = $pdo->prepare(
             'SELECT *
                FROM replays
-              WHERE (mode <> \'deathmatch\' OR best_objectives_hit > 0)
+              WHERE 1 = 1'
+                . $hiddenConditionNoAlias .
+            ' AND (mode <> \'deathmatch\' OR best_objectives_hit > 0)
               ORDER BY created_at_ms DESC
               LIMIT :start, :count'
         );
@@ -295,7 +339,8 @@ function replays_leaderboard_by_level(
     int $start,
     int $count,
     int $is_pr2hub = 0,
-    ?string $mode_filter = null
+    ?string $mode_filter = null,
+    bool $include_hidden = false
 ): array {
     $conditions = [
         'level_id = :level_id',
@@ -303,6 +348,10 @@ function replays_leaderboard_by_level(
         'first_finish_time_ms IS NOT NULL',
         '(mode <> \'deathmatch\' OR best_objectives_hit > 0)',
     ];
+
+    if (!$include_hidden) {
+        $conditions[] = 'COALESCE(hidden, 0) = 0';
+    }
 
     if ($mode_filter === 'team') {
         $conditions[] = 'participants_count > 1';
@@ -333,11 +382,12 @@ function replays_leaderboard_both(
     int $level_id,
     int $start,
     int $count,
-    int $is_pr2hub = 0
+    int $is_pr2hub = 0,
+    bool $include_hidden = false
 ): array {
     return [
-        'solo' => replays_leaderboard_unique_by_type($pdo, $level_id, $start, $count, $is_pr2hub, 'solo'),
-        'team' => replays_leaderboard_unique_by_type($pdo, $level_id, $start, $count, $is_pr2hub, 'team'),
+        'solo' => replays_leaderboard_unique_by_type($pdo, $level_id, $start, $count, $is_pr2hub, 'solo', $include_hidden),
+        'team' => replays_leaderboard_unique_by_type($pdo, $level_id, $start, $count, $is_pr2hub, 'team', $include_hidden),
     ];
 }
 
@@ -347,7 +397,8 @@ function replays_leaderboard_unique_by_type(
     int $start,
     int $count,
     int $is_pr2hub,
-    string $type
+    string $type,
+    bool $include_hidden = false
 ): array {
     $type = $type === 'team' ? 'team' : 'solo';
     $target = $start + $count;
@@ -358,7 +409,15 @@ function replays_leaderboard_unique_by_type(
     $seenKeys = [];
 
     while (count($uniqueRows) < $target) {
-        $chunk = replays_leaderboard_fetch_chunk($pdo, $level_id, $is_pr2hub, $type, $rawOffset, $chunkSize);
+        $chunk = replays_leaderboard_fetch_chunk(
+            $pdo,
+            $level_id,
+            $is_pr2hub,
+            $type,
+            $rawOffset,
+            $chunkSize,
+            $include_hidden
+        );
         if (empty($chunk)) {
             break;
         }
@@ -400,20 +459,24 @@ function replays_leaderboard_fetch_chunk(
     int $is_pr2hub,
     string $type,
     int $start,
-    int $count
+    int $count,
+    bool $include_hidden = false
 ): array {
     $participantCondition = $type === 'team' ? 'participants_count > 1' : 'participants_count = 1';
+    $hiddenCondition = $include_hidden ? '' : ' AND COALESCE(hidden, 0) = 0';
 
     $sql = sprintf(
         'SELECT *
            FROM replays
           WHERE level_id = :level_id
             AND is_pr2hub = :is_pr2hub
+            %s
             AND first_finish_time_ms IS NOT NULL
             AND %s
             AND (mode <> \'deathmatch\' OR best_objectives_hit > 0)
           ORDER BY best_objectives_hit DESC, first_finish_time_ms ASC, created_at_ms ASC
           LIMIT :start, :count',
+        $hiddenCondition,
         $participantCondition
     );
 
@@ -444,7 +507,7 @@ function replays_leaderboard_sort_key_expr(string $alias): string
     )";
 }
 
-function replays_leaderboard_conditions(string $alias, ?int $is_pr2hub, string $type): string
+function replays_leaderboard_conditions(string $alias, ?int $is_pr2hub, string $type, bool $include_hidden = false): string
 {
     if (!preg_match('/^[a-zA-Z_][a-zA-Z0-9_]*$/', $alias)) {
         throw new Exception('Invalid table alias for leaderboard conditions.');
@@ -454,6 +517,10 @@ function replays_leaderboard_conditions(string $alias, ?int $is_pr2hub, string $
         "{$alias}.first_finish_time_ms IS NOT NULL",
         "({$alias}.mode <> 'deathmatch' OR {$alias}.best_objectives_hit > 0)",
     ];
+
+    if (!$include_hidden) {
+        $conditions[] = "COALESCE({$alias}.hidden, 0) = 0";
+    }
 
     if ($type === 'team') {
         $conditions[] = "{$alias}.participants_count > 1";
@@ -468,12 +535,12 @@ function replays_leaderboard_conditions(string $alias, ?int $is_pr2hub, string $
     return implode(' AND ', $conditions);
 }
 
-function replays_leaderboard_winner_rows(PDO $pdo, ?int $is_pr2hub, string $type): array
+function replays_leaderboard_winner_rows(PDO $pdo, ?int $is_pr2hub, string $type, bool $include_hidden = false): array
 {
     $type = $type === 'team' ? 'team' : 'solo';
 
-    $outerConditions = replays_leaderboard_conditions('r', $is_pr2hub, $type);
-    $innerConditions = replays_leaderboard_conditions('w', $is_pr2hub, $type);
+    $outerConditions = replays_leaderboard_conditions('r', $is_pr2hub, $type, $include_hidden);
+    $innerConditions = replays_leaderboard_conditions('w', $is_pr2hub, $type, $include_hidden);
     $outerSortKey = replays_leaderboard_sort_key_expr('r');
     $innerSortKey = replays_leaderboard_sort_key_expr('w');
 
