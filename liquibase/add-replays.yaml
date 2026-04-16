@@ -145,6 +145,17 @@ databaseChangeLog:
                 ADD COLUMN IF NOT EXISTS replays_public TINYINT(1) NOT NULL DEFAULT 0
                 AFTER bad_hats;
   - changeSet:
+      id: add-replay-participant-hat
+      author: codex
+      changes:
+        - sql:
+            dbms: mysql
+            splitStatements: false
+            stripComments: true
+            sql: |
+              ALTER TABLE replay_participants
+                ADD COLUMN IF NOT EXISTS hat INT NULL AFTER username;
+  - changeSet:
       id: add-replay-hidden-flag
       author: codex
       changes:

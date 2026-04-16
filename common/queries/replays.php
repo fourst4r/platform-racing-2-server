@@ -56,16 +56,18 @@ function replay_participant_insert(
     string $replay_id,
     int $user_id,
     string $username,
+    ?int $hat = null,
     ?int $speed = null,
     ?int $accel = null,
     ?int $jump = null
 ): void
 {
     $stmt = $pdo->prepare(
-        'INSERT INTO replay_participants (replay_id, user_id, username, speed, accel, jump)
-         VALUES (:replay_id, :user_id, :username, :speed, :accel, :jump)
+        'INSERT INTO replay_participants (replay_id, user_id, username, hat, speed, accel, jump)
+         VALUES (:replay_id, :user_id, :username, :hat, :speed, :accel, :jump)
          ON DUPLICATE KEY UPDATE
             username = VALUES(username),
+            hat = VALUES(hat),
             speed = VALUES(speed),
             accel = VALUES(accel),
             jump = VALUES(jump)'
@@ -74,6 +76,7 @@ function replay_participant_insert(
         ':replay_id' => $replay_id,
         ':user_id' => $user_id,
         ':username' => $username,
+        ':hat' => $hat,
         ':speed' => $speed,
         ':accel' => $accel,
         ':jump' => $jump,
@@ -83,7 +86,7 @@ function replay_participant_insert(
 function replay_participants_select(PDO $pdo, string $replay_id): array
 {
     $stmt = $pdo->prepare(
-        'SELECT user_id, username, speed, accel, jump
+        'SELECT user_id, username, hat, speed, accel, jump
            FROM replay_participants
           WHERE replay_id = :replay_id
           ORDER BY username ASC'
@@ -100,7 +103,7 @@ function replay_participants_map_by_replay_ids(PDO $pdo, array $replay_ids): arr
 
     $placeholders = implode(',', array_fill(0, count($replay_ids), '?'));
     $stmt = $pdo->prepare(
-        "SELECT replay_id, user_id, username, speed, accel, jump
+        "SELECT replay_id, user_id, username, hat, speed, accel, jump
            FROM replay_participants
           WHERE replay_id IN ($placeholders)"
     );

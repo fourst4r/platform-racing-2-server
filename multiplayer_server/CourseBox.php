@@ -169,8 +169,12 @@ class CourseBox
         }
 
         $this->starting = true;
-        $course_id = substr($this->course_id, 0, strrpos($this->course_id, '_'));
-        $game = new Game($course_id, $this->room->getType());
+        $course_id = $this->course_id;
+        $lastUnderscore = strrpos($this->course_id, '_');
+        if ($lastUnderscore !== false) {
+            $course_id = substr($this->course_id, 0, $lastUnderscore);
+        }
+        $game = new Game($course_id, $this->room->getType(), $this->course_id);
         foreach ($this->slot_array as $player) {
             $player->confirmed = false;
             $game->addPlayer($player);

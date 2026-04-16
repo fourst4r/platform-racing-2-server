@@ -45,6 +45,7 @@ class Game extends Room
 
     private $level_id = 0;
     private $level_version = 0;
+    private $replay_course_id;
     private $replayRecorder;
     private $replayParticipants = array();
     private $replayUniquePackets = array();
@@ -56,9 +57,10 @@ class Game extends Room
     protected $temp_id = 0;
 
 
-    public function __construct($course_id, $from_room)
+    public function __construct($course_id, $from_room, $replay_course_id = null)
     {
         $this->course_id = $course_id;
+        $this->replay_course_id = $replay_course_id !== null ? $replay_course_id : $course_id;
         $this->from_room = $from_room;
         $this->tournament = PR2SocketServer::$tournament;
         $this->start_time = microtime(true);
@@ -1730,7 +1732,7 @@ class Game extends Room
 
     private function initReplayMetadata()
     {
-        $numeric = $this->course_id;
+        $numeric = $this->replay_course_id;
         $isPr2hub = strpos($numeric, '8p_') !== 0;
         if (!$isPr2hub) {
             $numeric = substr($numeric, 3);
@@ -1739,6 +1741,9 @@ class Game extends Room
         $this->level_id = isset($parts[0]) ? (int) $parts[0] : 0;
         $this->level_version = isset($parts[1]) ? (int) $parts[1] : 0;
         $this->replayIsPr2hub = (bool) $isPr2hub;
+        if ($this->replayIsPr2hub && $this->level_id > 0 && $this->level_version <= 0) {
+            output('ReplayRecorder invalid PR2Hub course/version: ' . $this->replay_course_id);
+        }
 
         try {
             $meta = [
@@ -1800,6 +1805,7 @@ class Game extends Room
             $this->replayRecorder->addParticipant(
                 $userId,
                 (string) $player->name,
+                (int) $player->hat,
                 (int) $player->speed,
                 (int) $player->acceleration,
                 (int) $player->jumping

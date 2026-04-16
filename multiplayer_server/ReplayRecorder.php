@@ -110,6 +110,7 @@ class ReplayRecorder
     public function addParticipant(
         int $userId,
         string $username,
+        ?int $hat = null,
         ?int $speed = null,
         ?int $accel = null,
         ?int $jump = null
@@ -118,6 +119,7 @@ class ReplayRecorder
         $this->meta['participants'][] = [
             'user_id' => $userId,
             'username' => $username,
+            'hat' => $hat,
             'speed' => $speed,
             'accel' => $accel,
             'jump' => $jump,
@@ -328,6 +330,9 @@ class ReplayRecorder
         foreach ($this->meta['participants'] as $participant) {
             $uid = (int) ($participant['user_id'] ?? 0);
             $uname = (string) ($participant['username'] ?? '');
+            $hat = array_key_exists('hat', $participant)
+                ? ($participant['hat'] === null ? null : (int) $participant['hat'])
+                : null;
             $speed = array_key_exists('speed', $participant)
                 ? ($participant['speed'] === null ? null : (int) $participant['speed'])
                 : null;
@@ -337,7 +342,7 @@ class ReplayRecorder
             $jump = array_key_exists('jump', $participant)
                 ? ($participant['jump'] === null ? null : (int) $participant['jump'])
                 : null;
-            replay_participant_insert($pdo, $replayId, $uid, $uname, $speed, $accel, $jump);
+            replay_participant_insert($pdo, $replayId, $uid, $uname, $hat, $speed, $accel, $jump);
         }
 
         foreach ($this->results as $row) {
