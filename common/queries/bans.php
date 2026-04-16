@@ -18,7 +18,7 @@ function ban_insert($pdo, $ip, $uid, $mod_uid, $exp_time, $reason, $record, $nam
                ip_ban = :ip_ban,
                account_ban = :account_ban,
                scope = :scope,
-               modified_time = $time
+               modified_time = NOW()
     ");
     $stmt->bindValue(':banned_ip', $ip, PDO::PARAM_STR);
     $stmt->bindValue(':banned_user_id', $uid, PDO::PARAM_INT);
@@ -188,7 +188,7 @@ function ban_update($pdo, $ban_id, $acc, $ip, $scope, $exp_time, $lifted, $lifte
             lifted_reason = :lift_reason,
             lifted_time = :lift_time,
             notes = :notes,
-            modified_time = UNIX_TIMESTAMP(NOW())
+            modified_time = NOW()
         WHERE ban_id = :ban_id
         LIMIT 1
     ');
@@ -269,7 +269,7 @@ function bans_select_recently_modified($pdo)
           banned_ip as ip,
           banned_user_id as user_id
         FROM bans
-        WHERE modified_time > UNIX_TIMESTAMP(NOW() - INTERVAL 5 MINUTE)
+        WHERE modified_time > NOW() - INTERVAL 5 MINUTE
     ');
     $result = $stmt->execute();
 
