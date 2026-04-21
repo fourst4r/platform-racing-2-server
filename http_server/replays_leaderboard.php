@@ -47,11 +47,12 @@ try {
         $viewerId = 0;
     }
 
-    $includeHidden = false;
-    if ($includeHiddenRequested && $viewerId > 0) {
-        $staff = is_staff($pdo, $viewerId, false, false);
-        $includeHidden = $staff->mod || $staff->admin;
-    }
+    $includeHidden = $includeHiddenRequested;
+    // $includeHidden = false;
+    // if ($includeHiddenRequested && $viewerId > 0) {
+    //     $staff = is_staff($pdo, $viewerId, false, false);
+    //     $includeHidden = $staff->mod || $staff->admin;
+    // }
 
     $visibility = replay_level_visibility($pdo, $levelId, $isPr2hub);
     $restrictReplays = $visibility['restricted'];

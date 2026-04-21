@@ -51,11 +51,12 @@ try {
         $viewerId = 0;
     }
 
-    $includeHidden = false;
-    if ($includeHiddenRequested && $viewerId > 0) {
-        $staff = is_staff($pdo, $viewerId, false, false);
-        $includeHidden = $staff->mod || $staff->admin;
-    }
+    $includeHidden = $includeHiddenRequested;
+    // $includeHidden = false;
+    // if ($includeHiddenRequested && $viewerId > 0) {
+    //     $staff = is_staff($pdo, $viewerId, false, false);
+    //     $includeHidden = $staff->mod || $staff->admin;
+    // }
 
     $rows = replays_select(
         $pdo,
