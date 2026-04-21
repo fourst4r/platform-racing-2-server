@@ -30,6 +30,7 @@ class Game extends Room
     private $campaign;
     private $prize_from_level = false;
     private $level_prize_solo_only = false;
+    private $level_prize_award_matching_epic = true;
 
     private $mode = self::MODE_RACE;
     private $hash;
@@ -182,6 +183,7 @@ class Game extends Room
         $player_count = count($this->player_array);
         $this->prize_from_level = false;
         $this->level_prize_solo_only = false;
+        $this->level_prize_award_matching_epic = true;
 
         global $campaign_array;
         if (isset($campaign_array[$this->course_id])) {
@@ -217,6 +219,7 @@ class Game extends Room
                     $this->prize = Prizes::find($lp->type, $lp->id);
                 }
                 $this->prize_from_level = true;
+                $this->level_prize_award_matching_epic = !$this->isSkeletonPrize($this->prize) || $player_count === 1;
             }
         }
 
@@ -329,6 +332,29 @@ class Game extends Room
             'feet' => 'eFeet'
         ];
         return isset($map[$type]) ? $map[$type] : null;
+    }
+
+
+    private function isSkeletonPrize($prize)
+    {
+        if (!isset($prize)) {
+            return false;
+        }
+
+        $type = $prize->getType();
+        $id = $prize->getId();
+
+        if (($type === 'head' || $type === 'eHead') && $id === Heads::SKELETON) {
+            return true;
+        }
+        if (($type === 'body' || $type === 'eBody') && $id === Bodies::SKELETON) {
+            return true;
+        }
+        if (($type === 'feet' || $type === 'eFeet') && $id === Feet::SKELETON) {
+            return true;
+        }
+
+        return false;
     }
 
 
@@ -759,7 +785,7 @@ class Game extends Room
                 }
 
                 // Level prizes can optionally include the matching epic upgrade.
-                if ($this->prize_from_level) {
+                if ($this->prize_from_level && $this->level_prize_award_matching_epic) {
                     $epic_type = $this->getEpicPrizeType($prize->getType());
                     if (!is_null($epic_type)) {
                         $epic_added = $player->gainPart($epic_type, $prize->getId());
