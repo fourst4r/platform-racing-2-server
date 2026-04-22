@@ -1828,13 +1828,14 @@ class Game extends Room
         }
         $this->replayParticipants[$userId] = true;
         try {
+            $stats = $player->getEffectiveRaceStats();
             $this->replayRecorder->addParticipant(
                 $userId,
                 (string) $player->name,
                 (int) $player->hat,
-                (int) $player->speed,
-                (int) $player->acceleration,
-                (int) $player->jumping
+                (int) $stats['speed'],
+                (int) $stats['acceleration'],
+                (int) $stats['jumping']
             );
         } catch (\Exception $e) {
             output('ReplayRecorder participant failed: ' . $e->getMessage());

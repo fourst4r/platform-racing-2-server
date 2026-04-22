@@ -533,7 +533,7 @@ class Player
     }
 
 
-    private function getStatStr()
+    public function getEffectiveRaceStats()
     {
         if (HappyHour::isActive()) {
             $speed = $this->hh_speed;
@@ -553,7 +553,19 @@ class Player
             $accel += 10;
             $jump += 10;
         }
-        return "$speed`$accel`$jump";
+
+        return [
+            'speed' => (int) $speed,
+            'acceleration' => (int) $accel,
+            'jumping' => (int) $jump,
+        ];
+    }
+
+
+    private function getStatStr()
+    {
+        $stats = $this->getEffectiveRaceStats();
+        return $stats['speed'].'`'.$stats['acceleration'].'`'.$stats['jumping'];
     }
 
 
