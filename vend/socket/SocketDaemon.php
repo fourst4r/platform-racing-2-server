@@ -98,10 +98,10 @@ class SocketDaemon
     private function cleanSockets()
     {
         # maybe could do this instead: $this->clients = array_filter($this->clients, fn($s) => !$s->disconnected && $this->socket instanceof \Socket)
-        foreach ($this->clients as $socket) {
+        foreach ($this->clients as $socketId => $socket) {
             if ($socket->disconnected || !$socket->socket instanceof \Socket || !$socket->is_open) {
-                if (isset($this->clients[$socket->id])) {
-                    unset($this->clients[$socket->id]);
+                if (isset($this->clients[$socketId])) {
+                    unset($this->clients[$socketId]);
                 }
             }
         }

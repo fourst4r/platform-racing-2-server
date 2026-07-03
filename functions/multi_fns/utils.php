@@ -156,7 +156,9 @@ function drain_plays()
 function get_population()
 {
     global $player_array;
-    return count($player_array);
+    return count(array_filter($player_array, function ($player) {
+        return isset($player) && $player->isConnected();
+    }));
 }
 
 
@@ -164,7 +166,10 @@ function get_population()
 function get_status()
 {
     global $player_array, $max_players;
-    return count($player_array) >= $max_players ? 'full' : 'open';
+    $population = count(array_filter($player_array, function ($player) {
+        return isset($player) && $player->isConnected();
+    }));
+    return $population >= $max_players ? 'full' : 'open';
 }
 
 
@@ -174,7 +179,9 @@ function sendToAll_players($str)
     global $player_array;
 
     foreach ($player_array as $player) {
-        $player->write($str);
+        if ($player->isConnected()) {
+            $player->write($str);
+        }
     }
 }
 
@@ -185,7 +192,7 @@ function send_to_guild($guild_id, $str)
     global $player_array;
 
     foreach ($player_array as $player) {
-        if ((int) $player->guild_id === $guild_id) {
+        if ($player->isConnected() && (int) $player->guild_id === $guild_id) {
             $player->write($str);
         }
     }

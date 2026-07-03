@@ -4,6 +4,9 @@ namespace pr2\multi;
 
 class Player
 {
+    const CONNECTION_ACTIVE = 'active';
+    const CONNECTION_RECONNECTING = 'reconnecting';
+
     public $socket;
     public $user_id;
     public $guild_id;
@@ -109,6 +112,18 @@ class Player
     public $average_vel_x = 0;
     public $average_vel_y = 0;
     public $race_stats = null;
+    public $remote_state = 'stand';
+    public $remote_parent = 'frontBackground';
+    public $remote_item = 0;
+    public $remote_scale_x = 1;
+    public $remote_rot_mod = 0;
+    public $remote_sparkle = 0;
+    public $remote_jet = 0;
+    public $remote_reconnect_pending = 0;
+    public $connection_state = self::CONNECTION_ACTIVE;
+    public $reconnect_expires_at = 0;
+    public $reconnect_disconnected_at = 0;
+    public $resume_race_payload = null;
 
 
     public function __construct($socket, $login)
@@ -188,7 +203,9 @@ class Player
         $this->active_rank = $this->rank + $this->rt_used;
 
         // final checks
-        $pCount = count($player_array); // server full?
+        $pCount = count(array_filter($player_array, function ($player) {
+            return isset($player) && $player->isConnected();
+        })); // server full?
         if (($pCount > $max_players && $this->group < 2) || ($pCount > ($max_players - 10) && $this->group === 0)) {
             $this->write('loginFailure`');
             $this->write('message`Sorry, this server is full. Try back later.');
@@ -197,20 +214,9 @@ class Player
             $player_array[$this->user_id] = $this;
         }
 
-        // if they're a trial, tell the client
-        if ($this->group === 2 && $this->trial_mod) {
-            $this->write("becomeTrialMod`");
-        }
-
-        // if they're special, tell the client
+        // if they're special, flag them for session bootstrap packets
         if (in_array($this->user_id, $special_ids)) {
             $this->special_user = true;
-            $this->write('becomeSpecialUser`');
-        }
-
-        // if they're the prizer, tell the client
-        if (PR2SocketServer::$prizer_id === $this->user_id) {
-            $this->write('becomePrizer`');
         }
 
         if (isset($player_array[$this->user_id])) {
@@ -220,7 +226,7 @@ class Player
             $this->applyTempItems();
             $this->verifyStats();
             $this->verifyParts();
-            $this->write("wearingHat`$this->hat");
+            $this->sendSessionBootstrap();
         }
     }
 
@@ -701,6 +707,87 @@ class Player
         }
     }
 
+    public function sendSessionBootstrap(): void
+    {
+        if ($this->group === 2 && $this->trial_mod) {
+            $this->write("becomeTrialMod`");
+        }
+        if ($this->special_user === true) {
+            $this->write('becomeSpecialUser`');
+        }
+        if (PR2SocketServer::$prizer_id === $this->user_id) {
+            $this->write('becomePrizer`');
+        }
+        $this->write("wearingHat`$this->hat");
+    }
+
+    public function isConnected(): bool
+    {
+        return isset($this->socket)
+            && method_exists($this->socket, 'isVirtual')
+            && $this->socket->isVirtual() === false
+            && $this->connection_state === self::CONNECTION_ACTIVE;
+    }
+
+    public function isReconnectPending(): bool
+    {
+        return $this->connection_state === self::CONNECTION_RECONNECTING
+            && $this->reconnect_expires_at > time()
+            && isset($this->game_room);
+    }
+
+    public function canReserveRaceReconnect(): bool
+    {
+        return isset($this->game_room)
+            && $this->game_room instanceof Game
+            && $this->game_room->canReserveReconnectFor($this);
+    }
+
+    public function handleUnexpectedDisconnect(PR2Client $socket): void
+    {
+        if ($this->socket !== $socket) {
+            return;
+        }
+
+        if ($this->canReserveRaceReconnect()) {
+            $this->connection_state = self::CONNECTION_RECONNECTING;
+            $this->reconnect_disconnected_at = time();
+            $this->reconnect_expires_at = $this->reconnect_disconnected_at + Game::RECONNECT_GRACE_SECONDS;
+            $this->socket = new PR2VirtualClient($this, $socket);
+            $this->game_room->reserveDisconnectedPlayer($this, $socket);
+            return;
+        }
+
+        $this->socket = null;
+        $this->remove();
+    }
+
+    public function resumeConnection($socket, $login): void
+    {
+        $this->socket = $socket;
+        $socket->player = $this;
+        $this->ip = $socket->ip;
+        $this->domain = $login->login->domain;
+        $this->version = $login->login->build;
+        $this->login_time = time();
+        $this->last_save_time = time();
+        $this->connection_state = self::CONNECTION_ACTIVE;
+        $this->reconnect_disconnected_at = 0;
+        $this->reconnect_expires_at = 0;
+        if (isset($this->game_room) && $this->game_room instanceof Game) {
+            $this->game_room->resumeDisconnectedPlayer($this);
+        }
+    }
+
+    public function clearReconnectState(): void
+    {
+        $this->connection_state = self::CONNECTION_ACTIVE;
+        $this->reconnect_expires_at = 0;
+        $this->reconnect_disconnected_at = 0;
+        $this->remote_reconnect_pending = 0;
+        $this->resume_race_payload = null;
+    }
+
 
     public function wearingHat($hat_num)
     {
@@ -892,6 +979,8 @@ class Player
     {
         global $player_array;
 
+        $this->clearReconnectState();
+
         // get out of whatever you're in
         if (isset($this->right_room)) {
             $this->right_room->removePlayer($this);
@@ -909,6 +998,9 @@ class Player
 
         // make sure the socket is nice and dead
         if (is_object($this->socket)) {
+            if (method_exists($this->socket, 'markIntentionalDisconnect')) {
+                $this->socket->markIntentionalDisconnect();
+            }
             $this->socket->player = null;
             $this->socket->close();
             $this->socket->onDisconnect();

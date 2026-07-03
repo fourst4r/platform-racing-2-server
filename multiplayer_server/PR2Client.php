@@ -10,6 +10,8 @@ class PR2Client extends \chabot\SocketServerClient
 
     private $rec_num = -1;
     private $send_num = 0;
+    private $disconnect_handled = false;
+    private $intentional_disconnect = false;
     public $last_user_action = 0;
     public $last_action = 0;
     public $login_id;
@@ -152,10 +154,23 @@ class PR2Client extends \chabot\SocketServerClient
 
     public function onDisconnect()
     {
+        if ($this->disconnect_handled) {
+            return;
+        }
+        $this->disconnect_handled = true;
+
         if (isset($this->player)) {
-            $this->player->socket = null;
-            $this->player->remove();
+            $player = $this->player;
             $this->player = null;
+
+            if ($this->intentional_disconnect) {
+                if (isset($player->socket) && $player->socket === $this) {
+                    $player->socket = null;
+                }
+                $player->remove();
+            } else {
+                $player->handleUnexpectedDisconnect($this);
+            }
         }
 
         if (isset($this->login_id)) {
@@ -174,6 +189,8 @@ class PR2Client extends \chabot\SocketServerClient
                 }
             }
         }
+
+        $this->disconnected = true;
     }
 
     // once every 2 seconds
@@ -196,5 +213,25 @@ class PR2Client extends \chabot\SocketServerClient
             throw new \Exception('This socket does not have a player.');
         }
         return $this->player;
+    }
+
+    public function markIntentionalDisconnect(): void
+    {
+        $this->intentional_disconnect = true;
+    }
+
+    public function peekNextSendNum(): int
+    {
+        return (int) $this->send_num;
+    }
+
+    public function peekLastReceivedNum(): int
+    {
+        return (int) $this->rec_num;
+    }
+
+    public function isVirtual(): bool
+    {
+        return false;
     }
 }

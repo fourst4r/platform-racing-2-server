@@ -136,6 +136,9 @@ function client_get_online_list($socket)
 {
     global $player_array;
     foreach ($player_array as $player) {
+        if (!$player->isConnected()) {
+            continue;
+        }
         $hats = count($player->hat_array) - 1;
         $group = get_group_info($player)->str;
         $socket->write("addUser`$player->name`$group`$player->active_rank`$hats");

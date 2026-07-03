@@ -57,6 +57,7 @@ require_once PR2_ROOT . '/LoiterDetector.php';
 require_once PR2_ROOT . '/Player.php';
 require_once PR2_ROOT . '/PR2SocketServer.php';
 require_once PR2_ROOT . '/PR2Client.php';
+require_once PR2_ROOT . '/PR2VirtualClient.php';
 require_once PR2_ROOT . '/RaceStats.php';
 require_once PR2_ROOT . '/ServerBans.php';
 require_once PR2_ROOT . '/TemporaryItems.php';

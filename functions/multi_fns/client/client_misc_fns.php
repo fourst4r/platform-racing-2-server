@@ -27,6 +27,9 @@ function client_check_status($socket)
 // close client connection
 function client_close($socket)
 {
+    if (method_exists($socket, 'markIntentionalDisconnect')) {
+        $socket->markIntentionalDisconnect();
+    }
     $socket->close();
     $socket->onDisconnect();
 }

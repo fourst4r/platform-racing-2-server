@@ -4,6 +4,8 @@ namespace pr2\multi;
 
 class Game extends Room
 {
+    const RECONNECT_GRACE_SECONDS = 600;
+    const RECONNECT_EVENT_LOG_LIMIT = 512;
 
     const LEVEL_BUTO = 1738847; // for jigg hat
     const LEVEL_CHEESE = 6207945; // for cheese hat
@@ -53,6 +55,11 @@ class Game extends Room
     private $replayFinishPositions = array();
     private $replayHasRealFinish = false;
     private $replayIsPr2hub = false;
+    private $reconnectReservations = array();
+    private $reconnectEventLog = array();
+    private $nextReconnectEventSeq = 1;
+
+    private static $activeGames = array();
 
     protected $room_name = 'game_room';
     protected $temp_id = 0;
@@ -65,7 +72,18 @@ class Game extends Room
         $this->from_room = $from_room;
         $this->tournament = PR2SocketServer::$tournament;
         $this->start_time = microtime(true);
+        self::$activeGames[spl_object_id($this)] = $this;
         $this->initReplayMetadata();
+    }
+
+
+    public static function tickAllReconnects(): void
+    {
+        foreach (self::$activeGames as $game) {
+            if ($game instanceof self) {
+                $game->tickReconnectReservations();
+            }
+        }
     }
 
 
@@ -116,6 +134,98 @@ class Game extends Room
         if (count($this->player_array) <= 0) {
             $this->remove();
         }
+    }
+
+
+    public function canReserveReconnectFor($player): bool
+    {
+        return $this->begun
+            && isset($player->race_stats)
+            && !$player->race_stats->finished_race
+            && !$player->race_stats->quit_race
+            && isset($this->player_array[$player->user_id]);
+    }
+
+
+    public function reserveDisconnectedPlayer($player, $socket): void
+    {
+        $this->reconnectReservations[$player->user_id] = [
+            'user_id' => (int) $player->user_id,
+            'temp_id' => (int) $player->temp_id,
+            'disconnected_at' => time(),
+            'expires_at' => time() + self::RECONNECT_GRACE_SECONDS,
+            'course_id' => (int) $this->course_id,
+            'level_id' => (int) $this->level_id,
+            'level_version' => (int) $this->level_version,
+            'room_type' => (string) $this->from_room,
+            'last_socket_send_num' => $socket->peekNextSendNum(),
+        ];
+        $this->setReconnectPendingState($player, true);
+    }
+
+
+    public function hasReconnectReservation($userId): bool
+    {
+        return isset($this->reconnectReservations[$userId])
+            && $this->reconnectReservations[$userId]['expires_at'] > time();
+    }
+
+
+    public function resumeDisconnectedPlayer($player): void
+    {
+        if (isset($this->reconnectReservations[$player->user_id])) {
+            $this->reconnectReservations[$player->user_id]['resume_started_at'] = time();
+        }
+        $this->setReconnectPendingState($player, false);
+    }
+
+
+    public function buildResumeRacePacket($player): string
+    {
+        $reservation = isset($this->reconnectReservations[$player->user_id])
+            ? $this->reconnectReservations[$player->user_id]
+            : [
+                'expires_at' => time() + self::RECONNECT_GRACE_SECONDS,
+            ];
+        $payload = [
+            'course_id' => (int) $this->course_id,
+            'replay_course_id' => (string) $this->replay_course_id,
+            'level_id' => (int) $this->level_id,
+            'level_version' => (int) $this->level_version,
+            'room_type' => (string) $this->from_room,
+            'temp_id' => (int) $player->temp_id,
+            'expires_at' => (int) $reservation['expires_at'],
+            'mode' => (string) $this->mode,
+        ];
+        return 'resumeRace`' . json_encode($payload);
+    }
+
+
+    public function resumeRaceState($player, $data): void
+    {
+        if (!$this->hasReconnectReservation($player->user_id)) {
+            $player->write('resumeRaceRejected`expired');
+            return;
+        }
+
+        $payload = $this->decodeResumePayload($data);
+        if (!$this->resumePayloadMatchesRace($payload)) {
+            $player->write('resumeRaceRejected`mismatch');
+            return;
+        }
+        $player->resume_race_payload = $payload;
+        $this->applyLocalResumeState($player, $payload);
+        $this->broadcastResumedPlayerState($player);
+        $clientLastSeenPacketNum = isset($payload->client_last_seen_packet_num)
+            ? (int) $payload->client_last_seen_packet_num
+            : -1;
+
+        $snapshot = $this->buildResumeSnapshot($player, $clientLastSeenPacketNum);
+        $events = $this->buildResumeEvents($player, $clientLastSeenPacketNum);
+
+        $player->write('resumeRaceSnapshot`' . base64_encode(json_encode($snapshot)));
+        $player->write('resumeRaceEvents`' . base64_encode(json_encode($events)));
+        unset($this->reconnectReservations[$player->user_id]);
     }
 
 
@@ -1242,53 +1352,17 @@ class Game extends Room
 
         $this->broadcastFinishTimes();
 
-        $this->sendToAll('var'.$player->temp_id.'`beginRemove`1');
+        $beginRemovePacket = 'var' . $player->temp_id . '`beginRemove`1';
+        $this->recordReconnectEvent('player_begin_remove', $beginRemovePacket);
+        $this->sendToAll($beginRemovePacket);
         $this->maybeEndDeathmatch();
     }
 
 
     private function broadcastFinishTimes()
     {
-        $str = 'finishTimes';
-
-        // still drawing?
-        $drawing = false;
-        foreach ($this->player_array as $player) {
-            $rs = $player->race_stats;
-            if ($rs->drawing === true) {
-                $drawing = true;
-                break;
-            }
-        }
-
-        // if still drawing, preserve the drawing animation
-        if ($drawing === true) {
-            foreach ($this->finish_array as $rs) {
-                $player = $this->idToPlayer($rs->temp_id);
-                $forfeit = $rs->quit_race ? ($this->mode === self::MODE_EGG ? '0' : 'forfeit') : '';
-                $local_ms = isset($rs->local_finish_ms) ? (int) $rs->local_finish_ms : '';
-                $str .= '`' . $rs->name . '`' . $forfeit . '`' . $rs->drawing . '`' . $rs->still_here . '`' . $local_ms;
-            }
-        } else { // if not, broadcast as normal
-            foreach ($this->finish_array as $rs) {
-                $obj_reached = $finish_time = null;
-                if ($this->mode === self::MODE_EGG) {
-                    $finish_time = $rs->eggs;
-                } elseif ($this->mode === self::MODE_OBJECTIVE) {
-                    if (!empty($rs->finish_time)) {
-                        $obj_reached = count($rs->objectives_reached);
-                        $finish_time = "$rs->finish_time,$obj_reached,$this->finish_count";
-                    }
-                } else {
-                    $finish_time = $rs->finish_time;
-                }
-                if (isset($finish_time) || $rs->quit_race) {
-                    $finish_time = isset($finish_time) ? $finish_time : ($rs->quit_race ? 'forfeit' : $finish_time);
-                    $local_ms = isset($rs->local_finish_ms) ? (int) $rs->local_finish_ms : '';
-                    $str .= '`' . $rs->name . '`' . $finish_time . '`' . $rs->drawing . '`' . $rs->still_here . '`' . $local_ms;
-                }
-            }
-        }
+        $str = $this->buildFinishTimesPacket();
+        $this->recordReconnectEvent('finish_times', $str);
         $this->sendToAll($str);
     }
 
@@ -1335,6 +1409,32 @@ class Game extends Room
     {
         $this->sendToRoom('exactPos'.$player->temp_id.'`'.$data, $player->user_id);
         list($player->pos_x, $player->pos_y) = explode('`', $data);
+    }
+
+
+    public function broadcastHit($player, $data)
+    {
+        $packet = 'hit' . $data;
+        $this->recordReconnectEvent('block_hit', $packet);
+        $this->sendToRoom($packet, $player->user_id);
+    }
+
+
+    public function broadcastActivate($player, $data)
+    {
+        $packet = 'activate`' . $data . '`';
+        if ($this->shouldRecordReconnectActivateEvent($data)) {
+            $this->recordReconnectEvent('block_activate', $packet);
+        }
+        $this->sendToRoom($packet, $player->user_id);
+    }
+
+
+    public function broadcastHeart($player)
+    {
+        $packet = 'heart' . $player->temp_id . '`';
+        $this->recordReconnectEvent('heart_block', $packet);
+        $this->sendToRoom($packet, $player->user_id);
     }
 
 
@@ -1406,7 +1506,12 @@ class Game extends Room
     public function setVar($player, $data)
     {
         if (!$player->race_stats->finished_race) {
-            $this->sendToRoom('var'.$player->temp_id.'`'.$data, $player->user_id);
+            $packet = 'var'.$player->temp_id.'`'.$data;
+            $parts = explode('`', $data);
+            if (isset($parts[0]) && $parts[0] !== 'rot') {
+                $this->recordReconnectEvent('player_var', $packet);
+            }
+            $this->sendToRoom($packet, $player->user_id);
 
             if ($data === 'state`bumped' && $this->mode === self::MODE_DEATHMATCH) {
                 $player->lives--;
@@ -1417,9 +1522,27 @@ class Game extends Room
             if (substr($data, 4) === 'item') {
                 $player->items_used++;
             }
-            $data = explode('`', $data);
-            if ($data[0] === 'rot') {
-                $player->rot = (int) $data[1];
+            if (!isset($parts[0])) {
+                return;
+            }
+            if ($parts[0] === 'rot') {
+                $player->rot = (int) $parts[1];
+            } elseif ($parts[0] === 'state' && isset($parts[1])) {
+                $player->remote_state = (string) $parts[1];
+            } elseif ($parts[0] === 'parent' && isset($parts[1])) {
+                $player->remote_parent = (string) $parts[1];
+            } elseif ($parts[0] === 'item' && isset($parts[1])) {
+                $player->remote_item = (int) $parts[1];
+            } elseif ($parts[0] === 'scaleX' && isset($parts[1])) {
+                $player->remote_scale_x = (int) $parts[1];
+            } elseif ($parts[0] === 'rotMod' && isset($parts[1])) {
+                $player->remote_rot_mod = (int) $parts[1];
+            } elseif ($parts[0] === 'sparkle' && isset($parts[1])) {
+                $player->remote_sparkle = (int) $parts[1];
+            } elseif ($parts[0] === 'jet' && isset($parts[1])) {
+                $player->remote_jet = (int) $parts[1];
+            } elseif ($parts[0] === 'reconnectPending' && isset($parts[1])) {
+                $player->remote_reconnect_pending = (int) $parts[1];
             }
         }
     }
@@ -1446,6 +1569,7 @@ class Game extends Room
         if ($this->mode != self::MODE_HAT || $this->loose_hat_array[$hat_id] == null || $hat_id >= $this->next_hat_id) {
             return;
         }
+        $this->recordReconnectEvent('hat_return', "maybeReturnHatToStart`$hat_id");
         $this->sendToAll("maybeReturnHatToStart`$hat_id");
     }
 
@@ -1554,8 +1678,10 @@ class Game extends Room
     {
         if (!$player->race_stats->finished_race) {
             $player->race_stats->eggs++;
+            $this->recordReconnectEvent('egg_remove', "removeEgg$data`");
             $this->sendToRoom("removeEgg$data`", $player->user_id);
             $this->broadcastFinishTimes();
+            $this->recordReconnectEvent('egg_add', 'addEggs`1');
             $this->sendToAll('addEggs`1');
         }
     }
@@ -1566,11 +1692,12 @@ class Game extends Room
         if (count($player->worn_hat_array) > 0) {
             $hat = array_pop($player->worn_hat_array);
             $this->loose_hat_array[$hat->id] = $hat;
-            $this->sendToAll(
-                'addEffect`Hat`'.$info.'`'.$hat->num.'`'.$hat->color.'`'.$hat->color2.'`'.$hat->id,
-                $player->user_id
-            );
-            $this->sendToAll($this->getHatStr($player));
+            $packet = 'addEffect`Hat`'.$info.'`'.$hat->num.'`'.$hat->color.'`'.$hat->color2.'`'.$hat->id;
+            $this->recordReconnectEvent('hat_drop', $packet);
+            $this->sendToAll($packet, $player->user_id);
+            $hatPacket = $this->getHatStr($player);
+            $this->recordReconnectEvent('hat_state', $hatPacket);
+            $this->sendToAll($hatPacket);
             if ($this->mode === self::MODE_HAT
                 && $this->hasHats == $player->temp_id
                 && $this->currentMS() < $this->hatCountdownEnd
@@ -1626,6 +1753,7 @@ class Game extends Room
         $hat = @$this->loose_hat_array[$hat_id];
         if (isset($hat) && $this->isStillPlaying($player->temp_id)) {
             $this->loose_hat_array[$hat_id] = null;
+            $this->recordReconnectEvent('hat_remove', 'removeHat'.$hat_id.'`');
             $this->sendToAll('removeHat'.$hat_id.'`');
             if ($hat->num == 12) {//thief hat
                 $this->commitThievery($player, $hat);
@@ -1674,7 +1802,9 @@ class Game extends Room
         $this->loose_hat_array = array();
         foreach ($this->player_array as $other_player) {
             $other_player->worn_hat_array = array();
-            $this->sendToAll($this->getHatStr($other_player));
+            $packet = $this->getHatStr($other_player);
+            $this->recordReconnectEvent('hat_state', $packet);
+            $this->sendToAll($packet);
         }
         $this->assignHat($player, $hat);
     }
@@ -1683,7 +1813,9 @@ class Game extends Room
     private function assignHat($player, $hat)
     {
         array_push($player->worn_hat_array, $hat);
-        $this->sendToAll($this->getHatStr($player));
+        $packet = $this->getHatStr($player);
+        $this->recordReconnectEvent('hat_state', $packet);
+        $this->sendToAll($packet);
     }
 
 
@@ -1721,6 +1853,259 @@ class Game extends Room
         return microtime(true) * 1000;
     }
 
+    private function tickReconnectReservations(): void
+    {
+        if (count($this->reconnectReservations) <= 0) {
+            return;
+        }
+
+        $time = time();
+        $expiredPlayers = array();
+        foreach ($this->reconnectReservations as $userId => $reservation) {
+            $player = isset($this->player_array[$userId]) ? $this->player_array[$userId] : null;
+            if (isset($player) && $player->isConnected()) {
+                continue;
+            }
+            if ((int) $reservation['expires_at'] <= $time) {
+                if (isset($player)) {
+                    $expiredPlayers[] = $player;
+                } else {
+                    unset($this->reconnectReservations[$userId]);
+                }
+            }
+        }
+
+        foreach ($expiredPlayers as $player) {
+            if (isset($player) && isset($this->player_array[$player->user_id])) {
+                $player->remove();
+            }
+        }
+    }
+
+    private function decodeResumePayload($data)
+    {
+        $payload = json_decode($data);
+        if ($payload instanceof \stdClass) {
+            return $payload;
+        }
+
+        $fallback = new \stdClass();
+        $fallback->client_last_seen_packet_num = is_numeric($data) ? (int) $data : -1;
+        return $fallback;
+    }
+
+    private function resumePayloadMatchesRace($payload): bool
+    {
+        if (!($payload instanceof \stdClass)) {
+            return true;
+        }
+        if (isset($payload->course_id) && (string) $payload->course_id !== (string) $this->course_id) {
+            return false;
+        }
+        if (isset($payload->level_version) && (int) $payload->level_version !== (int) $this->level_version) {
+            return false;
+        }
+        return true;
+    }
+
+    private function applyLocalResumeState($player, $payload): void
+    {
+        if (!($payload instanceof \stdClass) || !isset($payload->local_player) || !($payload->local_player instanceof \stdClass)) {
+            return;
+        }
+
+        $local = $payload->local_player;
+        if (isset($local->x) && is_numeric($local->x)) {
+            $player->pos_x = (int) $local->x;
+        }
+        if (isset($local->y) && is_numeric($local->y)) {
+            $player->pos_y = (int) $local->y;
+        }
+        if (isset($local->rotation) && is_numeric($local->rotation)) {
+            $player->rot = (int) $local->rotation;
+        }
+        if (isset($local->state) && is_string($local->state) && $local->state !== '') {
+            $player->remote_state = (string) $local->state;
+        }
+    }
+
+    private function buildResumeSnapshot($player, int $clientLastSeenPacketNum): array
+    {
+        $players = array();
+        foreach ($this->player_array as $otherPlayer) {
+            if (!isset($otherPlayer->race_stats) || !$otherPlayer->race_stats->still_here) {
+                continue;
+            }
+            $players[] = [
+                'user_id' => (int) $otherPlayer->user_id,
+                'temp_id' => (int) $otherPlayer->temp_id,
+                'packets' => $this->buildResumePlayerPackets($otherPlayer),
+            ];
+        }
+
+        return [
+            'course_id' => (int) $this->course_id,
+            'replay_course_id' => (string) $this->replay_course_id,
+            'level_id' => (int) $this->level_id,
+            'level_version' => (int) $this->level_version,
+            'room_type' => (string) $this->from_room,
+            'mode' => (string) $this->mode,
+            'begun' => (bool) $this->begun,
+            'local_user_id' => (int) $player->user_id,
+            'local_temp_id' => (int) $player->temp_id,
+            'client_last_seen_packet_num' => $clientLastSeenPacketNum,
+            'finish_times_packet' => $this->buildFinishTimesPacket(),
+            'players' => $players,
+            'has_hats' => (int) $this->hasHats,
+            'hat_countdown_end' => (int) $this->hatCountdownEnd,
+            'finish_count' => (int) $this->finish_count,
+            'finish_positions' => $this->finish_positions,
+            'cowboy_mode' => (bool) $this->cowboy_mode,
+            'cowboy_chance' => $this->cowboy_chance,
+            'ending_egg' => (bool) $this->ending_egg,
+            'next_reconnect_event_seq' => (int) $this->nextReconnectEventSeq,
+        ];
+    }
+
+    private function buildResumeEvents($player, int $clientLastSeenPacketNum): array
+    {
+        $events = array();
+        foreach ($this->reconnectEventLog as $event) {
+            $originPacketNum = isset($event['origin_packet_nums'][$player->user_id])
+                ? (int) $event['origin_packet_nums'][$player->user_id]
+                : null;
+            if ($originPacketNum === null || $originPacketNum <= $clientLastSeenPacketNum) {
+                continue;
+            }
+            $events[] = [
+                'race_event_seq' => (int) $event['race_event_seq'],
+                'origin_packet_num' => $originPacketNum,
+                'type' => (string) $event['type'],
+                'payload' => $event['payload'],
+                'timestamp' => (int) $event['timestamp'],
+            ];
+        }
+        return $events;
+    }
+
+    private function buildResumePlayerPackets($player): array
+    {
+        $packets = array();
+        $packets[] = $player->getRemoteInfo();
+        if (!isset($player->race_stats) || $player->race_stats->drawing === false) {
+            $packets[] = 'finishDrawing`' . $player->temp_id;
+        }
+        $packets[] = $this->getHatStr($player);
+        $packets[] = 'var' . $player->temp_id . '`parent`' . $player->remote_parent;
+        $packets[] = 'var' . $player->temp_id . '`state`' . $player->remote_state;
+        $packets[] = 'var' . $player->temp_id . '`scaleX`' . $player->remote_scale_x;
+        $packets[] = 'var' . $player->temp_id . '`item`' . $player->remote_item;
+        $packets[] = 'var' . $player->temp_id . '`rotMod`' . $player->remote_rot_mod;
+        $packets[] = 'var' . $player->temp_id . '`rot`' . $player->rot;
+        $packets[] = 'var' . $player->temp_id . '`sparkle`' . $player->remote_sparkle;
+        $packets[] = 'var' . $player->temp_id . '`jet`' . $player->remote_jet;
+        $packets[] = 'var' . $player->temp_id . '`reconnectPending`' . $player->remote_reconnect_pending;
+        $packets[] = 'exactPos' . $player->temp_id . '`' . (int) $player->pos_x . '`' . (int) $player->pos_y;
+        return $packets;
+    }
+
+    private function setReconnectPendingState($player, bool $isPending): void
+    {
+        $newValue = $isPending ? 1 : 0;
+        if ((int) $player->remote_reconnect_pending === $newValue) {
+            return;
+        }
+
+        $player->remote_reconnect_pending = $newValue;
+        $packet = 'var' . $player->temp_id . '`reconnectPending`' . $newValue;
+        $this->recordReconnectEvent('player_var', $packet);
+        $this->sendToRoom($packet, $player->user_id);
+    }
+
+    private function broadcastResumedPlayerState($player): void
+    {
+        foreach ($this->buildResumePlayerPackets($player) as $packet) {
+            $this->sendToRoom($packet, $player->user_id);
+        }
+    }
+
+    private function buildFinishTimesPacket(): string
+    {
+        $str = 'finishTimes';
+        $drawing = false;
+        foreach ($this->player_array as $player) {
+            if ($player->race_stats->drawing === true) {
+                $drawing = true;
+                break;
+            }
+        }
+
+        if ($drawing === true) {
+            foreach ($this->finish_array as $rs) {
+                $forfeit = $rs->quit_race ? ($this->mode === self::MODE_EGG ? '0' : 'forfeit') : '';
+                $localMs = isset($rs->local_finish_ms) ? (int) $rs->local_finish_ms : '';
+                $str .= '`' . $rs->name . '`' . $forfeit . '`' . $rs->drawing . '`' . $rs->still_here . '`' . $localMs;
+            }
+            return $str;
+        }
+
+        foreach ($this->finish_array as $rs) {
+            $finishTime = null;
+            if ($this->mode === self::MODE_EGG) {
+                $finishTime = $rs->eggs;
+            } elseif ($this->mode === self::MODE_OBJECTIVE) {
+                if (!empty($rs->finish_time)) {
+                    $objectivesReached = count($rs->objectives_reached);
+                    $finishTime = "$rs->finish_time,$objectivesReached,$this->finish_count";
+                }
+            } else {
+                $finishTime = $rs->finish_time;
+            }
+
+            if (isset($finishTime) || $rs->quit_race) {
+                $finishTime = isset($finishTime) ? $finishTime : 'forfeit';
+                $localMs = isset($rs->local_finish_ms) ? (int) $rs->local_finish_ms : '';
+                $str .= '`' . $rs->name . '`' . $finishTime . '`' . $rs->drawing . '`' . $rs->still_here . '`' . $localMs;
+            }
+        }
+
+        return $str;
+    }
+
+    private function shouldRecordReconnectActivateEvent(string $data): bool
+    {
+        $parts = explode('`', $data);
+        $direction = isset($parts[2]) ? (string) $parts[2] : '';
+
+        // Directional activate payloads are push blocks in the current client protocol.
+        // They can spam the reconnect event ring buffer without adding stable replay value.
+        // A more complete fix would snapshot and restore movable-block state during resume
+        // so reconnect fidelity does not depend on replaying every intermediate push event.
+        return !in_array($direction, ['up', 'down', 'left', 'right'], true);
+    }
+
+    private function recordReconnectEvent(string $type, $payload): void
+    {
+        $originPacketNums = array();
+        foreach ($this->player_array as $player) {
+            if (isset($player->socket) && method_exists($player->socket, 'peekNextSendNum')) {
+                $originPacketNums[$player->user_id] = $player->socket->peekNextSendNum();
+            }
+        }
+
+        $this->reconnectEventLog[] = [
+            'race_event_seq' => $this->nextReconnectEventSeq++,
+            'type' => $type,
+            'payload' => $payload,
+            'origin_packet_nums' => $originPacketNums,
+            'timestamp' => (int) round(microtime(true) * 1000),
+        ];
+
+        if (count($this->reconnectEventLog) > self::RECONNECT_EVENT_LOG_LIMIT) {
+            array_shift($this->reconnectEventLog);
+        }
+    }
+
 
     public function getCourseId()
     {
@@ -1731,6 +2116,7 @@ class Game extends Room
     public function remove()
     {
         $this->finalizeReplay();
+        unset(self::$activeGames[spl_object_id($this)]);
         foreach ($this as $key => $var) {
             if ($key !== 'mode' && $key !== 'finish_array') {
                 $this->$key = null;

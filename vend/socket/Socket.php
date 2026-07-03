@@ -83,17 +83,30 @@ abstract class Socket
 
     public function close()
     {
-        if ($this->is_open && $this->socket instanceof \Socket) {
+        if (!$this->is_open) {
+            return;
+        }
+
+        $this->is_open = false;
+        if ($this->socket instanceof \Socket) {
             @socket_shutdown($this->socket, 2);
             @socket_close($this->socket);
         }
-        // $this->socket = spl_object_id($this->socket);
-        $this->is_open = false;
     }
 
     public function write($buffer, $length = 4096)
     {
-        if (($ret = @socket_write($this->socket, $buffer, $length)) === false) {
+        if (!$this->is_open || !$this->socket instanceof \Socket) {
+            throw new \Exception("Could not write to socket: socket is closed");
+        }
+
+        try {
+            $ret = @socket_write($this->socket, $buffer, $length);
+        } catch (\Throwable $e) {
+            throw new \Exception("Could not write to socket: ".$e->getMessage(), 0, $e);
+        }
+
+        if ($ret === false) {
             throw new \Exception("Could not write to socket: ".$this->getError());
         }
         return $ret;
@@ -101,7 +114,17 @@ abstract class Socket
 
     public function read($length = 4096)
     {
-        if (($ret = @socket_read($this->socket, $length, PHP_BINARY_READ)) == false) {
+        if (!$this->is_open || !$this->socket instanceof \Socket) {
+            throw new \Exception("Could not read from socket: socket is closed");
+        }
+
+        try {
+            $ret = @socket_read($this->socket, $length, PHP_BINARY_READ);
+        } catch (\Throwable $e) {
+            throw new \Exception("Could not read from socket: ".$e->getMessage(), 0, $e);
+        }
+
+        if ($ret == false) {
             throw new \Exception("Could not read from socket: ".$this->getError());
         }
         return $ret;

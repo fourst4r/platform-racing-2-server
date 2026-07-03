@@ -119,7 +119,7 @@ function client_hit($socket, $data)
 {
     $player = $socket->getPlayer();
     if (isset($player->game_room)) {
-        $player->game_room->sendToRoom('hit'.$data, $player->user_id);
+        $player->game_room->broadcastHit($player, $data);
     }
 }
 
@@ -129,7 +129,7 @@ function client_activate($socket, $data)
 {
     $player = $socket->getPlayer();
     if (isset($player->game_room)) {
-        $player->game_room->sendToRoom('activate`'.$data.'`', $player->user_id);
+        $player->game_room->broadcastActivate($player, $data);
     }
 }
 
@@ -140,7 +140,7 @@ function client_heart($socket)
     $player = $socket->getPlayer();
     if (isset($player->game_room)) {
         $player->lives++;
-        $player->game_room->sendToRoom('heart'.$player->temp_id.'`', $player->user_id);
+        $player->game_room->broadcastHeart($player);
     }
 }
 
@@ -200,5 +200,14 @@ function client_check_hat_countdown($socket)
     $player = $socket->getPlayer();
     if (isset($player->game_room)) {
         $player->game_room->checkHatCountdown($player);
+    }
+}
+
+
+function client_resume_race_state($socket, $data)
+{
+    $player = $socket->getPlayer();
+    if (isset($player->game_room) && $player->game_room instanceof \pr2\multi\Game) {
+        $player->game_room->resumeRaceState($player, $data);
     }
 }

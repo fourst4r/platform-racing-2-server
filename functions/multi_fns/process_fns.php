@@ -224,8 +224,22 @@ function process_register_login($server_socket, $data)
             } elseif ($guild_id !== 0 && $guild_id !== (int) $login_obj->user->guild && !$ps_staff_cond && !$is_fred) {
                 $socket->write('message`Error: You are not a member of this guild.');
             } elseif (isset($player_array[$user_id])) {
-                if ($group > 0) {
-                    $existing_player = $player_array[$user_id];
+                $existing_player = $player_array[$user_id];
+                if ($existing_player->isReconnectPending()) {
+                    $player = $existing_player;
+                    $player->resumeConnection($socket, $login_obj);
+                    $socket->player = $player;
+                    $player->sendSessionBootstrap();
+                } elseif ($existing_player->connection_state === \pr2\multi\Player::CONNECTION_RECONNECTING) {
+                    $existing_player->remove();
+                    $player = new \pr2\multi\Player($socket, $login_obj);
+                    $socket->player = $player;
+                    if ((int) $player->user_id === $guild_owner) {
+                        $player->becomeServerOwner();
+                    } elseif ($player->group <= 0) {
+                        $player->becomeGuest();
+                    }
+                } elseif ($group > 0) {
                     $existing_player->write('message`You were disconnected because you logged in somewhere else.');
                     $existing_player->remove();
                     $dc_msg = 'Your account was already running on this server. '
@@ -251,17 +265,28 @@ function process_register_login($server_socket, $data)
                 } elseif ($login_obj->user->returning) {
                     // $player->welcomeBackMessage();
                 }
+            }
 
+            if (isset($player)) {
                 $socket->write("loginSuccessful`$group`$player->name");
                 $socket->write("setRank`$player->active_rank");
                 $socket->write("setServerOwner`$guild_owner");
                 $socket->write('ping`' . time());
+                if (isset($player->game_room)
+                    && $player->game_room instanceof \pr2\multi\Game
+                    && $player->game_room->hasReconnectReservation($player->user_id)
+                ) {
+                    $socket->write($player->game_room->buildResumeRacePacket($player));
+                }
             }
 
             // disconnect if an error occurred
             $ret = new stdClass();
             $ret->success = !empty($player);
             if (!$ret->success) {
+                if (method_exists($socket, 'markIntentionalDisconnect')) {
+                    $socket->markIntentionalDisconnect();
+                }
                 $socket->close();
                 $socket->onDisconnect();
             }
