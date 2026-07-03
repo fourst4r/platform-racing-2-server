@@ -1,0 +1,21 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1709" itemID="6801c6cc-0000057d" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1709">
+      <layers>
+        <DOMLayer name="Layer 1" color="#72AE88" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="bitmap1706.png">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

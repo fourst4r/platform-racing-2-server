@@ -1,0 +1,45 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 2109" itemID="6801c6cc-00000639" linkageExportForAS="true" linkageClassName="CatCaptchaPopupGraphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 2109">
+      <layers>
+        <DOMLayer name="Layer 1" color="#B7CDB4">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText left="12.25" width="137.55" height="17.05" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-85.25" ty="-120"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>-- Pick the Cat --</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" leftMargin="8" letterSpacing="-0.05" lineSpacing="0" lineHeight="17.05" size="14" bitmapSize="280" face="Verdana-Bold"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#CDCFBD" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 54" centerPoint3DX="-86" centerPoint3DY="-32.5">
+                  <matrix>
+                    <Matrix a="1.63226318359375" d="1.33517456054688" tx="-222" ty="-128"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

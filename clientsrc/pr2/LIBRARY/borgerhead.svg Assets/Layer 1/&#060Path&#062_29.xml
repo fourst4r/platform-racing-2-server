@@ -1,0 +1,33 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="borgerhead.svg Assets/Layer 1/&amp;#060Path&amp;#062_29" itemID="68a94192-000005ca" lastModified="1755922834">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_29">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#010101"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!1802 25[1796 -7 1770 1!1770 1[1744 9 1751 47!1751 47[1750 250 1378 320!1378 320[1285 337 1085 357!1085 357[917 374 870 389!870 389[764 401 467 444!467 444[312 466 255 461!255 461[187 454 139 403!139 403[108 369 25 234!25 234[-36 226
+ 45 372!45 372[108 486 166 555!166 555[216 596 292 589!292 589[336 586 431 569!431 569[561 543 884 506!884 506[1194 470 1339 438!1339 438[1571 388 1683 300!1683 300[1816 196 1802 25"/>
+                    <Edge cubics="!1802 25(;1794,-15 1741,-6 1751,47q1802 25Q1796 -7q1770 1Q1744 9q1751 47);"/>
+                    <Edge cubics="!1751 47(;1749,377 1053,330 870,389q1751 47Q1750 250q1378 320Q1285 337q1085 357Q917 374q870 389);"/>
+                    <Edge cubics="!870 389(;162,472 219,549 25,234q870 389Q764 401q467 444Q312 466q255 461Q187 454q139 403Q108 369q25 234);"/>
+                    <Edge cubics="!25 234(;-69,222 125,506 166,555q25 234Q-36 226q45 372Q108 486q166 555);"/>
+                    <Edge cubics="!166 555(;247,621 333,576 431,569q166 555Q216 596q292 589Q336 586q431 569);"/>
+                    <Edge cubics="!431 569(;984,458 1843,513 1802,25q431 569Q561 543q884 506Q1194 470q1339 438Q1571 388q1683 300Q1816 196q1802 25);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

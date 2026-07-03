@@ -1,0 +1,94 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1607" itemID="68b3cfa1-00000487" linkageExportForAS="true" linkageClassName="RandomizeStyleButtonGraphic" symbolType="button" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1607">
+      <layers>
+        <DOMLayer name="Layer 1" color="#82BF50">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1265" centerPoint3DX="31.5" centerPoint3DY="25">
+                  <matrix>
+                    <Matrix a="0.64935302734375" d="1.02793884277344" tx="12.25" ty="12.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1265" centerPoint3DX="31.5" centerPoint3DY="25">
+                  <matrix>
+                    <Matrix a="0.64935302734375" d="1.02793884277344" tx="12.25" ty="12.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#AEB5E9">
+          <frames/>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#F93FEB" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1273" centerPoint3DX="27.5" centerPoint3DY="27.5">
+                  <matrix>
+                    <Matrix a="0.83331298828125" d="0.83331298828125" tx="12.5" ty="12.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1273" centerPoint3DX="27.5" centerPoint3DY="27.5">
+                  <matrix>
+                    <Matrix a="0.83331298828125" d="0.83331298828125" tx="12.5" ty="12.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1273" centerPoint3DX="27.5" centerPoint3DY="27.5">
+                  <matrix>
+                    <Matrix a="0.83331298828125" d="0.83331298828125" tx="12.5" ty="12.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1275" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix a="0.961532592773438" d="0.990386962890625" tx="12.25" ty="11.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

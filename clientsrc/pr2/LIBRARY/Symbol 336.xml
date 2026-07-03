@@ -1,0 +1,26 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 336" itemID="6801c6cc-000002d7" symbolType="graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 336">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!1663 1957[1646 2119 1456 2098!1456 2098[1328 2084 1234 1999!1234 1999[1119 1896 1136 1736!1136 1736[1147 1632 1220 1576!1220 1576[1289 1523 1381 1533!1381 1533[1577 1554 1640 1729!1640 1729[1677 1831 1663 1957"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

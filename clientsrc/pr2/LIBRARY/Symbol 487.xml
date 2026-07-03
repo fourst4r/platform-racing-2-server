@@ -1,0 +1,29 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 487" itemID="6801c6cc-00000343" symbolType="graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 487">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF" alpha="0.917647058823529"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!1829 1399[1927 1399 2005 1479!2005 1479[2068 1544 2068 1582!2068 1582[2068 1657 1959 1765!1959 1765[1825 1899 1648 1899!1648 1899|1618 1904!1618 1904[1590 1877 1568 1877!1568 1877[1510 1877 1480 1915!1480 1915[1458 1944 1458 1982!1458
+ 1982[1458 2005 1509 2092!1509 2092|1502 2119!1502 2119[1483 2129 1473 2150!1473 2150[1458 2177 1458 2212!1458 2212[1458 2318 1240 2463!1240 2463[1166 2487 1070 2487!1070 2487[943 2487 854 2326!854 2326[788 2203 788 2121!788 2121[808
+ 2019 870 1923!870 1923[994 1731 1207 1731!1207 1731|1283 1744!1283 1744|1359 1757!1359 1757|1379 1747!1379 1747[1401 1765 1432 1765!1432 1765[1486 1765 1515 1732!1515 1732[1539 1705 1539 1663!1539 1663[1539 1641 1529 1620!1529 1620|1574
+ 1579!1574 1579[1764 1399 1829 1399"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

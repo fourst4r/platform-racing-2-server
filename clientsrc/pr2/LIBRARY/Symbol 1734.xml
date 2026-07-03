@@ -1,0 +1,50 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1734" itemID="6801c6cc-0000058f" symbolType="graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1734">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#4A483E"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!5 8[5 19 3 8!3 8|5 8!37 0|30 -47!30 -47|22 12!22 12|-11 -54!-11 -54[-22 -40 -36 -32!-36 -32[-43 -31 -50 -36!-50 -36|-40 13!-40 13|-118 51!-118 51|-49 51!-49 51|-82 44!-82 44|121 29!121 29|37 0"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#4F4FFF">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.0194549560546875" d="0.0194549560546875" tx="0.85" ty="12.6"/>
+                        </matrix>
+                        <GradientEntry color="#83836B" ratio="0"/>
+                        <GradientEntry color="#3D3C32" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!127 35|-125 55!-125 55[-90 28 -48 17!-48 17|-48 -59!-48 -59|83 -59!83 -59|83 17!83 17[106 23 127 35"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

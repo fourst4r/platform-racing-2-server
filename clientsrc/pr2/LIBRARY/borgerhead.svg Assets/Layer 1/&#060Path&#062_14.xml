@@ -1,0 +1,33 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="borgerhead.svg Assets/Layer 1/&amp;#060Path&amp;#062_14" itemID="68a94192-000005e8" lastModified="1755922834">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_14">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!27 0[14 -1 12 17!12 17[2 75 0 104!0 104[-2 117 2 126!2 126[7 136 14 139!14 139[22 141 29 134!29 134[35 127 36 118!36 118[38 102 40 22!40 22[40 3 27 0"/>
+                    <Edge cubics="!27 0(;18,-1 13,9 12,17q27 0Q14 -1q12 17);"/>
+                    <Edge cubics="!12 17(;7,46 2,75 0,104q12 17Q2 75q0 104);"/>
+                    <Edge cubics="!0 104(;-1,112 -1,119 2,126q0 104Q-2 117q2 126);"/>
+                    <Edge cubics="!2 126(;4,130 9,137 14,139q2 126Q7 136q14 139);"/>
+                    <Edge cubics="!14 139(;26,142 35,129 36,118q14 139Q22 141q29 134Q35 127q36 118);"/>
+                    <Edge cubics="!36 118(;39,86 39,54 40,22q36 118Q38 102q40 22);"/>
+                    <Edge cubics="!40 22(;40,14 36,2 27,0q40 22Q40 3q27 0);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

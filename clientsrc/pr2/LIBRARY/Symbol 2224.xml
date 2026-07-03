@@ -1,0 +1,24 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 2224" itemID="68b3cfa7-000005c9" linkageExportForAS="true" linkageClassName="ColorPicker_colorWell" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 2224">
+      <layers>
+        <DOMLayer name="Layer 1" color="#F8C320" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1678" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix a="0.110458374023438" d="0.316665649414062" tx="-10.5" ty="20.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

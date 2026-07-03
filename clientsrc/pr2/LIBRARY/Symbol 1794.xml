@@ -1,0 +1,66 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1794" itemID="6801c6cc-000005a8" linkageExportForAS="true" linkageClassName="MusicMenuGraphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1794">
+      <layers>
+        <DOMLayer name="Layer 1" color="#C3D4EC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText width="69" height="14.5" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix a="1.00047302246094" tx="-34.8" ty="-39"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>-- Music --</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" letterSpacing="-0.05" lineSpacing="0" lineHeight="14.5" bitmapSize="240" face="Verdana-Bold"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#6975E8">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMDynamicText fontRenderingMode="standard" width="219.9" height="64.2" isSelectable="false" renderAsHTML="true" lineType="multiline">
+                  <matrix>
+                    <Matrix tx="-109.5" ty="19"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>This song will play by default for players playing your course. Choose none for no song and random for a random one from the list.</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" rotation="true" lineHeight="14.5" bitmapSize="240" face="Verdana"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#D96D5F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 54" centerPoint3DX="16" centerPoint3DY="45.5">
+                  <matrix>
+                    <Matrix a="0.88238525390625" d="0.785186767578125" tx="-120" ty="-50"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

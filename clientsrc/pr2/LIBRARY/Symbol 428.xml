@@ -1,0 +1,34 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 428" itemID="6801c6cc-00000318" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 428">
+      <layers>
+        <DOMLayer name="Layer 1" color="#42BDAE" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0.0055694580078125" b="0.0153045654296875" c="-0.0139007568359375" d="0.0050506591796875" tx="177.05" ty="-47.3"/>
+                        </matrix>
+                        <GradientEntry color="#B0D077" ratio="0"/>
+                        <GradientEntry color="#429D04" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!424 74[497 145 490 262!490 262[481 378 387 454!387 454[326 495 248 495!248 495[145 495 72 425!72 425|68 418!68 418[38 387 22 351!22 351[0 303 0 248!0 248[0 192 22 145!22 145[40 105 72 74!72 74[145 0 248 0!248 0[346 0 418 70!418 70|424
+ 74!248 109[191 109 151 151!151 151|149 152!149 152[110 190 110 248!110 248[110 303 147 344!147 344|151 347!151 347[191 385 248 385!248 385[306 385 346 347!346 347[384 308 387 253!387 253|387 248!387 248[387 192 346 153!346 153|346 152
+!346 152|341 146!341 146[302 109 248 109"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

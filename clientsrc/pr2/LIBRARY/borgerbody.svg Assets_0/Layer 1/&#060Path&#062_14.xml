@@ -1,0 +1,38 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="borgerbody.svg Assets_0/Layer 1/&amp;#060Path&amp;#062_14" itemID="68b3e802-00000bf5" lastModified="1756620802">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_14">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!257 9[238 -6 198 4!198 4[174 11 133 30!133 30|67 62!67 62[17 87 3 100!3 100[0 103 1 110!1 110[1 118 7 118!7 118[22 117 40 109!40 109[51 105 72 95!72 95|134 67!134 67[179 46 193 41!193 41[207 36 224 34!224 34[234 33 255 31!255 31[261
+ 29 261 20!261 20[261 13 257 9"/>
+                    <Edge cubics="!257 9(;241,-4 217,-1 198,4q257 9Q238 -6q198 4);"/>
+                    <Edge cubics="!198 4(;176,10 154,20 133,30q198 4Q174 11q133 30);"/>
+                    <Edge cubics="!133 30(;111,40 89,51 67,62q133 30 67 62);"/>
+                    <Edge cubics="!67 62(;45,73 21,83 3,100q67 62Q17 87q3 100);"/>
+                    <Edge cubics="!3 100(;-1,103 -1,118 7,118q3 100Q0 103q1 110Q1 118q7 118);"/>
+                    <Edge cubics="!7 118(;30,116 51,104 72,95q7 118Q22 117q40 109Q51 105q72 95);"/>
+                    <Edge cubics="!72 95(;93,86 113,77 134,67q72 95 134 67);"/>
+                    <Edge cubics="!134 67(;153,58 172,48 193,41q134 67Q179 46q193 41);"/>
+                    <Edge cubics="!193 41(;203,37 213,35 224,34q193 41Q207 36q224 34);"/>
+                    <Edge cubics="!224 34(;234,33 245,34 255,31q224 34Q234 33q255 31);"/>
+                    <Edge cubics="!255 31(;263,28 261,13 257,9q255 31Q261 29q261 20Q261 13q257 9);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

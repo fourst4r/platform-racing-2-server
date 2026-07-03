@@ -1,0 +1,31 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 322" itemID="6801c6cc-000002d1" symbolType="graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 322">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!1677 1588|1679 1583!1679 1583|1684 1536!1684 1536[1684 1406 1601 1319!1601 1319[1575 1292 1544 1272!1544 1272[1521 1258 1516 1258!1516 1258|1492 1259!1492 1259[1483 1261 1483 1274!1483 1274[1483 1286 1467 1285!1467 1285|1438 1284!1438
+ 1284[1436 1276 1416 1276!1416 1276[1381 1276 1318 1342!1318 1342[1242 1422 1242 1512!1242 1512[1242 1586 1294 1648!1294 1648[1350 1714 1424 1714!1424 1714[1476 1714 1523 1694!1523 1694|1560 1674!1560 1674[1599 1674 1634 1648!1634 1648
+[1665 1625 1677 1588"/>
+                    <Edge fillStyle1="1" edges="
+!1442 1472[1442 1501 1462 1521!1462 1521[1482 1541 1511 1541!1511 1541[1540 1541 1560 1521!1560 1521[1580 1501 1580 1472!1580 1472[1580 1443 1560 1423!1560 1423[1540 1403 1511 1403!1511 1403[1482 1403 1462 1423!1462 1423[1442 1443 1442
+ 1472"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

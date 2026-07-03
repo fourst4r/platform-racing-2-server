@@ -1,0 +1,108 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 2152" itemID="6801c6cc-00000657" symbolType="graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 2152">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#404040"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!11 -874|-1 -881!-1 -881[-7 -877 -14 -874!-14 -874[-164 -789 -301 -745!-301 -745[-439 -700 -615 -700!-615 -700|-679 -701!-679 -701|-706 -702!-706 -702|-705 -675!-705 -675[-694 -108 -540 239!-540 239[-385 585 -17 868!-17 868|-1 881!-1
+ 881|14 868!14 868[383 586 538 239!538 239[694 -108 706 -675!706 -675|707 -702!707 -702|679 -701!679 -701|615 -700!615 -700[438 -700 299 -745!299 -745[161 -789 11 -874!681 -676[667 -103 512 236!512 236[356 576 -1 849!-1 849[-358 576 -513
+ 237!-513 237[-668 -103 -680 -676!-680 -676|-615 -674!-615 -674[-431 -675 -290 -721!-290 -721[-149 -768 -1 -852!-1 -852[146 -768 288 -721!288 -721[430 -675 615 -674!615 -674|681 -676"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#4F4FFF">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="-0.008880615234375" b="-0.02294921875" c="0.02294921875" d="-0.008880615234375" tx="2.85" ty="-5.1"/>
+                        </matrix>
+                        <GradientEntry color="#002342" ratio="0"/>
+                        <GradientEntry color="#004C7C" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="
+!169 -428[92 -456 4 -508!4 -508|-1 -510!-1 -510|-5 -508!-5 -508[-93 -456 -170 -428!-170 -428[-246 -400 -362 -400!-362 -400|-402 -401!-402 -401|-411 -401!-411 -401|-411 -391!-411 -391[-404 -42 -315 150!-315 150[-225 342 -6 507!-6 507|-1
+ 511!-1 511|5 507!5 507[225 342 314 150!314 150[404 -42 411 -391!411 -391|411 -401!411 -401|402 -401!402 -401|362 -400!362 -400[246 -400 169 -428"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#4F4FFF">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.04693603515625" d="0.04693603515625" tx="0.05"/>
+                        </matrix>
+                        <GradientEntry color="#C4C4C4" ratio="0"/>
+                        <GradientEntry color="#FFFFFF" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!501 -542|524 -543!524 -543|540 -539!540 -539|551 -527!551 -527|555 -511!555 -511|554 -488!554 -488[547 -55 434 195!434 195[320 446 31 665!31 665|32 665!32 665|19 675!19 675|1 681!1 681|-17 676!-17 676|-31 666!-31 666|-32 665!-32 665
+[-320 446 -433 195!-433 195|-433 194!-433 194[-546 -56 -553 -488!-553 -488|-554 -511!-554 -511|-550 -527!-550 -527|-538 -539!-538 -539|-522 -543!-522 -543|-500 -542!-500 -542|-452 -541!-452 -541[-319 -541 -228 -573!-228 -573[-136 -606
+ -26 -670!-26 -670|-25 -670!-25 -670|-14 -676!-14 -676|1 -680!1 -680|16 -675!16 -675|26 -669!26 -669|25 -670!25 -670[135 -606 228 -573!228 -573[318 -541 453 -541!453 -541|501 -542"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#4F4FFF">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0.0174560546875" b="-0.034576416015625" c="0.034576416015625" d="0.0174560546875" tx="-8.25" ty="-3.1"/>
+                        </matrix>
+                        <GradientEntry color="#949494" ratio="0"/>
+                        <GradientEntry color="#BDBDBD" ratio="0.52156862745098"/>
+                        <GradientEntry color="#525252" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!296 -731[436 -686 615 -686!615 -686|680 -687!680 -687|694 -688!694 -688|693 -674!693 -674[681 -110 527 235!527 235[373 579 6 860!6 860|-1 866!-1 866|-9 860!-9 860[-375 579 -528 234!-528 234[-682 -110 -693 -674!-693 -674|-693 -688!-693
+ -688|-679 -687!-679 -687|-615 -686!-615 -686[-437 -686 -298 -731!-298 -731[-159 -776 -8 -862!-8 -862|-1 -865!-1 -865|5 -862!5 -862[156 -776 296 -731"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

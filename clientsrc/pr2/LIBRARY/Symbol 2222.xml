@@ -1,0 +1,80 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 2222" itemID="6801c6cc-0000067d" symbolType="graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 2222">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0.04571533203125" d="0.021331787109375" tx="37.55" ty="17.5"/>
+                        </matrix>
+                        <GradientEntry color="#0075BF" ratio="0"/>
+                        <GradientEntry color="#0075BF" ratio="0"/>
+                        <GradientEntry color="#009DFF" ratio="0.992156862745098"/>
+                        <GradientEntry color="#009DFF" ratio="1"/>
+                        <GradientEntry color="#009DFF" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0.0460205078125" d="0.021636962890625" tx="37.8" ty="17.75"/>
+                        </matrix>
+                        <GradientEntry color="#0075BF" ratio="0"/>
+                        <GradientEntry color="#0075BF" ratio="0"/>
+                        <GradientEntry color="#009DFF" ratio="0.992156862745098"/>
+                        <GradientEntry color="#009DFF" ratio="1"/>
+                        <GradientEntry color="#009DFF" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!1490 21|1490 11!1490 11[1490 7 1493 4!1493 4[#5D7.E8 #1.18 1500 1"/>
+                    <Edge fillStyle1="2" edges="!1500 1|1507 4!1507 4|1510 11!1510 11|1510 700!1510 700|1507 707!1507 707|1500 710!1500 710|12 710!12 710|5 707!5 707|2 700!22 690|1490 690!1490 690|1490 21"/>
+                    <Edge fillStyle0="1" edges="!1500 1|12 1!12 1[8 1 5 4!5 4[2 7 2 11!2 11|2 700"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!2 700[#2.18 #2B7.E8 5 693!5 693[8 690 12 690!12 690|22 690"/>
+                    <Edge fillStyle0="1" edges="!22 690|22 21!22 21|1490 21"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#4F4FFF">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0.0460205078125" d="0.021636962890625" tx="37.2" ty="17.2"/>
+                        </matrix>
+                        <GradientEntry color="#0075BF" ratio="0"/>
+                        <GradientEntry color="#0075BF" ratio="0"/>
+                        <GradientEntry color="#009DFF" ratio="0.992156862745098"/>
+                        <GradientEntry color="#009DFF" ratio="1"/>
+                        <GradientEntry color="#009DFF" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!1488 -10|1324 -10!1324 -10|143 -10!143 -10|0 -10!0 -10|-7 -7!-7 -7|-10 0!-10 0|-10 113!-10 113|-10 537!-10 537|-10 689!-10 689|-7 696!-7 696|0 699!0 699|143 699!143 699|1324 699!1324 699|1488 699!1488 699|1495 696!1495 696|1498 689!1498
+ 689|1498 537!1498 537|1498 113!1498 113|1498 0!1498 0|1495 -7!1495 -7|1488 -10!1478 679|1324 679!1324 679|143 679!143 679|10 679!10 679|10 537!10 537|10 113!10 113|10 10!10 10|143 10!143 10|1324 10!1324 10|1478 10!1478 10|1478 113!1478
+ 113|1478 537!1478 537|1478 679"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

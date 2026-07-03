@@ -1,0 +1,478 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 245" itemID="6801c6cc-000002c1" linkageExportForAS="true" linkageClassName="platform_racing_2_fla.Symbol1049_671" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 245">
+      <layers>
+        <DOMLayer name="Layer 1" color="#F82DAF">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 244" name="verifiedIcon" centerPoint3DX="5.5" centerPoint3DY="33.45">
+                  <matrix>
+                    <Matrix a="0.53656005859375" d="0.53656005859375" tx="-6" ty="21.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#F5DDD8">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 242" name="hofIcon" centerPoint3DX="14" centerPoint3DY="28.45">
+                  <matrix>
+                    <Matrix tx="8" ty="22.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#A8B77F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText width="41.85" height="23.8" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-37.75" ty="22"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Group&#xD;</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#666666"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#7EBFF8">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText width="41.85" height="23.8" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-38" ty="54"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Guild&#xD;</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#666666"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#CFD6C0">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText width="40.5" height="23.8" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-38" ty="118"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Hats&#xD;</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#666666"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 6" color="#F1D514">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText width="40.5" height="23.8" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-38" ty="86"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Rank&#xD;</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#666666"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 7" color="#B09AC8">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText width="98.9" height="23.8" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="4.1" ty="118"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Active&#xD;</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="right" aliasText="false" autoKern="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#666666"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 8" color="#099FFE">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText width="98.9" height="23.8" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="4.1" ty="86"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Joined&#xD;</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="right" aliasText="false" autoKern="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#666666"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 9" color="#8A6DFB">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 234" name="kickButton" symbolType="button">
+                  <matrix>
+                    <Matrix tx="-36.5" ty="-55.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 10" color="#725BC2">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 229" name="inviteButton" symbolType="button">
+                  <matrix>
+                    <Matrix tx="1.3" ty="65.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 11" color="#B0B2D2">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMDynamicText name="supplText" width="223.5" height="14.55" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="-110.95" ty="267.15"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters></characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" rotation="true" lineHeight="14.5" bitmapSize="240" face="Verdana"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 12" color="#D6DFB3">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 54" name="supplBg" centerPoint3DX="13.5" centerPoint3DY="352.4">
+                  <matrix>
+                    <Matrix a="0.900802612304688" d="0.1832275390625" tx="-122.5" ty="256.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 13" color="#5EACF2">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 223" name="messageButton" symbolType="button">
+                  <matrix>
+                    <Matrix tx="-94.5" ty="227.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 14" color="#AC927F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMDynamicText name="activeBox" width="91" height="14.95" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="12" ty="130"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>17/Mar/2013</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="right" aliasText="false" rotation="true" lineHeight="14.5" bitmapSize="240" face="Verdana" fillColor="#151515"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 15" color="#CEBA70">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMDynamicText name="guildBox" width="141" height="14.55" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="-38" ty="66"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>none</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="14.5" bitmapSize="240" face="Verdana" fillColor="#151515"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 16" color="#26CCA2">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMDynamicText name="registerBox" width="91" height="14.85" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="12" ty="98"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>17/Sep/2013</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="right" aliasText="false" rotation="true" lineHeight="14.5" bitmapSize="240" face="Verdana" fillColor="#151515"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 17" color="#B751C4">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMDynamicText name="statusBox" width="213.5" height="14.5" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="-106.75" ty="1"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>offline</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" rotation="true" lineHeight="12.05" size="10" bitmapSize="200" face="Verdana" fillColor="#666666"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 18" color="#84FA15">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMDynamicText name="rankBox" width="36" height="14.55" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="-38" ty="98"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>24</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="14.5" bitmapSize="240" face="Verdana" fillColor="#151515"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 19" color="#D252AC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMDynamicText name="hatBox" width="36" height="14.55" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="-38" ty="130"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>2</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="14.5" bitmapSize="240" face="Verdana" fillColor="#151515"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 20" color="#F231A3">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMDynamicText name="groupBox" width="141" height="14.55" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="-38" ty="34"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Temporary Moderator</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="14.5" bitmapSize="240" face="Verdana" fillColor="#151515"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 21" color="#CBEFFE">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 78" name="levelsButton" centerPoint3DX="60.5" centerPoint3DY="315.95">
+                  <matrix>
+                    <Matrix tx="5" ty="155"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 22" color="#F43CE5">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 78" name="ignoreButton" centerPoint3DX="60.5" centerPoint3DY="342.95">
+                  <matrix>
+                    <Matrix tx="5" ty="182"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 23" color="#72D9F2">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 78" name="friendButton" centerPoint3DX="-49.5" centerPoint3DY="342.95">
+                  <matrix>
+                    <Matrix tx="-105" ty="182"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 24" color="#59E09D">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 78" name="followButton" centerPoint3DX="-49.5" centerPoint3DY="315.95">
+                  <matrix>
+                    <Matrix tx="-105" ty="155"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 25" color="#B814BC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 54" name="kickBg" centerPoint3DX="13.5" centerPoint3DY="33.9">
+                  <matrix>
+                    <Matrix a="0.900802612304688" d="0.144515991210938" tx="-122.5" ty="-61.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,42 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 869" itemID="6801c6cc-00000410" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 869">
+      <layers>
+        <DOMLayer name="Layer 1" color="#8DA27D" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 868" centerPoint3DX="31" centerPoint3DY="30.45">
+                  <matrix>
+                    <Matrix a="1.38888549804688" d="1.38888549804688"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#AE21F8">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#333333"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!1624 988[1548 1145 1426 1282!1426 1282[1097 1647 640 1647!640 1647[348 1647 191 1207!191 1207[111 985 90 742!90 742[90 389 340 221!340 221[559 73 890 108!890 108[1208 141 1440 317!1440 317[1690 508 1690 765!1690 765[1690 850 1624 988"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,36 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="borgerhead.svg Assets/Layer 1/&amp;#060Path&amp;#062_19" itemID="68a94192-000005de" lastModified="1755922834">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_19">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!44 139|43 87!43 87[41 44 35 14!35 14[32 -1 22 0!22 0[12 0 9 15!9 15[2 47 2 86!2 86|1 119!1 119[-1 155 9 168!9 168[13 174 20 176!20 176[28 178 33 172!33 172[41 162 42 158!42 158[44 152 44 139"/>
+                    <Edge cubics="!43 87(;42,62 40,38 35,14q43 87Q41 44q35 14);"/>
+                    <Edge cubics="!35 14(;34,8 29,-1 22,0q35 14Q32 -1q22 0);"/>
+                    <Edge cubics="!22 0(;14,0 10,9 9,15q22 0Q12 0q9 15);"/>
+                    <Edge cubics="!9 15(;4,38 2,62 2,86q9 15Q2 47q2 86);"/>
+                    <Edge cubics="!2 86(;2,86 1,119 1,119q2 86 1 119);"/>
+                    <Edge cubics="!1 119(;0,136 -2,154 9,168q1 119Q-1 155q9 168);"/>
+                    <Edge cubics="!9 168(;14,175 25,181 33,172q9 168Q13 174q20 176Q28 178q33 172);"/>
+                    <Edge cubics="!33 172(;36,168 40,164 42,158q33 172Q41 162q42 158);"/>
+                    <Edge cubics="!42 158(;44,152 44,145 44,139q42 158Q44 152q44 139);"/>
+                    <Edge cubics="!44 139(;44,139 43,87 43,87q44 139 43 87);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

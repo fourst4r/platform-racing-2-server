@@ -1,0 +1,21 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 100" itemID="68b3cf96-000001b8" linkageExportForAS="true" linkageClassName="TextArea_disabledSkin" scaleGridLeft="38" scaleGridRight="114" scaleGridTop="5.5" scaleGridBottom="16.5" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 100">
+      <layers>
+        <DOMLayer name="Layer 1" color="#ABFE66" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 86" symbolType="graphic" loop="loop">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

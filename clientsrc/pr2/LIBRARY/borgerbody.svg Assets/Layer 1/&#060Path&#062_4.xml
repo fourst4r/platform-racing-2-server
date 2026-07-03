@@ -1,0 +1,39 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="borgerbody.svg Assets/Layer 1/&amp;#060Path&amp;#062_4" itemID="68b3e7c6-00000bc5" lastModified="1756620742">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_4">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!67 2[64 -1 62 2!62 2|54 13!54 13[49 21 46 22!46 22|36 29!36 29|15 63!15 63[4 83 2 89!2 89[-2 99 3 106!3 106[9 114 15 108!15 108[17 105 30 85!30 85|51 50!51 50[53 47 55 33!55 33|67 9!67 9[69 6 67 2"/>
+                    <Edge cubics="!67 2(;65,0 63,0 62,2q67 2Q64 -1q62 2);"/>
+                    <Edge cubics="!62 2(;59,6 56,9 54,13q62 2 54 13);"/>
+                    <Edge cubics="!54 13(;52,16 50,20 46,22q54 13Q49 21q46 22);"/>
+                    <Edge cubics="!46 22(;43,24 39,26 36,29q46 22 36 29);"/>
+                    <Edge cubics="!15 63(;10,72 5,80 2,89q15 63Q4 83q2 89);"/>
+                    <Edge cubics="!2 89(;0,94 0,102 3,106q2 89Q-2 99q3 106);"/>
+                    <Edge cubics="!3 106(;6,110 11,112 15,108q3 106Q9 114q15 108);"/>
+                    <Edge cubics="!15 108(;21,101 25,93 30,85q15 108Q17 105q30 85);"/>
+                    <Edge cubics="!51 50(;54,45 54,39 55,33q51 50Q53 47q55 33);"/>
+                    <Edge cubics="!67 9(;68,7 68,4 67,2q67 9Q69 6q67 2);"/>
+                    <Edge cubics="!55 33(;55,33 67,9 67,9q55 33 67 9);"/>
+                    <Edge cubics="!36 29(;36,29 15,63 15,63q36 29 15 63);"/>
+                    <Edge cubics="!30 85(;30,85 51,50 51,50q30 85 51 50);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

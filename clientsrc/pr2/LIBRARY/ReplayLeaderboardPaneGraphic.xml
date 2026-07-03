@@ -1,0 +1,514 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="ReplayLeaderboardPaneGraphic" itemID="69086216-00000675" linkageExportForAS="true" linkageClassName="ReplayLeaderboardPaneGraphic" lastModified="1776068910">
+  <timeline>
+    <DOMTimeline name="ReplayLeaderboardPaneGraphic">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 101" name="soloContainer" centerPoint3DX="-68.1" centerPoint3DY="-19.65">
+                  <matrix>
+                    <Matrix a="1.36845397949219" d="4.09149169921875" tx="-123.65" ty="-31.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.9" y="-0.15"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Symbol 101" name="teamContainer" centerPoint3DX="-48.5" centerPoint3DY="88.6">
+                  <matrix>
+                    <Matrix a="1.37742614746094" d="4.09159851074219" tx="-125" ty="79.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05" y="0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMDynamicText width="100" height="13.25" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="-123" ty="64.35"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Team</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" alpha="0.00392156862745098" lineHeight="13.25" size="11" bitmapSize="220" face="Verdana"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText width="100" height="13.25" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="-123" ty="-46.25"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Solo</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" alpha="0.00392156862745098" lineHeight="13.25" size="11" bitmapSize="220" face="Verdana"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMSymbolInstance libraryItemName="Symbol 254" name="loadingGraphic" centerPoint3DX="32.5" centerPoint3DY="116">
+                  <matrix>
+                    <Matrix tx="-15.2" ty="68.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Symbol 1904" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix a="0.838668823242188" d="0.25372314453125" tx="-123.65" ty="-12.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMDynamicText name="soloTime0" width="72.5" height="12" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="-121.65" ty="-25.95"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>#1 12:34.56</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="soloPlayers0" left="15.8" width="84.9" height="12" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix a="0.999191284179688" tx="-60.95" ty="-25.95"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Jiggmin, Oxygen Magnet, Tejs</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="soloView0" left="16.5" width="39.5" height="10.95" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="27.15" ty="-24.95"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>watch</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana-Italic" fillColor="#234287"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="soloTime1" width="72.5" height="12" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="-121.65" ty="-10"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>#1 12:34.56</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="soloPlayers1" left="15.8" width="84.9" height="12" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix a="0.999191284179688" tx="-60.95" ty="-10"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Jiggmin, Oxygen Magnet, Tejs</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="soloView1" left="16.5" width="39.5" height="10.95" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="27.15" ty="-9"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>watch</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana-Italic" fillColor="#234287"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="soloTime2" width="72.5" height="12" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="-121.65" ty="6"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>#1 12:34.56</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="soloPlayers2" left="15.8" width="84.9" height="12" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix a="0.999191284179688" tx="-60.95" ty="6"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Jiggmin, Oxygen Magnet, Tejs</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="soloView2" left="16.5" width="39.5" height="10.95" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="27.15" ty="7"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>watch</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana-Italic" fillColor="#234287"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="soloTime3" width="72.5" height="12" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="-121.65" ty="21.95"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>#1 12:34.56</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="soloPlayers3" left="15.8" width="84.9" height="12" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix a="0.999191284179688" tx="-60.95" ty="21.95"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Jiggmin, Oxygen Magnet, Tejs</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="soloView3" left="16.5" width="39.5" height="10.95" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="27.15" ty="22.95"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>watch</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana-Italic" fillColor="#234287"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="soloTime4" width="72.5" height="12" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="-121.65" ty="37.95"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>#1 12:34.56</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="soloPlayers4" left="15.8" width="84.9" height="12" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix a="0.999191284179688" tx="-60.95" ty="37.95"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Jiggmin, Oxygen Magnet, Tejs</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="soloView4" left="16.5" width="39.5" height="10.95" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="27.15" ty="38.95"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>watch</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana-Italic" fillColor="#234287"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="teamTime0" width="72.5" height="12" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="-121.65" ty="85.55"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>#1 12:34.56</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="teamPlayers0" selected="true" left="15.8" width="84.9" height="12" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix a="0.999191284179688" tx="-60.95" ty="85.55"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Jiggmin, Oxygen Magnet, Tejs</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="teamView0" left="16.5" width="39.5" height="10.95" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="27.15" ty="86.55"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>watch</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana-Italic" fillColor="#234287"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="teamTime1" width="72.5" height="12" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="-121.65" ty="101.5"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>#1 12:34.56</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="teamPlayers1" left="15.8" width="84.9" height="12" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix a="0.999191284179688" tx="-60.95" ty="101.5"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Jiggmin, Oxygen Magnet, Tejs</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="teamView1" left="16.5" width="39.5" height="10.95" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="27.15" ty="102.5"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>watch</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana-Italic" fillColor="#234287"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="teamTime2" width="72.5" height="12" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="-121.65" ty="117.5"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>#1 12:34.56</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="teamPlayers2" left="15.8" width="84.9" height="12" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix a="0.999191284179688" tx="-60.95" ty="117.5"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Jiggmin, Oxygen Magnet, Tejs</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="teamView2" left="16.5" width="39.5" height="10.95" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="27.15" ty="118.5"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>watch</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana-Italic" fillColor="#234287"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="teamTime3" width="72.5" height="12" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="-121.65" ty="133.45"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>#1 12:34.56</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="teamPlayers3" left="15.8" width="84.9" height="12" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix a="0.999191284179688" tx="-60.95" ty="133.45"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Jiggmin, Oxygen Magnet, Tejs</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="teamView3" left="16.5" width="39.5" height="10.95" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="27.15" ty="134.45"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>watch</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana-Italic" fillColor="#234287"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="teamTime4" width="72.5" height="12" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="-121.65" ty="149.45"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>#1 12:34.56</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="teamPlayers4" left="15.8" width="84.9" height="12" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix a="0.999191284179688" tx="-60.95" ty="149.45"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Jiggmin, Oxygen Magnet, Tejs</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="teamView4" left="16.5" width="39.5" height="10.95" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="27.15" ty="150.45"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>watch</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana-Italic" fillColor="#234287"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMSymbolInstance libraryItemName="Symbol 1904" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix a="0.838668823242188" d="0.25372314453125" tx="-123.65" ty="19.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Symbol 1904" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix a="0.838668823242188" d="0.25372314453125" tx="-123.65" ty="99.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Symbol 1904" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix a="0.838668823242188" d="0.25372314453125" tx="-124.85" ty="131.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMDynamicText name="soloShowAll" left="12.65" width="43.35" height="10.95" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="25.15" ty="-44.15"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>show all</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana-Italic" fillColor="#234287"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="teamShowAll" left="12.65" width="43.35" height="10.95" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="25.15" ty="66.65"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>show all</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" rotation="true" lineHeight="10.9" size="9" face="Verdana-Italic" fillColor="#234287"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

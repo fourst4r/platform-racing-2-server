@@ -1,0 +1,151 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 2175" itemID="6801c6cc-00000661" linkageExportForAS="true" linkageClassName="ExternalLinkPopupGraphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 2175">
+      <layers>
+        <DOMLayer name="Layer 1" color="#33FC61">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 78" name="proceed_bt" centerPoint3DX="-49.5" centerPoint3DY="274.95">
+                  <matrix>
+                    <Matrix tx="-105" ty="114"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9B5C94">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 78" name="close_bt" centerPoint3DX="60.5" centerPoint3DY="274.95">
+                  <matrix>
+                    <Matrix tx="5" ty="114"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#26ACE7">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 129" name="linkBox" centerPoint3DX="90.65" centerPoint3DY="65.15">
+                  <matrix>
+                    <Matrix a="2.84999084472656" d="1.93180847167969" tx="-142.5" ty="-147.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#F719FA">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText width="274.2" height="72.5" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-139.05" ty="38.1"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>The world is a scary place, and that link&#xD;may harm your computer. If you trust the&#xD;sender and recognize the link, proceed at&#xD;your own risk. If not, report the PM.&#xD;</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" rotation="true" lineSpacing="0" lineHeight="14.5" bitmapSize="240" face="Verdana"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#DC54B2">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText width="284.8" height="43.5" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-144.35" ty="-3"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>You just clicked a link that is taking you to &#xA;the website in the box above.&#xD;</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" rotation="true" lineSpacing="0" lineHeight="14.5" bitmapSize="240" face="Verdana"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 6" color="#70BFE8">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText width="178.65" height="17.05" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-94" ty="-31"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>-- External Website --</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" leftMargin="9" letterSpacing="-0.05" lineSpacing="0" lineHeight="17.05" size="14" bitmapSize="280" face="Verdana-Bold"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 7" color="#D893B8">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 54" centerPoint3DX="-14" centerPoint3DY="-59.5">
+                  <matrix>
+                    <Matrix a="1.10302734375" d="0.523590087890625" tx="-150" ty="-155"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 8" color="#CEAEA4" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 54" centerPoint3DX="-14" centerPoint3DY="50.5">
+                  <matrix>
+                    <Matrix a="1.10302734375" d="1.04718017578125" tx="-150" ty="-45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

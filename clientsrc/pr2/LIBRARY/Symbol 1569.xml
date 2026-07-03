@@ -1,0 +1,24 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1569" itemID="68b3cfa1-0000047c" linkageExportForAS="true" linkageClassName="UnreadNotifGraphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1569">
+      <layers>
+        <DOMLayer name="Layer 1" color="#62B7C5" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1568" centerPoint3DX="7.35" centerPoint3DY="7.05">
+                  <matrix>
+                    <Matrix tx="3.3" ty="3.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

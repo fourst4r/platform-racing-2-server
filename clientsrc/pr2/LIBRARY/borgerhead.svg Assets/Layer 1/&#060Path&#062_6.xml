@@ -1,0 +1,36 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="borgerhead.svg Assets/Layer 1/&amp;#060Path&amp;#062_6" itemID="68a94192-000005fc" lastModified="1755922834">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_6">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!65 5[55 -5 46 4!46 4|37 14!37 14|10 63!10 63|3 79!3 79[-2 91 2 109!2 109[3 116 8 122!8 122[13 130 20 129!20 129|23 129!23 129[31 128 38 119!38 119|72 32!72 32[75 17 65 5"/>
+                    <Edge cubics="!65 5(;60,0 52,-2 46,4q65 5Q55 -5q46 4);"/>
+                    <Edge cubics="!46 4(;43,7 40,10 37,14q46 4 37 14);"/>
+                    <Edge cubics="!10 63(;8,68 5,74 3,79q10 63 3 79);"/>
+                    <Edge cubics="!3 79(;-1,89 0,99 2,109q3 79Q-2 91q2 109);"/>
+                    <Edge cubics="!2 109(;3,117 10,130 20,129q2 109Q3 116q8 122Q13 130q20 129);"/>
+                    <Edge cubics="!20 129(;21,129 22,129 23,129q20 129 23 129);"/>
+                    <Edge cubics="!23 129(;30,128 34,124 38,119q23 129Q31 128q38 119);"/>
+                    <Edge cubics="!72 32(;74,23 71,12 65,5q72 32Q75 17q65 5);"/>
+                    <Edge cubics="!38 119(;38,119 72,32 72,32q38 119 72 32);"/>
+                    <Edge cubics="!37 14(;37,14 10,63 10,63q37 14 10 63);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,21 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 69" itemID="68b3cf95-000001a7" linkageExportForAS="true" linkageClassName="Button_selectedDownSkin" scaleGridLeft="5" scaleGridRight="58.85" scaleGridTop="5" scaleGridBottom="17" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 69">
+      <layers>
+        <DOMLayer name="Layer 1" color="#8B32F1" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 68" symbolType="graphic" loop="loop">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

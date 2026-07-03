@@ -1,0 +1,53 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="babyhead" itemID="68bce8d4-0000064b" lastModified="1757216402">
+  <timeline>
+    <DOMTimeline name="babyhead">
+      <layers>
+        <DOMLayer name="babyhead base" color="#669900" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="babyhead base" symbolType="graphic" loop="loop">
+                  <transformationPoint>
+                    <Point x="54.85" y="58.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="babyhead color2" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="babyhead color222" symbolType="graphic" centerPoint3DX="82.25" centerPoint3DY="62.2" loop="loop">
+                  <matrix>
+                    <Matrix a="0.939697265625" b="-0.342025756835938" c="0.342025756835938" d="0.939697265625" tx="62.4" ty="62.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="18.9" y="6.2"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="babyhead color1" color="#FF0000" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="babyhead color1" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix a="0.939697265625" b="-0.342025756835938" c="0.342025756835938" d="0.939697265625" tx="-14.4" ty="22.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="53.1" y="56.15"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

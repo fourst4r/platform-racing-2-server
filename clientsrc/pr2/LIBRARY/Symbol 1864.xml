@@ -1,0 +1,35 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1864" itemID="6801c6cc-000005ce" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1864">
+      <layers>
+        <DOMLayer name="Layer 1" color="#0397FD" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle0="1" strokeStyle="1" edges="!193 -115[86 -420 -192 -380!-192 -380[-48 -268 -12 -145!-12 -145[-24 -88 -67 -20!-67 -20[-13 4 23 70!23 70[16 124 -27 160!-27 160|28 250!28 250|28 380!28 380|193 385!193 385|193 -115"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

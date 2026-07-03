@@ -1,0 +1,56 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="SkullBodyDone.svg" itemID="696b48cf-00000660" symbolType="graphic" lastModified="1768639523" lastUniqueIdentifier="3">
+  <timeline>
+    <DOMTimeline name="SkullBodyDone.svg">
+      <layers>
+        <DOMLayer name="skull body color1" color="#9933CC" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="skull body color1" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix tx="179.8" ty="305.65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="96.75" y="143.5"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="skull body base" color="#FF800A" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="skull body base" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix tx="174.85" ty="307.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="100.3" y="103.1"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="skull body color2" color="#00FFFF" autoNamed="false" visible="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="skull body color2" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix tx="167.9" ty="299.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="107.05" y="151.8"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

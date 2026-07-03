@@ -1,0 +1,51 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1724" itemID="6801c6cc-00000587" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1724">
+      <layers>
+        <DOMLayer name="Layer 1" color="#B2CF20" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0.16253662109375" d="0.196685791015625" tx="133.15" ty="160.85"/>
+                        </matrix>
+                        <GradientEntry color="#00CCFF" alpha="0.250980392156863" ratio="0"/>
+                        <GradientEntry color="#FFFFFF" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <LinearGradient>
+                            <matrix>
+                              <Matrix a="0.165313720703125" d="0.1971435546875" tx="134.9" ty="161"/>
+                            </matrix>
+                            <GradientEntry color="#AFCC3C" alpha="0.250980392156863" ratio="0"/>
+                            <GradientEntry color="#0099FF" ratio="1"/>
+                          </LinearGradient>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!4391 238[4391 256 4332 356!4332 356|4385 438!4385 438[4598 773 4809 1183!4809 1183[5326 2194 5387 2607!5387 2607[5448 3020 5141 3860!5141 3860[4833 4699 4596 4835!4596 4835[4295 5189 4090 5381!4090 5381[3729 5719 3221 5945!3221 5945
+[3043 6023 2287 6204!2287 6204[1384 6420 966 6420!966 6420|852 6411!852 6411|848 6411!848 6411|851 6425!851 6425|836 6440!836 6440|791 6440!791 6440|781 6395!781 6395|776 6390!776 6390|779 6390!779 6390[697 6044 608 5814!608 5814[565
+ 5703 469 5512!469 5512[403 5381 380 5269!380 5269[349 5116 349 4820!349 4820[349 4650 253 4135!253 4135[175 3722 134 3560!134 3560|134 3555!134 3555|9 3500!9 3500|0 3493!0 3493[-2 3485 29 3485!29 3485[42 3485 134 3518!134 3518|134 3470
+!134 3470|154 3470!154 3470|168 3531!168 3531|224 3551!224 3551|615 3695!615 3695[1204 3905 1418 3905!1418 3905[2374 3905 2751 3394!2751 3394[2946 3131 2946 2825!2946 2825|2948 2687!2948 2687[2947 2643 2934 2612!2934 2612|2750 2307!2750
+ 2307|2726 2320!2726 2320|2747 2301!2747 2301|2746 2300!2746 2300|2751 2285!2751 2285|2757 2292!2757 2292[2646 1002 2970 540!2970 540[3282 93 3586 0!3586 0[4181 114 4326 360!4326 360[4391 233 4391 238"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

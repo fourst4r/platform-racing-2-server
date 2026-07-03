@@ -1,0 +1,29 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 535" itemID="6801c6cc-0000035e" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 535">
+      <layers>
+        <DOMLayer name="Layer 1" color="#817193" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#010101"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!808 47|812 21!812 21|810 5!810 5|806 1!806 1|804 5!804 5|794 35!794 35|792 47!792 47|792 53!792 53|770 71!770 71|724 103!724 103|640 147!640 147[561 183 444 211!444 211|74 285!74 285|74 279!74 279|74 249!74 249|68 223!68 223|64 217!64
+ 217|60 215!60 215|60 225!60 225|64 241!64 241|64 245!64 245|62 251!62 251|60 263!60 263|60 285!60 285[36 293 26 299!26 299|26 283!26 283|20 251!20 251|8 241!8 241|6 251!6 251|8 263!8 263|14 275!14 275|12 277!12 277|2 291!2 291|0 299
+!0 299|0 313!0 313|2 323!2 323|4 331!4 331|6 331!6 331|10 327!10 327[10 361 20 371!20 371|26 377!26 377|30 377!30 377|32 369!32 369|120 351!120 351|232 333!232 333|448 293!448 293[575 262 644 231!644 231[696 207 728 187!728 187|771 160
+!771 160|806 125!806 125[815 120 816 87!816 87[818 53 808 47"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

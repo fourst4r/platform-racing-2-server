@@ -1,0 +1,101 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1845" itemID="68b3cfa3-0000050a" linkageExportForAS="true" linkageClassName="BG6" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1845">
+      <layers>
+        <DOMLayer name="Layer 1" color="#9D8886" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1844" symbolType="graphic" loop="loop">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#B402CB">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1842" centerPoint3DX="468" centerPoint3DY="115">
+                  <matrix>
+                    <Matrix a="0.20013427734375" d="0.20013427734375" tx="418" ty="65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#AB8470">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1842" centerPoint3DX="148" centerPoint3DY="220">
+                  <matrix>
+                    <Matrix a="0.199996948242188" d="0.199996948242188" tx="98" ty="170"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#CAD99C">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!8640 2920[8621 2949 8590 2955!8590 2955[8580 2940 8580 2910!8580 2910|8601 2904!8601 2904|8630 2905!8630 2905|8640 2920!7120 4580[7111 4608 7080 4620!7080 4620[7055 4610 7040 4595!7040 4595[7058 4569 7075 4559!7075 4559|7105 4550!7105
+ 4550|7120 4580!4780 2255[4798 2229 4815 2219!4815 2219|4845 2210!4845 2210|4860 2240!4860 2240[4851 2268 4820 2280!4820 2280[4795 2270 4780 2255!650 2791[628 2791 620 2780!620 2780[629 2754 680 2780!680 2780[673 2791 650 2791"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#DFADDC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1842" centerPoint3DX="76" centerPoint3DY="296">
+                  <matrix>
+                    <Matrix a="0.220001220703125" d="0.220001220703125" tx="26" ty="246"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 6" color="#C1CB8A">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1840" symbolType="graphic" loop="loop">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

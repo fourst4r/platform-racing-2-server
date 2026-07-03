@@ -1,0 +1,70 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1853" itemID="6801c6cc-000005c7" symbolType="graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1853">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF" alpha="0.501960784313725"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!8637 960[8882 960 9043 1060!9043 1060[9095 1094 9130 1133!9130 1133[9157 1162 9157 1172!9157 1172[9157 1230 9145 1254!9145 1254[9129 1286 9078 1300!9078 1300|8723 1325!8723 1325|8657 1355!8657 1355|8557 1355!8557 1355|8539 1347!8539
+ 1347|8537 1348!8537 1348[8502 1370 8477 1370!8477 1370[8369 1370 8342 1343!8342 1343|8328 1324!8328 1324[8318 1315 8297 1315!8297 1315[8175 1315 8169 1277!8169 1277|8162 1237!8162 1237[8150 1211 8107 1190!8107 1190[8102 1217 8102 1167
+!8102 1167[8102 1157 8145 1150!8145 1150[8186 1143 8222 1126!8222 1126[8223 1091 8238 1076!8238 1076[8204 1093 8182 1095!8182 1095[8236 1074 8318 978!8318 978[8410 911 8572 990!8572 990|8595 973!8595 973[8608 960 8637 960"/>
+                    <Edge fillStyle0="1" edges="
+!8761 1307|8781 1298!8781 1298|8780 1303!8780 1303|8751 1312!8751 1312|8761 1307!8342 1030|8284 1051!8284 1051|8334 1018!8334 1018|8342 1030"/>
+                    <Edge fillStyle1="1" edges="
+!9068 1251|9072 1250!9072 1250|9066 1237!9066 1237|9068 1251"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#4F4FFF">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0" b="0.228515625" c="-0.12664794921875" d="0" tx="275" ty="103.75"/>
+                        </matrix>
+                        <GradientEntry color="#6DA5F8" ratio="0"/>
+                        <GradientEntry color="#FFFFFF" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0" b="0.127792358398438" c="-0.122802734375" d="0" tx="275" ty="299.4"/>
+                        </matrix>
+                        <GradientEntry color="#7DB583" ratio="0"/>
+                        <GradientEntry color="#63A552" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!0 4150|0 0!0 0|11000 0!11000 0|11000 4150"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="
+!0 4150[5423 3802 11000 4150"/>
+                    <Edge fillStyle1="2" edges="
+!11000 4150|11000 8000!11000 8000|0 8000!0 8000|0 4150"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

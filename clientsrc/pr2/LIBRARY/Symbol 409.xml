@@ -1,0 +1,46 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 409" itemID="6801c6cc-0000030b" symbolType="graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 409">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!2266 233[2270 234 2270 250!2270 250[2270 307 1970 388!1970 388[1700 460 1605 460!1605 460|1587 455!1587 455[1580 465 1580 440!1580 440[1580 424 1586 422!1586 422|1605 417!1605 417[1585 415 1582 407!1582 407[1648 390 1841 309!1841 309
+[1975 252 2095 252!2095 252|2174 244!2174 244|2262 235!2262 235|2266 233!1060 600[1060 623 799 679!799 679|430 750!430 750|415 748!415 748[410 746 410 730!410 730[410 695 710 607!710 607[1007 521 1131 517!1131 517[1060 566 1060 600"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#4F4FFF">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="
+!1965 153[1656 225 1343 440!1343 440|860 440!860 440[216 755 229 815!229 815[775 897 1043 736!1043 736[1311 575 1322 512!1322 512[1967 619 2202 467!2202 467|2439 251!2439 251[2273 81 1965 153"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

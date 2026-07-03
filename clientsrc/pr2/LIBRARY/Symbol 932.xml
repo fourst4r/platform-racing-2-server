@@ -1,0 +1,26 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 932" itemID="6801c6cc-0000043c" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 932">
+      <layers>
+        <DOMLayer name="Layer 1" color="#A850C3" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#010101"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!136 0|81 27!81 27[45 39 8 20!8 20[-11 41 14 57!14 57[36 71 74 72!74 72[114 72 134 55!134 55[157 36 136 0"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

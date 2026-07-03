@@ -1,0 +1,34 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 337" itemID="6801c6cc-000002d8" symbolType="graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 337">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0.04095458984375" b="-0.0109710693359375" c="0.0083770751953125" d="0.031280517578125" tx="87.5" ty="99.35"/>
+                        </matrix>
+                        <GradientEntry color="#FFFFFF" alpha="0.752941176470588" ratio="0"/>
+                        <GradientEntry color="#FFFFFF" alpha="0.250980392156863" ratio="0.552941176470588"/>
+                        <GradientEntry color="#FFFFFF" alpha="0.752941176470588" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!2327 1561[2275 1426 2218 1426!2218 1426[2144 1426 1965 1486!1965 1486[1778 1548 1594 1637!1594 1637[1114 1872 1114 2057!1114 2057[1114 2258 1183 2387!1183 2387[1257 2524 1384 2524!1384 2524|1513 2530!1513 2530[1634 2536 1727 2532!1727
+ 2532[2023 2518 2093 2410!2093 2410|2226 2171!2226 2171[2333 1970 2340 1931!2340 1931|2358 1856!2358 1856[2372 1784 2372 1750!2372 1750[2372 1678 2327 1561"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

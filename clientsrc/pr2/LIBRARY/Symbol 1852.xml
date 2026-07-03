@@ -1,0 +1,60 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1852" itemID="68b3cfa3-00000510" linkageExportForAS="true" linkageClassName="BG2" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1852">
+      <layers>
+        <DOMLayer name="Layer 1" color="#6FF873" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0" b="0.13348388671875" c="0.148406982421875" d="0" tx="279.05" ty="133"/>
+                        </matrix>
+                        <GradientEntry color="#0E0403" ratio="0"/>
+                        <GradientEntry color="#AAA48A" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="-0.48321533203125" d="0.48321533203125" tx="416" ty="27"/>
+                        </matrix>
+                        <GradientEntry color="#FDEAC9" ratio="0"/>
+                        <GradientEntry color="#9D7E8E" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0" b="0.15142822265625" c="0.154327392578125" d="0" tx="270.65" ty="301.9"/>
+                        </matrix>
+                        <GradientEntry color="#FDF7BD" ratio="0"/>
+                        <GradientEntry color="#6F8B41" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!11000 2812|11000 2918"/>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="!11000 2918[10988 2948 10999 2997!10999 2997|11000 2997"/>
+                    <Edge fillStyle1="1" edges="!11000 2997|11000 3618"/>
+                    <Edge fillStyle1="2" edges="!11000 2918|11000 2997!0 0|11000 0!11000 0|11000 2812"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!11000 2812[10257 2373 9404 2233!9404 2233[8738 2119 8160 1840!8160 1840|8151 1835!8151 1835[7881 1773 7621 1866!7621 1866[7320 1972 7089 2194!7089 2194|3621 524!3621 524[3235 788 2761 813!2761 813[1273 905 0 0"/>
+                    <Edge fillStyle0="3" fillStyle1="1" edges="!11000 3618[10000 3725 8855 3615!8855 3615|9094 3875!9094 3875|9110 3985!9110 3985|6538 4075!6538 4075|6773 4240!6773 4240[5597 4465 4380 4326!4380 4326[3847 4267 3317 4339!3317 4339[1630 4576 0 4856"/>
+                    <Edge fillStyle0="1" edges="!6664 4227[6661 4199 6676 4226!6676 4226|6664 4227"/>
+                    <Edge fillStyle0="3" fillStyle1="1" edges="!0 4699[21 4657 0 4662"/>
+                    <Edge fillStyle1="3" edges="!0 4699|0 4662"/>
+                    <Edge fillStyle1="1" edges="!0 4856|0 4745!0 4745[43 4713 0 4740!0 4740|0 4699!0 4662|0 0"/>
+                    <Edge fillStyle1="3" edges="!11000 3618|11000 8000!11000 8000|0 8000!0 8000|0 4856"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

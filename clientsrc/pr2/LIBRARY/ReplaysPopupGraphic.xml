@@ -1,0 +1,103 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="ReplaysPopupGraphic" itemID="69dc966a-0000067d" linkageExportForAS="true" linkageClassName="ReplaysPopupGraphic" lastModified="1776741506">
+  <timeline>
+    <DOMTimeline name="ReplaysPopupGraphic">
+      <layers>
+        <DOMLayer name="Layer 1" color="#21B2C3">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 254" name="loading" centerPoint3DX="47.7" centerPoint3DY="47.7">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#97F6E7">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#D2EB77">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#E87754">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#EC03E6" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 54" centerPoint3DX="-150.4" centerPoint3DY="-45.05">
+                  <matrix>
+                    <Matrix a="1.163330078125" d="1.51828002929688" tx="-153.1" ty="-145"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.95" y="-0.55"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Symbol 101">
+                  <matrix>
+                    <Matrix a="1.99253845214844" d="9.99998474121094" tx="-146.65" ty="-107.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="75.9" y="10.35"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="ReplayLeaderboardItemGraphic">
+                  <matrix>
+                    <Matrix tx="-145" ty="-104.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="150" y="9.25"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMDynamicText name="titleText" top="-2.1" width="184.2" height="13" isSelectable="false" renderAsHTML="true">
+                  <matrix>
+                    <Matrix tx="-143" ty="-129.1"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>All Solo Replays (67)</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" lineHeight="10.9" size="9" bitmapSize="180" face="Verdana-Bold"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMSymbolInstance libraryItemName="Symbol 78" name="btnClose">
+                  <matrix>
+                    <Matrix tx="-48.25" ty="118.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="11"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Symbol 206" name="chkHidden">
+                  <matrix>
+                    <Matrix tx="56.2" ty="-135"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="11"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

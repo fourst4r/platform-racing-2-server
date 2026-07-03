@@ -1,0 +1,30 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1514" itemID="6801c6cc-00000517" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1514">
+      <layers>
+        <DOMLayer name="Layer 1" color="#E9EBC9" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <BitmapFill bitmapPath="bitmap1512.png" bitmapIsClipped="true">
+                        <matrix>
+                          <Matrix a="27.1163940429688" d="27.1163940429688"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!0 0|1085 0!1085 0|1085 1274!1085 1274|0 1274!0 1274|0 0"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

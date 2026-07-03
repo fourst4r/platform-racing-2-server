@@ -1,0 +1,26 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1123" itemID="6801c6cc-00000497" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1123">
+      <layers>
+        <DOMLayer name="Layer 1" color="#60BC78" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!282 47[276 25 254 17!254 17|217 7!217 7|142 1!142 1[65 3 5 56!5 56[-2 62 1 75!1 75[3 89 13 85!13 85[74 57 144 52!144 52|209 60!209 60|242 71!242 71|259 77!259 77[269 79 276 72!276 72[285 61 282 47"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

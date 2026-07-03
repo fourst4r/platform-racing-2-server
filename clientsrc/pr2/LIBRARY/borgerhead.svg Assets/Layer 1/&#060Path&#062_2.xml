@@ -1,0 +1,28 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="borgerhead.svg Assets/Layer 1/&amp;#060Path&amp;#062_2" itemID="68a94192-00000608" lastModified="1755922834">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_2">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!1347 50[1280 -27 935 13!935 13[646 46 322 136!322 136[7 224 0 267!0 267[-7 316 461 252!461 252[544 228 686 217!686 217[766 211 932 201!932 201[1232 175 1347 50"/>
+                    <Edge cubics="!1347 50(;1150,-175 -894,437 461,252q1347 50Q1280 -27q935 13Q646 46q322 136Q7 224q0 267Q-7 316q461 252);"/>
+                    <Edge cubics="!461 252(;731,173 1152,262 1347,50q461 252Q544 228q686 217Q766 211q932 201Q1232 175q1347 50);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

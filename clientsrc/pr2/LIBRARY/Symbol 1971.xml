@@ -1,0 +1,24 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1971" itemID="68b3cfa4-0000054b" linkageExportForAS="true" linkageClassName="ColorPickerHueArrowGraphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1971">
+      <layers>
+        <DOMLayer name="Layer 1" color="#5DBCC5" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1970" name="arrow" centerPoint3DX="42" centerPoint3DY="14.25">
+                  <matrix>
+                    <Matrix a="0" b="0.119796752929688" c="-0.120452880859375" d="0" tx="4.5" ty="-4.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

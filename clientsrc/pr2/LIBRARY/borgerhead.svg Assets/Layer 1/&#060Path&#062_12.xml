@@ -1,0 +1,38 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="borgerhead.svg Assets/Layer 1/&amp;#060Path&amp;#062_12" itemID="68a94192-000005f0" lastModified="1755922834">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_12">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!50 102|47 71!47 71[44 45 44 43!44 43|40 22!40 22[39 15 33 7!33 7[27 0 20 1!20 1[13 1 7 8!7 8[2 15 1 23!1 23|0 71!0 71[0 109 3 121!3 121[7 135 12 140!12 140[20 148 27 147!27 147[36 146 43 138!43 138[48 130 49 120!49 120[51 108 50 102"/>
+                    <Edge cubics="!47 71(;46,61 46,52 44,43q47 71Q44 45q44 43);"/>
+                    <Edge cubics="!44 43(;43,36 41,29 40,22q44 43 40 22);"/>
+                    <Edge cubics="!40 22(;39,16 36,11 33,7q40 22Q39 15q33 7);"/>
+                    <Edge cubics="!33 7(;30,3 25,0 20,1q33 7Q27 0q20 1);"/>
+                    <Edge cubics="!20 1(;10,1 2,13 1,23q20 1Q13 1q7 8Q2 15q1 23);"/>
+                    <Edge cubics="!0 71(;0,88 -1,105 3,121q0 71Q0 109q3 121);"/>
+                    <Edge cubics="!3 121(;5,128 7,135 12,140q3 121Q7 135q12 140);"/>
+                    <Edge cubics="!12 140(;16,144 21,148 27,147q12 140Q20 148q27 147);"/>
+                    <Edge cubics="!27 147(;40,146 48,132 49,120q27 147Q36 146q43 138Q48 130q49 120);"/>
+                    <Edge cubics="!49 120(;50,114 51,108 50,102q49 120Q51 108q50 102);"/>
+                    <Edge cubics="!50 102(;50,102 47,71 47,71q50 102 47 71);"/>
+                    <Edge cubics="!1 23(;1,23 0,71 0,71q1 23 0 71);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,67 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 405" itemID="6801c6cc-00000307" symbolType="graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 405">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF" alpha="0.250980392156863"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!2 -1151[-213 -1268 -316 -995!-316 -995[-444 -662 -323 -328!-323 -328[97 17 263 -532!263 -532[388 -942 2 -1151"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#4F4FFF">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor alpha="0.250980392156863"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!163 -1266[-186 -1527 -459 -1252!-459 -1252[-733 -978 -782 -566!-782 -566[-799 -424 -776 -281!-776 -281[-717 91 -975 234!-975 234|-994 169!-994 169[-1063 -54 -999 -286!-999 -286[-890 -1043 -655 -1459!-655 -1459[-421 -1875 182 -1619!182
+ -1619[785 -1364 1152 -633!1152 -633[1611 -730 2082 -715!2082 -715|2079 -642!2079 -642[1676 -475 1253 -520!1253 -520[971 -551 742 -778!742 -778[512 -1005 163 -1266"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#4F4FFF">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!918 -958[771 -1214 307 -1499!307 -1499[-157 -1785 -208 -1695!-208 -1695[-228 -1631 -179 -1587!-179 -1587[460 -1010 643 -168!643 -168[963 -259 1290 -294!1290 -294[1576 -325 1858 -385!1858 -385[2149 -449 2058 -718!2058 -718|1162 -624!1162
+ -624[1064 -702 918 -958!956 -1007[1177 -578 1643 -722!1643 -722[1867 -793 2097 -749!2097 -749[2269 -399 1822 -311!1822 -311[427 -27 -972 242!-972 242[-1177 -446 -881 -1108!-881 -1108[-699 -1513 -375 -1816!-375 -1816|349 -1614!349 -1614
+[750 -1409 956 -1007!-649 -1320[-1101 -628 -880 151!-880 151[-512 124 -179 -28!-179 -28|-226 -172!-226 -172[-343 -534 -431 -905!-431 -905[-519 -1280 -374 -1623!-374 -1623[-536 -1493 -649 -1320!-313 -1656[-438 -1086 -294 -717!-294 -717
+[-150 -349 -132 -269!-132 -269[-115 -189 -30 -36!-30 -36[372 -84 595 -155!595 -155[361 -983 -251 -1581!-251 -1581|-313 -1656"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

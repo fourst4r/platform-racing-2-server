@@ -1,0 +1,26 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 552" itemID="6801c6cc-00000367" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 552">
+      <layers>
+        <DOMLayer name="Layer 1" color="#D821FF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#010101"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!32 5|31 1!31 1|28 1!28 1|22 15!22 15|16 29!16 29|8 43!8 43|0 61!0 61|0 71!0 71|2 77!2 77|8 75!8 75|12 69!12 69|20 55!20 55|32 21!32 21|32 5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

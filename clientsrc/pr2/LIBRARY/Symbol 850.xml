@@ -1,0 +1,28 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 850" itemID="6801c6cc-00000403" symbolType="graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 850">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#67481F"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!991 868|1116 940!1116 940[1146 907 1211 765!1211 765[1283 607 1329 459!1329 459[1459 42 1268 79!1268 79[1276 190 1261 296!1261 296[1248 458 1175 611!1175 611[1102 764 991 868!313 594|303 639!303 639|299 646!299 646[290 721 266 793!266
+ 793[313 788 374 806!374 806|477 842!477 842[602 890 694 934!694 934|906 1034!906 1034[1284 1199 1489 1371!1489 1371[1539 1332 1542 1270!1542 1270|1189 1024!1189 1024[976 882 813 809!813 809|569 686!569 686[428 620 313 594!369 2133[238
+ 2345 394 2414!394 2414[450 2439 557 2451!557 2451|738 2467!738 2467[997 2483 1146 2443!1146 2443[1389 2378 1298 2174!1298 2174[1038 2262 827 2249!827 2249[636 2238 369 2133"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

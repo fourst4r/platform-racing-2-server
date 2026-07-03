@@ -1,0 +1,47 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 406" itemID="6801c6cc-00000308" symbolType="graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 406">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!2422 167[2358 211 2192 287!2192 287[1984 382 1895 382!1895 382[1883 382 1879 370!1879 370[1875 357 1862 357!1862 357|1650 432!1650 432|1633 428!1633 428[1627 424 1627 408!1627 408[1627 390 1862 287!1862 287[2090 187 2100 187!2100 187
+[2130 187 2133 200!2133 200|2132 225!2132 225[2165 216 2263 159!2263 159[2358 118 2422 167!855 662[658 714 605 732!605 732|442 771!442 771[326 796 260 825!260 825|242 819!242 819[235 813 235 797!235 797[233 791 237 783!237 783[244 768
+ 271 760!271 760|251 750!251 750|236 732!236 732[306 702 400 676!400 676|560 635!560 635[623 619 812 551!812 551[979 509 1025 595!1025 595[976 630 855 662"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#4F4FFF">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!2465 270[2312 416 1388 522!1388 522[1342 510 1005 686!1005 686[668 861 0 881!0 881[419 346 1371 521!1371 521[2171 -48 2718 66!2718 66[2618 123 2465 270"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,72 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 130" itemID="68b3cf96-000001d6" linkageExportForAS="true" linkageClassName="ConfirmPopupGraphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 130">
+      <layers>
+        <DOMLayer name="Layer 1" color="#E4931B">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 129" name="textBox" centerPoint3DX="78.15" centerPoint3DY="147.65">
+                  <matrix>
+                    <Matrix a="3.09109497070313" d="2.27197265625" tx="-155" ty="-65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#ADA948">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 78" name="cancel_bt" centerPoint3DX="77.5" centerPoint3DY="203.95">
+                  <matrix>
+                    <Matrix tx="22" ty="43"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#D759A1">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 78" name="ok_bt" centerPoint3DX="-68.5" centerPoint3DY="203.95">
+                  <matrix>
+                    <Matrix tx="-124" ty="43"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#67A890" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 54" centerPoint3DX="-30.5" centerPoint3DY="20.5">
+                  <matrix>
+                    <Matrix a="1.2242431640625" d="0.78521728515625" tx="-166.5" ty="-75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

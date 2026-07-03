@@ -1,0 +1,56 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1220" itemID="68b3cf9e-000003fe" linkageExportForAS="true" linkageClassName="MessagePopupGraphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1220">
+      <layers>
+        <DOMLayer name="Layer 1" color="#C6B5A8">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 129" name="textBox" centerPoint3DX="78.15" centerPoint3DY="147.65">
+                  <matrix>
+                    <Matrix a="3.09109497070313" d="2.27197265625" tx="-155" ty="-65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#33E2C4">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 78" name="ok_bt" centerPoint3DX="5.5" centerPoint3DY="203.95">
+                  <matrix>
+                    <Matrix tx="-50" ty="43"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#F9318D" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 54" centerPoint3DX="-30.5" centerPoint3DY="20.5">
+                  <matrix>
+                    <Matrix a="1.2242431640625" d="0.78521728515625" tx="-166.5" ty="-75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

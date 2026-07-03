@@ -1,0 +1,33 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1750" itemID="6801c6cc-00000598" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1750">
+      <layers>
+        <DOMLayer name="Layer 1" color="#DDA974" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="-0.043670654296875" d="-0.0152587890625" tx="-35.05" ty="-0.25"/>
+                        </matrix>
+                        <GradientEntry color="#FFFFFF" alpha="0" ratio="0"/>
+                        <GradientEntry color="#FFFF00" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!-840 -237|-6 -20!-6 -20|-5 -20!-5 -20|15 -15!15 -15|13 2!13 2|-8 6!-8 6[-47 68 -535 156!-535 156[-652 177 -925 245!-925 245|-927 236!-927 236[-790 192 -538 128!-538 128|-149 25!-149 25|-847 25!-847 25|-1177 11!-1177 11|-1407 5!-1407
+ 5|-1412 -20!-1412 -20[-1425 -22 -1400 -22!-1400 -22|-113 -3!-113 -3[-235 -27 -509 -109!-509 -109[-843 -209 -945 -250!-945 -250|-945 -252!-945 -252[-965 -255 -940 -255!-940 -255[-865 -237 -840 -237"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,28 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1858" itemID="6801c6cc-000005cb" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1858">
+      <layers>
+        <DOMLayer name="Layer 1" color="#83DA84" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!275 -593|55 -593!55 -593|55 -862!55 -862|890 -862!890 -862|890 -578!890 -578|760 -578!760 -578|200 -98!200 -98|775 597!775 597|890 597!890 597|890 863!890 863|100 863!100 863|100 602!100 602|245 602!245 602|245 547!245 547|-70 107!-70
+ 107|-350 317!-350 317|-350 592!-350 592|-195 592!-195 592|-195 863!-195 863|-890 863!-890 863|-890 612!-890 612|-755 612!-755 612|-755 -588!-755 -588|-890 -588!-890 -588|-890 -862!-890 -862|-135 -862!-135 -862|-135 -588!-135 -588|-340
+ -588!-340 -588|-340 7!-340 7|275 -593"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

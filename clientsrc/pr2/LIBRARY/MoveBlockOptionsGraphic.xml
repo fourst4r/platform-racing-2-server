@@ -1,0 +1,124 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="MoveBlockOptionsGraphic" itemID="68fd68ce-00000bfe" linkageExportForAS="true" linkageClassName="MoveBlockOptionsGraphic" lastModified="1761802899">
+  <timeline>
+    <DOMTimeline name="MoveBlockOptionsGraphic">
+      <layers>
+        <DOMLayer name="Layer 1" color="#50D080">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText width="31.25" height="14.5" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-99.05" ty="-15"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Path</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" rotation="true" lineHeight="14.5" bitmapSize="240" face="Verdana"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMSymbolInstance libraryItemName="Symbol 90" name="patternInput">
+                  <matrix>
+                    <Matrix a="1.58999633789062" tx="-64.1" ty="-19.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.45" y="11"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9FBF6B">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText width="110.85" height="14.5" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix a="1.00047302246094" tx="-59.3" ty="-49"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>-- Move Block --</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" leftMargin="5" letterSpacing="-0.1" lineSpacing="0" lineHeight="14.5" bitmapSize="240" face="Verdana-Bold"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#EF297A" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 54" centerPoint3DX="18.3" centerPoint3DY="51.6">
+                  <matrix>
+                    <Matrix a="0.867233276367188" d="0.795745849609375" tx="-117.7" ty="-58.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-2.25"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMStaticText left="-16.25" width="176.5" height="9.65" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-62.6" ty="7"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>e.g. "EEESWWWN" goes in a clockwise path</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" rotation="true" lineHeight="9.65" size="8" bitmapSize="160" face="Verdana"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMStaticText left="54.9" width="34.2" height="14.5" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-161.1" ty="28.5"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Delay</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" rotation="true" lineHeight="14.5" bitmapSize="240" face="Verdana"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMSymbolInstance libraryItemName="Symbol 90" name="intervalInput">
+                  <matrix>
+                    <Matrix a="0.720001220703125" tx="-63.55" ty="26.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="49.85" y="11"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Symbol 206" name="loopCheck">
+                  <matrix>
+                    <Matrix a="0.79998779296875" tx="16.2" ty="26.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="56.2" y="11"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Symbol 206" name="rigidCheck">
+                  <matrix>
+                    <Matrix a="0.79998779296875" tx="16.2" ty="59"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="56.2" y="11"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

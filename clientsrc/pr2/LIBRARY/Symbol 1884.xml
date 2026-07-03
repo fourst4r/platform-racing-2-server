@@ -1,0 +1,32 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1884" itemID="6801c6cc-000005db" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1884">
+      <layers>
+        <DOMLayer name="Layer 1" color="#5C52FF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0.2960205078125" d="0.08544921875"/>
+                        </matrix>
+                        <GradientEntry ratio="0.772549019607843"/>
+                        <GradientEntry alpha="0" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!4850 -1400|4850 1400!4850 1400|-4850 1400!-4850 1400|-4850 -1400!-4850 -1400|4850 -1400"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

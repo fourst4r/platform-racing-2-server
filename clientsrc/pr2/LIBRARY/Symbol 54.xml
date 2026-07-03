@@ -1,0 +1,46 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 54" itemID="68b3cf95-00000199" linkageExportForAS="true" linkageClassName="ShadowBG" scaleGridLeft="4.65" scaleGridRight="267.6" scaleGridTop="6.65" scaleGridBottom="186.7" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 54">
+      <layers>
+        <DOMLayer name="Layer 1" color="#9FE08C">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF" alpha="0.901960784313726"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!5360 0|5353 0!5353 0|92 0!92 0|80 0!80 0[46 0 23 23!23 23[0 46 0 80!0 80|0 132!0 132|0 3735!0 3735|0 3820!0 3820|92 3820!92 3820|5353 3820!5353 3820|5440 3820!5440 3820|5440 3735!5440 3735|5440 132!5440 132|5440 80!5440 80[5440 46 5417
+ 23!5417 23[5393 0 5360 0"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#943EE8" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 52" centerPoint3DX="133" centerPoint3DY="94.5">
+                  <matrix>
+                    <Matrix tx="-3" ty="-1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <DropShadowFilter alpha="0.6" angle="89.9993784528028" blurX="3" blurY="3" distance="2" hideObject="true" knockout="true" quality="2"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

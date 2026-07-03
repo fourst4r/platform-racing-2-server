@@ -1,0 +1,29 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 370" itemID="6801c6cc-000002f4" symbolType="graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 370">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#B10101"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!675 -192[764 -232 835 -269!835 -269|915 -307!915 -307[928 -314 938 -328!938 -328|943 -336!943 -336|952 -356!952 -356|963 -384!963 -384[1001 -407 1035 -436!1035 -436|1067 -467!1067 -467[1419 -829 1084 -1258!1084 -1258[749 -1688 295 -1780
+!295 -1780[-159 -1873 -455 -1730!-455 -1730[-559 -1679 -655 -1613!-655 -1613[-792 -1520 -899 -1395!-899 -1395[-1008 -1264 -1079 -1114!-1079 -1114[-1221 -813 -1264 -486!-1264 -486[-1286 -320 -1252 -156!-1252 -156|-1237 -133!-1237 -133
+[-1155 9 -1135 31!-1135 31[-1066 83 -945 138!-945 138[-774 215 -650 215!-650 215|-634 215!-634 215|-590 220!-590 220[-492 220 -296 156!-296 156|-250 141!-250 141[-133 135 -86 115!-86 115[-29 91 70 63!70 63|207 21!207 21[286 -9 435 -79
+!435 -79|675 -192"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

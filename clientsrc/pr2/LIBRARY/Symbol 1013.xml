@@ -1,0 +1,29 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1013" itemID="6801c6cc-00000451" symbolType="graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1013">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#776955"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!1268 701[1268 665 1194 611!1194 611[1169 645 1097 644!1097 644|880 635!880 635[653 635 236 621!236 621|-401 591!-401 591|-395 630!-395 630[-370 780 -340 780!-340 780|515 755!515 755|993 778!993 778|1223 800!1223 800[1231 800 1268 701
+!635 348|653 332!653 332|613 317!613 317|567 320!567 320[513 317 497 345!497 345|472 385!472 385|486 398!486 398[532 437 560 437!560 437[573 437 635 348"/>
+                    <Edge fillStyle1="1" edges="
+!317 239[295 278 277 345!277 345[257 340 237 307!237 307[213 268 202 260!202 260|197 266!197 266|189 264!189 264|207 230!207 230[220 203 269 195!269 195[304 190 322 176!322 176|356 196!356 196[333 211 317 239"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

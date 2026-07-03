@@ -1,0 +1,100 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1278" itemID="6801c6cc-000004d2" symbolType="button" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1278">
+      <layers>
+        <DOMLayer name="Layer 1" color="#52CEF1">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1265" centerPoint3DX="19.25" centerPoint3DY="12.5">
+                  <matrix>
+                    <Matrix a="0.67529296875" d="1.03790283203125"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1265" centerPoint3DX="19.25" centerPoint3DY="12.5">
+                  <matrix>
+                    <Matrix a="0.67529296875" d="1.03790283203125"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#FF771C">
+          <frames/>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#D5CCC4">
+          <frames/>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FA7683">
+          <frames/>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#D6A52A">
+          <frames/>
+        </DOMLayer>
+        <DOMLayer name="Layer 6" color="#BDD1BA" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1277" centerPoint3DX="65.1" centerPoint3DY="54.95">
+                  <matrix>
+                    <Matrix a="0.147262573242188" d="0.146713256835938" tx="-11.25" ty="-9.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1277" centerPoint3DX="65.1" centerPoint3DY="54.95">
+                  <matrix>
+                    <Matrix a="0.147262573242188" d="0.146713256835938" tx="-11.25" ty="-9.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1277" centerPoint3DX="65.1" centerPoint3DY="54.95">
+                  <matrix>
+                    <Matrix a="0.147262573242188" d="0.146713256835938" tx="-11.25" ty="-9.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1275" symbolType="graphic" loop="loop">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

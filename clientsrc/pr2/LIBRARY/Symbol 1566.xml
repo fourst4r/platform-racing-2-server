@@ -1,0 +1,40 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1566" itemID="68985e50-00000532" linkageExportForAS="true" linkageClassName="LobbyGraphic" lastModified="1754901044">
+  <timeline>
+    <DOMTimeline name="Symbol 1566">
+      <layers>
+        <DOMLayer name="Layer 1" color="#578BF2">
+          <frames>
+            <DOMFrame index="0" duration="11" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1504" centerPoint3DX="250" centerPoint3DY="412">
+                  <matrix>
+                    <Matrix a="2.8712158203125" d="0.3499755859375" tx="200" ty="362"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#ABE1BC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="11" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1565" cacheAsBitmap="true" centerPoint3DX="443.85" centerPoint3DY="332.35">
+                  <matrix>
+                    <Matrix d="1.00006103515625"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

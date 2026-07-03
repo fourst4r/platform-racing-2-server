@@ -1,0 +1,21 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1448" itemID="68b3cf9f-00000430" linkageExportForAS="true" linkageClassName="ComboBox_downSkin" scaleGridLeft="5" scaleGridRight="125" scaleGridTop="13.45" scaleGridBottom="18.25" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1448">
+      <layers>
+        <DOMLayer name="Layer 1" color="#44FA47" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1447" symbolType="graphic" loop="loop">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

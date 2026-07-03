@@ -1,0 +1,47 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1504" itemID="68b3cf9f-0000045b" linkageExportForAS="true" linkageClassName="SquareBG" scaleGridLeft="5.05" scaleGridRight="95.05" scaleGridTop="5.05" scaleGridBottom="95.15" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1504">
+      <layers>
+        <DOMLayer name="Layer 1" color="#6193B6" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0" b="-0.06103515625" c="0.0610198974609375" d="0" tx="49.95" ty="50"/>
+                        </matrix>
+                        <GradientEntry color="#9D9D9D" alpha="0.4" ratio="0"/>
+                        <GradientEntry color="#FFFFFF" alpha="0.647058823529412" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="0.05" pixelHinting="true" solidStyle="hairline">
+                        <fill>
+                          <LinearGradient>
+                            <matrix>
+                              <Matrix a="0" b="-0.06103515625" c="0.0610198974609375" d="0" tx="49.95" ty="50"/>
+                            </matrix>
+                            <GradientEntry color="#333333" ratio="0"/>
+                            <GradientEntry color="#999999" ratio="1"/>
+                          </LinearGradient>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!0 1901|0 100!0 100|0 99!0 99[0 0 99 0!99 0|100 0!100 0|1901 0!1901 0[2000 0 2000 99!2000 99|2000 100!2000 100|2000 1901!2000 1901[2000 2000 1901 2000!1901 2000|100 2000!100 2000|99 2000!99 2000[0 2000 0 1901"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

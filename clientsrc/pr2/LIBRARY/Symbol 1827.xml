@@ -1,0 +1,66 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1827" itemID="6801c6cc-000005b7" linkageExportForAS="true" linkageClassName="TeleportBlockOptionsGraphic" lastModified="1761437905">
+  <timeline>
+    <DOMTimeline name="Symbol 1827">
+      <layers>
+        <DOMLayer name="Layer 1" color="#50D080">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText width="221.1" height="64" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-110.55" ty="-28"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Choose the background color of &#xA;this block. Blocks with the same &#xA;color will be linked to this one.&#xD;</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" rotation="true" lineHeight="14.5" bitmapSize="240" face="Verdana"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9FBF6B">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText width="131.35" height="14.5" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix a="1.00047302246094" tx="-68" ty="-49"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>-- Teleport Block --</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" rotation="true" leftMargin="5" letterSpacing="-0.1" lineSpacing="0" lineHeight="14.5" bitmapSize="240" face="Verdana-Bold"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#EF297A" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 54" centerPoint3DX="18.3" centerPoint3DY="35.55">
+                  <matrix>
+                    <Matrix a="0.867233276367188" d="0.68072509765625" tx="-117.7" ty="-59.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

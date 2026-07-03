@@ -1,0 +1,40 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1719" itemID="68b3cfa2-000004ce" linkageExportForAS="true" linkageClassName="StingGraphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1719">
+      <layers>
+        <DOMLayer name="Layer 1" color="#F41693">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1718" name="leftSting" centerPoint3DX="65.4" centerPoint3DY="28.3">
+                  <matrix>
+                    <Matrix a="-0.464035034179688" d="0.463531494140625" tx="-10" ty="-20"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#E259F7" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1718" name="rightSting" centerPoint3DX="85.4" centerPoint3DY="28.3">
+                  <matrix>
+                    <Matrix a="0.464035034179688" d="0.463531494140625" tx="10" ty="-20"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

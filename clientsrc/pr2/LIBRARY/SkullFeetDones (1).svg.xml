@@ -1,0 +1,56 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="SkullFeetDones (1).svg" itemID="696b48ce-0000065e" symbolType="graphic" lastModified="1768639920">
+  <timeline>
+    <DOMTimeline name="SkullFeetDones (1).svg">
+      <layers>
+        <DOMLayer name="skull foot color1" color="#FF0000" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="skull foot color1" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix tx="216" ty="495.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="85.1" y="45.9"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="skull foot base" color="#669900" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="skull foot base" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix tx="211.5" ty="487.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="87.55" y="56.75"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="skull foot color2" color="#009999" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="skull foot color2" selected="true" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix tx="200.55" ty="425.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="98.25" y="90.5"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

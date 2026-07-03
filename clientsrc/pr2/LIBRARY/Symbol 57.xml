@@ -1,0 +1,15 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 57" itemID="68b3cf95-0000019b" linkageExportForAS="true" linkageClassName="fl.core.ComponentShim" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 57">
+      <layers>
+        <DOMLayer name="Layer 1" color="#B16AAD" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,82 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1518" itemID="6801c6cc-00000519" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1518">
+      <layers>
+        <DOMLayer name="Layer 1" color="#586CC8" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1517" centerPoint3DX="26.85" centerPoint3DY="44.45">
+                  <matrix>
+                    <Matrix a="0.4140625" d="0.4140625" tx="6.3" ty="18.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <GlowFilter alpha="0.498039215686275" blurX="12.2024993896484" blurY="12.2024993896484" color="#000000" inner="true"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#F5F53A">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" caps="none" weight="2.4" joints="miter" miterLimit="4">
+                        <fill>
+                          <SolidColor color="#F2F2F2"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge strokeStyle="1" edges="!458 424|442 424!442 424|362 413!362 413|294 380!294 380|292 379!292 379|290 380!290 380|222 413!222 413|142 424!142 424|125 424!125 424|122 424!122 424|122 428!122 428[126 575 162 652!162 652[196 726 289 800!289 800|292 801!292 801|294
+ 800!294 800[388 726 422 652!422 652[458 575 462 428!462 428|462 424!462 424|458 424"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#EC5FB0">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1514" blendMode="layer" centerPoint3DX="30.65" centerPoint3DY="48.45">
+                  <matrix>
+                    <Matrix a="0.4140625" d="0.4140625" tx="3.55" ty="16.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.19921875"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#F0CF60">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1511" symbolType="graphic" loop="loop">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

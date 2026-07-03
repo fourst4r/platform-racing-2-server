@@ -1,0 +1,41 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 220" itemID="6801c6cc-000002b7" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 220">
+      <layers>
+        <DOMLayer name="Layer 1" color="#BCE142" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="0.05" solidStyle="hairline">
+                        <fill>
+                          <LinearGradient>
+                            <matrix>
+                              <Matrix a="0" b="0.009765625" c="-0.009765625" d="0" tx="8" ty="8"/>
+                            </matrix>
+                            <GradientEntry color="#999999" ratio="0"/>
+                            <GradientEntry color="#333333" ratio="1"/>
+                          </LinearGradient>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!273 46[320 94 320 160!320 160[320 226 273 273!273 273[226 320 160 320!160 320[94 320 46 273!46 273[0 226 0 160!0 160[0 94 46 46!46 46[94 0 160 0!160 0[226 0 273 46"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

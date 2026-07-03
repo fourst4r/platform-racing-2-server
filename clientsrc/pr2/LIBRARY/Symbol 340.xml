@@ -1,0 +1,27 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 340" itemID="6801c6cc-000002db" symbolType="graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 340">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#EEF3FA"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!1734 1230[1734 1146 1756 1059!1756 1059[1763 1031 1809 885!1809 885[1665 833 1562 808!1562 808[1428 775 1317 775!1317 775[1115 775 960 825!960 825[806 876 521 1034!521 1034[679 1118 746 1178!746 1178[796 1224 812 1276!812 1276[888 1232
+ 999 1194!999 1194[1138 1147 1242 1147!1242 1147[1326 1147 1448 1175!1448 1175[1623 1214 1738 1291!1738 1291|1734 1230"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

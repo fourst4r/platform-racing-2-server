@@ -1,0 +1,28 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="borgerbody.svg Assets/Layer 1/&amp;#060Path&amp;#062_26" itemID="68b3e7c5-00000b99" lastModified="1756620741">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_26">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#010101"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!52 49[47 2 12 1!12 1[-20 0 22 80!22 80[27 114 34 125!34 125[46 142 52 49"/>
+                    <Edge cubics="!52 49(;46,-3 -39,-38 22,80q52 49Q47 2q12 1Q-20 0q22 80);"/>
+                    <Edge cubics="!22 80(;24,95 43,195 52,49q22 80Q27 114q34 125Q46 142q52 49);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

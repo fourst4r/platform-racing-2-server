@@ -1,0 +1,24 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1802" itemID="68b3cfa3-000004f6" linkageExportForAS="true" linkageClassName="HatsButtonGraphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1802">
+      <layers>
+        <DOMLayer name="Layer 1" color="#AED1D4" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1277" centerPoint3DX="81.35" centerPoint3DY="70.4">
+                  <matrix>
+                    <Matrix a="0.137451171875" d="0.13739013671875" tx="5" ty="6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

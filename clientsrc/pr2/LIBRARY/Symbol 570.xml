@@ -1,0 +1,28 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 570" itemID="6801c6cc-00000370" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 570">
+      <layers>
+        <DOMLayer name="Layer 1" color="#61EAC8" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#010101"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!361 48|359 30!359 30|359 26!359 26|357 18!357 18|355 16!355 16|355 14!355 14|350 2!350 2[346 -5 343 4!343 4[323 74 311 222!311 222|295 450!295 450[292 519 271 562!271 562[249 612 217 650!217 650|181 688!181 688|131 722!131 722|87 758
+!87 758|85 760!85 760|51 796!51 796|43 800!43 800|35 806!35 806|19 828!19 828[4 852 1 884!1 884[-6 931 9 971!9 971|23 994!23 994|41 1008!41 1008[47 1012 47 990!47 990[47 970 41 960!41 960|27 938!27 938|19 922!19 922|21 918!21 918[28 898
+ 39 884!39 884|51 864!51 864|61 841!61 841|71 827!71 827|105 813!105 813|151 785!151 785[197 756 227 717!227 717[304 618 311 537!311 537|320 420!320 420|327 303!327 303[333 227 357 75!357 75[359 79 361 69!361 69|361 48"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

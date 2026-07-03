@@ -1,0 +1,24 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="babyhead color2 copy" itemID="68bcf543-0000070d" symbolType="graphic" lastModified="1757216554">
+  <timeline>
+    <DOMTimeline name="babyhead color2 copy">
+      <layers>
+        <DOMLayer name="babyhead color2" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="babyhead color222" symbolType="graphic" centerPoint3DX="18.85" centerPoint3DY="6.15" loop="loop">
+                  <matrix>
+                    <Matrix a="0.939697265625" b="-0.342025756835938" c="0.342025756835938" d="0.939697265625" tx="-0.95" ty="6.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="18.85" y="6.15"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

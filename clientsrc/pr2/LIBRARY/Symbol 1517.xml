@@ -1,0 +1,33 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1517" itemID="6801c6cc-00000518" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1517">
+      <layers>
+        <DOMLayer name="Layer 1" color="#F1DACC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="-0.0088348388671875" b="-0.0229339599609375" c="-0.0229339599609375" d="0.0088348388671875" tx="23.4" ty="20.4"/>
+                        </matrix>
+                        <GradientEntry color="#002342" ratio="0"/>
+                        <GradientEntry color="#004C7C" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!813 110|773 110!773 110[663 110 580 82!580 82[523 63 415 3!415 3|410 0!410 0|406 3!406 3[298 63 241 82!241 82[159 110 49 110!49 110|9 110!9 110|0 109!0 109|0 119!0 119[10 474 96 660!96 660[179 838 405 1017!405 1017|410 1021!410 1021
+|416 1017!416 1017[643 838 726 660!726 660[812 474 822 119!822 119|822 109!822 109|813 110"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

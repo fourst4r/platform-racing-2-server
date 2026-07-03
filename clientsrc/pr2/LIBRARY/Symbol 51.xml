@@ -1,0 +1,28 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 51" itemID="6801c6cc-0000024d" symbolType="graphic" lastModified="1756618343">
+  <timeline>
+    <DOMTimeline name="Symbol 51">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!5498.5 84[#1576.5D #3C.5D 5477 43!5477 43[5453 20 5420 20!5420 20|140 20!140 20[106 20 83 43!83 43[#41.A3 #3C.5D 61.5 84"/>
+                    <Edge fillStyle0="1" edges="!61.5 84S1[60 #5B.AB 60 100!60 100|60 3840!60 3840|5500 3840!5500 3840|5500 100!5500 100[5500 #5B.AB 5498.5 84"/>
+                    <Edge fillStyle0="1" fillStyle1="1" edges="!61.5 84S2|5498.5 84"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

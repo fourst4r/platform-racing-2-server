@@ -1,0 +1,21 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="borgerhead color2" itemID="68b3d9c8-0000064e" lastModified="1756617248">
+  <timeline>
+    <DOMTimeline name="borgerhead color2">
+      <layers>
+        <DOMLayer name="borgerhead colorMC2" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="borgerhead colorMC2" symbolType="graphic" loop="loop">
+                  <transformationPoint>
+                    <Point x="55.75" y="48.6"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

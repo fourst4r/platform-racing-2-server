@@ -1,0 +1,32 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 830" itemID="6801c6cc-000003f8" symbolType="graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 830">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#333333"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!1316 274[1146 256 1043 362!1043 362[636 828 539 949!539 949[324 1219 324 1302!324 1302[327 1631 380 1827!380 1827[439 2043 448 2206!448 2206|593 2222!593 2222|640 2124!640 2124[689 2019 707 1995!707 1995[841 1814 970 1587!970 1587[1086
+ 1379 1130 1258!1130 1258[1295 810 1530 369!1530 369[1473 289 1316 274!1357 2621[1358 2675 1347 2702!1347 2702[1325 2752 1263 2750!1263 2750[1222 2748 1203 2701!1203 2701|1194 2654!1194 2654[1192 2557 1274 2538!1274 2538[1355 2514 1357
+ 2621"/>
+                    <Edge fillStyle1="1" edges="
+!189 2705[254 2706 254 2632!254 2632[253 2503 186 2502!186 2502[147 2501 132 2533!132 2533|128 2254!128 2254|1386 2286!1386 2286|1399 3004!1399 3004|134 2952!134 2952|132 2674!132 2674[149 2702 189 2705"/>
+                    <Edge fillStyle0="1" edges="
+!717 2542[798 2552 799 2653!799 2653[801 2740 728 2737!728 2737[641 2733 639 2617!639 2617[637 2533 717 2542"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

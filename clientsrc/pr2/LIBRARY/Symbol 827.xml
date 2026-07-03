@@ -1,0 +1,29 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 827" itemID="6801c6cc-000003f5" symbolType="graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 827">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#A49F67"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!1665 479[1647 607 1608 679!1608 679|1609 606!1609 606[1609 558 1589 535!1589 535[1572 516 1545 516!1545 516[1518 516 1464 536!1464 536[1409 556 1378 556!1378 556[1334 556 1278 513!1278 513[1232 478 1128 373!1128 373[1239 374 1308 339
+!1308 339[1367 309 1367 271!1367 271[1367 192 1260 113!1260 113|1089 6!1089 6|1274 -7!1274 -7[1461 -7 1564 71!1564 71[1676 155 1676 319!1676 319[1676 397 1665 479!370 379[515 481 631 431!631 431[660 543 592 592!592 592[546 624 423 639
+!423 639[279 656 239 671!239 671[152 704 152 787!152 787|169 869!169 869[188 956 200 981!200 981|129 990!129 990[-47 990 -133 848!-133 848[-202 734 -202 555!-202 555[-202 348 -96 244!-96 244[13 139 256 118!256 118[232 155 232 182!232
+ 182[232 283 370 379"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

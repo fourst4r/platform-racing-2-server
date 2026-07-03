@@ -1,0 +1,27 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 2168" itemID="68b3cfa6-000005a9" linkageExportForAS="true" linkageClassName="Doughnut" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 2168">
+      <layers>
+        <DOMLayer name="Layer 1" color="#8AB1E4" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#333333"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!15000 12000|-4000 12000!-4000 12000|-4000 -4000!-4000 -4000|15000 -4000!15000 -4000|15000 12000"/>
+                    <Edge fillStyle0="1" edges="!0 8000|0 0!0 0|11000 0!11000 0|11000 8000!11000 8000|0 8000"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

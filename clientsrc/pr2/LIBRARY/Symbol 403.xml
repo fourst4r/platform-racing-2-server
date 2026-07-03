@@ -1,0 +1,70 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 403" itemID="6801c6cc-00000305" symbolType="graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 403">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF" alpha="0.250980392156863"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!-423 -1107[-620 -717 -292 -448!-292 -448[148 -89 298 -610!298 -610[210 -954 -78 -1157!-78 -1157[-313 -1325 -423 -1107"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#4F4FFF">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor alpha="0.250980392156863"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!1195 -572|1215 -509!1215 -509[926 -481 806 -700!806 -700[685 -920 490 -1062!490 -1062[295 -1205 -131 -1390!-131 -1390[-557 -1576 -664 -1157!-664 -1157[-772 -739 -789 -345!-789 -345[-801 -60 -1013 124!-1013 124[-1332 399 -1753 489!-1753
+ 489|-1795 430!-1795 430[-1421 152 -994 -27!-994 -27[-1258 -998 -900 -1431!-900 -1431[-543 -1866 -41 -1679!-41 -1679[461 -1493 946 -951!946 -951[1127 -795 1195 -572"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#4F4FFF">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!930 -1029[1147 -805 1217 -500!1217 -500[812 -306 400 -129!400 -129|37 20!37 20[-568 263 -1147 567!-1147 567[-1332 664 -1532 706!-1532 706[-1670 733 -1779 640!-1779 640[-1858 571 -1832 467!-1832 467[-1825 439 -1827 410!-1827 410[-1699
+ 263 -1494 188!-1494 188[-1254 100 -1092 -95!-1092 -95[-1053 -141 -1042 -199!-1042 -199[-1183 -769 -1083 -1129!-1083 -1129[-983 -1489 -833 -1597!-833 -1597[-684 -1705 -530 -1728!-530 -1728[-451 -1745 -435 -1820!-435 -1820[-429 -1851 -408
+ -1864!-408 -1864|254 -1550!254 -1550[499 -1412 711 -1234!711 -1234|911 -1049!911 -1049|892 -1065!892 -1065|930 -1029!352 -263[239 -475 144 -885!144 -885[48 -1296 -370 -1697!-370 -1697|-379 -1600!-379 -1600[-545 -761 -276 55!-276 55[15
+ -34 390 -185!390 -185|352 -263!1042 -748[982 -1081 -251 -1675!-251 -1675[-180 -1627 -129 -1561!-129 -1561[59 -1315 169 -1028!169 -1028[340 -585 417 -196!417 -196[759 -340 1086 -519!1086 -519|1042 -748!-405 -1692|-476 -1670!-476 -1670
+[-909 -1559 -998 -1119!-998 -1119[-1085 -685 -989 -257!-989 -257[-961 -133 -997 -13!-997 -13|-1778 414!-1778 414[-1703 688 -1431 576!-1431 576[-1168 467 -918 332!-918 332[-633 175 -323 71!-323 71[-641 -728 -440 -1565!-440 -1565|-405 -1692"/>
+                    <Edge fillStyle0="1" edges="
+!-1340 -97|-1339 -100!-1339 -100[-1338 -114 -1340 -97"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

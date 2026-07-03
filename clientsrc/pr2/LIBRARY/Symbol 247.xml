@@ -1,0 +1,55 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 247" itemID="6801c6cc-000002c2" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 247">
+      <layers>
+        <DOMLayer name="Layer 1" color="#DAF508" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0" b="0.052490234375" c="-0.052886962890625" d="0" tx="65" ty="43.35"/>
+                        </matrix>
+                        <GradientEntry color="#666666" alpha="0" ratio="0"/>
+                        <GradientEntry color="#FFFFFF" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0" b="-0.052490234375" c="0.052886962890625" d="0" tx="21.6" ty="43.35"/>
+                        </matrix>
+                        <GradientEntry color="#666666" alpha="0" ratio="0"/>
+                        <GradientEntry color="#FFFFFF" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0" b="-0.0433349609375" c="0.0433349609375" d="0" tx="43.3" ty="43.35"/>
+                        </matrix>
+                        <GradientEntry color="#CCCCCC" alpha="0.501960784313725" ratio="0"/>
+                        <GradientEntry color="#FFFFFF" alpha="0.752941176470588" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!866 0|866 157"/>
+                    <Edge fillStyle0="1" edges="!866 1733[1225 1733 1478 1479!1478 1479[1732 1226 1732 867!1732 867[1732 508 1478 254!1478 254[1225 0 866 0"/>
+                    <Edge fillStyle0="1" fillStyle1="3" edges="!866 157[1160 157 1368 365!1368 365[1576 573 1576 867!1576 867[1576 1161 1368 1369!1368 1369[1160 1577 866 1577"/>
+                    <Edge fillStyle0="2" edges="!866 0[507 0 253 254!253 254[0 508 0 867!0 867[0 1226 253 1479!253 1479[507 1733 866 1733"/>
+                    <Edge fillStyle0="3" fillStyle1="2" edges="!866 157[572 157 364 365!364 365[156 573 156 867!156 867[156 1161 364 1369!364 1369[572 1577 866 1577"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!866 1577|866 1733"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

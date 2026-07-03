@@ -1,0 +1,37 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="borgerhead.svg Assets/Layer 1/&amp;#060Path&amp;#062_5" itemID="68a94192-000005fe" lastModified="1755922834">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_5">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!67 77|37 22!37 22[29 8 22 2!22 2[12 -4 6 5!6 5[-1 12 1 29!1 29[2 36 10 57!10 57[14 70 19 79!19 79|36 115!36 115[41 122 47 124!47 124|54 125!54 125[64 126 70 106!70 106[72 88 67 77"/>
+                    <Edge cubics="!37 22(;33,15 29,8 22,2q37 22Q29 8q22 2);"/>
+                    <Edge cubics="!22 2(;16,-2 10,-1 6,5q22 2Q12 -4q6 5);"/>
+                    <Edge cubics="!6 5(;0,11 0,20 1,29q6 5Q-1 12q1 29);"/>
+                    <Edge cubics="!1 29(;2,39 6,47 10,57q1 29Q2 36q10 57);"/>
+                    <Edge cubics="!10 57(;12,64 15,72 19,79q10 57Q14 70q19 79);"/>
+                    <Edge cubics="!36 115(;39,119 42,122 47,124q36 115Q41 122q47 124);"/>
+                    <Edge cubics="!47 124(;49,125 52,125 54,125q47 124 54 125);"/>
+                    <Edge cubics="!54 125(;63,126 68,113 70,106q54 125Q64 126q70 106);"/>
+                    <Edge cubics="!70 106(;71,96 71,86 67,77q70 106Q72 88q67 77);"/>
+                    <Edge cubics="!19 79(;19,79 36,115 36,115q19 79 36 115);"/>
+                    <Edge cubics="!67 77(;67,77 37,22 37,22q67 77 37 22);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

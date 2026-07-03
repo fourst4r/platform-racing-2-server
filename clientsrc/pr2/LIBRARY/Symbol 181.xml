@@ -1,0 +1,41 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 181" itemID="6801c6cc-000002a3" symbolType="graphic" lastModified="1756618359">
+  <timeline>
+    <DOMTimeline name="Symbol 181">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#43A398"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="0.05" solidStyle="hairline">
+                        <fill>
+                          <LinearGradient>
+                            <matrix>
+                              <Matrix a="0" b="-0.0067138671875" c="0.0067138671875" d="0" tx="5" ty="5"/>
+                            </matrix>
+                            <GradientEntry color="#666666" ratio="0"/>
+                            <GradientEntry color="#FFFFFF" ratio="1"/>
+                          </LinearGradient>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!100 200[59 200 29 170!29 170[0 141 0 100!0 100[0 59 29 29!29 29[59 0 100 0!100 0[141 0 170 29!170 29[200 59 200 100!200 100[200 141 170 170!170 170[141 200 100 200"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

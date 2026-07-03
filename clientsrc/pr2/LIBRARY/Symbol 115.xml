@@ -1,0 +1,21 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 115" itemID="68b3cf96-000001c7" linkageExportForAS="true" linkageClassName="ScrollThumb_overSkin" scaleGridLeft="1.05" scaleGridRight="8" scaleGridTop="5" scaleGridBottom="48" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 115">
+      <layers>
+        <DOMLayer name="Layer 1" color="#979AA2" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 114" symbolType="graphic" loop="loop">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

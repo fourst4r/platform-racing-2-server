@@ -1,0 +1,30 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1033" itemID="6801c6cc-00000458" symbolType="graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1033">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#7D5924"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!752 -602[738 -692 437 -710!437 -710[-33 -689 -120 -632!-120 -632[-172 -599 -185 -527!-185 -527|-192 -367!-192 -367|-190 -369!-190 -369[-135 -416 -87 -420!-87 -420[-48 -424 75 -367!75 -367|191 -310!191 -310[201 -311 251 -384!251 -384
+[298 -458 363 -464!363 -464[507 -478 546 -394!546 -394[561 -351 570 -335!570 -335[584 -311 615 -314!615 -314|685 -358!685 -358|737 -386!737 -386|787 -404!787 -404[749 -450 749 -510!749 -510|752 -602"/>
+                    <Edge fillStyle1="1" edges="
+!340 -358[418 -327 454 -291!454 -291|492 -241!492 -241[521 -203 695 -219!695 -219[736 -223 766 -242!766 -242[796 -82 796 -9!796 -9[796 278 639 471!639 471[493 651 303 651!303 651[112 651 -50 375!-50 375[-194 128 -194 -81!-194 -81[-194
+ -162 -179 -179!-179 -179[-165 -196 -165 -206!-165 -206|-170 -237!-170 -237|-115 -275!-115 -275[-62 -311 -49 -312!-49 -312[-7 -316 79 -251!79 -251[166 -185 210 -190!210 -190[255 -194 283 -227!283 -227[318 -268 340 -358"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

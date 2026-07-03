@@ -1,0 +1,50 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1457" itemID="6801c6cc-000004ee" symbolType="graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1457">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0" b="0.00787353515625" c="-0.00787353515625" d="0" tx="143.5" ty="7.55"/>
+                        </matrix>
+                        <GradientEntry color="#0075BF" ratio="0"/>
+                        <GradientEntry color="#009DFF" ratio="0.992156862745098"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!3020 420|20 420!20 420|20 20!20 20|3020 20!3020 20|3020 420!3040 0|3021 0!3021 0|19 0!19 0|0 0!0 0|0 19!0 19|0 421!0 421|0 440!0 440|19 440!19 440|3021 440!3021 440|3040 440!3040 440|3040 421!3040 421|3040 19!3040 19|3040 0"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#4F4FFF">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#DAF1FF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!3040 441|3021 441!3021 441|19 441!19 441|0 441!0 441|0 421!0 421|0 19!0 19|0 1!0 1|19 1!19 1|3021 1!3021 1|3040 1!3040 1|3040 19!3040 19|3040 421!3040 421|3040 441"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

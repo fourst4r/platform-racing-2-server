@@ -1,0 +1,75 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 2083" itemID="6801c6cc-00000631" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 2083">
+      <layers>
+        <DOMLayer name="Layer 1" color="#59E5AB">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 2082" symbolType="graphic" loop="loop">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#CF51F3">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 2081" name="dots" centerPoint3DX="6.35" centerPoint3DY="92.8">
+                  <matrix>
+                    <Matrix tx="-74" ty="-18.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#C17770">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 2079" name="base" centerPoint3DX="-33" centerPoint3DY="44.85">
+                  <matrix>
+                    <Matrix tx="-87.95" ty="-38.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#ECCEB3" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!-1507 -271[-1607 -105 -1674 68!-1674 68[-1857 545 -1857 1262!-1857 1262[-1857 1961 -1638 2303!-1638 2303[-1392 2689 -833 2689!-833 2689[-164 2689 210 2327!210 2327[578 1970 578 1344!578 1344[578 952 433 489!433 489[358 249 259 2!259
+ 2[151 -383 -25 -590!-25 -590[-260 -866 -638 -866!-638 -866[-837 -866 -1001 -782!-1001 -782[-1151 -705 -1347 -517!-1347 -517|-1507 -271"/>
+                    <Edge fillStyle1="1" edges="
+!-557 -762[-1127 -762 -1473 -69!-1473 -69[-1613 210 -1689 556!-1689 556[-1759 871 -1759 1153!-1759 1153[-1759 1487 -1739 1670!-1739 1670[-1709 1942 -1623 2119!-1623 2119[-1410 2557 -765 2557!-765 2557[-152 2557 171 2156!171 2156[440 1822
+ 440 1328!440 1328[440 399 44 -242!44 -242[-108 -487 -286 -632!-286 -632[-446 -762 -557 -762"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

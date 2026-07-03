@@ -1,0 +1,43 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1807" itemID="68b3cfa3-000004fa" linkageExportForAS="true" linkageClassName="SizePickerGraphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1807">
+      <layers>
+        <DOMLayer name="Layer 1" color="#F6C4BA">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1806" centerPoint3DX="11" centerPoint3DY="11">
+                  <matrix>
+                    <Matrix a="1.36363220214844" d="1.36363220214844"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#C79551" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1683" name="circle" centerPoint3DX="65" centerPoint3DY="65">
+                  <matrix>
+                    <Matrix a="0.0399932861328125" d="0.0399932861328125" tx="15" ty="15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color redMultiplier="0" blueMultiplier="0" greenMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

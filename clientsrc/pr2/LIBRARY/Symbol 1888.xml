@@ -1,0 +1,55 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1888" itemID="68b3cfa4-00000528" linkageExportForAS="true" linkageClassName="JiggminIntroGraphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1888">
+      <layers>
+        <DOMLayer name="Script Layer" color="#2ECDB3">
+          <frames>
+            <DOMFrame index="0" duration="230" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="230" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+dispatchEvent(new Event(Event.COMPLETE));
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#CEF785">
+          <frames>
+            <DOMFrame index="0" duration="249" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1887" name="logo" centerPoint3DX="625.55" centerPoint3DY="492.2">
+                  <matrix>
+                    <Matrix tx="124.95" ty="161"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#B907DD" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="249" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1248" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix a="21.1538848876953" d="19.277099609375" tx="275" ty="199.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

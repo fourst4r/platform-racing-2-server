@@ -1,0 +1,108 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1239" itemID="68b3cf9e-00000401" linkageExportForAS="true" linkageClassName="ReportMessageButtonGraphic" symbolType="button" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1239">
+      <layers>
+        <DOMLayer name="Layer 1" color="#89B2C5">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1238" centerPoint3DY="-0.2">
+                  <matrix>
+                    <Matrix tx="-1.7" ty="-6.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1238" centerPoint3DX="-0.55" centerPoint3DY="-2.1">
+                  <matrix>
+                    <Matrix a="1.30987548828125" d="1.30987548828125" tx="-2.25" ty="-8.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#677DAC">
+          <frames/>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#C23EE0" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 220">
+                  <matrix>
+                    <Matrix tx="-8" ty="-8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 220" centerPoint3DX="-1" centerPoint3DY="-1">
+                  <matrix>
+                    <Matrix a="1.125" d="1.125" tx="-9" ty="-9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 220" centerPoint3DX="-1" centerPoint3DY="-1">
+                  <matrix>
+                    <Matrix a="1.125" d="1.125" tx="-9" ty="-9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="0.05" solidStyle="hairline">
+                        <fill>
+                          <LinearGradient>
+                            <matrix>
+                              <Matrix a="0" b="0.010986328125" c="-0.010986328125" d="0"/>
+                            </matrix>
+                            <GradientEntry color="#999999" ratio="0"/>
+                            <GradientEntry color="#333333" ratio="1"/>
+                          </LinearGradient>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!127 -128[180 -74 180 0!180 0[180 74.5 127 127!127 127[74.5 180 0 180!0 180[-74 180 -128 127!-128 127[-180 74.5 -180 0!-180 0[-180 -74 -128 -128!-128 -128[-74 -180 0 -180!0 -180[74.5 -180 127 -128"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

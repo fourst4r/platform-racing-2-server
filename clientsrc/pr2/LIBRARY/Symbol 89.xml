@@ -1,0 +1,21 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 89" itemID="68b3cf96-000001b4" linkageExportForAS="true" linkageClassName="TextInput_upSkin" scaleGridLeft="2.25" scaleGridRight="150.05" scaleGridTop="1.45" scaleGridBottom="20.05" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 89">
+      <layers>
+        <DOMLayer name="Layer 1" color="#8E6A94" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 88" symbolType="graphic" loop="loop">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

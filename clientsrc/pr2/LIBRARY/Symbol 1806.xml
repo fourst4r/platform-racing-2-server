@@ -1,0 +1,21 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1806" itemID="68b3cfa3-000004f9" linkageExportForAS="true" linkageClassName="ColorPicker_upSkin" scaleGridLeft="3" scaleGridRight="14" scaleGridTop="3" scaleGridBottom="16" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1806">
+      <layers>
+        <DOMLayer name="Layer 1" color="#525DE0" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 1805" symbolType="graphic" loop="loop">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

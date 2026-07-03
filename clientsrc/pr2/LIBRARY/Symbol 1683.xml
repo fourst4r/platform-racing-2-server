@@ -1,0 +1,26 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1683" itemID="68b3cfa2-000004b3" linkageExportForAS="true" linkageClassName="Circle" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1683">
+      <layers>
+        <DOMLayer name="Layer 1" color="#EB8983" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!707 -707[1000 -414 1000 0!1000 0[1000 414 707 707!707 707[414 1000 0 1000!0 1000[-413 1000 -706 707!-706 707[-1000 414 -1000 0!-1000 0[-1000 -414 -706 -707!-706 -707[-413 -1000 0 -1000!0 -1000[414 -1000 707 -707"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

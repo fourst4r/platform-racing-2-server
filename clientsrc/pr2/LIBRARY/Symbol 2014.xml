@@ -1,0 +1,26 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 2014" itemID="6801c6cc-0000061d" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 2014">
+      <layers>
+        <DOMLayer name="Layer 1" color="#9460D1" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!60 0|1940 0!1940 0[2000 0 2000 60!2000 60|2000 1940!2000 1940[2000 2000 1940 2000!1940 2000|60 2000!60 2000[0 2000 0 1940!0 1940|0 60!0 60[0 0 60 0"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

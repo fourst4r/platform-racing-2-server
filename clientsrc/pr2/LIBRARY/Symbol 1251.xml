@@ -1,0 +1,43 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1251" itemID="6801c6cc-000004bf" symbolType="graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1251">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#666666"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" pixelHinting="true">
+                        <fill>
+                          <SolidColor color="#666666"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle0="2" fillStyle1="1" strokeStyle="1" edges="!-32 157|-36 132"/>
+                    <Edge strokeStyle="1" edges="!-36 132|-36 -106!-36 -106[-4 -96 53 -115!53 -115[118 -137 150 -181!150 -181|150 46"/>
+                    <Edge fillStyle0="2" fillStyle1="2" strokeStyle="1" edges="!150 46|150 78"/>
+                    <Edge fillStyle0="2" edges="!-36 132|-48 120!-48 120[-66 108 -90 108!-90 108[-114 108 -131 120!-131 120[-149 131 -149 148!-149 148[-149 165 -131 177!-131 177[-114 188 -90 188!-90 188[-66 188 -48 177!-48 177|-32 157"/>
+                    <Edge fillStyle0="1" edges="!-32 157|-31 148!-31 148[-31 139 -36 132"/>
+                    <Edge fillStyle1="2" edges="!150 46[160 55 160 68!160 68[160 85 143 97!143 97[125 108 101 108!101 108[77 108 60 97!60 97[42 85 42 68!42 68[42 51 60 40!60 40[77 28 101 28!101 28[125 28 143 40!143 40|150 46"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

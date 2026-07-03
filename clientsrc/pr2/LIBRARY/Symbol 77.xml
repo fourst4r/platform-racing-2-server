@@ -1,0 +1,34 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 77" itemID="68b3cf96-000001ae" linkageExportForAS="true" linkageClassName="focusRectSkin" scaleGridLeft="4.9" scaleGridRight="76.95" scaleGridTop="4.95" scaleGridBottom="16.95" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 77">
+      <layers>
+        <DOMLayer name="Layer 1" color="#70A2F5" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="1.52587890625e-05" b="0.01318359375" c="-0.013427734375" d="1.52587890625e-05" tx="41.05" ty="11"/>
+                        </matrix>
+                        <GradientEntry color="#0075BF" ratio="0"/>
+                        <GradientEntry color="#009DFF" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!1621 360[1621 419 1563 420!1563 420|1540 420!1540 420|97 420!97 420|78 420!78 420[20 419 21 360!21 360|21 340!21 340|21 98!21 98|21 80!21 80[20 21 78 20!78 20|97 20!97 20|1540 20!1540 20|1563 20!1563 20[1621 21 1621 80!1621 80|1621 98
+!1621 98|1621 340!1621 340|1621 360!1641 80[1641 0 1561 0!1561 0|1540 0!1540 0|97 0!97 0|81 0!81 0[0 0 1 80!1 80|1 98!1 98|1 340!1 340|1 360!1 360[0 440 81 440!81 440|97 440!97 440|1540 440!1540 440|1561 440!1561 440[1641 440 1641 360
+!1641 360|1641 340!1641 340|1641 98!1641 98|1641 80"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

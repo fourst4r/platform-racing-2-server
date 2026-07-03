@@ -1,0 +1,29 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="borgerbody.svg Assets/Layer 1/&amp;#060Path&amp;#062" itemID="68b3e7c6-00000bcd" lastModified="1756620742">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!682 1685[442 1464 321 1267!321 1267[212 1089 178 892!178 892[153 742 163 497!163 497[180 199 183 19!183 19[114 -46 73 117!73 117[53 198 16 508!16 508[-76 978 297 1425!297 1425[429 1583 560 1666!560 1666[684 1744 682 1685"/>
+                    <Edge cubics="!682 1685(;15,1071 172,740 183,19q682 1685Q442 1464q321 1267Q212 1089q178 892Q153 742q163 497Q180 199q183 19);"/>
+                    <Edge cubics="!183 19(;78,-80 51,217 16,508q183 19Q114 -46q73 117Q53 198q16 508);"/>
+                    <Edge cubics="!16 508(;-126,1237 686,1832 682,1685q16 508Q-76 978q297 1425Q429 1583q560 1666Q684 1744q682 1685);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

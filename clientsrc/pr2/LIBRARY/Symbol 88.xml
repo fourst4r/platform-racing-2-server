@@ -1,0 +1,46 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 88" itemID="6801c6cc-00000269" symbolType="graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 88">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#C9CBCC"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#D3D5D6"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#6D6F70"/>
+                    </FillStyle>
+                    <FillStyle index="4">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!3020 0|3040 0!3040 0|3040 30!3040 30|3040 400!3040 400|3040 440!3040 440|3020 440"/>
+                    <Edge fillStyle0="4" fillStyle1="1" edges="!3020 420|3020 400!3020 400|3020 30!3020 30|3020 20"/>
+                    <Edge fillStyle0="3" fillStyle1="1" edges="!3020 20|3020 0"/>
+                    <Edge fillStyle0="3" fillStyle1="4" edges="!20 20|30 20!30 20|3002 20!3002 20|3020 20"/>
+                    <Edge fillStyle1="3" edges="!0 20|0 0!0 0|30 0!30 0|3002 0!3002 0|3020 0"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!3020 420|3020 440"/>
+                    <Edge fillStyle0="4" fillStyle1="2" edges="!20 420|30 420!30 420|3002 420!3002 420|3020 420"/>
+                    <Edge fillStyle1="2" edges="!3020 440|3002 440!3002 440|30 440!30 440|20 440"/>
+                    <Edge fillStyle0="4" fillStyle1="1" edges="!20 20|20 30!20 30|20 400!20 400|20 420"/>
+                    <Edge fillStyle0="3" fillStyle1="1" edges="!0 20|20 20"/>
+                    <Edge fillStyle1="1" edges="!20 440|0 440!0 440|0 400!0 400|0 30!0 30|0 20"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!20 440|20 420"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

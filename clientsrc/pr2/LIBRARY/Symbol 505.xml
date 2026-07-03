@@ -1,0 +1,26 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 505" itemID="6801c6cc-0000034d" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 505">
+      <layers>
+        <DOMLayer name="Layer 1" color="#F932EE" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#010101"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!22 4|20 1!20 1|16 2!16 2|14 6!14 6|12 8!12 8|8 14!8 14|6 16!6 16|2 24!2 24|0 30!0 30|0 42!0 42|2 46!2 46|4 48!4 48|6 48!6 48|8 46!8 46|12 44!12 44|18 32!18 32|22 22!22 22|24 8!24 8|25 9!25 9|22 4"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

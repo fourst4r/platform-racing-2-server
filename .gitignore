@@ -10,3 +10,4 @@ ecv
 vendor
 /search.php
 .vscode/*
+Deploy-Client.ps1

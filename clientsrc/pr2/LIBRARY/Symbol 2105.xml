@@ -1,0 +1,26 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 2105" itemID="68b3cfa5-00000580" linkageExportForAS="true" linkageClassName="Arrow2Graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 2105">
+      <layers>
+        <DOMLayer name="Layer 1" color="#42CA89" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!140 -51|140 653!140 653|-120 653!-120 653|-120 -51!-120 -51|-443 -51!-443 -51|-1 -653!-1 -653|442 -51!442 -51|140 -51"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

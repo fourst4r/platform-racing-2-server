@@ -1,0 +1,53 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="babyhead copy" itemID="68bcf51c-0000070b" lastModified="1757214028">
+  <timeline>
+    <DOMTimeline name="babyhead copy">
+      <layers>
+        <DOMLayer name="babyhead base" color="#669900" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="babyhead base" symbolType="graphic" loop="loop">
+                  <transformationPoint>
+                    <Point x="54.85" y="58.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="babyhead color2 copy" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="babyhead color2 copy" selected="true" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix tx="63.4" ty="56.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="18.85" y="6.15"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="babyhead color1" color="#FF0000" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="babyhead color1" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix tx="1.55" ty="1.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="53.15" y="56.1"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

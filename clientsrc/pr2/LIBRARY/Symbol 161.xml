@@ -1,0 +1,45 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 161" itemID="68b3cf96-000001e6" linkageExportForAS="true" linkageClassName="SliderTrack_skin" scaleGridLeft="2.25" scaleGridRight="78" scaleGridTop="0.05" scaleGridBottom="2.95" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 161">
+      <layers>
+        <DOMLayer name="Layer 1" color="#AA2BAF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#575E62"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#8C9295"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#EBEBEB"/>
+                    </FillStyle>
+                    <FillStyle index="4">
+                      <SolidColor color="#AEB2B4"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="2" fillStyle1="3" edges="!1580 20|1580 40"/>
+                    <Edge fillStyle1="2" edges="!1580 40|1580 60!1580 60|1561 60!1561 60|1560 60!1580 20|1600 20!1600 20|1600 40!1600 40|1580 40"/>
+                    <Edge fillStyle1="1" edges="!20 20|20 0!20 0|44 0!44 0|1561 0!1561 0|1580 0!1580 0|1580 20"/>
+                    <Edge fillStyle0="2" fillStyle1="4" edges="!1560 40|1560 60"/>
+                    <Edge fillStyle0="2" fillStyle1="3" edges="!1580 40|1561 40!1561 40|1560 40"/>
+                    <Edge fillStyle0="1" fillStyle1="3" edges="!20 20|44 20!44 20|1561 20!1561 20|1580 20"/>
+                    <Edge fillStyle1="2" edges="!20 40|0 40!0 40|0 20!0 20|20 20!40 60|20 60!20 60|20 40"/>
+                    <Edge fillStyle0="4" fillStyle1="2" edges="!40 40|40 60"/>
+                    <Edge fillStyle0="3" fillStyle1="4" edges="!40 40|44 40!44 40|1560 40"/>
+                    <Edge fillStyle1="4" edges="!1560 60|44 60!44 60|40 60"/>
+                    <Edge fillStyle0="3" fillStyle1="2" edges="!20 40|40 40!20 20|20 40"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

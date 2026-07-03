@@ -1,0 +1,129 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1443" itemID="6801c6cc-000004e1" symbolType="graphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 1443">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor alpha="0.4"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!2700 240|2700 260!2700 260|2720 260!2720 260|2720 240!2720 240|2740 240!2740 240|2740 220!2740 220|2760 220!2760 220|2760 200!2760 200|2780 200!2780 200|2780 180!2780 180|2640 180!2640 180|2640 200!2640 200|2660 200!2660 200|2660 220
+!2660 220|2680 220!2680 220|2680 240!2680 240|2700 240"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#4F4FFF">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0" b="-0.00640869140625" c="0.018310546875" d="0" tx="61.5" ty="6.75"/>
+                        </matrix>
+                        <GradientEntry color="#CCCCCC" alpha="0" ratio="0"/>
+                        <GradientEntry color="#FFFFFF" alpha="0.141176470588235" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!2940 240|2501 240!2501 240|79 240!79 240|20 240!20 240|20 80!20 80[20 20 80 20!80 20|2501 20!2501 20|2880 20!2880 20[2939 20 2940 80!2940 80|2940 240"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#4F4FFF">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0" b="-0.013427734375" c="-0.013427734375" d="0" tx="11" ty="11"/>
+                        </matrix>
+                        <GradientEntry color="#CCCCCC" alpha="0.2" ratio="0"/>
+                        <GradientEntry color="#FFFFFF" alpha="0.298039215686275" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!2940 80|2940 273!2940 273|2940 360!2940 360[2940 419 2883 420!2883 420|2501 420!2501 420|79 420!79 420|78 420!78 420[20 419 20 360!20 360|20 273!20 273|20 80!20 80[20 21 78 20!78 20|79 20!79 20|2501 20!2501 20|2883 20!2883 20[2940 21
+ 2940 80"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#4F4FFF">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0" b="-0.018310546875" c="0.018310546875" d="0" tx="125.65" ty="15.95"/>
+                        </matrix>
+                        <GradientEntry color="#585F63" alpha="0.298039215686275" ratio="0"/>
+                        <GradientEntry color="#B7BABC" alpha="0.298039215686275" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!2500 20|2501 20!2501 20|2520 20!2520 20|2520 273!2520 273|2520 362!2520 362|2520 420!2520 420|2501 420!2501 420|2500 420!2500 420|2500 362!2500 362|2500 273!2500 273|2500 20"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#4F4FFF">
+          <frames>
+            <DOMFrame index="0" motionTweenScale="false" keyMode="8192">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0" b="-0.013427734375" c="0.013427734375" d="0" tx="137" ty="11"/>
+                        </matrix>
+                        <GradientEntry color="#585F63" alpha="0.298039215686275" ratio="0"/>
+                        <GradientEntry color="#B7BABC" alpha="0.298039215686275" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="
+!2880 0|2501 0!2501 0|80 0!80 0[0 0 0 80!0 80|0 273!0 273|0 360!0 360[0 440 80 440!80 440|2501 440!2501 440|2880 440!2880 440[2960 440 2960 360!2960 360|2960 273!2960 273|2960 80!2960 80[2960 0 2880 0!2940 80|2940 273!2940 273|2940 360
+!2940 360[2940 419 2883 420!2883 420|2501 420!2501 420|79 420!79 420|78 420!78 420[20 419 20 360!20 360|20 273!20 273|20 80!20 80[20 21 78 20!78 20|79 20!79 20|2501 20!2501 20|2883 20!2883 20[2940 21 2940 80"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

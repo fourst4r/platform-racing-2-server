@@ -1,0 +1,43 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 254" itemID="68b3cf97-0000020f" linkageExportForAS="true" linkageClassName="LoadingGraphic" lastModified="1744522409">
+  <timeline>
+    <DOMTimeline name="Symbol 254">
+      <layers>
+        <DOMLayer name="Layer 1" color="#F88F10">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 253" centerPoint3DX="5.5" centerPoint3DY="1.55">
+                  <matrix>
+                    <Matrix tx="-24.15" ty="-8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color redMultiplier="0.75" blueMultiplier="0.75" greenMultiplier="0.75" redOffset="64" blueOffset="64" greenOffset="64"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#5ACDDD" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 248" centerPoint3DX="26.75" centerPoint3DY="26.7">
+                  <matrix>
+                    <Matrix a="0.78521728515625" d="0.78521728515625" tx="-34" ty="-34.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

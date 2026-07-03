@@ -1,0 +1,56 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="borgerbody.svg" itemID="68b3e804-00000c12" symbolType="graphic" lastModified="1756620998">
+  <timeline>
+    <DOMTimeline name="borgerbody.svg">
+      <layers>
+        <DOMLayer name="borgerbody base" color="#669900" autoNamed="false" visible="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="borgerbody base" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix tx="-0.05" ty="0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="56.7" y="84.1"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="borgerbody colo2" color="#FF800A" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="borgerbody color2" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix tx="1.15" ty="22.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="51.2" y="71.2"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="borgerbody color1" color="#9933CC" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="borgerbody color1" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix tx="29.3" ty="2.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="41.3" y="81.65"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>
