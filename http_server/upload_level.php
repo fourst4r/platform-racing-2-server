@@ -36,6 +36,24 @@ $time = time();
 $ip = get_ip();
 $on_success = 'normal';
 
+function trim_utf8_to_max_bytes($value, $max_bytes)
+{
+    if (!is_string($value) || strlen($value) <= $max_bytes) {
+        return $value;
+    }
+
+    if (function_exists('mb_strcut')) {
+        return mb_strcut($value, 0, $max_bytes, 'UTF-8');
+    }
+
+    $value = substr($value, 0, $max_bytes);
+    while ($value !== '' && !preg_match('//u', $value)) {
+        $value = substr($value, 0, -1);
+    }
+
+    return $value;
+}
+
 try {
     // post check
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -52,9 +70,9 @@ try {
         throw new Exception('The title is too long. Please limit it to 50 characters.');
     }
 
-    // sanity check: note too long?
+    // TINYTEXT is capped at 255 bytes, and some legacy levels exceed that.
     if (strlen($note) > 255) {
-        throw new Exception('The note is too long. Please limit it to 255 characters.');
+        $note = trim_utf8_to_max_bytes($note, 255);
     }
 
     // rate limiting
