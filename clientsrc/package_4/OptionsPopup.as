@@ -44,11 +44,11 @@ package package_4
          this.m.soundPercentBox.text = Settings.soundLevel + "%";
          this.m.wasdUp.maxChars = this.m.wasdRight.maxChars = this.m.wasdDown.maxChars = this.m.wasdLeft.maxChars = this.m.wasdItem.maxChars = 1;
          this.m.wasdUp.restrict = this.m.wasdRight.restrict = this.m.wasdDown.restrict = this.m.wasdLeft.restrict = this.m.wasdItem.restrict = "0-9 A-Z";
-         this.m.wasdUp.text = String.fromCharCode(this.altCtrl.up).toUpperCase();
-         this.m.wasdRight.text = String.fromCharCode(this.altCtrl.right).toUpperCase();
-         this.m.wasdDown.text = String.fromCharCode(this.altCtrl.down).toUpperCase();
-         this.m.wasdLeft.text = String.fromCharCode(this.altCtrl.left).toUpperCase();
-         this.m.wasdItem.text = String.fromCharCode(this.altCtrl.item).toUpperCase();
+         this.m.wasdUp.text = this.getControlText(this.altCtrl.up);
+         this.m.wasdRight.text = this.getControlText(this.altCtrl.right);
+         this.m.wasdDown.text = this.getControlText(this.altCtrl.down);
+         this.m.wasdLeft.text = this.getControlText(this.altCtrl.left);
+         this.m.wasdItem.text = this.getControlText(this.altCtrl.item);
          this.m.filterHighlight.y = this.fps30 === false ? Number(this.hFalseY) : Number(this.hTrueY);
          this.m.artHighlight.y = this.drawArt === false ? Number(this.hFalseY) : Number(this.hTrueY);
          this.m.filterOn_bt.addEventListener(MouseEvent.CLICK,this.toggleFilterOn,false,0,true);
@@ -256,6 +256,17 @@ package package_4
          startFadeOut();
       }
       
+      private function getControlText(param1:*) : String
+      {
+         var _loc2_:int = int(param1);
+         return _loc2_ > 0 ? String.fromCharCode(_loc2_).toUpperCase() : "";
+      }
+      
+      private function getControlCode(param1:String) : int
+      {
+         return param1.length > 0 ? int(param1.toUpperCase().charCodeAt(0)) : 0;
+      }
+      
       override public function remove() : *
       {
          if(OptionsSongsMenu.instance != null)
@@ -273,31 +284,11 @@ package package_4
          this.m.music_bt.removeEventListener(MouseEvent.MOUSE_OUT,this.hoverOut);
          this.toggleArtBtnListeners(false);
          this.hoverOut();
-         if(this.m.wasdUp.text == "")
-         {
-            this.m.wasdUp.text = "W";
-         }
-         if(this.m.wasdRight.text == "")
-         {
-            this.m.wasdRight.text = "D";
-         }
-         if(this.m.wasdDown.text == "")
-         {
-            this.m.wasdDown.text = "S";
-         }
-         if(this.m.wasdLeft.text == "")
-         {
-            this.m.wasdLeft.text = "A";
-         }
-         if(this.m.wasdItem.text == "")
-         {
-            this.m.wasdItem.text = "I";
-         }
-         this.altCtrl.up = this.m.wasdUp.text.toUpperCase().charCodeAt(0);
-         this.altCtrl.right = this.m.wasdRight.text.toUpperCase().charCodeAt(0);
-         this.altCtrl.down = this.m.wasdDown.text.toUpperCase().charCodeAt(0);
-         this.altCtrl.left = this.m.wasdLeft.text.toUpperCase().charCodeAt(0);
-         this.altCtrl.item = this.m.wasdItem.text.toUpperCase().charCodeAt(0);
+         this.altCtrl.up = this.getControlCode(this.m.wasdUp.text);
+         this.altCtrl.right = this.getControlCode(this.m.wasdRight.text);
+         this.altCtrl.down = this.getControlCode(this.m.wasdDown.text);
+         this.altCtrl.left = this.getControlCode(this.m.wasdLeft.text);
+         this.altCtrl.item = this.getControlCode(this.m.wasdItem.text);
          Settings.setValue(Settings.ALTERNATE_CONTROLS,this.altCtrl);
          Settings.setValue(Settings.DRAW_ART,this.drawArt);
          Settings.setValue(Settings.FPS_30,this.fps30);
