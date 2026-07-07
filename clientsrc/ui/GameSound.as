@@ -23,6 +23,10 @@ package ui
       {
          this.url = Main.baseURL + "/music/new";
          super();
+         tabEnabled = false;
+         tabChildren = false;
+         focusEnabled = false;
+         focusRect = false;
          editable = false;
          this.inLE = param1;
          width = 200;

@@ -22,6 +22,8 @@ package package_6
          addChild(this.m);
          maxMessages = 7;
          this.m.chatInput.restrict = "^`";
+         this.m.chatInput.tabEnabled = false;
+         this.m.chatInput.focusRect = false;
          this.m.top.textBox1.mouseWheelEnabled = this.m.bg.textBox2.mouseWheelEnabled = false;
          this.m.addEventListener(MouseEvent.MOUSE_WHEEL,this.ensureBottom,false,0,true);
          Main.stage.addEventListener(MouseEvent.MOUSE_DOWN,this.mouseDownHandler,false,0,true);

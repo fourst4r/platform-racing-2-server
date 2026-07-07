@@ -17,6 +17,15 @@ package package_6
          this.m = new QuitButtonGraphic();
          super();
          this.game = param1;
+         tabEnabled = false;
+         tabChildren = false;
+         focusRect = false;
+         this.m.tabEnabled = false;
+         this.m.tabChildren = false;
+         this.m.focusRect = false;
+         this.m.quit_bt.focusEnabled = false;
+         this.m.quit_bt.tabEnabled = false;
+         this.m.quit_bt.focusRect = false;
          addChild(this.m);
          this.m.quit_bt.addEventListener(KeyboardEvent.KEY_UP,this.invokeQuit);
          this.m.quit_bt.addEventListener(MouseEvent.MOUSE_UP,this.invokeQuit);

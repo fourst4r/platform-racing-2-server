@@ -125,6 +125,8 @@ package package_6
          super.initialize();
          Course.course = this;
          addEventListener(Event.ENTER_FRAME,this.checkSpectateHotkey,false,0,true);
+         Main.stage.addEventListener(KeyboardEvent.KEY_DOWN,this.preventRaceTabFocus,true,1000,true);
+         Main.stage.addEventListener(FocusEvent.KEY_FOCUS_CHANGE,this.preventRaceTabFocus,true,1000,true);
          Main.stage.addEventListener(MouseEvent.MOUSE_DOWN,this.onStageMouseDown,false,0,true);
          addChild(this.holder);
          this.timer = new CourseTimer(this);
@@ -463,6 +465,17 @@ package package_6
          {
             return;
          }
+         Main.stage.focus = Main.stage;
+      }
+
+      private function preventRaceTabFocus(param1:*) : void
+      {
+         if(param1.keyCode != Keyboard.TAB)
+         {
+            return;
+         }
+         param1.preventDefault();
+         param1.stopImmediatePropagation();
          Main.stage.focus = Main.stage;
       }
       
@@ -817,6 +830,8 @@ package package_6
          removeEventListener(Event.ENTER_FRAME,this.maybeEndIntro);
          removeEventListener(Event.ENTER_FRAME,this.rotate);
          removeEventListener(Event.ENTER_FRAME,this.cameraFollowPlayer);
+         Main.stage.removeEventListener(KeyboardEvent.KEY_DOWN,this.preventRaceTabFocus,true);
+         Main.stage.removeEventListener(FocusEvent.KEY_FOCUS_CHANGE,this.preventRaceTabFocus,true);
          Main.stage.removeEventListener(MouseEvent.MOUSE_DOWN,this.onStageMouseDown);
          if(this.timer != null)
          {

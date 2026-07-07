@@ -23,7 +23,17 @@ package package_6
          this.game = Course.course;
          this.htmlNameMaker = new HTMLNameMaker();
          super();
+         tabEnabled = false;
+         tabChildren = false;
+         focusRect = false;
          this.m = new SpectatePickerGraphic();
+         this.m.tabEnabled = false;
+         this.m.tabChildren = false;
+         this.m.focusRect = false;
+         this.m.arrowLeft.tabEnabled = false;
+         this.m.arrowLeft.focusRect = false;
+         this.m.arrowRight.tabEnabled = false;
+         this.m.arrowRight.focusRect = false;
          this.m.arrowLeft.addEventListener(MouseEvent.CLICK,this.clickLeft,false,0,true);
          this.m.arrowRight.addEventListener(MouseEvent.CLICK,this.clickRight,false,0,true);
          addChild(this.m);
