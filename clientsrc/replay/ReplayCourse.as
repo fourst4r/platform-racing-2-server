@@ -94,9 +94,19 @@ package replay
          var bodyColor2:Number = Number(args[12]);
          var feetColor2:Number = Number(args[13]);
          var group:String = String(args[14]);
+         var existing:Character = this.playerArray[tempId];
+         var wasSpectated:Boolean = this.playerSpectating === existing;
+         if(existing != null)
+         {
+            existing.remove();
+         }
          var character:RemoteCharacter = new RemoteCharacter(tempId,this.miniMap.getDot(),name,hat,head,body,feet,group);
          character.setColors(hatColor,hatColor2,headColor,headColor2,bodyColor,bodyColor2,feetColor,feetColor2);
          this.playerArray[tempId] = character;
+         if(wasSpectated)
+         {
+            this.playerSpectating = character;
+         }
          if(this.drawingInfo != null)
          {
             this.drawingInfo.method_138(name,tempId);
