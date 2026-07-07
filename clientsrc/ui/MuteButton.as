@@ -1,5 +1,6 @@
 package ui
 {
+   import flash.events.Event;
    import flash.events.*;
    import flash.geom.*;
    import flash.media.*;
@@ -42,6 +43,7 @@ package ui
             _loc2_.volume = 1;
          }
          SoundMixer.soundTransform = _loc2_;
+         dispatchEvent(new Event(Event.CHANGE));
       }
       
       private function onClick(param1:MouseEvent) : *
