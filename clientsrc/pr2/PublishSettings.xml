@@ -9,7 +9,7 @@
     <gif>0</gif>
     <jpeg>0</jpeg>
     <png>0</png>
-    <swc>1</swc>
+    <swc>0</swc>
     <oam>0</oam>
     <flashDefaultName>1</flashDefaultName>
     <projectorWinDefaultName>1</projectorWinDefaultName>
@@ -32,7 +32,7 @@
     <publishFormat id="3E6AA359-3A3C-4827-B709-9977BDDDACCB">0</publishFormat>
     <publishFormat id="BBC1F406-65F2-4219-9304-FA48C7549E44">0</publishFormat>
     <publishFormat id="BBC1F806-66F2-4339-9306-FA48C7549E59">0</publishFormat>
-    <publishFormat id="BBC2F906-78F3-4239-9305-FA48C8549E59">1</publishFormat>
+    <publishFormat id="BBC2F906-78F3-4239-9305-FA48C8549E59">0</publishFormat>
   </PublishFormatProperties>
   <PublishHtmlProperties enabled="true">
     <VersionDetectionIfAvailable>0</VersionDetectionIfAvailable>
@@ -97,7 +97,7 @@
     <AS3Dialect>AS3</AS3Dialect>
     <AS3ExportFrame>1</AS3ExportFrame>
     <AS3Optimize>1</AS3Optimize>
-    <ExportSwc>1</ExportSwc>
+    <ExportSwc>0</ExportSwc>
     <ScriptStuckDelay>15</ScriptStuckDelay>
     <IncludeXMP>1</IncludeXMP>
     <HardwareAcceleration>1</HardwareAcceleration>

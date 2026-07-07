@@ -55,8 +55,8 @@
                     </StrokeStyle>
                   </strokes>
                   <edges>
-                    <Edge fillStyle1="1" strokeStyle="1" edges="!132 60|0 60!0 60|0 -60!0 -60|132 -60"/>
                     <Edge fillStyle1="2" strokeStyle="1" edges="!132 -60|240 -120!240 -120|240 120!240 120|132 60"/>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!132 60|0 60!0 60|0 -60!0 -60|132 -60"/>
                     <Edge fillStyle0="2" fillStyle1="1" strokeStyle="1" edges="!132 -60|132 60"/>
                   </edges>
                 </DOMShape>

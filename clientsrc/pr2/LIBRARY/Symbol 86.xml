@@ -23,15 +23,15 @@
                   </fills>
                   <edges>
                     <Edge fillStyle0="1" edges="!3020 440|3040 440!3040 440|3040 331!3040 331|3040 109!3040 109|3040 0!3040 0|3020 0"/>
-                    <Edge fillStyle0="3" fillStyle1="1" edges="!3020 420|3020 331!3020 331|3020 109!3020 109|3020 20"/>
                     <Edge fillStyle0="4" fillStyle1="1" edges="!3020 20|3020 0"/>
+                    <Edge fillStyle0="3" fillStyle1="1" edges="!3020 420|3020 331!3020 331|3020 109!3020 109|3020 20"/>
                     <Edge fillStyle0="1" fillStyle1="2" edges="!3020 420|3020 440"/>
-                    <Edge fillStyle0="3" fillStyle1="2" edges="!20 420|759 420!759 420|2281 420!2281 420|3020 420"/>
-                    <Edge fillStyle1="2" edges="!3020 440|2281 440!2281 440|759 440!759 440|20 440"/>
-                    <Edge fillStyle0="4" edges="!3020 0|2281 0!2281 0|759 0!759 0|0 0!0 0|0 20"/>
                     <Edge fillStyle0="4" fillStyle1="3" edges="!20 20|759 20!759 20|2281 20!2281 20|3020 20"/>
-                    <Edge fillStyle0="1" fillStyle1="3" edges="!20 420|20 331!20 331|20 109!20 109|20 20"/>
+                    <Edge fillStyle0="4" edges="!3020 0|2281 0!2281 0|759 0!759 0|0 0!0 0|0 20"/>
+                    <Edge fillStyle1="2" edges="!3020 440|2281 440!2281 440|759 440!759 440|20 440"/>
+                    <Edge fillStyle0="3" fillStyle1="2" edges="!20 420|759 420!759 420|2281 420!2281 420|3020 420"/>
                     <Edge fillStyle0="1" edges="!0 20|0 109!0 109|0 331!0 331|0 440!0 440|20 440"/>
+                    <Edge fillStyle0="1" fillStyle1="3" edges="!20 420|20 331!20 331|20 109!20 109|20 20"/>
                     <Edge fillStyle0="1" fillStyle1="4" edges="!20 20|0 20"/>
                     <Edge fillStyle0="1" fillStyle1="2" edges="!20 440|20 420"/>
                   </edges>

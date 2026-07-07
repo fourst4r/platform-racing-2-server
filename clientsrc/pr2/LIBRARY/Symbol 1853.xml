@@ -54,10 +54,10 @@
                   <edges>
                     <Edge fillStyle1="1" edges="
 !0 4150|0 0!0 0|11000 0!11000 0|11000 4150"/>
-                    <Edge fillStyle0="1" fillStyle1="2" edges="
-!0 4150[5423 3802 11000 4150"/>
                     <Edge fillStyle1="2" edges="
 !11000 4150|11000 8000!11000 8000|0 8000!0 8000|0 4150"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="
+!0 4150[5423 3802 11000 4150"/>
                   </edges>
                 </DOMShape>
               </elements>

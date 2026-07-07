@@ -11,3 +11,5 @@ vendor
 /search.php
 .vscode/*
 Deploy-Client.ps1
+/clientsrc/pr2/bin
+/clientsrc/RECOVER_pr2

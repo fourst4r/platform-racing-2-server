@@ -17,7 +17,7 @@
                     </StrokeStyle>
                   </strokes>
                   <edges>
-                    <Edge strokeStyle="1" edges="!0 0|80 80!80 -80|0 0!0 0|-80 -80!-80 80|0 0"/>
+                    <Edge strokeStyle="1" edges="!0 0|80 80!80 -80|0 0!-80 80|0 0!0 0|-80 -80"/>
                   </edges>
                 </DOMShape>
               </elements>
