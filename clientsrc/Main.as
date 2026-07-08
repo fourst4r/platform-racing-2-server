@@ -32,13 +32,15 @@ package
       
       public static const version:String = "9";
       
-      // public static const baseURL:String = "http://bestestgameserver.ddns.net:8080";
-      public static const baseURL:String = "http://localhost:8080";
-      public static const basePr2HubURL:String = "https://pr2hub.com";
+      // public static const productionBaseURL:String = "http://trapwork.org";
+      public static const productionBaseURL:String = "http://localhost";
+      public static const productionPr2HubURL:String = "https://pr2hub.com";
       
-      // public static const levelsURL:String = "http://bestestgameserver.ddns.net:8080/levels";
-      public static const levelsURL:String = "http://localhost:8080/levels";
-      public static const phLevelsURL:String = "https://pr2hub.com/levels";
+      public static var baseURL:String = productionBaseURL;
+      public static var basePr2HubURL:String = productionPr2HubURL;
+      
+      public static var levelsURL:String = productionBaseURL + "/levels";
+      public static var phLevelsURL:String = productionPr2HubURL + "/levels";
       
       public static var stage:Stage;
       
@@ -166,6 +168,7 @@ package
             Main.initialized = true;
             Main.stage = stage;
             Main.instance = this;
+            this.determineSite();
             Blocks.init();
             Parts.makeParts();
             Keys.initialize(stage);
@@ -175,7 +178,6 @@ package
             GpNotification.init(stage);
             class_4.init();
             stats = new SWFStats();
-            this.determineSite();
             stage.frameRate = 27;
             Security.loadPolicyFile(baseURL + "/crossdomain.xml");
             Security.allowDomain("kongregate.com");
@@ -198,6 +200,7 @@ package
       
       private function determineSite() : *
       {
+         var _loc0_:String = null;
          var _loc2_:Number = NaN;
          var _loc1_:String = "local";
          url = stage.loaderInfo.url;
@@ -213,6 +216,18 @@ package
             }
          }
          Main.domain = _loc1_;
+         _loc0_ = this.getRequestOrigin();
+         if(this.useCurrentOriginForApi(_loc1_) && _loc0_ != null)
+         {
+            Main.baseURL = _loc0_;
+         }
+         else
+         {
+            Main.baseURL = productionBaseURL;
+         }
+         Main.basePr2HubURL = productionPr2HubURL;
+         Main.levelsURL = Main.baseURL + "/levels";
+         Main.phLevelsURL = Main.basePr2HubURL + "/levels";
          if(Main.domain.indexOf("bubblebox.com") != -1 || Main.domain.indexOf("2games.com") != -1)
          {
             Main.siteMode = "bubbleBox";
@@ -229,6 +244,32 @@ package
          {
             Main.siteMode = "kongregate";
          }
+      }
+      
+      private function getRequestOrigin() : String
+      {
+         var _loc1_:Number = NaN;
+         var _loc2_:Number = NaN;
+         if(protocol != "http" && protocol != "https")
+         {
+            return null;
+         }
+         _loc1_ = Number(url.indexOf("//"));
+         _loc2_ = Number(url.indexOf("/",_loc1_ + 2));
+         if(_loc1_ == -1)
+         {
+            return null;
+         }
+         if(_loc2_ == -1)
+         {
+            return url;
+         }
+         return url.substr(0,_loc2_);
+      }
+      
+      private function useCurrentOriginForApi(param1:String) : Boolean
+      {
+         return param1 == "local" || param1.indexOf("localhost") == 0 || param1.indexOf("127.0.0.1") == 0 || param1.indexOf("::1") != -1 || param1.indexOf("pr2hub.com") != -1 || param1.indexOf("trapwork.org") != -1 || param1.indexOf("bestestgameserver.ddns.net") == 0;
       }
       
       private function getKongApiOnTesting() : *
