@@ -1,0 +1,35 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="CerebrumHead Assets/Layer 1/&amp;#060Path&amp;#062_1_3" itemID="6a4ed886-00000b5a" lastModified="1783552134">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_1_3">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!27.5 36.5[#20.1E #22.C4 33 33!33 33[36 30 37 19!37 19[37 12 34 7!34 7[21 -17 5 17!5 17[-11 52 16 47!16 47|27.5 36.5"/>
+                    <Edge fillStyle1="1" edges="!27.5 36.5|29 35!29 35|26 37!26 37[#1A.B5 #24.C4 27.5 36.5"/>
+                    <Edge cubics="!37 19(;37,17 39,15 34,7q37 19Q37 12q34 7);"/>
+                    <Edge cubics="!34 7(;17,-25 -20,53 16,47q34 7Q21 -17q5 17Q-11 52q16 47);"/>
+                    <Edge cubics="!29 35(;29,35 26,37 26,37q29 35 26 37);"/>
+                    <Edge cubics="!33 33(;35,31 36,26 37,19q33 33Q36 30q37 19);"/>
+                    <Edge cubics="!28 37(;31,36 32,34 33,33q28 37Q32 35q33 33);"/>
+                    <Edge cubics="!26 37(;27,37 27,37 28,37q26 37Q27 37q28 37);"/>
+                    <Edge cubics="!28 37(;28,37 29,35 29,35q28 37 29 35);"/>
+                    <Edge cubics="!16 47(;16,47 28,37 28,37q16 47 28 37);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

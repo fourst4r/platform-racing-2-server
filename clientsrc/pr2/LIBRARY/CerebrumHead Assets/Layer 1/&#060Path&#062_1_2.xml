@@ -1,0 +1,32 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="CerebrumHead Assets/Layer 1/&amp;#060Path&amp;#062_1_2" itemID="6a4ed885-00000b3e" lastModified="1783552133">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_1_2">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!1325 2[849 235 312 210!312 210[162 201 19 174!19 174[1 171 0 201!0 201[-2 231 15 236!15 236[265 297 540 284!540 284[795 271 1060 196!1060 196[1203 155 1342 84!1342 84[1365 70 1358 30!1358 30[1351 -10 1325 2"/>
+                    <Edge cubics="!1325 2(;1010,156 662,226 312,210q1325 2Q849 235q312 210);"/>
+                    <Edge cubics="!312 210(;214,204 115,192 19,174q312 210Q162 201q19 174);"/>
+                    <Edge cubics="!19 174(;-5,170 -7,230 15,236q19 174Q1 171q0 201Q-2 231q15 236);"/>
+                    <Edge cubics="!15 236(;360,320 722,292 1060,196q15 236Q265 297q540 284Q795 271q1060 196);"/>
+                    <Edge cubics="!1060 196(;1158,168 1252,130 1342,84q1060 196Q1203 155q1342 84);"/>
+                    <Edge cubics="!1342 84(;1372,66 1360,-14 1325,2q1342 84Q1365 70q1358 30Q1351 -10q1325 2);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

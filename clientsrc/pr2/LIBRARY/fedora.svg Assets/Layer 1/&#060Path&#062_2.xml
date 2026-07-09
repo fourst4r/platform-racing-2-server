@@ -1,0 +1,34 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="fedora.svg Assets/Layer 1/&amp;#060Path&amp;#062_2" itemID="6a4ed9f2-00000ba8" lastModified="1783552498">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_2">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!764 326[761 317 725 256!725 256[695 206 692 166!692 166[715 147 704 73!704 73[693 -5 640 0!640 0[629 8 582 57!582 57[543 97 508 114!508 114[411 172 262 164!262 164[91 144 4 144!4 144[-7 280 36 300!36 300[121 313 200 358!200 358[207 405
+ 180 463!180 463[157 512 116 558!116 558[186 604 535 487!535 487[676 439 744 397!744 397[821 348 764 326"/>
+                    <Edge cubics="!764 326(;750,284 697,234 692,166q764 326Q761 317q725 256Q695 206q692 166);"/>
+                    <Edge cubics="!692 166(;714,148 720,-8 640,0q692 166Q715 147q704 73Q693 -5q640 0);"/>
+                    <Edge cubics="!640 0(;600,30 568,84 508,114q640 0Q629 8q582 57Q543 97q508 114);"/>
+                    <Edge cubics="!508 114(;350,208 178,144 4,144q508 114Q411 172q262 164Q91 144q4 144);"/>
+                    <Edge cubics="!4 144(;-14,364 42,268 200,358q4 144Q-7 280q36 300Q121 313q200 358);"/>
+                    <Edge cubics="!200 358(;210,426 164,504 116,558q200 358Q207 405q180 463Q157 512q116 558);"/>
+                    <Edge cubics="!116 558(;205,616 927,388 764,326q116 558Q186 604q535 487Q676 439q744 397Q821 348q764 326);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

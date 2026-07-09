@@ -1,0 +1,32 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="jester.svg Assets/Layer 1/&amp;#060Path&amp;#062_5" itemID="6a4ed9f4-00000bb2" lastModified="1783552500">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_5">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#010101"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!191 94[178 88 147 82!147 82[117 75 101 68!101 68[54 46 23 6!23 6[9 -9 2 9!2 9[-5 27 3 40!3 40[32 93 85 122!85 122[150 161 194 148!194 148[208 144 206 122!206 122[204 100 191 94"/>
+                    <Edge cubics="!191 94(;164,82 131,82 101,68q191 94Q178 88q147 82Q117 75q101 68);"/>
+                    <Edge cubics="!101 68(;71,54 43,32 23,6q101 68Q54 46q23 6);"/>
+                    <Edge cubics="!23 6(;3,-16 -7,24 3,40q23 6Q9 -9q2 9Q-5 27q3 40);"/>
+                    <Edge cubics="!3 40(;23,76 49,102 85,122q3 40Q32 93q85 122);"/>
+                    <Edge cubics="!85 122(;115,140 159,158 194,148q85 122Q150 161q194 148);"/>
+                    <Edge cubics="!194 148(;214,142 207,102 191,94q194 148Q208 144q206 122Q204 100q191 94);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

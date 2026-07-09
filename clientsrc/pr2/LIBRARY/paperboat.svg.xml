@@ -1,0 +1,212 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="paperboat.svg" itemID="6a4ed9f5-00000bd5" symbolType="graphic" lastModified="1783552501">
+  <timeline>
+    <DOMTimeline name="paperboat.svg">
+      <layers>
+        <DOMLayer name="Layer 1" color="#0000FF" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup selected="true">
+                  <members>
+                    <DOMShape selected="true" isDrawingObject="true">
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#EFEB9D"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="!2793 791[2801 767 2807 710!2807 710[2813 656 2823 629!2823 629[2829 615 2840 605!2840 605[2840 560 2833 497!2833 497[2829 471 2826 463!2826 463[2746 499 2703 511!2703 511[2671 519 2656 521!2656 521[2630 537 2613 541!2613 541[2595 546
+ 2567 549!2567 549[2385 670 2275 701!2275 701[2252 741 2189 741!2189 741[2127 741 2101 697!2101 697[2035 669 1989 597!1989 597[1921 561 1803 454!1803 454[1666 325 1600 265!1600 265[1361 48 1313 145!1313 145[1194 389 1032 714!1032 714
+[922 936 894 1023!894 1023[849 1159 765 1203!765 1203[622 1282 304 1291!304 1291[163 1293 117 1296!117 1296[45 1301 55 1319!55 1319[74 1356 131 1421!131 1421[222 1526 323 1661!323 1661[347 1675 371 1727!371 1727[384 1757 413 1818!413
+ 1818[471 1923 583 1857!583 1857[719 1823 1194 1734!1194 1734[1615 1655 1854 1585!1854 1585[2616 1364 2786 917!2786 917[2775 890 2779 855!2779 855[2782 834 2793 791"/>
+                        <Edge cubics="!2793 791(;2810,739 2803,681 2823,629q2793 791Q2801 767q2807 710Q2813 656q2823 629);"/>
+                        <Edge cubics="!2823 629(;2827,619 2833,611 2840,605q2823 629Q2829 615q2840 605);"/>
+                        <Edge cubics="!2840 605(;2840,569 2837,533 2833,497q2840 605Q2840 560q2833 497);"/>
+                        <Edge cubics="!2833 497(;2831,483 2830,473 2826,463q2833 497Q2829 471q2826 463);"/>
+                        <Edge cubics="!2826 463(;2786,481 2746,499 2703,511q2826 463Q2746 499q2703 511);"/>
+                        <Edge cubics="!2703 511(;2687,515 2671,519 2656,521q2703 511Q2671 519q2656 521);"/>
+                        <Edge cubics="!2656 521(;2643,529 2630,537 2613,541q2656 521Q2630 537q2613 541);"/>
+                        <Edge cubics="!2613 541(;2597,545 2583,547 2567,549q2613 541Q2595 546q2567 549);"/>
+                        <Edge cubics="!2567 549(;2477,609 2375,673 2275,701q2567 549Q2385 670q2275 701);"/>
+                        <Edge cubics="!2275 701(;2261,725 2231,741 2189,741q2275 701Q2252 741q2189 741);"/>
+                        <Edge cubics="!2189 741(;2143,741 2115,721 2101,697q2189 741Q2127 741q2101 697);"/>
+                        <Edge cubics="!2101 697(;2059,679 2021,647 1989,597q2101 697Q2035 669q1989 597);"/>
+                        <Edge cubics="!1989 597(;1771,481 1396,-21 1313,145q1989 597Q1921 561q1803 454Q1666 325q1600 265Q1361 48q1313 145);"/>
+                        <Edge cubics="!1313 145(;1075,633 940,881 894,1023q1313 145Q1194 389q1032 714Q922 936q894 1023);"/>
+                        <Edge cubics="!894 1023(;872,1089 830,1169 765,1203q894 1023Q849 1159q765 1203);"/>
+                        <Edge cubics="!765 1203(;513,1341 24,1262 55,1319q765 1203Q622 1282q304 1291Q163 1293q117 1296Q45 1301q55 1319);"/>
+                        <Edge cubics="!55 1319(;95,1396 129,1401 323,1661q55 1319Q74 1356q131 1421Q222 1526q323 1661);"/>
+                        <Edge cubics="!323 1661(;403,1709 395,1967 583,1857q323 1661Q347 1675q371 1727Q384 1757q413 1818Q471 1923q583 1857);"/>
+                        <Edge cubics="!583 1857(;1305,1677 2517,1626 2786,917q583 1857Q719 1823q1194 1734Q1615 1655q1854 1585Q2616 1364q2786 917);"/>
+                        <Edge cubics="!2786 917(;2770,877 2782,833 2793,791q2786 917Q2775 890q2779 855Q2782 834q2793 791);"/>
+                      </edges>
+                    </DOMShape>
+                    <DOMShape selected="true" isDrawingObject="true">
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#010101"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!2867 481[2868 479 2865 472!2865 472[2860 462 2860 453!2860 453[2810 441 2791 445!2791 445[2751 456 2602 535!2602 535[2543 551 2411 620!2411 620[2250 704 2184 732!2184 732[2055 575 1811 383!1811 383[1518 164 1368 47!1368 47[1375 36 1354
+ 10!1354 10[1333 -15 1324 19!1324 19[1318 9 1300 5!1300 5[1283 2 1272 9!1272 9[1241 28 1308 87!1308 87[1253 215 1051 608!1051 608[876 948 791 1179!791 1179[575 1226 291 1238!291 1238[61 1248 26 1268!26 1268[-34 1301 63 1435!63 1435[143
+ 1544 475 1907!475 1907[1155 1828 1635 1688!1635 1688[2268 1502 2703 1176!2703 1176|2707 1177!2707 1177[2762 1065 2803 852!2803 852[2844 602 2867 481!2810 587[2779 705 2762 779!2762 779[2753 821 2700 1063!2700 1063[2421 899 2006 899!2006
+ 899[2118 858 2396 698!2396 698[2647 554 2830 503!2830 503[2816 534 2810 587!840 1159[855 1115 1093 684!1093 684[1298 312 1291 199!1291 199|1302 185!1302 185[1313 172 1345 123!1345 123[1465 232 1720 429!1720 429[2014 657 2130 755!2130
+ 755[1826 896 1538 991!1538 991[1450 524 1392 310!1392 310[1344 131 1343 205!1343 205[1341 279 1386 494!1386 494[1439 748 1520 997!1520 997[1181 1106 834 1169!834 1169|840 1159!1916 1497[1638 1600 1233 1698!1233 1698[756 1804 514 1859
+!514 1859[512 1854 506 1846!506 1846[693 1708 915 1516!915 1516[1171 1292 1320 1165!1320 1165[1358 1132 1404 1112!1404 1112[1456 1088 1573 1055!1573 1055[1622 1041 1735 998!1735 998[1832 961 1881 951!1881 951[1908 958 2258 1014!2258 1014
+[2498 1053 2660 1131!2660 1131[2457 1250 2297 1331!2297 1331[2098 1430 1916 1497!472 1847|467 1847!467 1847[327 1600 51 1309!51 1309[56 1308 85 1308!85 1308[109 1308 121 1297!121 1297[374 1304 661 1269!661 1269[939 1235 1211 1167!1211
+ 1167[647 1680 472 1847"/>
+                        <Edge cubics="!2810 587(;2766,755 2763,773 2700,1063q2810 587Q2779 705q2762 779Q2753 821q2700 1063);"/>
+                        <Edge cubics="!2700 1063(;2513,953 2270,899 2006,899q2700 1063Q2421 899q2006 899);"/>
+                        <Edge cubics="!2006 899(;2280,799 2498,595 2830,503q2006 899Q2118 858q2396 698Q2647 554q2830 503);"/>
+                        <Edge cubics="!2830 503(;2817,531 2813,559 2810,587q2830 503Q2816 534q2810 587);"/>
+                        <Edge cubics="!1916 1497(;1480,1659 998,1749 514,1859q1916 1497Q1638 1600q1233 1698Q756 1804q514 1859);"/>
+                        <Edge cubics="!514 1859(;512,1853 514,1856 506,1846q514 1859Q512 1854q506 1846);"/>
+                        <Edge cubics="!506 1846(;811,1621 1021,1419 1320,1165q506 1846Q693 1708q915 1516Q1171 1292q1320 1165);"/>
+                        <Edge cubics="!1320 1165(;1368,1123 1411,1101 1573,1055q1320 1165Q1358 1132q1404 1112Q1456 1088q1573 1055);"/>
+                        <Edge cubics="!1573 1055(;1685,1023 1791,969 1881,951q1573 1055Q1622 1041q1735 998Q1832 961q1881 951);"/>
+                        <Edge cubics="!1881 951(;2121,1011 2387,999 2660,1131q1881 951Q1908 958q2258 1014Q2498 1053q2660 1131);"/>
+                        <Edge cubics="!2660 1131(;2421,1271 2178,1401 1916,1497q2660 1131Q2457 1250q2297 1331Q2098 1430q1916 1497);"/>
+                        <Edge cubics="!472 1847(;470,1847 470,1847 467,1847q472 1847 467 1847);"/>
+                        <Edge cubics="!467 1847(;372,1679 220,1487 51,1309q467 1847Q327 1600q51 1309);"/>
+                        <Edge cubics="!51 1309(;70,1303 100,1316 121,1297q51 1309Q56 1308q85 1308Q109 1308q121 1297);"/>
+                        <Edge cubics="!121 1297(;464,1306 855,1256 1211,1167q121 1297Q374 1304q661 1269Q939 1235q1211 1167);"/>
+                        <Edge cubics="!1211 1167(;991,1367 721,1609 472,1847q1211 1167Q647 1680q472 1847);"/>
+                        <Edge cubics="!840 1159(;900,979 1303,393 1291,199q840 1159Q855 1115q1093 684Q1298 312q1291 199);"/>
+                        <Edge cubics="!1291 199(;1303,181 1291,205 1345,123q1291 199Q1291 199q1302 185Q1313 172q1345 123);"/>
+                        <Edge cubics="!1345 123(;1565,323 1863,529 2130,755q1345 123Q1465 232q1720 429Q2014 657q2130 755);"/>
+                        <Edge cubics="!2130 755(;1958,835 1751,921 1538,991q2130 755Q1826 896q1538 991);"/>
+                        <Edge cubics="!1538 991(;1278,-381 1283,265 1520,997q1538 991Q1450 524q1392 310Q1344 131q1343 205Q1341 279q1386 494Q1439 748q1520 997);"/>
+                        <Edge cubics="!1520 997(;1296,1069 1065,1127 834,1169q1520 997Q1181 1106q834 1169);"/>
+                        <Edge cubics="!834 1169(;835,1167 838,1163 840,1159q834 1169 840 1159);"/>
+                        <Edge cubics="!2867 481(;2870,477 2860,469 2860,453q2867 481Q2868 479q2865 472Q2860 462q2860 453);"/>
+                        <Edge cubics="!2860 453(;2803,439 2820,419 2602,535q2860 453Q2810 441q2791 445Q2751 456q2602 535);"/>
+                        <Edge cubics="!2602 535(;2494,565 2340,667 2184,732q2602 535Q2543 551q2411 620Q2250 704q2184 732);"/>
+                        <Edge cubics="!2184 732(;1978,481 1668,281 1368,47q2184 732Q2055 575q1811 383Q1518 164q1368 47);"/>
+                        <Edge cubics="!1368 47(;1374,37 1338,-33 1324,19q1368 47Q1375 36q1354 10Q1333 -15q1324 19);"/>
+                        <Edge cubics="!1324 19(;1308,-9 1206,-3 1308,87q1324 19Q1318 9q1300 5Q1283 2q1272 9Q1241 28q1308 87);"/>
+                        <Edge cubics="!1308 87(;1161,431 941,769 791,1179q1308 87Q1253 215q1051 608Q876 948q791 1179);"/>
+                        <Edge cubics="!791 1179(;0,1351 -354,1001 475,1907q791 1179Q575 1226q291 1238Q61 1248q26 1268Q-34 1301q63 1435Q143 1544q475 1907);"/>
+                        <Edge cubics="!475 1907(;1234,1819 2066,1654 2703,1176q475 1907Q1155 1828q1635 1688Q2268 1502q2703 1176);"/>
+                        <Edge cubics="!2703 1176(;2706,1176 2706,1177 2707,1177q2703 1176 2707 1177);"/>
+                        <Edge cubics="!2707 1177(;2796,997 2820,723 2867,481q2707 1177Q2762 1065q2803 852Q2844 602q2867 481);"/>
+                      </edges>
+                    </DOMShape>
+                    <DOMGroup selected="true">
+                      <members>
+                        <DOMSymbolInstance libraryItemName="paperboat.svg Assets/Layer 1/&amp;#060Compound Path&amp;#062" selected="true" blendMode="layer">
+                          <matrix>
+                            <Matrix tx="22.35" ty="8"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="59.7" y="42.75"/>
+                          </transformationPoint>
+                          <color>
+                            <Color alphaMultiplier="0.3203125"/>
+                          </color>
+                        </DOMSymbolInstance>
+                        <DOMSymbolInstance libraryItemName="paperboat.svg Assets/Layer 1/&amp;#060Path&amp;#062_6" selected="true" blendMode="layer">
+                          <matrix>
+                            <Matrix tx="65.75" ty="56.1"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="16.35" y="10"/>
+                          </transformationPoint>
+                          <color>
+                            <Color alphaMultiplier="0.3203125"/>
+                          </color>
+                        </DOMSymbolInstance>
+                        <DOMSymbolInstance libraryItemName="paperboat.svg Assets/Layer 1/&amp;#060Path&amp;#062_5" selected="true" blendMode="layer">
+                          <matrix>
+                            <Matrix tx="14.15" ty="64.75"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="12.8" y="7.7"/>
+                          </transformationPoint>
+                          <color>
+                            <Color alphaMultiplier="0.3203125"/>
+                          </color>
+                        </DOMSymbolInstance>
+                        <DOMSymbolInstance libraryItemName="paperboat.svg Assets/Layer 1/&amp;#060Path&amp;#062_3" selected="true" blendMode="layer">
+                          <matrix>
+                            <Matrix tx="74.1" ty="15.6"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="11.55" y="10.05"/>
+                          </transformationPoint>
+                          <color>
+                            <Color alphaMultiplier="0.3203125"/>
+                          </color>
+                        </DOMSymbolInstance>
+                        <DOMSymbolInstance libraryItemName="paperboat.svg Assets/Layer 1/&amp;#060Path&amp;#062_2" selected="true" blendMode="layer">
+                          <matrix>
+                            <Matrix tx="128.15" ty="31.55"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="2.7" y="6.65"/>
+                          </transformationPoint>
+                          <color>
+                            <Color alphaMultiplier="0.3203125"/>
+                          </color>
+                        </DOMSymbolInstance>
+                        <DOMSymbolInstance libraryItemName="paperboat.svg Assets/Layer 1/&amp;#060Path&amp;#062_1" selected="true" blendMode="layer">
+                          <matrix>
+                            <Matrix tx="123.3" ty="34.75"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="2.55" y="2.95"/>
+                          </transformationPoint>
+                          <color>
+                            <Color alphaMultiplier="0.3203125"/>
+                          </color>
+                        </DOMSymbolInstance>
+                        <DOMGroup selected="true">
+                          <members>
+                            <DOMSymbolInstance libraryItemName="paperboat.svg Assets/Layer 1/&amp;#060Path&amp;#062_1_0" selected="true" blendMode="layer">
+                              <matrix>
+                                <Matrix tx="81" ty="34.1"/>
+                              </matrix>
+                              <transformationPoint>
+                                <Point/>
+                              </transformationPoint>
+                              <color>
+                                <Color alphaMultiplier="0.3203125"/>
+                              </color>
+                            </DOMSymbolInstance>
+                            <DOMSymbolInstance libraryItemName="paperboat.svg Assets/Layer 1/&amp;#060Path&amp;#062" selected="true" blendMode="layer">
+                              <matrix>
+                                <Matrix tx="80.95" ty="30.75"/>
+                              </matrix>
+                              <transformationPoint>
+                                <Point x="2.95" y="3.65"/>
+                              </transformationPoint>
+                              <color>
+                                <Color alphaMultiplier="0.3203125"/>
+                              </color>
+                            </DOMSymbolInstance>
+                          </members>
+                        </DOMGroup>
+                        <DOMSymbolInstance libraryItemName="paperboat.svg Assets/Layer 1/&amp;#060Path&amp;#062_0" selected="true" blendMode="layer">
+                          <matrix>
+                            <Matrix tx="62.9" ty="21.65"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="3.15" y="10.05"/>
+                          </transformationPoint>
+                          <color>
+                            <Color alphaMultiplier="0.3203125"/>
+                          </color>
+                        </DOMSymbolInstance>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

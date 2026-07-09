@@ -1,0 +1,36 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="CerebrumFeet.svg Assets/Layer 1/&amp;#060Path&amp;#062_11" itemID="6a4e2841-000007b8" lastModified="1783507009">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_11">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!105 2[98 -2 92 1!92 1[85 3 81 7!81 7|56 19!56 19[35 28 6 35!6 35[1 36 1 42!1 42[0 49 5 49!5 49[33 53 60 46!60 46[73 43 85 37!85 37[90 36 98 30!98 30[107 23 108 14!108 14[110 8 105 2"/>
+                    <Edge cubics="!105 2(;101,0 96,-1 92,1q105 2Q98 -2q92 1);"/>
+                    <Edge cubics="!92 1(;88,2 84,4 81,7q92 1Q85 3q81 7);"/>
+                    <Edge cubics="!81 7(;73,11 65,15 56,19q81 7 56 19);"/>
+                    <Edge cubics="!56 19(;40,26 23,31 6,35q56 19Q35 28q6 35);"/>
+                    <Edge cubics="!6 35(;-1,36 -1,49 5,49q6 35Q1 36q1 42Q0 49q5 49);"/>
+                    <Edge cubics="!5 49(;24,52 42,51 60,46q5 49Q33 53q60 46);"/>
+                    <Edge cubics="!60 46(;69,44 77,41 85,37q60 46Q73 43q85 37);"/>
+                    <Edge cubics="!85 37(;90,36 94,33 98,30q85 37Q90 36q98 30);"/>
+                    <Edge cubics="!98 30(;103,26 107,21 108,14q98 30Q107 23q108 14);"/>
+                    <Edge cubics="!108 14(;109,10 108,6 105,2q108 14Q110 8q105 2);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

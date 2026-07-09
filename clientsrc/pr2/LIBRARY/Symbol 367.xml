@@ -1,6 +1,6 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 367" itemID="6801c6cc-000002f1" lastModified="1769388165" lastUniqueIdentifier="3">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 367" itemID="6801c6cc-000002f1" lastModified="1783553511" lastUniqueIdentifier="3">
   <timeline>
-    <DOMTimeline name="Symbol 367" currentFrame="52">
+    <DOMTimeline name="Symbol 367" currentFrame="53">
       <layers>
         <DOMLayer name="Layer 1" color="#A751E6">
           <frames>
@@ -1457,14 +1457,51 @@
             </DOMFrame>
             <DOMFrame index="53" duration="7" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="skullHeadHorns.svg" symbolType="graphic" centerPoint3DX="59.65" centerPoint3DY="82.7" loop="loop">
+                <DOMGroup>
                   <matrix>
-                    <Matrix a="0.366424560546875" d="0.366424560546875" tx="-1.4" ty="23.85"/>
+                    <Matrix a="0.9791259765625" b="-0.203170776367188" c="0.203170776367188" d="0.9791259765625" tx="13.6" ty="47.55"/>
                   </matrix>
-                  <transformationPoint>
-                    <Point x="166.9" y="160.9"/>
-                  </transformationPoint>
-                </DOMSymbolInstance>
+                  <members>
+                    <DOMShape selected="true" isDrawingObject="true">
+                      <matrix>
+                        <Matrix a="0.9791259765625" b="-0.203170776367188" c="0.203170776367188" d="0.9791259765625" tx="13.6" ty="47.55"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#93AAAD"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="!177 2058[308 2107 475 2127!475 2127[646 2147 822 2134!822 2134|824 2134!824 2134[1057 2117 1249 2042!1249 2042[1460 1960 1584 1818!1584 1818[1584 1742 1566 1670!1566 1670[1239 1843 860 1892!860 1892[473 1941 129 1848!129 1848[142 1893
+ 145 1961!145 1961[149 2020 157 2038!157 2038[167 2051 177 2058"/>
+                        <Edge cubics="!177 2058(;349,2122 585,2152 822,2134q177 2058Q308 2107q475 2127Q646 2147q822 2134);"/>
+                        <Edge cubics="!822 2134(;822,2134 824,2134 824,2134q822 2134 824 2134);"/>
+                        <Edge cubics="!824 2134(;1116,2113 1411,2016 1584,1818q824 2134Q1057 2117q1249 2042Q1460 1960q1584 1818);"/>
+                        <Edge cubics="!1584 1818(;1584,1768 1578,1718 1566,1670q1584 1818Q1584 1742q1566 1670);"/>
+                        <Edge cubics="!1566 1670(;1135,1898 593,1974 129,1848q1566 1670Q1239 1843q860 1892Q473 1941q129 1848);"/>
+                        <Edge cubics="!129 1848(;153,1934 139,2000 157,2038q129 1848Q142 1893q145 1961Q149 2020q157 2038);"/>
+                        <Edge cubics="!157 2038(;163,2046 168,2052 177,2058q157 2038Q167 2051q177 2058);"/>
+                      </edges>
+                    </DOMShape>
+                    <DOMShape selected="true" isDrawingObject="true">
+                      <matrix>
+                        <Matrix a="0.9791259765625" b="-0.203170776367188" c="0.203170776367188" d="0.9791259765625" tx="13.6" ty="47.55"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#93AAAD"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!989 1816[931 1824 815 1836!815 1836[684 1849 569 1853!569 1853[785 1855 989 1816"/>
+                        <Edge cubics="!989 1816(;931,1824 873,1830 815,1836q989 1816Q931 1824q815 1836);"/>
+                        <Edge cubics="!815 1836(;733,1844 651,1850 569,1853q815 1836Q684 1849q569 1853);"/>
+                        <Edge cubics="!569 1853(;711,1854 851,1842 989,1816q569 1853Q785 1855q989 1816);"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
               </elements>
             </DOMFrame>
           </frames>

@@ -225,7 +225,14 @@ package
          {
             Main.baseURL = productionBaseURL;
          }
-         Main.basePr2HubURL = productionPr2HubURL;
+         if(this.useCurrentOriginForPr2Hub(_loc1_, _loc0_))
+         {
+            Main.basePr2HubURL = Main.baseURL + "/pr2hub";
+         }
+         else
+         {
+            Main.basePr2HubURL = productionPr2HubURL;
+         }
          Main.levelsURL = Main.baseURL + "/levels";
          Main.phLevelsURL = Main.basePr2HubURL + "/levels";
          if(Main.domain.indexOf("bubblebox.com") != -1 || Main.domain.indexOf("2games.com") != -1)
@@ -270,6 +277,15 @@ package
       private function useCurrentOriginForApi(param1:String) : Boolean
       {
          return param1 == "local" || param1.indexOf("localhost") == 0 || param1.indexOf("127.0.0.1") == 0 || param1.indexOf("::1") != -1 || param1.indexOf("pr2hub.com") != -1 || param1.indexOf("trapwork.org") != -1 || param1.indexOf("bestestgameserver.ddns.net") == 0;
+      }
+
+      private function useCurrentOriginForPr2Hub(param1:String, param2:String) : Boolean
+      {
+         if(param2 == null)
+         {
+            return false;
+         }
+         return param1 == "local" || param1.indexOf("localhost") == 0 || param1.indexOf("127.0.0.1") == 0 || param1.indexOf("::1") != -1 || param1.indexOf("trapwork.org") != -1;
       }
       
       private function getKongApiOnTesting() : *

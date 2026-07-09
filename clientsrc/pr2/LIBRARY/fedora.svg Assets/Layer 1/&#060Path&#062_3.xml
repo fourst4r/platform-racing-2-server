@@ -1,0 +1,31 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="fedora.svg Assets/Layer 1/&amp;#060Path&amp;#062_3" itemID="6a4ed9f2-00000ba6" lastModified="1783552498">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_3">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!929 307[810 52 767 13!767 13[743 -8 721 3!721 3[706 11 672 48!672 48[582 147 488 184!488 184[321 249 57 191!57 191[-26 227 15 331!15 331[19 341 58 421!58 421[85 477 91 511!91 511[101 539 89 601!89 601[78 658 96 693!96 693[385 642 637
+ 550!637 550[991 422 929 307"/>
+                    <Edge cubics="!929 307(;597,-407 867,369 57,191q929 307Q810 52q767 13Q743 -8q721 3Q706 11q672 48Q582 147q488 184Q321 249q57 191);"/>
+                    <Edge cubics="!57 191(;-81,251 71,397 91,511q57 191Q-26 227q15 331Q19 341q58 421Q85 477q91 511);"/>
+                    <Edge cubics="!91 511(;113,573 63,627 96,693q91 511Q101 539q89 601Q78 658q96 693);"/>
+                    <Edge cubics="!96 693(;334,651 1024,483 929,307q96 693Q385 642q637 550Q991 422q929 307);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

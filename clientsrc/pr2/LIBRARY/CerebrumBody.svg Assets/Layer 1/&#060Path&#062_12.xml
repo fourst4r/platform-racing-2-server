@@ -1,0 +1,42 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="CerebrumBody.svg Assets/Layer 1/&amp;#060Path&amp;#062_12" itemID="6a4e284a-00000802" lastModified="1783507018">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_12">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!510 2[504 -5 500 6!500 6[496 17 500 22!500 22[530 60 525 107!525 107[520 155 483 186!483 186|481 188!481 188[445 209 402 215!402 215[357 225 311 221!311 221[269 220 228 230!228 230[194 235 151 249!151 249[71 281 7 337!7 337[-7 350 3
+ 377!3 377[13 404 28 388!28 388[102 313 204 279!204 279[259 264 308 263!308 263[325 261 358 257!358 257[366 257 383 258!383 258[399 260 407 259!407 259[453 255 489 227!489 227[526 200 542 158!542 158[557 117 549 75!549 75[540 33 510 2"/>
+                    <Edge cubics="!510 2(;501,-8 495,16 500,22q510 2Q504 -5q500 6Q496 17q500 22);"/>
+                    <Edge cubics="!500 22(;540,72 533,145 483,186q500 22Q530 60q525 107Q520 155q483 186);"/>
+                    <Edge cubics="!483 186(;482,186 481,187 481,188q483 186 481 188);"/>
+                    <Edge cubics="!481 188(;457,202 430,211 402,215q481 188Q445 209q402 215);"/>
+                    <Edge cubics="!402 215(;372,222 342,224 311,221q402 215Q357 225q311 221);"/>
+                    <Edge cubics="!311 221(;283,220 255,223 228,230q311 221Q269 220q228 230);"/>
+                    <Edge cubics="!228 230(;202,234 176,241 151,249q228 230Q194 235q151 249);"/>
+                    <Edge cubics="!151 249(;98,270 49,300 7,337q151 249Q71 281q7 337);"/>
+                    <Edge cubics="!7 337(;-11,354 7,410 28,388q7 337Q-7 350q3 377Q13 404q28 388);"/>
+                    <Edge cubics="!28 388(;77,338 137,301 204,279q28 388Q102 313q204 279);"/>
+                    <Edge cubics="!204 279(;238,270 273,264 308,263q204 279Q259 264q308 263);"/>
+                    <Edge cubics="!308 263(;325,261 341,258 358,257q308 263Q325 261q358 257);"/>
+                    <Edge cubics="!358 257(;374,256 391,260 407,259q358 257Q366 257q383 258Q399 260q407 259);"/>
+                    <Edge cubics="!407 259(;468,253 520,214 542,158q407 259Q453 255q489 227Q526 200q542 158);"/>
+                    <Edge cubics="!542 158(;562,104 550,43 510,2q542 158Q557 117q549 75Q540 33q510 2);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

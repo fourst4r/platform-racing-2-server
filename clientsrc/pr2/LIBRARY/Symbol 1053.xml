@@ -1,6 +1,6 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1053" itemID="6801c6cc-00000465" lastModified="1775360548" lastUniqueIdentifier="2">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 1053" itemID="6801c6cc-00000465" lastModified="1783552318" lastUniqueIdentifier="2">
   <timeline>
-    <DOMTimeline name="Symbol 1053" currentFrame="52">
+    <DOMTimeline name="Symbol 1053" currentFrame="53">
       <layers>
         <DOMLayer name="Layer 1" color="#7FDD9E">
           <frames>
@@ -782,7 +782,34 @@
               </elements>
             </DOMFrame>
             <DOMFrame index="53" duration="7" keyMode="9728">
-              <elements/>
+              <elements>
+                <DOMShape isDrawingObject="true">
+                  <matrix>
+                    <Matrix tx="-27.65" ty="-13.45"/>
+                  </matrix>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#93AAAD"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!2166 947[2071 867 1871 796!1871 796[1640 722 1533 677!1533 677[1505 669 1365 596!1365 596[1267 544 1184 559!1184 559[1154 561 1007 635!1007 635[892 692 880 650!880 650|860 669!860 669[845 688 804 687!804 687[770 685 750 736!750 736[727
+ 795 575 762!575 762[528 747 506 745!506 745[467 742 447 788!447 788|450 786!450 786[434 820 376 836!376 836[299 858 273 876!273 876[145 1037 433 1029!433 1029[458 1028 674 1012!674 1012[809 1002 846 1015!846 1015[1588 1037 1685 1037
+!1685 1037[2337 1037 2166 947"/>
+                    <Edge cubics="!2166 947(;2009,815 1746,766 1533,677q2166 947Q2071 867q1871 796Q1640 722q1533 677);"/>
+                    <Edge cubics="!1533 677(;1409,643 1326,534 1184,559q1533 677Q1505 669q1365 596Q1267 544q1184 559);"/>
+                    <Edge cubics="!1184 559(;1096,566 901,723 880,650q1184 559Q1154 561q1007 635Q892 692q880 650);"/>
+                    <Edge cubics="!880 650(;874,657 867,663 860,669q880 650 860 669);"/>
+                    <Edge cubics="!860 669(;822,718 786,645 750,736q860 669Q845 688q804 687Q770 685q750 736);"/>
+                    <Edge cubics="!750 736(;730,787 644,777 575,762q750 736Q727 795q575 762);"/>
+                    <Edge cubics="!575 762(;529,756 479,715 447,788q575 762Q528 747q506 745Q467 742q447 788);"/>
+                    <Edge cubics="!447 788(;447,788 450,786 450,786q447 788 450 786);"/>
+                    <Edge cubics="!450 786(;422,847 340,829 273,876q450 786Q434 820q376 836Q299 858q273 876);"/>
+                    <Edge cubics="!273 876(;61,1144 721,970 846,1015q273 876Q145 1037q433 1029Q458 1028q674 1012Q809 1002q846 1015);"/>
+                    <Edge cubics="!846 1015(;1053,1021 2437,1089 2166,947q846 1015Q1588 1037q1685 1037Q2337 1037q2166 947);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
             </DOMFrame>
           </frames>
         </DOMLayer>

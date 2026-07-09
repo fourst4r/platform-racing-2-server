@@ -1,0 +1,28 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="pirate.svg Assets/Layer 1/&amp;#060Path&amp;#062_1" itemID="6a4ed9f6-00000bdc" lastModified="1783552502">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_1">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FDFEFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!842 3[725 -17 489 69!489 69[292 142 122 242!122 242[-43 341 13 347!13 347[77 354 430 208!430 208[443 193 525 177!525 177[573 167 685 145!685 145[893 96 842 3"/>
+                    <Edge cubics="!842 3(;500,-57 -598,633 430,208q842 3Q725 -17q489 69Q292 142q122 242Q-43 341q13 347Q77 354q430 208);"/>
+                    <Edge cubics="!430 208(;475,158 928,158 842,3q430 208Q443 193q525 177Q573 167q685 145Q893 96q842 3);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,44 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="CerebrumBody.svg Assets/Layer 1/&amp;#060Path&amp;#062_4" itemID="6a4e284a-000007e4" lastModified="1783507018">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_4">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!42 0[21 0 8 18!8 18|3 28!3 28[0 34 0 41!0 41[0 52 3 59!3 59[5 63 8 63!8 63[10 62 12 57!12 57|13 55!13 55|13 54!13 54|14 53!14 53|17 49!17 49|23 43!23 43|31 39!31 39|36 39!36 39|43 38!43 38[49 38 52 32!52 32[56 24 55 19!55 19[55 0 42
+ 0"/>
+                    <Edge cubics="!42 0(;28,0 16,7 8,18q42 0Q21 0q8 18);"/>
+                    <Edge cubics="!8 18(;6,21 4,24 3,28q8 18 3 28);"/>
+                    <Edge cubics="!3 28(;1,32 0,37 0,41q3 28Q0 34q0 41);"/>
+                    <Edge cubics="!0 41(;0,47 1,54 3,59q0 41Q0 52q3 59);"/>
+                    <Edge cubics="!3 59(;4,61 6,63 8,63q3 59Q5 63q8 63);"/>
+                    <Edge cubics="!8 63(;10,62 11,60 12,57q8 63Q10 62q12 57);"/>
+                    <Edge cubics="!12 57(;12,56 12,56 13,55q12 57 13 55);"/>
+                    <Edge cubics="!13 55(;13,55 13,54 13,54q13 55 13 54);"/>
+                    <Edge cubics="!13 54(;13,54 14,53 14,53q13 54 14 53);"/>
+                    <Edge cubics="!14 53(;15,52 16,51 17,49q14 53 17 49);"/>
+                    <Edge cubics="!23 43(;26,41 28,40 31,39q23 43 31 39);"/>
+                    <Edge cubics="!31 39(;33,39 34,39 36,39q31 39 36 39);"/>
+                    <Edge cubics="!36 39(;38,38 41,38 43,38q36 39 43 38);"/>
+                    <Edge cubics="!43 38(;47,38 50,36 52,32q43 38Q49 38q52 32);"/>
+                    <Edge cubics="!52 32(;54,28 56,23 55,19q52 32Q56 24q55 19);"/>
+                    <Edge cubics="!55 19(;55,11 51,0 42,0q55 19Q55 0q42 0);"/>
+                    <Edge cubics="!17 49(;17,49 23,43 23,43q17 49 23 43);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

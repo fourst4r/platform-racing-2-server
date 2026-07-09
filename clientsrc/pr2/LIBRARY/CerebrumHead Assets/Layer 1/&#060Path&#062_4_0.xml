@@ -1,0 +1,34 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="CerebrumHead Assets/Layer 1/&amp;#060Path&amp;#062_4_0" itemID="6a4ed885-00000b38" lastModified="1783552133">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_4_0">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!383 2[364 14 327 28!327 28[284 44 267 52!267 52[233 70 169 114!169 114[105 162 75 191!75 191[26 239 3 288!3 288[-8 312 6 352!6 352[21 394 51 378!51 378[87 360 133 312!133 312[201 241 207 236!207 236[235 212 299 153!299 153[358 101 399
+ 84!399 84[427 72 418 30!418 30[408 -13 383 2"/>
+                    <Edge cubics="!383 2(;348,24 306,32 267,52q383 2Q364 14q327 28Q284 44q267 52);"/>
+                    <Edge cubics="!267 52(;233,70 201,92 169,114q267 52Q233 70q169 114);"/>
+                    <Edge cubics="!169 114(;105,162 37,214 3,288q169 114Q105 162q75 191Q26 239q3 288);"/>
+                    <Edge cubics="!3 288(;-9,314 7,402 51,378q3 288Q-8 312q6 352Q21 394q51 378);"/>
+                    <Edge cubics="!51 378(;111,348 157,280 207,236q51 378Q87 360q133 312Q201 241q207 236);"/>
+                    <Edge cubics="!207 236(;263,188 333,112 399,84q207 236Q235 212q299 153Q358 101q399 84);"/>
+                    <Edge cubics="!399 84(;437,68 416,-18 383,2q399 84Q427 72q418 30Q408 -13q383 2);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

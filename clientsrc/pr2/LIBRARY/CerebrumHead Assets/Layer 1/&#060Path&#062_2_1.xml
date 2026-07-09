@@ -1,0 +1,28 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="CerebrumHead Assets/Layer 1/&amp;#060Path&amp;#062_2_1" itemID="6a4ed886-00000b58" lastModified="1783552134">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_2_1">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!53 24[58 -20 17 6!17 6[-24 32 19 48!19 48[22 44 35 42!35 42[46 40 53 24"/>
+                    <Edge cubics="!53 24(;59,-34 -39,26 19,48q53 24Q58 -20q17 6Q-24 32q19 48);"/>
+                    <Edge cubics="!19 48(;29,36 40,52 53,24q19 48Q22 44q35 42Q46 40q53 24);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

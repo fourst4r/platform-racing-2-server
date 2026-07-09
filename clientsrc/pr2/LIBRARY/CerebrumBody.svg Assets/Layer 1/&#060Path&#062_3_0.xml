@@ -1,0 +1,34 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="CerebrumBody.svg Assets/Layer 1/&amp;#060Path&amp;#062_3_0" itemID="6a4e284a-00000814" lastModified="1783507018">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_3_0">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!172 15[163 10 154 7!154 7[114 -5 74 5!74 5[34 14 4 43!4 43[-2 48 0 59!0 59[3 70 11 67!11 67[42 56 80 54!80 54[115 53 149 60!149 60[161 64 168 64!168 64[183 64 185 43!185 43[187 25 172 15"/>
+                    <Edge cubics="!172 15(;167,12 161,9 154,7q172 15Q163 10q154 7);"/>
+                    <Edge cubics="!154 7(;101,-9 44,5 4,43q154 7Q114 -5q74 5Q34 14q4 43);"/>
+                    <Edge cubics="!4 43(;-3,49 -1,71 11,67q4 43Q-2 48q0 59Q3 70q11 67);"/>
+                    <Edge cubics="!11 67(;33,59 56,55 80,54q11 67Q42 56q80 54);"/>
+                    <Edge cubics="!80 54(;103,53 126,55 149,60q80 54Q115 53q149 60);"/>
+                    <Edge cubics="!149 60(;155,62 162,64 168,64q149 60Q161 64q168 64);"/>
+                    <Edge cubics="!168 64(;179,64 184,53 185,43q168 64Q183 64q185 43);"/>
+                    <Edge cubics="!185 43(;186,32 181,21 172,15q185 43Q187 25q172 15);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -32,6 +32,10 @@ package package_14
          addItem(new class_228(Objects.BLOCK_MOVE),"Move Block","Where will it end up? Nobody knows! Every so often, this will move one space in a random direction. Use sparingly, too many of these can slow the game down.");
          addItem(new class_228(Objects.BLOCK_WATER),"Water Block","Swim!");
          addItem(new class_228(Objects.BLOCK_MUD),"Mud Block","Swim slower!");
+         addItem(new class_228(Objects.BLOCK_ONE_WAY_LEFT),"One Way Left Block","Only the left face of this block collides.");
+         addItem(new class_228(Objects.BLOCK_ONE_WAY_RIGHT),"One Way Right Block","Only the right face of this block collides.");
+         addItem(new class_228(Objects.BLOCK_ONE_WAY_UP),"One Way Up Block","Only the top face of this block collides.");
+         addItem(new class_228(Objects.BLOCK_ONE_WAY_DOWN),"One Way Down Block","Only the bottom face of this block collides.");
          addItem(new class_228(Objects.BLOCK_ROTATE_RIGHT),"Rotate Right Block","The wheels on the bus go round and round, round and round, round and round.");
          addItem(new class_228(Objects.BLOCK_ROTATE_LEFT),"Rotate Left Block","The wheels on the bus go round and round, round and round, round and round.");
          addItem(new class_228(Objects.BLOCK_PUSH),"Push Block","This block can be pushed around.");

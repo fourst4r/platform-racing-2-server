@@ -66,6 +66,10 @@
       
       public static var mudBitmap:MudBitmap;
       public static var freezeBitmap:FreezeTrapBitmap;
+      public static var oneWayLeftBitmap:OneWayLeftBlock;
+      public static var oneWayRightBitmap:OneWayRightBlock;
+      public static var oneWayUpBitmap:OneWayUpBlock;
+      public static var oneWayDownBitmap:OneWayDownBlock;
        
       
       public function Blocks()
@@ -106,6 +110,10 @@
          teleportBitmap = new TeleportBitmap(30,30);
          mudBitmap = new MudBitmap(30,30);
          freezeBitmap = new FreezeTrapBitmap(30,30);
+         oneWayLeftBitmap = new OneWayLeftBlock(30,30);
+         oneWayRightBitmap = new OneWayRightBlock(30,30);
+         oneWayUpBitmap = new OneWayUpBlock(30,30);
+         oneWayDownBitmap = new OneWayDownBlock(30,30);
       }
       
       public static function getBlock(param1:int) : BitmapData
@@ -234,6 +242,22 @@
          else if(param1 == Objects.BLOCK_FREEZE)
          {
             _loc2_ = freezeBitmap;
+         }
+         else if(param1 == Objects.BLOCK_ONE_WAY_LEFT)
+         {
+            _loc2_ = oneWayLeftBitmap;
+         }
+         else if(param1 == Objects.BLOCK_ONE_WAY_RIGHT)
+         {
+            _loc2_ = oneWayRightBitmap;
+         }
+         else if(param1 == Objects.BLOCK_ONE_WAY_UP)
+         {
+            _loc2_ = oneWayUpBitmap;
+         }
+         else if(param1 == Objects.BLOCK_ONE_WAY_DOWN)
+         {
+            _loc2_ = oneWayDownBitmap;
          }
          return _loc2_;
       }

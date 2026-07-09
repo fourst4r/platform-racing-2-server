@@ -1,0 +1,41 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="fedora.svg Assets/Layer 1/&amp;#060Path&amp;#062" itemID="6a4ed9f2-00000bac" lastModified="1783552498">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!1646 0[1630 4 1608 15!1608 15[1584 28 1572 34!1572 34|1342 142!1342 142[1196 205 1028 262!1028 262[711 371 382 429!382 429|194 460!194 460[74 483 6 492!6 492[0 492 1 501!1 501[1 509 6 509!6 509[217 502 344 480!344 480[512 453 672 414
+!672 414[1005 332 1318 204!1318 204[1416 164 1488 130!1488 130|1574 90!1574 90[1588 83 1617 69!1617 69[1642 57 1658 44!1658 44[1668 35 1664 16!1664 16[1660 -3 1646 0"/>
+                    <Edge cubics="!1646 0(;1620,6 1596,22 1572,34q1646 0Q1630 4q1608 15Q1584 28q1572 34);"/>
+                    <Edge cubics="!1342 142(;1240,186 1134,226 1028,262q1342 142Q1196 205q1028 262);"/>
+                    <Edge cubics="!1028 262(;818,334 602,390 382,429q1028 262Q711 371q382 429);"/>
+                    <Edge cubics="!382 429(;320,440 256,449 194,460q382 429 194 460);"/>
+                    <Edge cubics="!194 460(;132,472 68,484 6,492q194 460Q74 483q6 492);"/>
+                    <Edge cubics="!6 492(;-2,492 0,509 6,509q6 492Q0 492q1 501Q1 509q6 509);"/>
+                    <Edge cubics="!6 509(;120,505 232,499 344,480q6 509Q217 502q344 480);"/>
+                    <Edge cubics="!344 480(;454,462 564,440 672,414q344 480Q512 453q672 414);"/>
+                    <Edge cubics="!672 414(;892,360 1108,290 1318,204q672 414Q1005 332q1318 204);"/>
+                    <Edge cubics="!1318 204(;1376,180 1432,156 1488,130q1318 204Q1416 164q1488 130);"/>
+                    <Edge cubics="!1488 130(;1516,116 1546,104 1574,90q1488 130 1574 90);"/>
+                    <Edge cubics="!1574 90(;1602,76 1632,64 1658,44q1574 90Q1588 83q1617 69Q1642 57q1658 44);"/>
+                    <Edge cubics="!1658 44(;1671,32 1666,-4 1646,0q1658 44Q1668 35q1664 16Q1660 -3q1646 0);"/>
+                    <Edge cubics="!1572 34(;1572,34 1342,142 1342,142q1572 34 1342 142);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -897,8 +897,8 @@ package package_8
             this.crouching = false;
             if(this.grounded == true)
             {
-               _loc1_ = this.getBlock(x,y - 40);
-               _loc2_ = this.getBlock(x,y - 10);
+               _loc1_ = this.getBlock(x,y - 40,true,false,Block.FACE_BOTTOM);
+               _loc2_ = this.getBlock(x,y - 10,true,false,Block.FACE_BOTTOM);
                if(_loc1_ != null && _loc2_ == null)
                {
                   this.crouching = true;
@@ -933,7 +933,7 @@ package package_8
       
       private function method_261() : *
       {
-         if(this.var_469 != null && this.var_262 == null)
+         if(this.var_469 != null && (this.var_262 == null || this.var_262 is OneWayBlock))
          {
             this.var_469.onStand(this);
             this.method_41();
@@ -951,25 +951,25 @@ package package_8
          {
             y += 0.001;
          }
-         this.var_630 = this.getBlock(x - this.var_189,y,true,true);
-         this.var_469 = this.getBlock(x,y,true,true);
-         this.var_657 = this.getBlock(x + this.var_189,y,true,true);
-         this.var_329 = this.getBlock(x - this.var_189,y - 10);
-         this.var_658 = this.getBlock(x,y - 10);
-         this.var_296 = this.getBlock(x + this.var_189,y - 10);
-         this.var_654 = this.getBlock(x - this.var_189,y - 30);
-         this.var_262 = this.getBlock(x,y - 30);
-         this.var_631 = this.getBlock(x + this.var_189,y - 30);
-         this.var_306 = this.getBlock(x,y - this.var_325 + 30);
-         this.var_297 = this.getBlock(x,y - this.var_325);
+         this.var_630 = this.getBlock(x - this.var_189,y,true,true,Block.FACE_TOP);
+         this.var_469 = this.getBlock(x,y,true,true,Block.FACE_TOP);
+         this.var_657 = this.getBlock(x + this.var_189,y,true,true,Block.FACE_TOP);
+         this.var_329 = this.getBlock(x - this.var_189,y - 10,true,false,Block.FACE_RIGHT);
+         this.var_658 = this.getBlock(x,y - 10,true,false,Block.FACE_BOTTOM);
+         this.var_296 = this.getBlock(x + this.var_189,y - 10,true,false,Block.FACE_LEFT);
+         this.var_654 = this.getBlock(x - this.var_189,y - 30,true,false,Block.FACE_BOTTOM);
+         this.var_262 = this.getBlock(x,y - 30,true,false,Block.FACE_BOTTOM);
+         this.var_631 = this.getBlock(x + this.var_189,y - 30,true,false,Block.FACE_BOTTOM);
+         this.var_306 = this.getBlock(x,y - this.var_325 + 30,true,false,Block.FACE_BOTTOM);
+         this.var_297 = this.getBlock(x,y - this.var_325,true,false,Block.FACE_BOTTOM);
       }
       
-      private function getBlock(param1:Number, param2:Number, param3:Boolean = true, param4:Boolean = false) : Block
+      private function getBlock(param1:Number, param2:Number, param3:Boolean = true, param4:Boolean = false, param5:int = -1) : Block
       {
          var _loc5_:Block = null;
          if(this.map != null)
          {
-            if((_loc5_ = this.map.getBlockFromPos(param1,param2,param3)) == null || !_loc5_.isActive() || var_4.getBool(TOP) && _loc5_ is VanishBlock && !param4)
+            if((_loc5_ = this.map.getBlockFromPos(param1,param2,param3)) == null || !_loc5_.isActive() || !_loc5_.collidesOnFace(this,param5) || param5 == Block.FACE_BOTTOM && velY > 0 && _loc5_ is OneWayBlock || var_4.getBool(TOP) && _loc5_ is VanishBlock && !param4)
             {
                return null;
             }

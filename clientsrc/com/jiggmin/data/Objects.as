@@ -94,6 +94,10 @@ package com.jiggmin.data
 
       public static const BLOCK_MUD:int = 150;
       public static const BLOCK_FREEZE:int = 151;
+      public static const BLOCK_ONE_WAY_LEFT:int = 152;
+      public static const BLOCK_ONE_WAY_RIGHT:int = 153;
+      public static const BLOCK_ONE_WAY_UP:int = 154;
+      public static const BLOCK_ONE_WAY_DOWN:int = 155;
       
       public static const BG1Code:int = 201;
       
@@ -298,6 +302,22 @@ package com.jiggmin.data
          if(param1 == BLOCK_MUD)
          {
             return new MudBlock();
+         }
+         if(param1 == BLOCK_ONE_WAY_LEFT)
+         {
+            return new OneWayBlock(BLOCK_ONE_WAY_LEFT,Block.FACE_LEFT);
+         }
+         if(param1 == BLOCK_ONE_WAY_RIGHT)
+         {
+            return new OneWayBlock(BLOCK_ONE_WAY_RIGHT,Block.FACE_RIGHT);
+         }
+         if(param1 == BLOCK_ONE_WAY_UP)
+         {
+            return new OneWayBlock(BLOCK_ONE_WAY_UP,Block.FACE_TOP);
+         }
+         if(param1 == BLOCK_ONE_WAY_DOWN)
+         {
+            return new OneWayBlock(BLOCK_ONE_WAY_DOWN,Block.FACE_BOTTOM);
          }
          if(param1 == BG1Code)
          {

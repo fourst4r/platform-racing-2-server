@@ -1,0 +1,33 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="sombrero.svg Assets/Layer 1/&amp;#060Path&amp;#062" itemID="6a4ed9f6-00000bea" lastModified="1783552502">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!2987 4[2591 246 2326 386!2326 386[1957 581 1630 695!1630 695[1245 830 843 868!843 868[440 907 38 847!38 847[1 841 0 930!0 930[0 1019 42 1025!42 1025[439 1085 840 1047!840 1047[1237 1009 1620 877!1620 877[1955 763 2334 565!2334 565[2608
+ 422 3012 175!3012 175[3048 154 3036 68!3036 68[3024 -18 2987 4"/>
+                    <Edge cubics="!2987 4(;2553,270 2111,527 1630,695q2987 4Q2591 246q2326 386Q1957 581q1630 695);"/>
+                    <Edge cubics="!1630 695(;1118,874 575,927 38,847q1630 695Q1245 830q843 868Q440 907q38 847);"/>
+                    <Edge cubics="!38 847(;-10,839 -16,1017 42,1025q38 847Q1 841q0 930Q0 1019q42 1025);"/>
+                    <Edge cubics="!42 1025(;574,1105 1112,1052 1620,877q42 1025Q439 1085q840 1047Q1237 1009q1620 877);"/>
+                    <Edge cubics="!1620 877(;2113,709 2567,447 3012,175q1620 877Q1955 763q2334 565Q2608 422q3012 175);"/>
+                    <Edge cubics="!3012 175(;3060,147 3036,-25 2987,4q3012 175Q3048 154q3036 68Q3024 -18q2987 4);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

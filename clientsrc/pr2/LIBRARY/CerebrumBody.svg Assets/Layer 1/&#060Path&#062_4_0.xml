@@ -1,0 +1,30 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="CerebrumBody.svg Assets/Layer 1/&amp;#060Path&amp;#062_4_0" itemID="6a4e284a-00000812" lastModified="1783507018">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_4_0">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!102 6[6 337 0 686!0 686[-1 711 17 710!17 710[34 710 35 685!35 685[43 345 116 14!116 14[118 7 111 1!111 1[104 -4 102 6"/>
+                    <Edge cubics="!102 6(;38,227 4,456 0,686q102 6Q6 337q0 686);"/>
+                    <Edge cubics="!0 686(;-1,719 34,718 35,685q0 686Q-1 711q17 710Q34 710q35 685);"/>
+                    <Edge cubics="!35 685(;40,459 67,235 116,14q35 685Q43 345q116 14);"/>
+                    <Edge cubics="!116 14(;118,5 105,-8 102,6q116 14Q118 7q111 1Q104 -4q102 6);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,33 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="sombrero.svg Assets/Layer 1/&amp;#060Path&amp;#062_1" itemID="6a4ed9f6-00000be8" lastModified="1783552502">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_1">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!912 474[895 375 842 271!842 271[788 164 719 94!719 94[602 -23 324 6!324 6[-74 52 16 688!16 688[22 721 30 733!30 733[27 838 64 915!64 915[142 1075 401 1047!401 1047[647 1021 794 873!794 873[955 711 912 474"/>
+                    <Edge cubics="!912 474(;889,344 812,188 719,94q912 474Q895 375q842 271Q788 164q719 94);"/>
+                    <Edge cubics="!719 94(;619,-6 457,-8 324,6q719 94Q602 -23q324 6);"/>
+                    <Edge cubics="!324 6(;-22,46 -22,420 16,688q324 6Q-74 52q16 688);"/>
+                    <Edge cubics="!16 688(;20,710 24,724 30,733q16 688Q22 721q30 733);"/>
+                    <Edge cubics="!30 733(;28,794 36,857 64,915q30 733Q27 838q64 915);"/>
+                    <Edge cubics="!64 915(;128,1047 271,1061 401,1047q64 915Q142 1075q401 1047);"/>
+                    <Edge cubics="!401 1047(;707,1015 972,807 912,474q401 1047Q647 1021q794 873Q955 711q912 474);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

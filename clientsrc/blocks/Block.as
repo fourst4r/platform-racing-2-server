@@ -10,6 +10,15 @@ package blocks
    
    public class Block extends Sprite
    {
+      public static const FACE_ANY:int = -1;
+      
+      public static const FACE_TOP:int = 0;
+      
+      public static const FACE_RIGHT:int = 1;
+      
+      public static const FACE_BOTTOM:int = 2;
+      
+      public static const FACE_LEFT:int = 3;
        
       
       private var size:Number = 30;
@@ -283,6 +292,11 @@ package blocks
                param1.targetVelX = 0;
             }
          }
+      }
+      
+      public function collidesOnFace(character:LocalCharacter, face:int = -1) : Boolean
+      {
+         return true;
       }
       
       public function onTouch(param1:LocalCharacter) : *

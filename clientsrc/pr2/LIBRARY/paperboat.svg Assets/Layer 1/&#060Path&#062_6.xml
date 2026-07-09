@@ -1,0 +1,38 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="paperboat.svg Assets/Layer 1/&amp;#060Path&amp;#062_6" itemID="6a4ed9f5-00000bc6" lastModified="1783552501">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062_6">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!621 35[578 -7 495 1!495 1[456 3 398 21!398 21[377 19 358 25!358 25|270 57!270 57[178 92 126 135!126 135[63 187 24 254!24 254[-29 347 35 385!35 385[66 404 111 401!111 401[125 400 188 387!188 387[306 362 355 347!355 347[459 317 516 287
+!516 287[562 265 588 246!588 246[625 218 640 184!640 184[659 146 654 104!654 104[649 62 621 35"/>
+                    <Edge cubics="!621 35(;589,4 539,-3 495,1q621 35Q578 -7q495 1);"/>
+                    <Edge cubics="!495 1(;463,3 431,11 398,21q495 1Q456 3q398 21);"/>
+                    <Edge cubics="!398 21(;386,20 375,20 358,25q398 21Q377 19q358 25);"/>
+                    <Edge cubics="!358 25(;328,35 300,47 270,57q358 25 270 57);"/>
+                    <Edge cubics="!270 57(;218,77 170,99 126,135q270 57Q178 92q126 135);"/>
+                    <Edge cubics="!126 135(;75,177 -64,327 35,385q126 135Q63 187q24 254Q-29 347q35 385);"/>
+                    <Edge cubics="!35 385(;83,414 138,397 188,387q35 385Q66 404q111 401Q125 400q188 387);"/>
+                    <Edge cubics="!188 387(;245,375 300,364 355,347q188 387Q306 362q355 347);"/>
+                    <Edge cubics="!355 347(;411,331 465,314 516,287q355 347Q459 317q516 287);"/>
+                    <Edge cubics="!516 287(;565,264 618,235 640,184q516 287Q562 265q588 246Q625 218q640 184);"/>
+                    <Edge cubics="!640 184(;665,133 658,71 621,35q640 184Q659 146q654 104Q649 62q621 35);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

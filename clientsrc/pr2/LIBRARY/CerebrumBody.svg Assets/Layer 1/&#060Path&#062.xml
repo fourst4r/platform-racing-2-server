@@ -1,0 +1,34 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="CerebrumBody.svg Assets/Layer 1/&amp;#060Path&amp;#062" itemID="6a4e284a-000007d4" lastModified="1783507018">
+  <timeline>
+    <DOMTimeline name="&amp;#060Path&amp;#062">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#5BBC6B"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!797 471[799 405 783 269!783 269[764 119 763 62!763 62[749 24 707 41!707 41[634 71 625 71!625 71[588 68 449 41!449 41[346 21 263 31!263 31[177 39 88 15!88 15[20 -3 11 5!11 5[-5 19 6 119!6 119[30 302 50 474!50 474[274 682 402 737!402 737
+[615 828 667 579!667 579[669 569 693 575!693 575[718 581 724 570!724 570[759 620 786 572!786 572[811 525 797 471"/>
+                    <Edge cubics="!797 471(;801,348 766,192 763,62q797 471Q799 405q783 269Q764 119q763 62);"/>
+                    <Edge cubics="!763 62(;740,-3 682,68 625,71q763 62Q749 24q707 41Q634 71q625 71);"/>
+                    <Edge cubics="!625 71(;494,62 406,13 263,31q625 71Q588 68q449 41Q346 21q263 31);"/>
+                    <Edge cubics="!263 31(;-45,58 -31,-213 50,474q263 31Q177 39q88 15Q20 -3q11 5Q-5 19q6 119Q30 302q50 474);"/>
+                    <Edge cubics="!50 474(;244,654 588,959 667,579q50 474Q274 682q402 737Q615 828q667 579);"/>
+                    <Edge cubics="!667 579(;671,559 713,591 724,570q667 579Q669 569q693 575Q718 581q724 570);"/>
+                    <Edge cubics="!724 570(;774,641 814,536 797,471q724 570Q759 620q786 572Q811 525q797 471);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>
