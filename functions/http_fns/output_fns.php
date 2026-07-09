@@ -79,18 +79,15 @@ function output_header($title = '', $staff_nav = false, $show_admin = false, $ca
 // standard footer
 function output_footer()
 {
-    $tz = date('T');
-    $time = date("g:i a \o\\n M j, Y");
     echo "</div></div>"
         ."<div id='footer'>"
             ."<div class='content'>"
                 ."<ul class='footer_links'>"
-                    ."<li><a href='/backups'>Backups</a></li>"
-                    ."<li><a href='https://jiggmin2.com/forums/showthread.php?tid=19'>Folding@Home</a></li>"
-                    ."<li><a href='/terms_of_use.php'>Terms of Use</a></li>"
-                    ."<li><a href='/rules'>Rules</a></li>"
+                    ."<li><a href='/' target='_blank' rel='noopener noreferrer'>Play</a></li>"
+                    ."<li><a href='/leaderboard.php' target='_blank' rel='noopener noreferrer'>Leaderboard</a></li>"
+                    ."<li><a href='https://discord.gg/h4HpbfAPBw' target='_blank' rel='noopener noreferrer'>Discord</a></li>"
                 ."</ul>"
-            ."<br />All times are $tz. The time is currently $time.</div>"
+            ."</div>"
         ."</div></div>";
 }
 
