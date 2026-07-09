@@ -14,7 +14,7 @@ function describeVault($pdo, $user, $items_to_get = 'all')
     // get requested items
     $vault_info = file_get_contents(CACHE_DIR . '/vault.json');
     if (!$vault_info) {
-        regenerate_vault_items($pdo);
+        regenerate_vault_items($pdo, false);
         $vault_info = file_get_contents(CACHE_DIR . '/vault.json');
         if (!$vault_info) {
             throw new Exception('Could not retrieve vault info.');
@@ -23,6 +23,13 @@ function describeVault($pdo, $user, $items_to_get = 'all')
 
     // populate array
     $vault_info = json_decode($vault_info);
+    if (!isset($vault_info->listings) || !is_object($vault_info->listings)) {
+        regenerate_vault_items($pdo, false);
+        $vault_info = json_decode(file_get_contents(CACHE_DIR . '/vault.json'));
+        if (!isset($vault_info->listings) || !is_object($vault_info->listings)) {
+            throw new Exception('Could not retrieve vault info.');
+        }
+    }
     $items = $items_to_get === 'all' ? $vault_info->listings : new stdClass();
     if ($items_to_get !== 'all') {
         foreach ($items_to_get as $slug) {
@@ -266,10 +273,15 @@ function send_confirmation_pm($pdo, $user_id, $order_id, $title, $price, $quanti
 
 
 // regenerates vault items (intended to be run from CLI when there are new changes to vault items)
-function regenerate_vault_items($pdo)
+function regenerate_vault_items($pdo, $verbose = null)
 {
     require_once QUERIES_DIR . '/vault_items.php';
-    output('Regenerating vault items...');
+    if ($verbose === null) {
+        $verbose = PHP_SAPI === 'cli';
+    }
+    if ($verbose) {
+        output('Regenerating vault items...');
+    }
 
     // select items
     $items = vault_items_select($pdo);
@@ -285,6 +297,11 @@ function regenerate_vault_items($pdo)
 
     // save to file
     $file_link = CACHE_DIR . '/vault.json';
-    file_put_contents($file_link, json_encode($items_out, JSON_PRETTY_PRINT));
-    output("Vault items regenerated and saved to $file_link.\n");
+    $bytes_written = file_put_contents($file_link, json_encode($items_out, JSON_PRETTY_PRINT));
+    if ($bytes_written === false) {
+        throw new Exception('Could not save regenerated vault info.');
+    }
+    if ($verbose) {
+        output("Vault items regenerated and saved to $file_link.\n");
+    }
 }
