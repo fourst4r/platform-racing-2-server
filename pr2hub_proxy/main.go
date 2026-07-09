@@ -271,7 +271,7 @@ func buildListRoute(r *http.Request, cfg config) (*proxyRoute, error) {
 		return nil, newHTTPError(http.StatusBadRequest, "invalid list page")
 	}
 
-	if err := validateOptionalTokenAndRandQuery(r.URL.Query()); err != nil {
+	if err := validateAllowedQueryKeys(r.URL.Query(), "token", "rand"); err != nil {
 		return nil, err
 	}
 
@@ -376,12 +376,14 @@ func buildLevelRoute(r *http.Request, cfg config) (*proxyRoute, error) {
 	}
 
 	levelID := match[1]
-	version := r.URL.Query().Get("version")
+	queryValues := r.URL.Query()
+	if err := validateAllowedQueryKeys(queryValues, "version", "token", "rand"); err != nil {
+		return nil, err
+	}
+
+	version := queryValues.Get("version")
 	if !versionPattern.MatchString(version) {
 		return nil, newHTTPError(http.StatusBadRequest, "invalid level version")
-	}
-	if len(r.URL.Query()) > 1 || (len(r.URL.Query()) == 1 && r.URL.Query().Get("version") == "" && r.URL.RawQuery != "" && !strings.HasPrefix(r.URL.RawQuery, "version=")) {
-		return nil, newHTTPError(http.StatusBadRequest, "unexpected query parameters")
 	}
 
 	upstreamURL := fmt.Sprintf("%s/levels/%s.txt", cfg.UpstreamBase, levelID)
@@ -409,7 +411,7 @@ func buildLevelDataRoute(r *http.Request, cfg config) (*proxyRoute, error) {
 	}
 
 	query := r.URL.Query()
-	if err := validateOptionalTokenAndRandQuery(query); err != nil {
+	if err := validateAllowedQueryKeys(query, "level_id", "token", "rand"); err != nil {
 		return nil, err
 	}
 
@@ -444,16 +446,14 @@ func parsePositiveInt(value string) (int, error) {
 	return num, nil
 }
 
-func validateOptionalTokenAndRandQuery(values url.Values) error {
+func validateAllowedQueryKeys(values url.Values, allowedKeys ...string) error {
 	if len(values) == 0 {
 		return nil
 	}
 
-	allowed := map[string]bool{
-		"token":    true,
-		"rand":     true,
-		"level_id": true,
-		"version":  true,
+	allowed := map[string]bool{}
+	for _, key := range allowedKeys {
+		allowed[key] = true
 	}
 
 	for key, vals := range values {

@@ -126,6 +126,25 @@ func TestBuildLevelRouteDisablesStale(t *testing.T) {
 	}
 }
 
+func TestBuildLevelRouteIgnoresTokenAndRandQuery(t *testing.T) {
+	req, err := http.NewRequest(http.MethodGet, "http://trapwork.org/levels/6472117.txt?version=4&rand=6295465&token=abc123", nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	route, err := buildRoute(req, testConfig())
+	if err != nil {
+		t.Fatalf("buildRoute returned error: %v", err)
+	}
+
+	if route.CacheKey != "levels:6472117:4" {
+		t.Fatalf("unexpected cache key %q", route.CacheKey)
+	}
+	if route.UpstreamURL != "https://pr2hub.com/levels/6472117.txt?version=4" {
+		t.Fatalf("unexpected upstream URL %q", route.UpstreamURL)
+	}
+}
+
 func TestBuildListRouteIgnoresTokenAndRandQuery(t *testing.T) {
 	req, err := http.NewRequest(http.MethodGet, "http://trapwork.org/files/lists/newest/1?rand=5463708&token=abc123", nil)
 	if err != nil {
