@@ -38,7 +38,9 @@ $head_extras = [
 
 output_header('Platform Racing 2', false, false, false, $head_extras);
 
-$swf_url = '/clients/loader.swf';
+$swf_path = __DIR__ . '/clients/loader.swf';
+$swf_version = file_exists($swf_path) ? (string) filemtime($swf_path) : (string) time();
+$swf_url = '/clients/loader.swf?v=' . urlencode($swf_version);
 
 echo '<div class="game_holder">'
         .'<embed width="550" height="400" '
