@@ -99,6 +99,7 @@ package com.jiggmin.data
       public static const BLOCK_ONE_WAY_UP:int = 154;
       public static const BLOCK_ONE_WAY_DOWN:int = 155;
       public static const BLOCK_UNSAFE:int = 156;
+      public static const BLOCK_PILLAR:int = 157;
       
       public static const BG1Code:int = 201;
       
@@ -323,6 +324,10 @@ package com.jiggmin.data
          if(param1 == BLOCK_UNSAFE)
          {
             return new UnsafeStandBlock();
+         }
+         if(param1 == BLOCK_PILLAR)
+         {
+            return new PillarBlock();
          }
          if(param1 == BG1Code)
          {

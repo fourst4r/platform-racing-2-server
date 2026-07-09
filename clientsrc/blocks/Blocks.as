@@ -71,6 +71,10 @@
       public static var oneWayUpBitmap:OneWayUpBlock;
       public static var oneWayDownBitmap:OneWayDownBlock;
       public static var unsafeBitmap:UnsafeBlock;
+      public static var pillar1Bitmap:Pillar1Block;
+      public static var pillar2Bitmap:Pillar2Block;
+      public static var pillar3Bitmap:Pillar3Block;
+      public static var transparentBitmap:BitmapData;
        
       
       public function Blocks()
@@ -116,6 +120,10 @@
          oneWayUpBitmap = new OneWayUpBlock(30,30);
          oneWayDownBitmap = new OneWayDownBlock(30,30);
          unsafeBitmap = new UnsafeBlock(30,30);
+         pillar1Bitmap = new Pillar1Block(30,30);
+         pillar2Bitmap = new Pillar2Block(30,30);
+         pillar3Bitmap = new Pillar3Block(30,30);
+         transparentBitmap = new BitmapData(30,30,true,0);
       }
       
       public static function getBlock(param1:int) : BitmapData
@@ -265,7 +273,29 @@
          {
             _loc2_ = unsafeBitmap;
          }
+         else if(param1 == Objects.BLOCK_PILLAR)
+         {
+            _loc2_ = transparentBitmap;
+         }
          return _loc2_;
+      }
+      
+      public static function getPillarBitmap(param1:int) : BitmapData
+      {
+         if(param1 == 2)
+         {
+            return pillar2Bitmap;
+         }
+         if(param1 == 3)
+         {
+            return pillar3Bitmap;
+         }
+         return pillar1Bitmap;
+      }
+      
+      public static function getSolidColorBitmap(param1:uint) : BitmapData
+      {
+         return new BitmapData(30,30,false,param1);
       }
    }
 }

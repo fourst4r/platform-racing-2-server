@@ -44,6 +44,7 @@ package package_14
          addItem(new class_228(Objects.BLOCK_CUSTOM_STATS),"Custom Stats Block","Bumping this will set the player\'s stats to what you specify. Uncheck a stat to leave it unchanged. The default is 50-50-50.");
          addItem(new class_228(Objects.BLOCK_SAFETY),"Safety Net","Touching this will teleport you back to your last safe location. It\'s the same as falling off of the course.");
          addItem(new class_228(Objects.BLOCK_UNSAFE),"Unsafe Block","A basic block that does not count as a safe spot.");
+         addItem(new class_228(Objects.BLOCK_PILLAR),"Pillar Block","A basic block with a selectable pillar style and background color.");
          addItem(new class_228(Objects.BLOCK_HEART),"Heart Block","This block grants you one extra heart in Deathmatch mode, and renders you invincible for five fantastic seconds.");
          addItem(new class_228(Objects.BLOCK_TIME),"Time Block","Adds 10 seconds to your timer.");
          addItem(new class_228(Objects.BLOCK_MINION_EGG),"Egg Minion","Romps about with evil intent.");
