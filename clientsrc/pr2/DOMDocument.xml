@@ -1572,6 +1572,12 @@
      </extendedSwatchLists>
      <PrinterSettings/>
      <publishHistory>
+          <PublishItem publishSize="2641250" publishTime="1783571719" publishDebug="true"/>
+          <PublishItem publishSize="2641335" publishTime="1783571411" publishDebug="true"/>
+          <PublishItem publishSize="2641235" publishTime="1783568674" publishDebug="true"/>
+          <PublishItem publishSize="2641888" publishTime="1783568499" publishDebug="true"/>
+          <PublishItem publishSize="2640925" publishTime="1783567896" publishDebug="true"/>
+          <PublishItem publishSize="2222964" publishTime="1783564474"/>
           <PublishItem publishSize="2634579" publishTime="1783564340" publishDebug="true"/>
           <PublishItem publishSize="2634564" publishTime="1783564200" publishDebug="true"/>
           <PublishItem publishSize="2634619" publishTime="1783564182" publishDebug="true"/>
@@ -1586,11 +1592,5 @@
           <PublishItem publishSize="2633543" publishTime="1783559646" publishDebug="true"/>
           <PublishItem publishSize="2630945" publishTime="1783559476" publishDebug="true"/>
           <PublishItem publishSize="2630474" publishTime="1783556869" publishDebug="true"/>
-          <PublishItem publishSize="2625960" publishTime="1783554301" publishDebug="true"/>
-          <PublishItem publishSize="2625850" publishTime="1783553714" publishDebug="true"/>
-          <PublishItem publishSize="2626022" publishTime="1783553628" publishDebug="true"/>
-          <PublishItem publishSize="2625968" publishTime="1783552419" publishDebug="true"/>
-          <PublishItem publishSize="2626107" publishTime="1783510478" publishDebug="true"/>
-          <PublishItem publishSize="2626158" publishTime="1783510117" publishDebug="true"/>
      </publishHistory>
 </DOMDocument>

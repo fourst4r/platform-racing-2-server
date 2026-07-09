@@ -26,14 +26,14 @@ package
       
       public static const beta:Boolean = false;
       
-      public static const testing:Boolean = true;
+      public static const testing:Boolean = false;
       
       public static const build:String = "29-oct-2023-v168_2_1";
       
       public static const version:String = "9";
       
-      // public static const productionBaseURL:String = "http://trapwork.org";
-      public static const productionBaseURL:String = "http://localhost";
+      public static const productionBaseURL:String = "http://trapwork.org";
+      // public static const productionBaseURL:String = "http://localhost";
       public static const productionPr2HubURL:String = "https://pr2hub.com";
       
       public static var baseURL:String = productionBaseURL;
