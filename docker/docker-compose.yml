@@ -9,6 +9,7 @@ services:
       - "8080:80"
     environment:
       - MULTI_INTERNAL_HOST=multi
+      - PR2HUB_PROXY_URL=http://pr2hub-proxy:8080
     volumes:
       - ../clients:/pr2/http_server/clients:ro
       - ../../levels:/pr2/http_server/levels
@@ -16,6 +17,16 @@ services:
       - shared-data:/pr2/shared
     depends_on:
       - mysql
+      - pr2hub-proxy
+
+  pr2hub-proxy:
+    build:
+      context: ../
+      dockerfile: docker/pr2hub_proxy.dockerfile
+    environment:
+      - PROXY_UPSTREAM_BASE=https://pr2hub.com
+    volumes:
+      - pr2hub-proxy-cache:/cache
 
   multi:
     build:
@@ -76,3 +87,4 @@ services:
 volumes:
   mysql-data:
   shared-data:
+  pr2hub-proxy-cache:

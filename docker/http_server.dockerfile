@@ -13,6 +13,7 @@ COPY docker/http_server_startup.sh /http_server_startup.sh
 
 # Copy in custom config
 COPY docker/prepend_file.ini $PHP_INI_DIR/conf.d/
+COPY docker/pr2hub_proxy.conf /etc/apache2/conf-available/pr2hub_proxy.conf
 
 # Use the default production configuration
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
@@ -26,6 +27,8 @@ RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 RUN apt-get update && apt-get install -y \
     zip \
     cron
+
+ENV PR2HUB_PROXY_URL=http://pr2hub-proxy:8080
 
 # Install extensions
 RUN docker-php-ext-install pdo_mysql
@@ -48,6 +51,10 @@ RUN sed -i 's/\r$//' /etc/cron.d/minute-cron \
 
 # Ensure cron logs to stdout 
 RUN ln -sf /proc/1/fd/1 /var/log/cron.log
+
+# Enable reverse proxy support for same-origin PR2Hub forwarding.
+RUN a2enmod proxy proxy_http env \
+    && a2enconf pr2hub_proxy
 
 # Run minute and hour cron when this service starts up to generate server and level list files
 ENTRYPOINT []
