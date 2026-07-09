@@ -70,6 +70,7 @@
       public static var oneWayRightBitmap:OneWayRightBlock;
       public static var oneWayUpBitmap:OneWayUpBlock;
       public static var oneWayDownBitmap:OneWayDownBlock;
+      public static var unsafeBitmap:UnsafeBlock;
        
       
       public function Blocks()
@@ -114,6 +115,7 @@
          oneWayRightBitmap = new OneWayRightBlock(30,30);
          oneWayUpBitmap = new OneWayUpBlock(30,30);
          oneWayDownBitmap = new OneWayDownBlock(30,30);
+         unsafeBitmap = new UnsafeBlock(30,30);
       }
       
       public static function getBlock(param1:int) : BitmapData
@@ -258,6 +260,10 @@
          else if(param1 == Objects.BLOCK_ONE_WAY_DOWN)
          {
             _loc2_ = oneWayDownBitmap;
+         }
+         else if(param1 == Objects.BLOCK_UNSAFE)
+         {
+            _loc2_ = unsafeBitmap;
          }
          return _loc2_;
       }
