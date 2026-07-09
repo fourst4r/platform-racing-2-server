@@ -44,11 +44,17 @@ class PR2Client extends \chabot\SocketServerClient
         try {
             $array = explode('`', $string);
             if ($this->process) {
+                if (count($array) < 1 || $array[0] === '') {
+                    throw new \Exception('Malformed process packet.');
+                }
                 $call = $array[0];
                 $function = "process_$call";
                 array_splice($array, 0, 1);
                 $data = join('`', $array);
             } else {
+                if (count($array) < 3) {
+                    throw new \Exception('Malformed client packet.');
+                }
                 $hash = $array[0];
                 $send_num = (int) $array[1];
                 $call = $array[2];

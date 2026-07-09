@@ -29,6 +29,8 @@ RUN apt-get update && apt-get install -y \
     cron
 
 ENV PR2HUB_PROXY_URL=http://pr2hub-proxy:8080
+ENV MULTI_INTERNAL_HOST=multi
+ENV MULTI_INTERNAL_PORT=9160
 
 # Install extensions
 RUN docker-php-ext-install pdo_mysql
@@ -52,8 +54,8 @@ RUN sed -i 's/\r$//' /etc/cron.d/minute-cron \
 # Ensure cron logs to stdout 
 RUN ln -sf /proc/1/fd/1 /var/log/cron.log
 
-# Enable reverse proxy support for same-origin PR2Hub forwarding.
-RUN a2enmod proxy proxy_http env \
+# Enable reverse proxy support for same-origin PR2Hub and WebSocket forwarding.
+RUN a2enmod proxy proxy_http proxy_wstunnel env \
     && a2enconf pr2hub_proxy
 
 # Run minute and hour cron when this service starts up to generate server and level list files

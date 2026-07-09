@@ -66,7 +66,7 @@
     <Report>0</Report>
     <Protect>0</Protect>
     <OptimizeForAE>0</OptimizeForAE>
-    <OmitTraceActions>0</OmitTraceActions>
+    <OmitTraceActions>1</OmitTraceActions>
     <Quality>80</Quality>
     <DeblockingFilter>0</DeblockingFilter>
     <StreamFormat>0</StreamFormat>

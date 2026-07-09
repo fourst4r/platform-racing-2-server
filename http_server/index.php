@@ -32,7 +32,7 @@ $socket_proxy_targets = array_values(array_unique($socket_proxy_targets, SORT_RE
 $socket_proxy_targets_json = json_encode($socket_proxy_targets, JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
 
 $head_extras = [
-    "<script>(function(){var socketScheme=window.location.protocol==='https:'?'wss://':'ws://';var targets=$socket_proxy_targets_json;window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config=window.RufflePlayer.config||{};window.RufflePlayer.config.socketProxy=targets.map(function(target){return {host:target.host,port:target.port,proxyUrl:socketScheme+target.host+':' + target.port};});})();</script>",
+    "<script>(function(){var socketScheme=window.location.protocol==='https:'?'wss://':'ws://';var socketProxyUrl=socketScheme+window.location.host+'/socketproxy/';var targets=$socket_proxy_targets_json;window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config=window.RufflePlayer.config||{};window.RufflePlayer.config.socketProxy=targets.map(function(target){return {host:target.host,port:target.port,proxyUrl:socketProxyUrl};});})();</script>",
     "<script src='https://unpkg.com/@ruffle-rs/ruffle'></script>",
 ];
 

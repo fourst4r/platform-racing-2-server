@@ -1572,6 +1572,8 @@
      </extendedSwatchLists>
      <PrinterSettings/>
      <publishHistory>
+          <PublishItem publishSize="2227666" publishTime="1783571778"/>
+          <PublishItem publishSize="2228007" publishTime="1783571766"/>
           <PublishItem publishSize="2641250" publishTime="1783571719" publishDebug="true"/>
           <PublishItem publishSize="2641335" publishTime="1783571411" publishDebug="true"/>
           <PublishItem publishSize="2641235" publishTime="1783568674" publishDebug="true"/>
@@ -1590,7 +1592,5 @@
           <PublishItem publishSize="2632702" publishTime="1783560447" publishDebug="true"/>
           <PublishItem publishSize="2634207" publishTime="1783560103" publishDebug="true"/>
           <PublishItem publishSize="2633543" publishTime="1783559646" publishDebug="true"/>
-          <PublishItem publishSize="2630945" publishTime="1783559476" publishDebug="true"/>
-          <PublishItem publishSize="2630474" publishTime="1783556869" publishDebug="true"/>
      </publishHistory>
 </DOMDocument>

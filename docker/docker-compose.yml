@@ -9,6 +9,7 @@ services:
       - "8080:80"
     environment:
       - MULTI_INTERNAL_HOST=multi
+      - MULTI_INTERNAL_PORT=9160
       - PR2HUB_PROXY_URL=http://pr2hub-proxy:8080
     volumes:
       - ../clients:/pr2/http_server/clients:ro
