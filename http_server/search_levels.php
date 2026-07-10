@@ -39,7 +39,7 @@ try {
     }
 
     if ($page_str === false) {
-        rate_limit("$ip-search", 10, 5);
+        rate_limit("$ip-search", 5, 5);
         apcu_add($key, 'WAIT', 5); // will not overwrite existing
         $pdo = pdo_connect();
 
