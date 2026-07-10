@@ -24,6 +24,8 @@ package package_6
       private var isMod:Boolean = false;
       
       private var reportsMode:Boolean = false;
+
+      private var hotkeys:Object;
       
       private var statsSelect:StatsSelect;
       
@@ -31,13 +33,14 @@ package package_6
 
       private var freeCamera:Boolean = false;
       
-      public function TestCourse(param1:URLVariables, param2:Boolean = false, param3:Boolean = false)
+      public function TestCourse(param1:URLVariables, param2:Boolean = false, param3:Boolean = false, param4:Object = null)
       {
          this.m = new TestCourseGraphic();
          super();
          this.variables = param1;
          this.isMod = param2;
          this.reportsMode = param3;
+         this.hotkeys = param4;
       }
       
       override public function initialize() : *
@@ -113,7 +116,7 @@ package package_6
       
       private function clickBack(param1:MouseEvent) : *
       {
-         Main.pageHolder.changePage(new LevelEditor(this.variables,this.isMod,this.reportsMode));
+         Main.pageHolder.changePage(new LevelEditor(this.variables,this.isMod,this.reportsMode,this.hotkeys));
       }
       
       private function clickRestart(param1:MouseEvent) : *
@@ -186,6 +189,7 @@ package package_6
          this.m = null;
          this.statsSelect = null;
          this.variables = null;
+         this.hotkeys = null;
          super.remove();
       }
    }

@@ -105,12 +105,13 @@ package levelEditor
          return out;
       }
       
-      public function LevelEditor(param1:URLVariables, param2:Boolean = false, param3:Boolean = false)
+      public function LevelEditor(param1:URLVariables, param2:Boolean = false, param3:Boolean = false, param4:Object = null)
       {
          super();
          this.variables = param1;
          this.isMod = param2;
          this.reportsMode = param3;
+         this.hotkeys = this.cloneHotkeys(param4);
       }
       
       override public function initialize() : *
@@ -517,6 +518,11 @@ package levelEditor
          LevelEditor.editor = null;
       }
 
+      public function getHotkeysSnapshot() : Object
+      {
+         return this.cloneHotkeys(this.hotkeys);
+      }
+
       private function onLEKeyDown(e:KeyboardEvent) : void
       {
          if (Main.stage.focus is TextField)
@@ -642,6 +648,21 @@ package levelEditor
          trace("block at mouse: " + bo);
          if (bo == null) return;
          this.hotkeys[keyCode] = bo.displayCode;
+      }
+
+      private function cloneHotkeys(source:Object) : Object
+      {
+         var copy:Object = {};
+         var key:* = null;
+         if (source == null)
+         {
+            return copy;
+         }
+         for (key in source)
+         {
+            copy[key] = source[key];
+         }
+         return copy;
       }
 
       public function getBlocksInRegion(region:Rectangle) : Array

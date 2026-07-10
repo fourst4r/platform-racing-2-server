@@ -176,7 +176,7 @@ package levelEditor
       {
          if(!this.editor.drawing)
          {
-            Main.pageHolder.changePage(new TestCourse(this.editor.method_344(),this.editor.canViewLevelReports(),this.editor.inReportsMode()));
+            Main.pageHolder.changePage(new TestCourse(this.editor.method_344(),this.editor.canViewLevelReports(),this.editor.inReportsMode(),this.editor.getHotkeysSnapshot()));
          }
       }
       
