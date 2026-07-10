@@ -130,7 +130,7 @@ package package_6
          if(!(Main.stage.focus is TextField) && (Keys.isPressed(Keyboard.DOWN) || Keys.isPressed(altCtrl.down) || Keys.isPressed(Keyboard.UP) || Keys.isPressed(altCtrl.up) || Keys.isPressed(Keyboard.LEFT) || Keys.isPressed(altCtrl.left) || Keys.isPressed(Keyboard.RIGHT) || Keys.isPressed(altCtrl.right)))
          {
             this.spectatePicker.stopSpectating();
-            super.onSpectateKeyPress(param1);
+            this.activateManualFreeCam();
          }
       }
       

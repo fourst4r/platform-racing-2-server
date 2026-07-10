@@ -356,7 +356,11 @@ package replay
          if(keyPressed)
          {
             this.autoFollow = false;
-            super.onSpectateKeyPress(param1);
+            if(this.spectatePicker != null)
+            {
+               this.spectatePicker.stopSpectating();
+            }
+            this.activateManualFreeCam();
             return;
          }
          if(this.playerSpectating == null && this.autoFollow && this.playerArray != null)

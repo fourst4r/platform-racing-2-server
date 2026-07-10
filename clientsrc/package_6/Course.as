@@ -124,7 +124,8 @@ package package_6
       {
          super.initialize();
          Course.course = this;
-         addEventListener(Event.ENTER_FRAME,this.checkSpectateHotkey,false,0,true);
+         Main.stage.addEventListener(Event.ACTIVATE,this.onStageActivate,false,0,true);
+         Main.stage.addEventListener(KeyboardEvent.KEY_DOWN,this.onSpectateToggle,false,0,true);
          Main.stage.addEventListener(KeyboardEvent.KEY_DOWN,this.preventRaceTabFocus,true,1000,true);
          Main.stage.addEventListener(FocusEvent.KEY_FOCUS_CHANGE,this.preventRaceTabFocus,true,1000,true);
          Main.stage.addEventListener(MouseEvent.MOUSE_DOWN,this.onStageMouseDown,false,0,true);
@@ -271,15 +272,19 @@ package package_6
          removeEventListener(Event.ENTER_FRAME,this.maybeEndIntro);
       }
 
-      private function checkSpectateHotkey(e:Event) : *
+      private function onSpectateToggle(e:KeyboardEvent) : void
       {
-         if(Main.stage.focus is TextField)
+         if(e.keyCode != Keyboard.P)
          {
             return;
          }
-         if(!Keys.justPressed(Keyboard.P))
+         if(Main.stage.focus == RaceChat.textBox)
          {
             return;
+         }
+         if(Main.stage.focus is TextField)
+         {
+            Main.stage.focus = Main.stage;
          }
          if(this.canSpectate)
          {
@@ -402,6 +407,14 @@ package package_6
          this.changeSpectate(-1);
       }
 
+      protected function activateManualFreeCam() : void
+      {
+         Main.stage.focus = Main.stage;
+         this.freeCamManual = true;
+         this.playerSpectating = null;
+         this.updateCameraMode();
+      }
+
       private function handleSpectateZoom(e:Event):void
       {
          if (!this.canSpectate) return;
@@ -455,12 +468,17 @@ package package_6
          this.toggleKeyScroll(this.shouldFreeCam());
       }
 
-      private function onStageMouseDown(event:MouseEvent) : void
+      private function onStageActivate(event:Event) : void
       {
-         if(!this.shouldFreeCam())
+         if(Main.stage.focus is TextField)
          {
             return;
          }
+         Main.stage.focus = Main.stage;
+      }
+
+      private function onStageMouseDown(event:MouseEvent) : void
+      {
          if(event.target is TextField)
          {
             return;
@@ -484,10 +502,8 @@ package package_6
          removeEventListener(Event.ENTER_FRAME,this.maybeEndIntro);
          if(!this.playerDone)
          {
-            if(!this.freeCamManual)
-            {
-               this.toggleSpectatePossible(false);
-            }
+            this.freeCamManual = false;
+            this.toggleSpectatePossible(false);
             this.updateCameraMode();
          }
          setZoom(1);
@@ -824,12 +840,13 @@ package package_6
       override public function remove() : *
       {
          var _loc1_:Character = null;
-         removeEventListener(Event.ENTER_FRAME,this.checkSpectateHotkey);
          removeEventListener(Event.ENTER_FRAME,this.onRaceEnterFrame);
          CommandHandler.commandHandler.defineCommand("beginRace",null);
          removeEventListener(Event.ENTER_FRAME,this.maybeEndIntro);
          removeEventListener(Event.ENTER_FRAME,this.rotate);
          removeEventListener(Event.ENTER_FRAME,this.cameraFollowPlayer);
+         Main.stage.removeEventListener(Event.ACTIVATE,this.onStageActivate);
+         Main.stage.removeEventListener(KeyboardEvent.KEY_DOWN,this.onSpectateToggle);
          Main.stage.removeEventListener(KeyboardEvent.KEY_DOWN,this.preventRaceTabFocus,true);
          Main.stage.removeEventListener(FocusEvent.KEY_FOCUS_CHANGE,this.preventRaceTabFocus,true);
          Main.stage.removeEventListener(MouseEvent.MOUSE_DOWN,this.onStageMouseDown);
