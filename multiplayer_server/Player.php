@@ -779,6 +779,39 @@ class Player
         }
     }
 
+    public function replaceActiveConnectionForReconnect(PR2Client $socket, $login): bool
+    {
+        if (!$this->canReserveRaceReconnect()) {
+            return false;
+        }
+
+        $old_socket = isset($this->socket) ? $this->socket : null;
+        if ($old_socket === $socket) {
+            return false;
+        }
+        if (!is_object($old_socket) || !method_exists($old_socket, 'peekNextSendNum')) {
+            return false;
+        }
+
+        $this->connection_state = self::CONNECTION_RECONNECTING;
+        $this->reconnect_disconnected_at = time();
+        $this->reconnect_expires_at = $this->reconnect_disconnected_at + Game::RECONNECT_GRACE_SECONDS;
+
+        if (isset($this->game_room) && $this->game_room instanceof Game) {
+            $this->game_room->reserveDisconnectedPlayer($this, $old_socket);
+        }
+
+        if ($old_socket instanceof PR2Client) {
+            $old_socket->player = null;
+            $old_socket->markIntentionalDisconnect();
+            $old_socket->close();
+            $old_socket->onDisconnect();
+        }
+
+        $this->resumeConnection($socket, $login);
+        return true;
+    }
+
     public function clearReconnectState(): void
     {
         $this->connection_state = self::CONNECTION_ACTIVE;

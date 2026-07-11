@@ -205,6 +205,7 @@ function process_register_login($server_socket, $data)
         $login_id = (int) $login_obj->login->login_id;
         $group = (int) $login_obj->user->power;
         $user_id = (int) $login_obj->user->user_id;
+        $reconnect_requested = isset($login_obj->login->reconnect) && (bool) $login_obj->login->reconnect;
         $is_fred = $user_id === FRED;
         $ps_staff_cond = $group === 3 || ($group === 2 && ($guild_id === 205 || $guild_id === 183));
         $is_guild_owner = $user_id === $guild_owner;
@@ -228,6 +229,10 @@ function process_register_login($server_socket, $data)
                 if ($existing_player->isReconnectPending()) {
                     $player = $existing_player;
                     $player->resumeConnection($socket, $login_obj);
+                    $socket->player = $player;
+                    $player->sendSessionBootstrap();
+                } elseif ($reconnect_requested && $existing_player->replaceActiveConnectionForReconnect($socket, $login_obj)) {
+                    $player = $existing_player;
                     $socket->player = $player;
                     $player->sendSessionBootstrap();
                 } elseif ($existing_player->connection_state === \pr2\multi\Player::CONNECTION_RECONNECTING) {

@@ -42,6 +42,7 @@ package menu
          _loc2_.remember = Main.remember;
          _loc2_.login_id = int(param1);
          _loc2_.award_kong = Main.awardKongNextLogin;
+         _loc2_.reconnect = this.reconnectMode;
          var _loc3_:String = JSON.stringify(_loc2_);
          var _loc4_:Encryptor;
          (_loc4_ = new Encryptor()).setKey(Env.LOGIN_KEY);
