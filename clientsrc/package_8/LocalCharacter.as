@@ -852,19 +852,29 @@ package package_8
             }
             if(velX >= -1)
             {
-               if(this.var_296 != null && this.getBlock(this.var_296.getPosX() - 30,this.var_296.getPosY()) == null)
+               if(this.var_296 != null && !(this.var_296 is OneWayBlock) && this.getBlock(this.var_296.getPosX() - 30,this.var_296.getPosY()) == null)
                {
                   this.var_296.onLeftHit(this);
                   this.method_41();
                }
             }
+            if(this.shouldHitLeftOneWayBlock())
+            {
+               this.var_296.onLeftHit(this);
+               this.method_41();
+            }
             if(velX <= 1)
             {
-               if(this.var_329 != null && this.getBlock(this.var_329.getPosX() + 30,this.var_329.getPosY()) == null)
+               if(this.var_329 != null && !(this.var_329 is OneWayBlock) && this.getBlock(this.var_329.getPosX() + 30,this.var_329.getPosY()) == null)
                {
                   this.var_329.onRightHit(this);
                   this.method_41();
                }
+            }
+            if(this.shouldHitRightOneWayBlock())
+            {
+               this.var_329.onRightHit(this);
+               this.method_41();
             }
             if(velY < 0)
             {
@@ -872,17 +882,17 @@ package package_8
                {
                   this.crouching = true;
                }
-               if(this.mode != "water" && this.var_262 != null && this.getBlock(this.var_262.getPosX(),this.var_262.getPosY() + 30) == null)
+               if(this.mode != "water" && this.var_262 != null && (!(this.var_262 is OneWayBlock) || OneWayBlock(this.var_262).shouldResolveCollision(this)) && this.getBlock(this.var_262.getPosX(),this.var_262.getPosY() + 30) == null)
                {
                   this.var_262.onBump(this);
                   this.method_41();
                }
-               else if(this.mode != "water" && this.var_306 != null && this.getBlock(this.var_306.getPosX(),this.var_306.getPosY() + 30) == null)
+               else if(this.mode != "water" && this.var_306 != null && (!(this.var_306 is OneWayBlock) || OneWayBlock(this.var_306).shouldResolveCollision(this)) && this.getBlock(this.var_306.getPosX(),this.var_306.getPosY() + 30) == null)
                {
                   this.var_306.onBump(this);
                   this.method_41();
                }
-               else if(this.var_297 != null && this.getBlock(this.var_297.getPosX(),this.var_297.getPosY() + 30) == null)
+               else if(this.var_297 != null && (!(this.var_297 is OneWayBlock) || OneWayBlock(this.var_297).shouldResolveCollision(this)) && this.getBlock(this.var_297.getPosX(),this.var_297.getPosY() + 30) == null)
                {
                   this.var_297.onBump(this);
                   this.method_41();
@@ -933,7 +943,7 @@ package package_8
       
       private function method_261() : *
       {
-         if(this.var_469 != null && (this.var_262 == null || this.var_262 is OneWayBlock))
+         if(this.var_469 != null && (!(this.var_469 is OneWayBlock) || OneWayBlock(this.var_469).shouldPopOut(this)) && (this.var_262 == null || this.var_262 is OneWayBlock))
          {
             this.var_469.onStand(this);
             this.method_41();
@@ -976,6 +986,24 @@ package package_8
             return _loc5_;
          }
          return null;
+      }
+
+      private function shouldHitLeftOneWayBlock() : Boolean
+      {
+         if(!(this.var_296 is OneWayBlock))
+         {
+            return false;
+         }
+         return OneWayBlock(this.var_296).shouldResolveCollision(this) && this.getBlock(this.var_296.getPosX() - 30,this.var_296.getPosY()) == null;
+      }
+
+      private function shouldHitRightOneWayBlock() : Boolean
+      {
+         if(!(this.var_329 is OneWayBlock))
+         {
+            return false;
+         }
+         return OneWayBlock(this.var_329).shouldResolveCollision(this) && this.getBlock(this.var_329.getPosX() + 30,this.var_329.getPosY()) == null;
       }
       
       public function setMode(param1:String) : *
