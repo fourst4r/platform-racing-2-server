@@ -5,6 +5,7 @@ header("Content-type: text/plain");
 require_once GEN_HTTP_FNS;
 require_once HTTP_FNS . '/rand_crypt/to_hash.php';
 require_once HTTP_FNS . '/rand_crypt/Encryptor.php';
+require_once QUERIES_DIR . '/tokens.php';
 require_once QUERIES_DIR . '/users.php';
 
 // make some variables
@@ -66,7 +67,8 @@ try {
     // change their pass
     user_update_pass($pdo, $login->user_id, to_hash($new_pass));
 
-    // clear the existing token
+    // revoke every login token for this account, then clear the cookie
+    tokens_delete_by_user($pdo, $login->user_id);
     setcookie("token", "", time() - 3600);
 
     // tell the world

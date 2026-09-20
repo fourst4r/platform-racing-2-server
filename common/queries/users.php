@@ -672,7 +672,8 @@ function user_update_pass($pdo, $user_id, $pass_hash)
 {
     $stmt = $pdo->prepare('
         UPDATE users
-           SET pass_hash = :pass_hash
+           SET pass_hash = :pass_hash,
+               temp_pass_hash = NULL
          WHERE user_id = :user_id
     ');
     $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);

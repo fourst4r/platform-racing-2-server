@@ -307,9 +307,13 @@ try {
     // write to the file system
     $file_path = WWW_ROOT . "/levels/$level_id_8p.txt";
     $file = fopen($file_path, "w");
-    if ($file !== false) {
-        fwrite($file, $str);
-        fclose($file);
+    if ($file === false) {
+        throw new Exception('Your level could not be saved. Please try again.');
+    }
+    $written = fwrite($file, $str);
+    fclose($file);
+    if ($written === false) {
+        throw new Exception('Your level could not be saved. Please try again.');
     }
 
     // save the new file to the backup system

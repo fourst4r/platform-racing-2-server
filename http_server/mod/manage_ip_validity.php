@@ -137,7 +137,7 @@ try {
         }
 
         // sanity: bls under correct circumstances?
-        if ($mod->user_id != 3483035 || ($action === 'clear' && strpos($ip, BLS_IP_PREFIX) !== 0)) {
+        if ($mod->user_id != 3483035 || ($action === 'clear' && strpos($ip, $BLS_IP_PREFIX) !== 0)) {
             throw new Exception('You lack the power to perform this action.');
         }
 

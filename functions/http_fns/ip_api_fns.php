@@ -31,8 +31,12 @@ function query_ip_api($ip)
     // define api key and try to use it
     $key = (int) date('j') % 2 === 0 ? $IP_API_KEY_1 : $IP_API_KEY_2;
     $data = @file_get_contents(make_ip_api_link($ip, $key));
-    if ($data !== false && !empty($data->success)) {
-        return $data;
+    if ($data !== false) {
+        // the response is raw JSON; decode a copy to read the success flag
+        $decoded = json_decode($data);
+        if (!empty($decoded->success)) {
+            return $data;
+        }
     }
 
     // try to use the other one

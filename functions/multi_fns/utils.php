@@ -487,7 +487,7 @@ function kill_socket()
 // graceful shutdown
 function shutdown_server($socket = null, $die = true, $msg = 'The server is restarting, hold on a sec...')
 {
-    global $player_array, $socket;
+    global $player_array;
 
     // kill socket
     kill_socket();
