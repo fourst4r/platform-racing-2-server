@@ -37,5 +37,5 @@ try {
     // tell the command line
     output('Hourly CRON successful.');
 } catch (Exception $e) {
-    output('ERROR: Hourly CRON failed.');
+    output('ERROR: Hourly CRON failed. ' . $e->getMessage());
 }

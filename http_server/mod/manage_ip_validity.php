@@ -97,7 +97,7 @@ try {
 
             // record action
             $fn = ($action === 'allow' ? 'mod_' : 'admin_') . 'action_insert';
-            $fn($pdo, $mod->user_id, "$mod->name ${action}ed IP $target_ip from $ip.", 'manage-ip-validity', $ip);
+            $fn($pdo, $mod->user_id, "$mod->name {$action}ed IP $target_ip from $ip.", 'manage-ip-validity', $ip);
 
             // tell the world
             echo "Successfully {$action}ed the IP address \"$safe_ip\".";

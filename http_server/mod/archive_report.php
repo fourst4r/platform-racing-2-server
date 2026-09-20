@@ -64,7 +64,7 @@ try {
     $ret->error = $e->getMessage();
 } finally {
     if (!empty($mode)) {
-        $ret->{"${mode}_id"} = $id;
+        $ret->{"{$mode}_id"} = $id;
         if ($mode === 'level') {
             $ret->version = $version;
         }

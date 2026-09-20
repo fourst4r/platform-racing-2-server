@@ -50,7 +50,7 @@ try {
     // tell it to the world
     $ret->success = true;
     $suppl = $action === 'restrict' ? ' from all level lists' : '';
-    $ret->message = "This level has been ${action}ed successfully. It may take up to 60 seconds to disappear$suppl.";
+    $ret->message = "This level has been {$action}ed successfully. It may take up to 60 seconds to disappear$suppl.";
 } catch (Exception $e) {
     $ret->error = $e->getMessage();
 } finally {

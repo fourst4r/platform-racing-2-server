@@ -30,7 +30,7 @@ $messages_reasons = [
     'Scamming'
 ];
 
-$reasons = ${"${mode}_reasons"};
+$reasons = ${"{$mode}_reasons"};
 
 try {
     // rate limiting
@@ -55,7 +55,7 @@ try {
     echo '<p>---</p>';
 
     // get the reports of this mode
-    $fn = "${mode}_reported_select";
+    $fn = "{$mode}_reported_select";
     ${$mode} = $fn($pdo, $start, $count);
 
     // sanity: no reports?
@@ -140,7 +140,7 @@ try {
                     ."<input type='hidden' value='social' name='scope'>";
             echo !empty($levels) ? "<input type='hidden' value='$record' name='record'>"
                 ."<input type='hidden' value='$this_id' name='level_id'>" : '';
-            foreach (${"${mode}_reasons"} as $reason) {
+            foreach (${"{$mode}_reasons"} as $reason) {
                 $full_reason = !empty($levels) ? "Inappropriate Level -- $reason" : "$reason in PMs";
                 echo "<button type='submit' name='reason' value='$full_reason'>$reason</button> ";
             }
