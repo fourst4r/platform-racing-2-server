@@ -64,6 +64,9 @@ try {
     $encryptor->setKey($LOGIN_KEY);
     $str_login = $encryptor->decrypt($encrypted_login, $LOGIN_IV);
     $login = json_decode($str_login);
+    if (!is_object($login)) {
+        throw new Exception('Your login data could not be read. Please reload the game and try again.');
+    }
     $login->ip = $ip;
     $user_name = $login->user_name;
     $user_pass = $login->user_pass;

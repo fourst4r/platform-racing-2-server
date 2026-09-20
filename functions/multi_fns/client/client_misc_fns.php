@@ -10,9 +10,9 @@ function client_become_process($socket, $data)
     // I'll come back and uncomment this later...
     if ($data === $PROCESS_PASS /*&& (preg_match($PROCESS_IP, $socket->ip) || $socket->ip === '127.0.0.1')*/) {
         $socket->process = true;
-        output('Succeeded in becoming process: ' . $socket->ip . ' | Data: ' . $data . ' | Pass: ' . $PROCESS_PASS . ' | IP: ' . $PROCESS_IP);
+        output('Succeeded in becoming process: ' . $socket->ip);
     } else {
-        output('Failed to become process: ' . $socket->ip . ' | Data: ' . $data . ' | Pass: ' . $PROCESS_PASS . ' | IP: ' . $PROCESS_IP);
+        output('Failed to become process: ' . $socket->ip);
     }
 }
 
