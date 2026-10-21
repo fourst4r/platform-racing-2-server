@@ -1,5 +1,5 @@
 # Start from an official php image
-FROM php:7.3-cli
+FROM php:8.2.35-cli
 
 # Copy in php code
 COPY config.php /pr2/

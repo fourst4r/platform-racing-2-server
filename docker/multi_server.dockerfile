@@ -1,5 +1,5 @@
 # Start from an official php image
-FROM php:8.2-cli
+FROM php:8.2.35-cli
 
 # Install extensions
 RUN docker-php-ext-install pdo_mysql sockets
